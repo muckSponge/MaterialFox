@@ -10,6 +10,8 @@ This is a userChrome.css theme, which means you must manually add it to your Fir
 
 ## Installation
 1. Copy the chrome folder into your Firefox profile directory. To find your profile directory, go to about:support.
+2. Install [Simple New Tab Button](https://addons.mozilla.org/en-US/firefox/addon/simple-new-tab-button/) and drag the button to the far right of your tab bar.
+3. Remove the built in new tab button.
 2. Restart Firefox.
 
 ## Please note
