@@ -1,0 +1,60 @@
+:root
+{
+  --ease-in: cubic-bezier(.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, .2, 1);
+  --ease-basic: linear;
+  
+  --button-size: 32px;
+  --icon-size: 24px;
+  
+  --chrome-color: #3d4043 !important;
+  --lwt-text-color: var(--chrome-color) !important;
+  --chrome-background-color: #e8eaed !important;
+  --chrome-secondary-background-color: #FFF !important;
+  --toolbox-border-bottom-color: hsl(0, 0%, 70%) !important;
+  
+  --toolbar-color: hsl(0, 0%, 40%) !important;
+  
+  --toolbarbutton-background-color: hsla(0, 0%, 40%, 0);
+  --toolbarbutton-background-color-hover: hsla(0, 0%, 40%, .12);
+  
+  --lwt-toolbar-field-color: var(--toolbar-color) !important;
+  
+  --textbox-background-color: #f1f3f4;
+  --textbox-background-color-focused: #fff;
+  
+  --textbox-inner-color-focused: #bad6fb;
+  --textbox-outer-color-focused: #bad6fb;
+  
+  --tab-background-color-hover: hsla(0, 0%, 100%, .45);
+  --tab-separator-color: hsl(0, 0%, 60%);
+  
+  --space-above-tabbar: 8px !important;
+}
+
+#titlebar,
+#tabbrowser-tabs
+{
+  --tab-min-height: 36px !important;
+}
+
+#main-window[privatebrowsingmode]
+{
+  --chrome-color: hsl(0, 0%, 96%) !important;
+  --toolbar-color: hsl(0, 0%, 96%) !important;
+  --chrome-background-color: #202124 !important;
+  --chrome-secondary-background-color: #333639 !important;
+  --toolbox-border-bottom-color: hsl(0, 0%, 16%) !important;
+  
+  --toolbarbutton-background-color: hsla(0, 0%, 96%, 0);
+  --toolbarbutton-background-color-hover: hsla(0, 0%, 96%, .12);
+  
+  --textbox-background-color: #292c2f;
+  --textbox-background-color-focused: #3d4043;
+  
+  --textbox-inner-color-focused: #5f6e89;
+  --textbox-outer-color-focused: #596883;
+  
+  --tab-background-color-hover: hsla(0, 0%, 100%, .05);
+  --tab-separator-color: #6f6f71;
+}
