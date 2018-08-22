@@ -1,5 +1,7 @@
 # MaterialFox
-A Material Design-inspired userChrome.css theme for Firefox
+*A Material Design-inspired userChrome.css theme for Firefox*
+
+![Preview](https://user-images.githubusercontent.com/5405629/44436935-13a8bd00-a5fb-11e8-8912-a0b54da95c45.png)
 
 ## What this does
 Inspired by Google's Material Design and their latest Google Chrome UI, this theme turns your Firefox into a Material-styled web browser. The aim was to style the browser as closely as possible to Google Chrome, where practical. Google Chrome is by no means a perfect implementation of the Material Design philosophy and as such, the theme deviates from Google Chrome in some areas to provide a better experience.
