@@ -1,9 +1,4 @@
-/* #nav-bar > #nav-bar-customization-target > #urlbar-container > textbox
-{
-  color: red !important;
-} */
-
-#navigator-toolbox toolbar
+#navigator-toolbox :-moz-any(toolbar, #nav-bar-customization-target)
 {
   -moz-box-align: center !important;
 }
@@ -76,6 +71,8 @@
 #navigator-toolbox :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack)
 {
   fill-opacity: 1 !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
 #navigator-toolbox .toolbarbutton-1 > .toolbarbutton-icon
@@ -103,7 +100,14 @@
 
 #navigator-toolbox :-moz-any(#back-button, #forward-button)
 {
-  list-style-image: url(arrow-back-2x.svg) !important;
+  list-style-image: url(arrow-back-1x.svg) !important;
+}
+
+/* Windows */
+#navigator-toolbox #PanelUI-button
+{
+  border: none !important;
+  margin: 0 !important;
 }
 
 #navigator-toolbox #PanelUI-menu-button
@@ -118,7 +122,7 @@
 
 #navigator-toolbox #stop-button
 {
-  list-style-image: url(stop-x2.svg) !important;
+  list-style-image: url(stop-x1.svg) !important;
 }
 
 #navigator-toolbox #forward-button
@@ -224,7 +228,7 @@
   overflow: visible !important;
   font-size: 12px !important;
   
-  fill: transparent;
+  fill: transparent !important;
   color: var(--chrome-toolbar-color) !important;
 }
 
@@ -385,11 +389,15 @@
   width: 13px !important;
 }
 
-#titlebar-buttonbox-container
+/* macOS */
+@media (-moz-mac-yosemite-theme)
 {
-  -moz-box-align: start !important;
-  padding-top: 11px !important;
-  margin-left: -1px !important;
+  #titlebar-buttonbox-container
+  {
+    -moz-box-align: start !important;
+    padding-top: 11px !important;
+    margin-left: -1px !important;
+  }
 }
 
 #_42b6f73f-e197-466e-9059-bd40982e88ce_-browser-action
