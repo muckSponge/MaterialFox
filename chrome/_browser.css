@@ -232,14 +232,6 @@
   color: var(--chrome-toolbar-color) !important;
 }
 
-.tabbrowser-tab[fadein]
-{
-  min-width: 0 !important;
-  transition:
-    fill .3s var(--ease-basic),
-    max-width .15s ease-out !important;
-}
-
 .scrollbutton-down,
 .scrollbutton-up,
 #alltabs-button
@@ -255,7 +247,6 @@
 .tabbrowser-tab[visuallyselected]
 {
   fill: var(--chrome-secondary-background-color) !important;
-  transition-property: max-width !important;
 }
 
 .tab-content
@@ -305,6 +296,7 @@
   background-attachment: local !important;
   margin: 0 -8px !important;
   border: 0 !important;
+  transition: fill .3s var(--ease-basic) !important;
 }
 
 .tabbrowser-tab::before
@@ -323,6 +315,11 @@
 .tabbrowser-tab:hover + .tabbrowser-tab::before
 {
   opacity: 0 !important;
+}
+
+.tabbrowser-tab[visuallyselected] .tab-background
+{
+  transition: none !important;
 }
 
 .tabbrowser-tab[pinned]
