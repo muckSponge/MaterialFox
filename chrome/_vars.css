@@ -35,7 +35,7 @@
 #titlebar,
 #tabbrowser-tabs
 {
-  --tab-min-height: 36px !important;
+  --tab-min-height: 34px !important;
 }
 
 #main-window[privatebrowsingmode],
