@@ -142,16 +142,16 @@
   background-color: var(--textbox-background-color) !important;
   border: 0 !important;
   box-shadow: none !important;
-  margin: 1px !important;
-  padding: 2px !important;
+  margin: 4px !important;
+  padding: 0px !important;
   background-clip: padding-box !important;
 }
 
 #urlbar[focused]
 {
   box-shadow:
-    0 0 0 2px var(--textbox-outer-color-focused),
-    0 0 0 2px var(--textbox-inner-color-focused) inset !important;
+    0 0 0 1px var(--textbox-outer-color-focused),
+    0 0 0 1px var(--textbox-inner-color-focused) inset !important;
   background-color: var(--textbox-background-color-focused) !important;
 }
 
