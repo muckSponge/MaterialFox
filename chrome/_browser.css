@@ -160,7 +160,7 @@
   color: var(--toolbar-color) !important;
 }
 
-#page-action-buttons > :not(#star-button-box),
+#page-action-buttons > :-moz-any(#pocket-button-box, #pageActionButton),
 .urlbar-history-dropmarker
 {
   display: none !important;
