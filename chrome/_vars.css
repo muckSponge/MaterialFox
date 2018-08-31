@@ -38,7 +38,8 @@
   --tab-min-height: 36px !important;
 }
 
-#main-window[privatebrowsingmode]
+#main-window[privatebrowsingmode],
+#main-window[lwthemetextcolor=bright]
 {
   --chrome-color: hsl(0, 0%, 96%) !important;
   --toolbar-color: hsl(0, 0%, 96%) !important;
