@@ -16,10 +16,8 @@
   padding-right: 6px !important;
 }
 
-#navigator-toolbox :-moz-any(.toolbarbutton-1, .bookmark-item)
+#navigator-toolbox :-moz-any(.toolbarbutton-1, .bookmark-item, .scrollbutton-up, .scrollbutton-down)
 {
-  max-height: 32px !important;
-  
   font-size: 12px !important;
   padding: 0 !important;
   margin: 0 !important;
@@ -49,17 +47,17 @@
   background-clip: padding-box !important;
 }
 
-#navigator-toolbox :-moz-any(.toolbarbutton-1, .bookmark-item)[disabled]
+#navigator-toolbox :-moz-any(.toolbarbutton-1, .bookmark-item, .scrollbutton-up, .scrollbutton-down)[disabled]
 {
   opacity: .42 !important;
 }
 
-#navigator-toolbox :-moz-any(.toolbarbutton-1, .bookmark-item):hover:not([disabled])
+#navigator-toolbox :-moz-any(.toolbarbutton-1, .bookmark-item, .scrollbutton-up, .scrollbutton-down):hover:not([disabled])
 {
   background-color: var(--toolbarbutton-background-color-hover) !important;
 }
 
-#navigator-toolbox :-moz-any(.toolbarbutton-1, .bookmark-item):-moz-any(:hover:active, [checked], [open]):not([disabled])
+#navigator-toolbox :-moz-any(.toolbarbutton-1, .bookmark-item, .scrollbutton-up, .scrollbutton-down):-moz-any(:hover:active, [checked], [open]):not([disabled])
 {
   fill-opacity: .16 !important;
   background-size: 100% !important;
@@ -147,7 +145,7 @@
   margin: 1px !important;
   padding: 2px !important;
   background-clip: padding-box !important;
-  min-height: 24px !important;
+  min-height: 28px !important;
   position: relative !important;
   overflow: visible !important;
 }
@@ -190,7 +188,9 @@
 {
   min-width: 32px !important;
   height: 24px !important;
-  padding: 4px !important;
+  padding: 4px 8px !important;
+  border-radius: 99px !important;
+  fill-opacity: 1 !important;
 }
 
 #star-button
@@ -227,12 +227,12 @@
   -moz-appearance: none !important;
   background: 0 !important;
   color: inherit !important;
-  padding-right: 2px !important;
+  padding-inline-end: 2px !important;
 }
 
 #tabbrowser-tabs
 {
-  padding-right: 2px !important;
+  padding-inline-end: 2px !important;
 }
 
 .titlebar-placeholder
@@ -240,14 +240,32 @@
   border: 0 !important;
 }
 
-#tabbrowser-tabs .arrowscrollbox-scrollbox
+#tabbrowser-tabs:not([overflow]) .arrowscrollbox-scrollbox
 {
   margin: 0 -8px !important;
 }
 
 #tabbrowser-tabs .scrollbox-innerbox
 {
-  padding: 0 8px !important;
+  margin: 0 8px !important;
+}
+
+#tabbrowser-tabs[overflow]
+{
+  /* I love magic numbers... */
+  margin-inline-start: -9px !important;
+}
+
+#tabbrowser-tabs[overflow] .tabbrowser-tab[pinned]
+{
+  transform: translateX(-8px) !important;
+}
+
+/* vertically center buttons in tab scroll area */
+#tabbrowser-tabs :-moz-any(.toolbarbutton-1, .scrollbutton-up, .scrollbutton-down)
+{
+  margin-top: calc((var(--tab-min-height) - var(--button-size)) / 2) !important;
+  margin-bottom: calc((var(--tab-min-height) - var(--button-size)) / 2) !important;
 }
 
 .tabbrowser-tab
@@ -261,10 +279,14 @@
   color: var(--chrome-toolbar-color) !important;
 }
 
-.scrollbutton-down,
-.scrollbutton-up,
 .arrowscrollbox-overflow-start-indicator,
-.arrowscrollbox-overflow-end-indicator,
+.arrowscrollbox-overflow-end-indicator
+{
+  width: 1px !important;
+  margin: 8px -.5px !important;
+  background: var(--tab-separator-color) !important;
+}
+
 #alltabs-button
 {
   display: none !important;
@@ -356,11 +378,6 @@
   transition: none !important;
 }
 
-.tabbrowser-tab[pinned]
-{
-  max-width: 36px !important;
-}
-
 .tabbrowser-tab[pinned] .tab-content
 {
   width: 36px !important;
@@ -379,7 +396,7 @@
   width: 16px !important;
   height: 16px !important;
   margin: 0 !important;
-  margin-left: 6px !important;
+  margin-inline-start: 6px !important;
   padding: 3.5px !important;
   border-radius: 99px !important;
   transition-property: fill-opacity, background-color !important;
@@ -426,7 +443,7 @@
 
 #tabbrowser-tabs .tabs-newtab-button
 {
-  margin-left: 6px !important;
+  margin-inline-start: 6px !important;
 }
 
 /* Simple New Tab Button */
@@ -442,7 +459,7 @@
   {
     -moz-box-align: start !important;
     padding-top: 11px !important;
-    margin-left: -1px !important;
+    margin-inline-start: -1px !important;
   }
 }
 
