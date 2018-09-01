@@ -468,7 +468,7 @@
   #navigator-toolbox::after
   {
     border-top: .5px solid var(--chrome-secondary-background-color) !important;
-		border-bottom-width: .5px !important;
+	border-bottom-width: .5px !important;
   }
   
   #navigator-toolbox :-moz-any(#back-button, #forward-button)
