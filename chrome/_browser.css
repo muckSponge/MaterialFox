@@ -139,6 +139,7 @@
 #urlbar
 {
   border-radius: 99px !important;
+  -moz-outline-radius: 99px !important;
   background-color: var(--textbox-background-color) !important;
   border: 0 !important;
   box-shadow: none !important;
@@ -147,25 +148,14 @@
   background-clip: padding-box !important;
   min-height: 28px !important;
   position: relative !important;
-  overflow: visible !important;
+  outline: 0 solid var(--textbox-outer-color-focused) !important;
+  outline-offset: -1px !important;
 }
 
 #urlbar[focused]
 {
   background-color: var(--textbox-background-color-focused) !important;
-}
-
-#urlbar[focused]::after
-{
-  display: -moz-box !important;
-  content: "";
-  position: absolute !important;
-  left: -1px;
-  right: -1px;
-  top: -1px;
-  bottom: -1px;
-  border-radius: 99px;
-  border: 2px solid var(--textbox-outer-color-focused);
+  outline-width: 2px !important;
 }
 
 #page-action-buttons
