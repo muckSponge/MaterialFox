@@ -1,14 +1,14 @@
 <svg
 	xmlns="http://www.w3.org/2000/svg"
-	width="8"
-	height="8"
-	viewBox="0 0 8 8"
+	width="16"
+	height="16"
+	viewBox="0 0 16 16"
 	stroke-linecap="round"
 	stroke-linejoin="round"
-	stroke-width="1"
+	stroke-width="1.5"
 	stroke="context-fill"
 	stroke-opacity="context-fill-opacity"
 >
-	<path d="M8,0,0,8Z"/>
-	<path d="M0,0,8,8Z"/>
+	<path d="M11.25,11.25l-6.5-6.5"/>
+	<path d="M4.75,11.25l6.5-6.5"/>
 </svg>

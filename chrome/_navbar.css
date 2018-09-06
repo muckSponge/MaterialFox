@@ -1,0 +1,261 @@
+#nav-bar
+{
+	min-height: 36px !important;
+	box-shadow: none !important;
+	padding-left: 6px !important;
+	padding-right: 6px !important;
+}
+
+#reload-button[disabled]:not(:-moz-window-inactive) > .toolbarbutton-icon
+{
+	opacity: 1 !important;
+}
+
+#navigator-toolbox :-moz-any(#back-button, #forward-button)
+{
+	list-style-image: url(arrow-back-1x.svg) !important;
+}
+
+/* Windows */
+#navigator-toolbox #PanelUI-button
+{
+	border: none !important;
+	margin: 0 !important;
+}
+
+#navigator-toolbox #PanelUI-menu-button
+{
+	list-style-image: url(menu.svg) !important;
+}
+
+#navigator-toolbox #reload-button
+{
+	list-style-image: url(refresh-1x.svg) !important;
+}
+
+#navigator-toolbox #stop-button
+{
+	list-style-image: url(stop-1x.svg) !important;
+}
+
+#navigator-toolbox #forward-button
+{
+	transform: scaleX(-1) !important;
+}
+
+#navigator-toolbox #sync-button
+{
+	list-style-image: url(profile.svg) !important;
+}
+
+#navigator-toolbox #sync-button .toolbarbutton-icon
+{
+	transform: scale(calc(1 + 1 / 16));
+}
+
+#urlbar-container
+{
+	overflow: visible !important;
+	padding: 0 5px !important;
+}
+
+#urlbar
+{
+	border-radius: 99px !important;
+	background-color: var(--toolbar-field-background-color) !important;
+	color: inherit !important;
+	border: 0 !important;
+	box-shadow: none !important;
+	margin: 1px !important;
+	padding: 2px !important;
+	background-clip: padding-box !important;
+	min-height: 28px !important;
+	transition: background-color .1s var(--ease-basic) !important;
+}
+
+#urlbar:hover
+{
+	background-color: var(--toolbar-field-hover-background-color) !important;
+}
+
+#urlbar[focused]
+{
+	background-color: var(--toolbar-field-focus-background-color) !important;
+	border: 2px solid var(--toolbar-field-focus-border-color) !important;
+	padding: 1px !important;
+	margin: 0 !important;
+}
+
+#identity-box
+{
+	padding: 0 8px !important;
+	margin: 0 !important;
+}
+
+#identity-icon-labels
+{
+	padding-inline-start: 8px !important;
+	color: inherit !important;
+}
+
+#identity-box,
+.urlbar-icon
+{
+	border-radius: 99px !important;
+	fill-opacity: 1 !important;
+	transition: background-color .2s var(--ease-basic);
+	background-color: transparent !important;
+}
+
+#identity-box:hover:not(.no-hover),
+.urlbar-icon:hover:not([disabled])
+{
+	background-color: var(--toolbarbutton-hover-background) !important;
+}
+
+#identity-box:hover:active:not(.no-hover),
+#identity-box[open],
+.urlbar-icon:hover:active:not([disabled]),
+.urlbar-icon[open]
+{
+	background-color: var(--toolbarbutton-active-background) !important;
+	transition-duration: 0 !important;
+}
+
+#urlbar[pageproxystate=valid] > #identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage),
+#urlbar-display-box
+{
+	overflow: visible !important;
+	border: 0 !important;
+	margin-inline-end: 8px !important;
+}
+
+#urlbar[pageproxystate=valid] > #identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage)::after,
+#urlbar-display-box::after
+{
+	content: "" !important;
+	display: -moz-box !important;
+	background: currentColor !important;
+	opacity: var(--tab-separator-opacity) !important;
+	height: 16px !important;
+	width: 1px !important;
+	transform: translateX(8px) !important;
+	transition: opacity .2s var(--ease-basic) !important;
+}
+
+#urlbar[pageproxystate=valid] > #identity-box:hover:not(.no-hover)::after,
+#urlbar[pageproxystate=valid] > #identity-box[open]::after
+{
+	opacity: 0 !important;
+}
+
+#identity-box > #identity-icon
+{
+	list-style-image: url(info-1x.svg) !important;
+}
+
+#identity-box > #connection-icon
+{
+	list-style-image: url(connection-1x.svg) !important;
+	fill: currentColor !important;
+}
+
+#identity-box:not(.unknownIdentity) > #identity-icon
+{
+	list-style-image: none !important;
+	margin-inline-end: -20px !important;
+}
+
+.urlbar-input
+{
+	padding: 0 !important;
+}
+
+#page-action-buttons > :-moz-any(#pageActionSeparator, #pocket-button-box, #pageActionButton),
+.urlbar-history-dropmarker
+{
+	display: none !important;
+}
+
+#pageActionSeparator
+{
+	height: 24px !important;
+}
+
+.urlbar-icon-wrapper
+{
+	background: 0 !important;
+}
+
+.urlbar-icon
+{
+	min-width: 32px !important;
+	height: 24px !important;
+	padding: 4px 8px !important;
+}
+
+#star-button
+{
+	list-style-image: url(star-1x.svg) !important;
+	fill-opacity: 0 !important;
+}
+
+#star-button[starred]
+{
+	fill: var(--toolbarbutton-icon-fill-attention) !important;
+	fill-opacity: 1 !important;
+}
+
+#star-button-animatable-box
+{
+	display: none !important;
+}
+
+/* high DPI adjustments */
+@media (min--moz-device-pixel-ratio: 2)
+{
+	#navigator-toolbox :-moz-any(#back-button, #forward-button)
+	{
+		list-style-image: url(arrow-back-2x.svg) !important;
+	}
+
+	#navigator-toolbox #PanelUI-menu-button .toolbarbutton-icon
+	{
+		transform: translate(-.5px, -.5px) !important;
+	}
+
+	#navigator-toolbox #stop-button
+	{
+		list-style-image: url(stop-2x.svg) !important;
+	}
+
+	#navigator-toolbox #reload-button
+	{
+		list-style-image: url(refresh-2x.svg) !important;
+	}
+
+	#navigator-toolbox #star-button
+	{
+		list-style-image: url(star-2x.svg) !important;
+	}
+	
+	#identity-icon-labels
+	{
+		transform: translateY(-.5px) !important;
+	}
+
+	#identity-box > #identity-icon
+	{
+		list-style-image: url(info-2x.svg) !important;
+	}
+
+	#identity-box > #connection-icon
+	{
+		list-style-image: url(connection-2x.svg) !important;
+	}
+
+	.urlbar-input
+	{
+		transform: translateY(-.5px) !important;
+	}
+}

@@ -1,0 +1,330 @@
+#TabsToolbar
+{
+	padding-inline-end: 2px !important;
+	color: var(--chrome-color) !important;
+}
+
+#TabsToolbar:-moz-lwtheme-darktext:not(:-moz-window-inactive),
+#main-window[privatebrowsingmode] #TabsToolbar
+{
+	-moz-appearance: none !important;
+}
+
+.titlebar-placeholder
+{
+	border: 0 !important;
+}
+
+.titlebar-placeholder[type=pre-tabs]
+{
+	width: 12px !important;
+}
+
+.titlebar-placeholder[type=post-tabs]
+{
+	width: 0 !important;
+}
+
+/* add space at end of tab bar if no buttons present */
+#TabsToolbar:-moz-any(
+	[currentset$="tabbrowser-tabs"],
+	[currentset$="tabbrowser-tabs,alltabs-button"],
+	[currentset$="tabbrowser-tabs,new-tab-button"],
+	[currentset$="tabbrowser-tabs,alltabs-button,new-tab-button"],
+	[currentset$="tabbrowser-tabs,new-tab-button,alltabs-button"]
+) .titlebar-placeholder[type=post-tabs]
+{
+	width: 46px !important;
+}
+
+#tabbrowser-tabs:not([overflow]) .arrowscrollbox-scrollbox
+{
+	margin: 0 -8px !important;
+}
+
+#tabbrowser-tabs .scrollbox-innerbox
+{
+	margin: 0 8px !important;
+}
+
+/* vertically center buttons in tab scroll area */
+#tabbrowser-tabs :-moz-any(.toolbarbutton-1, .scrollbutton-up, .scrollbutton-down)
+{
+	margin-top: calc((var(--tab-min-height) - var(--button-size)) / 2) !important;
+	margin-bottom: calc((var(--tab-min-height) - var(--button-size)) / 2) !important;
+}
+
+.tabbrowser-tab
+{
+	min-height: var(--tab-min-height) !important;
+
+	overflow: visible !important;
+	font-size: 12px !important;
+}
+
+.tabbrowser-tab
+{
+	/* don't use inline-start, breaks pinned */
+	margin-inline-end: -1px !important;
+}
+
+.tabbrowser-tab[fadein]
+{
+	max-width: 240px !important;
+}
+
+.tab-content
+{
+	overflow: hidden !important;
+	padding-inline-start: 12px !important;
+	padding-inline-end: 8px !important;
+}
+
+.tab-throbber,
+.tab-throbber-fallback,
+.tab-icon-image,
+.tab-sharing-icon-overlay,
+.tab-icon-sound,
+.tab-close-button
+{
+	margin-top: 0 !important;
+}
+
+.tabbrowser-tab::after,
+.tab-line
+{
+	display: none !important;
+}
+
+.tab-background
+{
+	-moz-context-properties: fill, fill-opacity !important;
+	background-color: transparent !important;
+	background-image:
+		-moz-image-rect(url(tab.svg), 0, 25%, 25%, 0),
+		-moz-image-rect(url(tab.svg), 0, 100%, 25%, 75%),
+		-moz-image-rect(url(tab.svg), 25%, 25%, 75%, 0),
+		-moz-image-rect(url(tab.svg), 25%, 100%, 75%, 75%),
+		-moz-image-rect(url(tab.svg), 75%, 25%, 100%, 0),
+		-moz-image-rect(url(tab.svg), 75%, 100%, 100%, 75%),
+		-moz-image-rect(url(tab.svg), 0, 75%, 100%, 25%) !important;
+	background-size:
+		16px 8px, 16px 8px,
+		16px calc(100% - 16px), 16px calc(100% - 16px),
+		16px 8px, 16px 8px,
+		calc(100% - 32px) 100% !important;
+	background-position:
+		left top, right top,
+		left 8px, right 8px,
+		left bottom, right bottom,
+		16px top !important;
+	background-repeat: no-repeat !important;
+	background-attachment: local !important;
+	margin: 0 -8px !important;
+	border: 0 !important;
+	transition: fill-opacity .2s var(--ease-basic) !important;
+	fill: var(--toolbar-bgcolor) !important;
+	fill-opacity: 0 !important;
+	
+	/* required due to negative margin */
+	pointer-events: none !important;
+}
+
+.tabbrowser-tab::before,
+.tabbrowser-tab:last-of-type::after
+{
+	content: "" !important;
+	display: -moz-box !important;
+	width: 1px !important;
+	margin: 7px 0 !important;
+	padding: 0 !important;
+	transition: opacity .15s var(--ease-basic) !important;
+	opacity: var(--tab-separator-opacity) !important;
+}
+
+.tabbrowser-tab::before
+{
+	margin-inline-end: -1px !important;
+}
+
+.tabbrowser-tab:last-of-type::after
+{
+	transform: translateX(-1px) !important;
+}
+
+.tabbrowser-tab:-moz-any(:hover, [visuallyselected], :first-of-type)::before,
+.tabbrowser-tab:-moz-any(:hover, [visuallyselected], :first-of-type)::after,
+.tabbrowser-tab:-moz-any(:hover, [visuallyselected]) + .tabbrowser-tab::before
+{
+	opacity: 0 !important;
+}
+
+.tabbrowser-tab:hover .tab-background
+{
+	fill-opacity: var(--tab-hover-fill-opacity) !important;
+}
+
+.tabbrowser-tab[visuallyselected] .tab-background
+{
+	transition: none !important;
+	fill-opacity: 1 !important;
+}
+
+.tabbrowser-tab[visuallyselected] .tab-close-button
+{
+	color: var(--toolbar-color) !important;
+}
+
+.tab-icon-image
+{
+	margin-inline-end: 8px !important;
+}
+
+/* hide new tab favicon */
+.tabbrowser-tab[image^="chrome://branding/"]:not([pinned]) .tab-icon-image
+{
+	display: none !important;
+}
+
+.tab-label-container
+{
+	margin-top: -2px !important;
+	opacity: 1 !important;
+}
+
+.tabbrowser-tab[fadein] .tab-close-button
+{
+	visibility: visible !important;
+}
+
+.tab-close-button
+{
+	list-style-image: url(close-tab.svg) !important;
+	width: 16px !important;
+	height: 16px !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border-radius: 99px !important;
+	transition-property: fill-opacity, background-color !important;
+	transition-duration: .15s !important;
+	transition-timing-function: var(--ease-basic) !important;
+	fill-opacity: 1 !important;
+}
+
+.tab-close-button:hover
+{
+	background-color: var(--toolbarbutton-hover-background) !important;
+}
+
+/* clipped tabs */
+#tabbrowser-tabs[closebuttons=activetab] .tab-content:not([pinned])
+{
+	padding-inline-start: 8px !important;
+}
+
+#tabbrowser-tabs[closebuttons=activetab] .tabbrowser-tab:not([visuallyselected]) .tab-close-button
+{
+	visibility: collapse !important;
+}
+
+/* overflowing and pinned tabs */
+#tabbrowser-tabs[overflow]
+{
+	/* I love magic numbers... */
+	margin-inline-start: -1px !important;
+}
+
+#tabbrowser-tabs[overflow] .tabbrowser-tab[pinned]
+{
+	/* gives scrollbutton-up extra room */
+	transform: translateX(-8px) !important;
+}
+
+#tabbrowser-tabs[overflow] .tab-content,
+.tab-content[pinned]
+{
+	-moz-box-pack: center !important;
+}
+
+#tabbrowser-tabs[overflow] .tab-icon-image,
+.tab-icon-image[pinned]
+{
+	margin: auto !important;
+}
+
+#tabbrowser-tabs[overflow] .tab-content[image]:not([image^="chrome://branding/"]):not([pinned]),
+.tab-content[pinned]
+{
+	width: 36px !important;
+	padding: 0 !important;
+	padding-inline-start: 0 !important;
+	padding-inline-end: 0 !important;
+}
+
+#tabbrowser-tabs[overflow] .tabbrowser-tab:not([visuallyselected]) .tab-close-button,
+#tabbrowser-tabs[overflow] .tabbrowser-tab[visuallyselected] :-moz-any(.tab-label-container, .tab-icon-image),
+#tabbrowser-tabs[overflow] .tabbrowser-tab[image]:not([image^="chrome://branding/"]) .tab-label-container,
+:-moz-any(.tab-label-container, .tab-close-button)[pinned]
+{
+	display: none !important;
+}
+
+#tabbrowser-tabs .tabs-newtab-button
+{
+	margin-inline-start: 6px !important;
+}
+
+.tabs-newtab-button,
+/* Simple New Tab Button */
+#TabsToolbar #_42b6f73f-e197-466e-9059-bd40982e88ce_-browser-action
+{
+	list-style-image: url(new-tab.svg) !important;
+}
+
+.arrowscrollbox-overflow-start-indicator,
+.arrowscrollbox-overflow-end-indicator
+{
+	width: 1px !important;
+	margin: 7px -.5px !important;
+	background: currentColor !important;
+	opacity: var(--tab-separator-opacity) !important;
+}
+
+#alltabs-button
+{
+	display: none !important;
+}
+
+/* macOS */
+@media (-moz-mac-yosemite-theme)
+{
+	#titlebar-buttonbox-container
+	{
+		-moz-box-align: start !important;
+		margin-inline-start: 0 !important;
+	}
+}
+
+/* high DPI adjustments */
+@media (min--moz-device-pixel-ratio: 2)
+{
+	.tabbrowser-tab::before,
+	.arrowscrollbox-overflow-start-indicator,
+	.arrowscrollbox-overflow-end-indicator
+	{
+		transform: translateY(.5px) !important;
+	}
+
+	.tabbrowser-tab:last-of-type::after
+	{
+		transform: translate(-1px, .5px) !important;
+	}
+	
+	@media (-moz-mac-yosemite-theme)
+	{
+		#titlebar-buttonbox-container
+		{
+			padding-top: 13.5px !important;
+		}
+	}
+}
