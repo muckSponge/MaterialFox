@@ -90,6 +90,14 @@
 {
 	padding: 0 8px !important;
 	margin: 0 !important;
+	border: 0 !important;
+	position: relative !important;
+	background: 0 !important;
+}
+
+#urlbar[pageproxystate=valid] > #identity-box:not(.no-hover) > #identity-icon
+{
+	fill-opacity: 1 !important;
 }
 
 #identity-icon-labels
@@ -98,39 +106,15 @@
 	color: inherit !important;
 }
 
-#identity-box,
-.urlbar-icon
-{
-	border-radius: 99px !important;
-	fill-opacity: 1 !important;
-	transition: background-color .2s var(--ease-basic);
-	background-color: transparent !important;
-}
-
-#identity-box:hover:not(.no-hover),
-.urlbar-icon:hover:not([disabled])
-{
-	background-color: var(--toolbarbutton-hover-background) !important;
-}
-
-#identity-box:hover:active:not(.no-hover),
-#identity-box[open],
-.urlbar-icon:hover:active:not([disabled]),
-.urlbar-icon[open]
-{
-	background-color: var(--toolbarbutton-active-background) !important;
-	transition-duration: 0 !important;
-}
-
-#urlbar[pageproxystate=valid] > #identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage),
+#identity-box:-moz-any(.notSecureText, .verifiedIdentity),
 #urlbar-display-box
 {
 	overflow: visible !important;
-	border: 0 !important;
 	margin-inline-end: 8px !important;
 }
 
-#urlbar[pageproxystate=valid] > #identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage)::after,
+/* separator */
+#identity-box:-moz-any(.notSecureText, .verifiedIdentity)::after,
 #urlbar-display-box::after
 {
 	content: "" !important;
@@ -143,15 +127,20 @@
 	transition: opacity .2s var(--ease-basic) !important;
 }
 
-#urlbar[pageproxystate=valid] > #identity-box:hover:not(.no-hover)::after,
-#urlbar[pageproxystate=valid] > #identity-box[open]::after
+#identity-box:-moz-any(.notSecureText, .verifiedIdentity):hover:not(.no-hover)::after,
+#identity-box:-moz-any(.notSecureText, .verifiedIdentity)[open]::after
 {
 	opacity: 0 !important;
 }
 
-#identity-box > #identity-icon
+#urlbar[pageproxystate=valid] > #identity-box.unknownIdentity > #identity-icon
 {
 	list-style-image: url(info-1x.svg) !important;
+}
+
+#urlbar[pageproxystate=valid] > #identity-box.chromeUI > #identity-icon
+{
+	list-style-image: url(identity-icons-brand.svg) !important;
 }
 
 #identity-box > #connection-icon
@@ -160,10 +149,58 @@
 	fill: currentColor !important;
 }
 
-#identity-box:not(.unknownIdentity) > #identity-icon
+/* hide identity icon if identity/domain is verified */
+#identity-box:-moz-any(.verifiedIdentity, .verifiedDomain) > #identity-icon
 {
 	list-style-image: none !important;
 	margin-inline-end: -20px !important;
+}
+
+#identity-box::before
+{
+	pointer-events: none !important;
+	content: "" !important;
+	display: -moz-box !important;
+	position: absolute !important;
+	left: 0 !important;
+	right: 0 !important;
+	top: 0 !important;
+	bottom: 0 !important;
+	background-color: currentColor !important;
+	opacity: 0 !important;
+	border-radius: 99px !important;
+	transition: opacity .2s var(--ease-basic) !important;
+}
+
+#identity-box:hover:not(.no-hover)::before
+{
+	opacity: .12 !important;
+}
+
+#identity-box:hover:active:not(.no-hover)::before,
+#identity-box[open]:not(.no-hover)::before
+{
+	opacity: .24 !important;
+	transition: none !Important;
+}
+
+#identity-box.chromeUI #identity-icon-labels
+{
+	visibility: collapse !important;
+}
+
+@supports not -moz-bool-pref("materialFox.disableIdentityColors")
+{
+	/* apply Firefox-style identity colours here */
+	#identity-box.verifiedIdentity
+	{
+		color: #43A047 !important;
+	}
+	
+	#urlbar[pageproxystate=valid] > #identity-box.unknownIdentity
+	{
+		color: #EF5350 !important;
+	}
 }
 
 .urlbar-input
@@ -192,7 +229,23 @@
 	min-width: 32px !important;
 	height: 24px !important;
 	padding: 4px 8px !important;
+	border-radius: 99px !important;
+	fill-opacity: 1 !important;
+	transition: background-color .2s var(--ease-basic);
+	background-color: transparent !important;
 }
+
+.urlbar-icon:hover:not([disabled])
+{
+	background-color: var(--toolbarbutton-hover-background) !important;
+}
+
+.urlbar-icon:hover:active:not([disabled]),
+.urlbar-icon[open]
+{
+	background-color: var(--toolbarbutton-active-background) !important;
+	transition-duration: 0 !important;
+} 
 
 #star-button
 {
@@ -244,7 +297,7 @@
 		transform: translateY(-.5px) !important;
 	}
 
-	#identity-box > #identity-icon
+	#urlbar[pageproxystate=valid] > #identity-box.unknownIdentity > #identity-icon
 	{
 		list-style-image: url(info-2x.svg) !important;
 	}

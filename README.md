@@ -17,7 +17,7 @@ Some steps involve accessing the about:config page. You can get there by typing 
 3. Restart Firefox.
 
 ### Optional steps
-Match Chrome's light color scheme:
+Replicate Chrome's light color scheme:
 * Right click on toolbar -> Customize.
 * Click Themes.
 * Select Light theme.
@@ -26,10 +26,14 @@ Add space above tab bar:
 * Right click on toolbar -> Customize.
 * Check Drag Space checkbox.
 
-Match Chrome behaviour for clipped tabs:
+Replicate Chrome behaviour for clipped tabs:
 * [about:config] Set ```browser.tabs.tabClipWidth``` to ```83``` (default is ```144```).
 
+Replicate Chrome identity colours (or lack thereof):
+* [about:config] Add new entry ```materialFox.disableIdentityColors``` with value ```true```.
+* Restart Firefox.
+
 ## Please note
-* Untested on Linux.
-* Windows may have oversized titlebar buttons.
-* Some customisation settings may no longer work (compact density, some custom themes)
+* Linux is not frequently tested; last tested on 07/09/2018.
+* Users may experience oversized titlebar buttons on Windows.
+* Some customisation settings may no longer work (compact density, some custom themes).
