@@ -84,7 +84,7 @@
 	background: 0 !important;
 }
 
-#navigator-toolbox :-moz-any(.toolbarbutton-badge-stack, .bookmark-item) > .toolbarbutton-icon
+#navigator-toolbox :-moz-any(.toolbarbutton-badge-stack, .bookmark-item, .subviewbutton) > .toolbarbutton-icon
 {
 	padding: 0 !important;
 }
