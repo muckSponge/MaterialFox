@@ -296,12 +296,13 @@
 }
 
 /* macOS */
-@media (-moz-mac-yosemite-theme)
+@media (-moz-overlay-scrollbars)
 {
 	#titlebar-buttonbox-container
 	{
 		-moz-box-align: start !important;
 		margin-inline-start: 0 !important;
+		margin-block-start: 13px !important;
 	}
 }
 
@@ -320,11 +321,12 @@
 		transform: translate(-1px, .5px) !important;
 	}
 	
-	@media (-moz-mac-yosemite-theme)
+	/* macOS */
+	@media (-moz-overlay-scrollbars)
 	{
 		#titlebar-buttonbox-container
 		{
-			padding-top: 13.5px !important;
+			margin-block-start: 13.5px !important;
 		}
 	}
 }
