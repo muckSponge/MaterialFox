@@ -43,6 +43,11 @@
 	transform: scaleX(-1) !important;
 }
 
+#navigator-toolbox #home-button
+{
+	list-style-image: url(home-1x.svg) !important;
+}
+
 #navigator-toolbox #sync-button
 {
 	list-style-image: url(profile.svg) !important;
@@ -285,6 +290,11 @@
 	#navigator-toolbox #reload-button
 	{
 		list-style-image: url(refresh-2x.svg) !important;
+	}
+	
+	#navigator-toolbox #home-button
+	{
+		list-style-image: url(home-2x.svg) !important;
 	}
 
 	#navigator-toolbox #star-button
