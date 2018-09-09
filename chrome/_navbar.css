@@ -189,9 +189,9 @@
 	visibility: collapse !important;
 }
 
+/* Firefox-style identity colours */
 @supports not -moz-bool-pref("materialFox.disableIdentityColors")
 {
-	/* apply Firefox-style identity colours here */
 	#identity-box.verifiedIdentity
 	{
 		color: #43A047 !important;
