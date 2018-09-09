@@ -33,7 +33,9 @@ Replicate Chrome identity colours (or lack thereof):
 * [about:config] Add new entry ```materialFox.disableIdentityColors``` with value ```true```.
 * Restart Firefox.
 
+Remove pocket button from Address Bar:
+* Right click on pocket button -> Remove from Address Bar
+
 ## Please note
 * Linux is not frequently tested; last tested on 07/09/2018.
-* Users may experience oversized titlebar buttons on Windows.
 * Some customisation settings may no longer work (compact density, some custom themes).

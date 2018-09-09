@@ -208,7 +208,7 @@
 	padding: 0 !important;
 }
 
-#page-action-buttons > :-moz-any(#pageActionSeparator, #pocket-button-box, #pageActionButton),
+#page-action-buttons > :-moz-any(#pageActionSeparator, #pageActionButton),
 .urlbar-history-dropmarker
 {
 	display: none !important;
