@@ -6,15 +6,12 @@
 
 	--button-size: 32px; /* is this used? */
 	--icon-size: 24px; /* is this used? */
-	
-	/* todo: only use this with specific selectors */
-/* 	--space-above-tabbar: 8px !important; */
 }
 
 #titlebar,
 #tabbrowser-tabs
 {
-	--tab-min-height: 34px !important;
+ 	--tab-min-height: 34px !important;
 	--tab-min-width: 36px !important;
 }
 
