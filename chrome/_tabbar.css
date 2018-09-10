@@ -168,7 +168,6 @@
 }
 
 .tabbrowser-tab[visuallyselected][style*=transform] + .tabbrowser-tab[style*=transform] .tab-content::after,
-
 .tabbrowser-tab[style*=transform]:not([visuallyselected]) .tab-content::before,
 .tabbrowser-tab[style*=transform] + .tabbrowser-tab:not([visuallyselected]) .tab-content::before,
 .tabbrowser-tab:not([visuallyselected]):not(:hover) + .tabbrowser-tab:not([visuallyselected]):not(:hover) .tab-content::before,
@@ -180,6 +179,11 @@
 .tabbrowser-tab:hover .tab-background
 {
 	fill-opacity: var(--tab-hover-fill-opacity) !important;
+}
+
+.tabbrowser-tab[visuallyselected]
+{
+	color: var(--toolbar-color) !important;
 }
 
 .tabbrowser-tab[visuallyselected] .tab-background
