@@ -58,13 +58,15 @@
 	transform: scale(calc(1 + 1 / 16));
 }
 
-#urlbar-container
+#urlbar-container,
+#searchbar-container
 {
 	overflow: visible !important;
 	padding: 0 5px !important;
 }
 
-#urlbar
+#urlbar,
+#searchbar
 {
 	border-radius: 99px !important;
 	background-color: var(--toolbar-field-background-color) !important;
@@ -78,12 +80,14 @@
 	transition: background-color .1s var(--ease-basic) !important;
 }
 
-#urlbar:hover
+#urlbar:hover,
+#searchbar:hover
 {
 	background-color: var(--toolbar-field-hover-background-color) !important;
 }
 
-#urlbar[focused]
+#urlbar[focused],
+#searchbar[focused]
 {
 	background-color: var(--toolbar-field-focus-background-color) !important;
 	border: 2px solid var(--toolbar-field-focus-border-color) !important;
@@ -211,6 +215,14 @@
 .urlbar-input
 {
 	padding: 0 !important;
+}
+
+.searchbar-textbox
+{
+	border: 0 !important;
+	background: 0 !important;
+	box-shadow: none !important;
+	margin: 0 !important;
 }
 
 #page-action-buttons > :-moz-any(#pageActionSeparator, #pageActionButton),
