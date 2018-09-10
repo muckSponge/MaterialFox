@@ -57,15 +57,26 @@
 .tabbrowser-tab
 {
 	min-height: var(--tab-min-height) !important;
-
 	overflow: visible !important;
 	font-size: 12px !important;
 }
 
-.tabbrowser-tab
+/* neighbouring tabs should "pinch" together */
+.tabbrowser-tab:not([last-visible-tab])
 {
-	/* don't use inline-start, breaks pinned */
-	margin-inline-end: -1px !important;
+	margin-inline-end: -.5px !important;
+}
+
+/* special case for pinned tabs when overflowing */
+#tabbrowser-tabs:not([overflow]) .tabbrowser-tab:not([first-visible-tab]),
+#tabbrowser-tabs[overflow] .tabbrowser-tab:not([first-visible-tab]):not([pinned])
+{
+	margin-inline-start: -.5px !important;
+}
+
+#tabbrowser-tabs[overflow] .tabbrowser-tab:not([first-visible-tab])[pinned] .tab-stack
+{
+	margin-inline-start: -2px !important;
 }
 
 .tabbrowser-tab[fadein]
@@ -75,9 +86,34 @@
 
 .tab-content
 {
+	position: relative !important;
 	overflow: hidden !important;
 	padding-inline-start: 12px !important;
 	padding-inline-end: 8px !important;
+}
+
+.tab-content::before,
+.tab-content::after
+{
+	content: "" !important;
+	display: -moz-box !important;
+	position: absolute !important;
+	background-color: currentColor !important;
+	width: 1px !important;
+	height: 20px !important;
+	transform: translateY(-10px) !important;
+	opacity: 0 !important;
+	transition: opacity .2s var(--ease-basic) !important;
+}
+
+.tab-content::before
+{
+	left: 0 !important;
+}
+
+.tab-content::after
+{
+	right: 0 !important;
 }
 
 .tab-throbber,
@@ -90,6 +126,7 @@
 	margin-top: 0 !important;
 }
 
+.tabbrowser-tab::before,
 .tabbrowser-tab::after,
 .tab-line
 {
@@ -130,33 +167,14 @@
 	pointer-events: none !important;
 }
 
-.tabbrowser-tab::before,
-.tabbrowser-tab:last-of-type::after
+.tabbrowser-tab[visuallyselected][style*=transform] + .tabbrowser-tab[style*=transform] .tab-content::after,
+
+.tabbrowser-tab[style*=transform]:not([visuallyselected]) .tab-content::before,
+.tabbrowser-tab[style*=transform] + .tabbrowser-tab:not([visuallyselected]) .tab-content::before,
+.tabbrowser-tab:not([visuallyselected]):not(:hover) + .tabbrowser-tab:not([visuallyselected]):not(:hover) .tab-content::before,
+#tabbrowser-tabs[hasadjacentnewtabbutton] .tabbrowser-tab[last-visible-tab]:not([visuallyselected]):not(:hover) .tab-content::after
 {
-	content: "" !important;
-	display: -moz-box !important;
-	width: 1px !important;
-	margin: 7px 0 !important;
-	padding: 0 !important;
-	transition: opacity .15s var(--ease-basic) !important;
 	opacity: var(--tab-separator-opacity) !important;
-}
-
-.tabbrowser-tab::before
-{
-	margin-inline-end: -1px !important;
-}
-
-.tabbrowser-tab:last-of-type::after
-{
-	transform: translateX(-1px) !important;
-}
-
-.tabbrowser-tab:-moz-any(:hover, [visuallyselected], :first-of-type)::before,
-.tabbrowser-tab:-moz-any(:hover, [visuallyselected], :first-of-type)::after,
-.tabbrowser-tab:-moz-any(:hover, [visuallyselected]) + .tabbrowser-tab::before
-{
-	opacity: 0 !important;
 }
 
 .tabbrowser-tab:hover .tab-background
@@ -228,12 +246,6 @@
 }
 
 /* overflowing and pinned tabs */
-#tabbrowser-tabs[overflow]
-{
-	/* I love magic numbers... */
-	margin-inline-start: -1px !important;
-}
-
 #tabbrowser-tabs[overflow] .tabbrowser-tab[pinned]
 {
 	/* gives scrollbutton-up extra room */
