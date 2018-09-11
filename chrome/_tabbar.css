@@ -197,7 +197,9 @@
 	color: var(--toolbar-color) !important;
 }
 
-.tab-icon-image
+.tab-icon-image,
+.tab-throbber,
+.tab-throbber-fallback
 {
 	margin-inline-end: 8px !important;
 }
@@ -236,6 +238,27 @@
 .tab-close-button:hover
 {
 	background-color: var(--toolbarbutton-hover-background) !important;
+}
+
+.tab-throbber
+{
+	-moz-context-properties: fill, fill-opacity !important;
+	fill: currentColor !important;
+	fill-opacity: .7 !important;
+	background-image: url(spinner-busy.svg) !important;
+}
+
+.tab-throbber::before,
+.tab-throbber-fallback
+{
+	display: none !important;
+}
+
+.tab-throbber[progress]
+{
+	fill: var(--tab-loading-fill) !important;
+	fill-opacity: 1 !important;
+	background-image: url(spinner-progress.svg) !important;
 }
 
 /* clipped tabs */

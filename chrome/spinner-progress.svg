@@ -1,0 +1,38 @@
+<svg stroke="context-fill" stroke-opacity="context-fill-opacity" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+	<style>
+		.spinner
+		{
+			animation: rotator 1.5s linear infinite;
+			transform-origin: center;
+			--pi: 3.14;
+			--radius: 6;
+			--dash: calc(2 * var(--pi) * var(--radius));
+			--dash-shrunk: calc(var(--dash) * .99);
+			--dash-expanded: calc(var(--dash) * .35);
+		}
+
+		@keyframes rotator
+		{
+			0% { transform: rotate(0); }
+			100% { transform: rotate(1turn); }
+		}
+
+		.path
+		{
+			stroke-dasharray: var(--dash);
+			stroke-dashoffset: 0;
+			transform-origin: center;
+			animation: dash 1.5s linear infinite;
+		}
+
+		@keyframes dash
+		{
+			0%, 7.5% { stroke-dashoffset: var(--dash-shrunk); transform: rotate(0); }
+			42.5%, 57.5% { stroke-dashoffset: var(--dash-expanded); transform: rotate(.35turn); }
+			92.5%, 100% { stroke-dashoffset: var(--dash-shrunk); transform: rotate(1turn); }
+		}
+	</style>
+	<g class="spinner">
+		<circle class="path" fill="none" stroke-width="2" stroke-linecap="round" cx="8" cy="8" r="6"/>
+	</g>
+</svg>
