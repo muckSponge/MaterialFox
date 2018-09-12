@@ -279,19 +279,16 @@
 	transform: translateX(-8px) !important;
 }
 
-#tabbrowser-tabs[overflow] .tab-content,
 .tab-content[pinned]
 {
 	-moz-box-pack: center !important;
 }
 
-#tabbrowser-tabs[overflow] .tab-icon-image,
 .tab-icon-image[pinned]
 {
 	margin: auto !important;
 }
 
-#tabbrowser-tabs[overflow] .tab-content[image]:not([image^="chrome://branding/"]):not([pinned]),
 .tab-content[pinned]
 {
 	width: 36px !important;
@@ -300,12 +297,38 @@
 	padding-inline-end: 0 !important;
 }
 
-#tabbrowser-tabs[overflow] .tabbrowser-tab:not([visuallyselected]) .tab-close-button,
-#tabbrowser-tabs[overflow] .tabbrowser-tab[visuallyselected] :-moz-any(.tab-label-container, .tab-icon-image),
-#tabbrowser-tabs[overflow] .tabbrowser-tab[image]:not([image^="chrome://branding/"]) .tab-label-container,
 :-moz-any(.tab-label-container, .tab-close-button)[pinned]
 {
 	display: none !important;
+}
+
+/* close button / favicon is centered within 36px tab */
+@supports -moz-bool-pref("materialFox.reduceTabOverflow")
+{
+	#tabbrowser-tabs[overflow] .tab-content
+	{
+		-moz-box-pack: center !important;
+	}
+	
+	#tabbrowser-tabs[overflow] .tab-icon-image
+	{
+		margin: auto !important;
+	}
+	
+	#tabbrowser-tabs[overflow] .tab-content[image]:not([image^="chrome://branding/"]):not([pinned])
+	{
+		width: 36px !important;
+		padding: 0 !important;
+		padding-inline-start: 0 !important;
+		padding-inline-end: 0 !important;
+	}
+	
+	#tabbrowser-tabs[overflow] .tabbrowser-tab:not([visuallyselected]) .tab-close-button,
+	#tabbrowser-tabs[overflow] .tabbrowser-tab[visuallyselected] :-moz-any(.tab-label-container, .tab-icon-image),
+	#tabbrowser-tabs[overflow] .tabbrowser-tab[image]:not([image^="chrome://branding/"]) .tab-label-container
+	{
+		display: none !important;
+	} 
 }
 
 #tabbrowser-tabs .tabs-newtab-button

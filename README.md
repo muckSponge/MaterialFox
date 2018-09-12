@@ -29,6 +29,9 @@ Add space above tab bar:
 Replicate Chrome behaviour for clipped tabs:
 * [about:config] Set ```browser.tabs.tabClipWidth``` to ```83``` (default is ```144```).
 
+Allow tabs to shrink more; tabs in overflow will look the same as pinned tabs:
+* [about:config] Add new entry ```materialFox.reduceTabOverflow``` with value ```true```.
+
 Replicate Chrome identity colours (or lack thereof):
 * [about:config] Add new entry ```materialFox.disableIdentityColors``` with value ```true```.
 * Restart Firefox.

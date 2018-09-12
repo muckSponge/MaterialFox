@@ -12,7 +12,14 @@
 #tabbrowser-tabs
 {
  	--tab-min-height: 34px !important;
-	--tab-min-width: 36px !important;
+}
+
+@supports -moz-bool-pref("materialFox.reduceTabOverflow")
+{
+	#tabbrowser-tabs
+	{
+		--tab-min-width: 36px !important;
+	}
 }
 
 /* no themes */
