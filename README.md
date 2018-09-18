@@ -37,6 +37,9 @@ Replicate Chrome identity colours (or lack thereof):
 * [about:config] Add new entry ```materialFox.disableIdentityColors``` with value ```true```.
 * Restart Firefox.
 
+Replicate Chrome's "Not Secure" on HTTP:
+* [about:config] Set ```security.insecure_connection_text.enabled``` to ```true```.
+
 Remove pocket button from Address Bar:
 * Right click on pocket button -> Remove from Address Bar
 
