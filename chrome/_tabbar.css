@@ -323,9 +323,9 @@
 		padding-inline-end: 0 !important;
 	}
 	
-	#tabbrowser-tabs[overflow] .tabbrowser-tab:not([visuallyselected]) .tab-close-button,
-	#tabbrowser-tabs[overflow] .tabbrowser-tab[visuallyselected] :-moz-any(.tab-label-container, .tab-icon-image),
-	#tabbrowser-tabs[overflow] .tabbrowser-tab[image]:not([image^="chrome://branding/"]) .tab-label-container
+	#tabbrowser-tabs[overflow] .tabbrowser-tab:not([visuallyselected]):not([pinned]) .tab-close-button,
+	#tabbrowser-tabs[overflow] .tabbrowser-tab[visuallyselected]:not([pinned]) :-moz-any(.tab-label-container, .tab-icon-image),
+	#tabbrowser-tabs[overflow] .tabbrowser-tab[image]:not([image^="chrome://branding/"]):not([pinned]) .tab-label-container
 	{
 		display: none !important;
 	} 
