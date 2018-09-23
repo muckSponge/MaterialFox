@@ -158,6 +158,11 @@
 	fill: currentColor !important;
 }
 
+#identity-box:-moz-any(.unknownIdentity, .notSecureText, .insecureLoginForms) > #connection-icon
+{
+	display: none !important;
+}
+
 /* hide identity icon if identity/domain is verified */
 #identity-box:-moz-any(.verifiedIdentity, .verifiedDomain) > #identity-icon
 {
