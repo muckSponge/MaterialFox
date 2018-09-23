@@ -225,7 +225,7 @@
 	margin: 0 !important;
 }
 
-#page-action-buttons > :-moz-any(#pageActionSeparator, #pageActionButton),
+#page-action-buttons > #pageActionSeparator,
 .urlbar-history-dropmarker
 {
 	display: none !important;
@@ -262,7 +262,26 @@
 {
 	background-color: var(--toolbarbutton-active-background) !important;
 	transition-duration: 0 !important;
-} 
+}
+
+#pageActionButton
+{
+	list-style-image: url(menu.svg) !important;
+	transition:
+		opacity .2s var(--ease-basic),
+		visibility 0s .2s !important;
+	opacity: 0 !important;
+	visibility: hidden !important;
+}
+
+#urlbar:hover #pageActionButton,
+#pageActionButton:-moz-any(:hover, [open])
+{
+	transition:
+		opacity .2s var(--ease-basic) !important;
+	opacity: 1 !important;
+	visibility: visible !important;
+}
 
 #star-button
 {
