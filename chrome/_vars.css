@@ -48,6 +48,7 @@
 	--lwt-tab-text: #3d4043 !important;
 	
 	--tab-hover-fill-opacity: .1 !important;
+	--tab-focus-fill-opacity: .2 !important;
 	--tab-separator-opacity: .35 !important;
 }
 
@@ -67,6 +68,7 @@
 {
 	--chrome-color: var(--toolbar-color) !important;
 	--tab-hover-fill-opacity: .45 !important;
+	--tab-focus-fill-opacity: .7 !important;
 	--tab-separator-opacity: .48 !important;
 }
 
@@ -87,6 +89,7 @@
 	--toolbox-border-bottom-color: hsl(0, 0%, 16%) !important;
 	
 	--tab-hover-fill-opacity: .5 !important;
+	--tab-focus-fill-opacity: .75 !important;
 }
 
 /* dark tab bar and menubar */
