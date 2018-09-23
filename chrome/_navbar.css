@@ -267,20 +267,30 @@
 #pageActionButton
 {
 	list-style-image: url(menu.svg) !important;
+}
+
+.urlbar-page-action:not(#star-button-box)
+{
 	transition:
-		opacity .2s var(--ease-basic),
+		background-color .2s var(--ease-basic),
+		margin .15s var(--ease-in),
+		opacity .15s var(--ease-basic),
 		visibility 0s .2s !important;
 	opacity: 0 !important;
 	visibility: hidden !important;
+	margin-inline-start: -32px !important;
 }
 
-#urlbar:hover #pageActionButton,
-#pageActionButton:-moz-any(:hover, [open])
+#urlbar:hover .urlbar-page-action:not(#star-button-box),
+.urlbar-page-action:not(#star-button-box):-moz-any(:hover, [open], [readeractive])
 {
 	transition:
-		opacity .2s var(--ease-basic) !important;
+		background-color .2s var(--ease-basic),
+		margin .3s var(--ease-out),
+		opacity .3s var(--ease-basic) !important;
 	opacity: 1 !important;
 	visibility: visible !important;
+	margin-inline-start: 0 !important;
 }
 
 #star-button
