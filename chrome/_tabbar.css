@@ -352,11 +352,6 @@
 	opacity: var(--tab-separator-opacity) !important;
 }
 
-#alltabs-button
-{
-	display: none !important;
-}
-
 /* macOS */
 @media (-moz-overlay-scrollbars)
 {
