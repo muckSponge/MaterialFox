@@ -68,6 +68,7 @@
 #urlbar,
 #searchbar
 {
+	font-size: 14px !important;
 	border-radius: 99px !important;
 	background-color: var(--toolbar-field-background-color) !important;
 	color: inherit !important;
@@ -111,11 +112,11 @@
 
 #identity-icon-labels
 {
-	padding-inline-start: 8px !important;
+	padding-inline-start: 10px !important;
 	color: inherit !important;
 }
 
-#identity-box:-moz-any(.notSecureText, .verifiedIdentity),
+#identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI),
 #urlbar-display-box
 {
 	overflow: visible !important;
@@ -123,7 +124,7 @@
 }
 
 /* separator */
-#identity-box:-moz-any(.notSecureText, .verifiedIdentity)::after,
+#identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI)::after,
 #urlbar-display-box::after
 {
 	content: "" !important;
@@ -136,13 +137,13 @@
 	transition: opacity .2s var(--ease-basic) !important;
 }
 
-#identity-box:-moz-any(.notSecureText, .verifiedIdentity):hover:not(.no-hover)::after,
-#identity-box:-moz-any(.notSecureText, .verifiedIdentity)[open]::after
+#identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI):hover:not(.no-hover)::after,
+#identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI)[open]::after
 {
 	opacity: 0 !important;
 }
 
-#urlbar[pageproxystate=valid] > #identity-box.unknownIdentity > #identity-icon
+#urlbar[pageproxystate=valid] > #identity-box.unknownIdentity:not(.insecureLoginForms) > #identity-icon
 {
 	list-style-image: url(info-1x.svg) !important;
 }
@@ -152,24 +153,29 @@
 	list-style-image: url(identity-icons-brand.svg) !important;
 }
 
+#identity-box > image
+{
+	fill: currentColor !important;
+	fill-opacity: 1 !important;
+}
+
 #identity-box > #connection-icon
 {
 	list-style-image: url(connection-1x.svg) !important;
-	fill: currentColor !important;
 }
 
-#identity-box:-moz-any(.unknownIdentity, .notSecureText, .insecureLoginForms) > #connection-icon
+#identity-box:-moz-any(.unknownIdentity, .notSecureText):not(.insecureLoginForms) > #connection-icon
 {
 	display: none !important;
 }
 
-#identity-box.insecureLoginForms > #identity-icon
+#identity-box:-moz-any(.insecureLoginForms, .certUserOverridden) > #connection-icon
 {
 	list-style-image: url(connection-warning-1x.svg) !important;
 }
 
 /* hide identity icon if identity/domain is verified */
-#identity-box:-moz-any(.verifiedIdentity, .verifiedDomain) > #identity-icon
+#identity-box:-moz-any(.verifiedIdentity, .verifiedDomain, .insecureLoginForms, .certUserOverridden) > #identity-icon
 {
 	list-style-image: none !important;
 	margin-inline-end: -20px !important;
@@ -203,11 +209,6 @@
 	transition: none !Important;
 }
 
-#identity-box.chromeUI #identity-icon-labels
-{
-	visibility: collapse !important;
-}
-
 /* Firefox-style identity colours */
 @supports not -moz-bool-pref("materialFox.disableIdentityColors")
 {
@@ -222,7 +223,7 @@
 	}
 }
 
-#identity-box.insecureLoginForms
+#identity-box:-moz-any(.insecureLoginForms, .certUserOverridden)
 {
 	color: #c94031 !important;
 }
@@ -360,25 +361,28 @@
 	
 	#identity-icon-labels
 	{
-		transform: translateY(-.5px) !important;
+		padding-inline-end: .5px !important;
 	}
 
-	#urlbar[pageproxystate=valid] > #identity-box.unknownIdentity > #identity-icon
+	#urlbar[pageproxystate=valid] > #identity-box.unknownIdentity:not(.insecureLoginForms) > #identity-icon
 	{
 		list-style-image: url(info-2x.svg) !important;
-	}
-	
-	#urlbar[pageproxystate=valid] > #identity-box.insecureLoginForms > #identity-icon
-	{
-		list-style-image: url(connection-warning-2x.svg) !important;
+		transform: translate(.5px, .5px) !important;
 	}
 
 	#identity-box > #connection-icon
 	{
 		list-style-image: url(connection-2x.svg) !important;
 	}
+	
+	#identity-box:-moz-any(.insecureLoginForms, .certUserOverridden) > #connection-icon
+	{
+		list-style-image: url(connection-warning-2x.svg) !important;
+	}
 
-	.urlbar-input
+	#identity-icon-labels,
+	.urlbar-input,
+	.searchbar-input
 	{
 		transform: translateY(-.5px) !important;
 	}
