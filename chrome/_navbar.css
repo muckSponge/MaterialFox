@@ -163,6 +163,11 @@
 	display: none !important;
 }
 
+#identity-box.insecureLoginForms > #identity-icon
+{
+	list-style-image: url(connection-warning-1x.svg) !important;
+}
+
 /* hide identity icon if identity/domain is verified */
 #identity-box:-moz-any(.verifiedIdentity, .verifiedDomain) > #identity-icon
 {
@@ -215,6 +220,11 @@
 	{
 		color: #EF5350 !important;
 	}
+}
+
+#identity-box.insecureLoginForms
+{
+	color: #c94031 !important;
 }
 
 .urlbar-input
@@ -356,6 +366,11 @@
 	#urlbar[pageproxystate=valid] > #identity-box.unknownIdentity > #identity-icon
 	{
 		list-style-image: url(info-2x.svg) !important;
+	}
+	
+	#urlbar[pageproxystate=valid] > #identity-box.insecureLoginForms > #identity-icon
+	{
+		list-style-image: url(connection-warning-2x.svg) !important;
 	}
 
 	#identity-box > #connection-icon
