@@ -116,7 +116,7 @@
 	color: inherit !important;
 }
 
-#identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI),
+#identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden),
 #urlbar-display-box
 {
 	overflow: visible !important;
@@ -124,28 +124,32 @@
 }
 
 /* separator */
-#identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI)::after,
+#identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden)::after,
 #urlbar-display-box::after
 {
 	content: "" !important;
 	display: -moz-box !important;
-	background: currentColor !important;
-	opacity: var(--tab-separator-opacity) !important;
+	background: #9d9e9f !important;
 	height: 16px !important;
 	width: 1px !important;
 	transform: translateX(8px) !important;
 	transition: opacity .2s var(--ease-basic) !important;
 }
 
-#identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI):hover:not(.no-hover)::after,
-#identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI)[open]::after
+#identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden):hover:not(.no-hover)::after,
+#identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden)[open]::after
 {
 	opacity: 0 !important;
 }
 
-#urlbar[pageproxystate=valid] > #identity-box.unknownIdentity:not(.insecureLoginForms) > #identity-icon
+#urlbar[pageproxystate=valid] > #identity-icon
 {
 	list-style-image: url(info-1x.svg) !important;
+}
+
+#urlbar[pageproxystate=valid] > #identity-box:-moz-any(.verifiedDomain, .verifiedIdentity) > #identity-icon
+{
+	list-style-image: url(connection-1x.svg) !important;
 }
 
 #urlbar[pageproxystate=valid] > #identity-box.chromeUI > #identity-icon
@@ -159,73 +163,44 @@
 	fill-opacity: 1 !important;
 }
 
-#identity-box > #connection-icon
-{
-	list-style-image: url(connection-1x.svg) !important;
-}
-
-#identity-box:-moz-any(.unknownIdentity, .notSecureText):not(.insecureLoginForms) > #connection-icon
+/* no longer used as a connection icon */
+#connection-icon
 {
 	display: none !important;
+	list-style-image: url(naughty-shield-1x.svg) !important;
 }
 
-#identity-box:-moz-any(.insecureLoginForms, .certUserOverridden) > #connection-icon
+#identity-box:-moz-any(
+.mixedActiveBlocked,
+.mixedDisplayContentLoadedActiveBlocked,
+.mixedActiveContent) > #connection-icon
+{
+	display: -moz-box !important;
+}
+
+#urlbar[pageproxystate=valid] > #identity-box:-moz-any(
+.certUserOverridden,
+.weakCipher,
+.mixedActiveContent) > #identity-icon
 {
 	list-style-image: url(connection-warning-1x.svg) !important;
 }
 
-/* hide identity icon if identity/domain is verified */
-#identity-box:-moz-any(.verifiedIdentity, .verifiedDomain, .insecureLoginForms, .certUserOverridden) > #identity-icon
-{
-	list-style-image: none !important;
-	margin-inline-end: -20px !important;
-}
-
-#identity-box::before
-{
-	pointer-events: none !important;
-	content: "" !important;
-	display: -moz-box !important;
-	position: absolute !important;
-	left: 0 !important;
-	right: 0 !important;
-	top: 0 !important;
-	bottom: 0 !important;
-	background-color: currentColor !important;
-	opacity: 0 !important;
-	border-radius: 99px !important;
-	transition: opacity .2s var(--ease-basic) !important;
-}
-
-#identity-box:hover:not(.no-hover)::before
-{
-	opacity: .12 !important;
-}
-
-#identity-box:hover:active:not(.no-hover)::before,
-#identity-box[open]:not(.no-hover)::before
-{
-	opacity: .24 !important;
-	transition: none !Important;
-}
-
-/* Firefox-style identity colours */
-@supports not -moz-bool-pref("materialFox.disableIdentityColors")
-{
-	#identity-box.verifiedIdentity
-	{
-		color: #43A047 !important;
-	}
-	
-	#urlbar[pageproxystate=valid] > #identity-box.unknownIdentity
-	{
-		color: #EF5350 !important;
-	}
-}
-
-#identity-box:-moz-any(.insecureLoginForms, .certUserOverridden)
+#identity-box.certUserOverridden
 {
 	color: #c94031 !important;
+}
+
+.certUserOverridden #identity-icon-labels
+{
+	visibility: visible !important;
+	display: -moz-box !important;
+}
+
+.certUserOverridden #identity-icon-labels::after
+{
+	content: "Not Secure" !important;
+	display: -moz-box !important;
 }
 
 .urlbar-input
@@ -257,7 +232,8 @@
 	background: 0 !important;
 }
 
-.urlbar-icon
+.urlbar-icon,
+#identity-box
 {
 	min-width: 32px !important;
 	height: 24px !important;
@@ -268,13 +244,16 @@
 	background-color: transparent !important;
 }
 
-.urlbar-icon:hover:not([disabled])
+.urlbar-icon:hover:not([disabled]),
+#identity-box:hover:not(.no-hover)
 {
 	background-color: var(--toolbarbutton-hover-background) !important;
 }
 
 .urlbar-icon:hover:active:not([disabled]),
-.urlbar-icon[open]
+.urlbar-icon[open],
+#identity-box:hover:active:not(.no-hover),
+#identity-box[open]:not(.no-hover)
 {
 	background-color: var(--toolbarbutton-active-background) !important;
 	transition-duration: 0 !important;
@@ -364,20 +343,28 @@
 		padding-inline-end: .5px !important;
 	}
 
-	#urlbar[pageproxystate=valid] > #identity-box.unknownIdentity:not(.insecureLoginForms) > #identity-icon
+	#urlbar[pageproxystate=valid] > #identity-box:-moz-any(.unknownIdentity) > #identity-icon
 	{
 		list-style-image: url(info-2x.svg) !important;
 		transform: translate(.5px, .5px) !important;
 	}
-
-	#identity-box > #connection-icon
+	
+	#urlbar[pageproxystate=valid] > #identity-box:-moz-any(.verifiedDomain, .verifiedIdentity) > #identity-icon
 	{
 		list-style-image: url(connection-2x.svg) !important;
 	}
 	
-	#identity-box:-moz-any(.insecureLoginForms, .certUserOverridden) > #connection-icon
+	#urlbar[pageproxystate=valid] > #identity-box:-moz-any(
+	.certUserOverridden,
+	.weakCipher,
+	.mixedActiveContent) > #identity-icon
 	{
 		list-style-image: url(connection-warning-2x.svg) !important;
+	}
+	
+	#connection-icon
+	{
+		list-style-image: url(naughty-shield-2x.svg) !important;
 	}
 
 	#identity-icon-labels,
