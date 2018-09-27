@@ -343,7 +343,7 @@
 		padding-inline-end: .5px !important;
 	}
 
-	#urlbar[pageproxystate=valid] > #identity-box:-moz-any(.unknownIdentity) > #identity-icon
+	#urlbar[pageproxystate=valid] > #identity-box:-moz-any(.unknownIdentity, .notSecure) > #identity-icon
 	{
 		list-style-image: url(info-2x.svg) !important;
 		transform: translate(.5px, .5px) !important;
