@@ -163,6 +163,12 @@
 	fill-opacity: 1 !important;
 }
 
+#identity-box.extensionPage > #identity-icon
+{
+	list-style-image: none !important;
+	margin-inline-end: -16px !important;
+}
+
 /* no longer used as a connection icon */
 #connection-icon
 {
