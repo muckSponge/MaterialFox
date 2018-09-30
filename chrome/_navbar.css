@@ -116,7 +116,7 @@
 	color: inherit !important;
 }
 
-#identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden),
+#urlbar[pageproxystate=valid] #identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden),
 #urlbar-display-box
 {
 	overflow: visible !important;
@@ -124,7 +124,7 @@
 }
 
 /* separator */
-#identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden)::after,
+#urlbar[pageproxystate=valid] #identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden)::after,
 #urlbar-display-box::after
 {
 	content: "" !important;
@@ -136,8 +136,8 @@
 	transition: opacity .2s var(--ease-basic) !important;
 }
 
-#identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden):hover:not(.no-hover)::after,
-#identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden)[open]::after
+#urlbar[pageproxystate=valid] #identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden):hover:not(.no-hover)::after,
+#urlbar[pageproxystate=valid] #identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden)[open]::after
 {
 	opacity: 0 !important;
 }
@@ -187,12 +187,13 @@
 #urlbar[pageproxystate=valid] > #identity-box:-moz-any(
 .certUserOverridden,
 .weakCipher,
-.mixedActiveContent) > #identity-icon
+.mixedActiveContent,
+.insecureLoginForms) > #identity-icon
 {
 	list-style-image: url(connection-warning-1x.svg) !important;
 }
 
-#identity-box.certUserOverridden
+#identity-box:-moz-any(.certUserOverridden, .insecureLoginForms)
 {
 	color: #c94031 !important;
 }
@@ -363,7 +364,8 @@
 	#urlbar[pageproxystate=valid] > #identity-box:-moz-any(
 	.certUserOverridden,
 	.weakCipher,
-	.mixedActiveContent) > #identity-icon
+	.mixedActiveContent,
+	.insecureLoginForms) > #identity-icon
 	{
 		list-style-image: url(connection-warning-2x.svg) !important;
 	}
