@@ -225,7 +225,8 @@
 	opacity: 1 !important;
 }
 
-.tabbrowser-tab[image]:not([image^="chrome://branding/"]) .tab-label-container
+.tabbrowser-tab[image]:not([image^="chrome://branding/"]) .tab-label-container,
+.tabbrowser-tab:-moz-any([progress], [busy]) .tab-label-container
 {
 	padding-inline-start: 8px !important;
 }
@@ -260,6 +261,7 @@
 	fill: currentColor !important;
 	fill-opacity: .7 !important;
 	background-image: url(spinner-busy.svg) !important;
+	margin: 0 !important;
 }
 
 .tab-throbber::before,
@@ -277,11 +279,6 @@
 
 /* clipped tabs */
 #tabbrowser-tabs[closebuttons=activetab] .tab-content:not([pinned])
-{
-	padding-inline-start: 8px !important;
-}
-
-#tabbrowser-tabs[closebuttons=activetab] .tabbrowser-tab[image]:not([image^="chrome://branding/"]) .tab-label-container
 {
 	padding-inline-start: 8px !important;
 }
