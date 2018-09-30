@@ -22,81 +22,71 @@
 	}
 }
 
-/* no themes */
-/* this is more or less darktext except tab bar
-   so we will force lwt vars */
 :root
-{
-	--toolbar-color: #606367 !important;
-	--toolbar-bgcolor: var(--chrome-secondary-background-color) !important;
-	
-	--chrome-color: hsl(210, 5%, 63%) !important;
-	--lwt-text-color: var(--toolbar-color) !important;
-	--chrome-background-color: #dfe1e5 !important;
-	--chrome-secondary-background-color: #FFF !important;
-	--toolbox-border-bottom-color: hsl(0, 0%, 70%) !important;
-	
-	--toolbar-field-background-color: var(--lwt-toolbar-field-background-color, red) !important;
-	--toolbar-field-hover-background-color: var(--lwt-toolbar-field-hover-background-color, red) !important;
-	--toolbar-field-focus-background-color: var(--lwt-toolbar-field-focus-background-color, red) !important;
-
-	--lwt-toolbar-field-color: var(--toolbar-color) !important;
-	--lwt-toolbar-field-background-color: #f1f3f4 !important;
-	--lwt-toolbar-field-hover-background-color: #e8eaed !important;
-	--lwt-toolbar-field-focus-background-color: #fff !important;
-	
-	--lwt-tab-text: #3d4043 !important;
-	
+{	
 	--tab-hover-fill-opacity: .1 !important;
 	--tab-focus-fill-opacity: .2 !important;
 	--tab-separator-opacity: .35 !important;
+	
+	--toolbar-field-background-color: hsl(200, 12%, 95%) !important;
+	--toolbar-field-hover-background-color: hsl(216, 12%, 92%) !important;
+	--toolbar-field-focus-background-color: hsl(0, 0%, 100%) !important;
 }
 
-/* force darktext style buttons for selected tab */
-.tabbrowser-tab[visuallyselected],
-:root
+:root:-moz-any(:-moz-lwtheme-brighttext, [privatebrowsingmode])
 {
-	--toolbarbutton-hover-background: var(--lwt-toolbarbutton-hover-background, red) !important;
-	--toolbarbutton-active-background: var(--lwt-toolbarbutton-active-background, red) !important;
-	
-	--lwt-toolbarbutton-hover-background: hsla(0, 0%, 40%, .12) !important;
-	--lwt-toolbarbutton-active-background: hsla(0, 0%, 40%, .24) !important;
+	--toolbar-field-background-color: hsl(206, 8%, 17%) !important;
+	--toolbar-field-hover-background-color: hsl(206, 7%, 20%) !important;
+	--toolbar-field-focus-background-color: hsl(206, 6%, 25%) !important;
 }
 
-/* light themes */
-:root:-moz-lwtheme-darktext
+:root:not(:-moz-lwtheme)
 {
-	--chrome-color: var(--toolbar-color) !important;
-	--tab-hover-fill-opacity: .45 !important;
-	--tab-focus-fill-opacity: .7 !important;
-	--tab-separator-opacity: .48 !important;
+	--toolbar-color: hsl(213, 5%, 39%) !important;
+	--toolbox-border-bottom-color: hsl(0, 0%, 70%) !important;
 }
 
-/* dark themes */
-#main-window[privatebrowsingmode],
-:root:-moz-lwtheme-brighttext
+:root:-moz-lwtheme-darktext,
+:root toolbar:not([brighttext]),
+:root:not(:-moz-lwtheme-darktext) .tabbrowser-tab[visuallyselected] .tab-close-button,
+:root:not(:-moz-lwtheme-darktext):not([privatebrowsingmode]) .tab-close-button:hover
 {
-	--lwt-toolbar-field-background-color: #292c2f !important;
-	--lwt-toolbar-field-hover-background-color: #303336 !important;
-	--lwt-toolbar-field-focus-background-color: #3d4043 !important;
-	
-	--lwt-tab-text: var(--toolbar-color) !important;
-	
-	--chrome-color: hsl(210, 5%, 63%) !important;
+	--toolbarbutton-hover-background: var(--lwt-toolbarbutton-hover-background, hsl(0, 0%, 93%)) !important;
+    --toolbarbutton-active-background: var(--lwt-toolbarbutton-active-background, hsl(0, 0%, 89%)) !important;
+}
+
+:root:-moz-lwtheme-brighttext,
+:root toolbar[brighttext]
+{
+    --toolbarbutton-hover-background: var(--lwt-toolbarbutton-hover-background, hsla(0, 0%, 100%, .1)) !important;
+    --toolbarbutton-active-background: var(--lwt-toolbarbutton-active-background, hsla(0, 0%, 100%, .17)) !important;
+}
+
+:root[privatebrowsingmode]
+{
 	--toolbar-color: hsl(180, 4%, 95%) !important;
-	--chrome-background-color: #202124 !important;
-	--chrome-secondary-background-color: #333639 !important;
+	--toolbar-bgcolor: hsl(206, 7%, 21%) !important;
+	--chrome-secondary-background-color: hsl(206, 7%, 21%) !important;
 	--toolbox-border-bottom-color: hsl(0, 0%, 16%) !important;
-	
-	--tab-hover-fill-opacity: .5 !important;
-	--tab-focus-fill-opacity: .75 !important;
 }
 
-/* dark tab bar and menubar */
-:root:not(:-moz-lwtheme-darktext) toolbar:not(#nav-bar),
-#main-window[privatebrowsingmode],
-:root:-moz-lwtheme-brighttext
+:root[privatebrowsingmode] toolbar:not(#TabsToolbar):not(#toolbar-menubar),
+:root[privatebrowsingmode] .tabbrowser-tab[visuallyselected] .tab-close-button
 {
-	--lwt-toolbarbutton-hover-background: hsla(0, 0%, 96%, .12) !important;
-	--lwt-toolbarbutton-active-background: hsla(0, 0%, 96%, .24) !important;
+	--chrome-color: hsl(180, 4%, 95%) !important;
+	--toolbarbutton-hover-background: hsla(0, 0%, 100%, .1) !important;
+    --toolbarbutton-active-background: hsla(0, 0%, 100%, .17) !important;
+}
+
+/* special case for urlbar buttons */
+:-moz-any(#urlbar, #searchbar)
+{
+	--toolbarbutton-hover-background: hsl(210, 5%, 85%) !important;
+	--toolbarbutton-active-background: hsl(210, 4%, 80%) !important;
+}
+
+:root:-moz-any([privatebrowsingmode], :-moz-lwtheme-brighttext) :-moz-any(#urlbar, #searchbar)
+{
+	--toolbarbutton-hover-background: hsl(206, 5%, 26%) !important;
+	--toolbarbutton-active-background: hsl(210, 4%, 31%) !important;
 }

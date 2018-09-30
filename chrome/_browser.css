@@ -1,11 +1,33 @@
+@media (-moz-windows-compositor)
+{
+    @media not all and (-moz-os-version: windows-win7)
+    {
+        @media not all and (-moz-os-version: windows-win8)
+        {
+            @media (-moz-windows-default-theme)
+			{
+                #main-window[tabsintitlebar]:not(:-moz-lwtheme):-moz-window-inactive
+				{
+                    background-color: hsl(0, 0%, 50%) !important;
+                }
+				
+				#main-window[tabsintitlebar] toolbar:-moz-any(#TabsToolbar, #toolbar-menubar)[brighttext]:not(:-moz-lwtheme)
+				{
+					color: hsl(206, 6%, 78%) !important;
+				}
+
+				#main-window[tabsintitlebar] toolbar:-moz-any(#TabsToolbar, #toolbar-menubar):not(:-moz-lwtheme):-moz-window-inactive
+				{
+					color: hsl(0, 0%, 100%) !important;
+				}
+			}
+		}
+	}
+}
+
 #navigator-toolbox :-moz-any(toolbar, #nav-bar-customization-target)
 {
 	-moz-box-align: center !important;
-}
-
-#navigator-toolbox > toolbar:not(#TabsToolbar)
-{
-	color: var(--toolbar-color) !important;
 }
 
 #navigator-toolbox :-moz-any(.toolbarbutton-1, .bookmark-item:not(.subviewbutton), .scrollbutton-up, .scrollbutton-down)

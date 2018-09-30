@@ -1,13 +1,6 @@
 #TabsToolbar
 {
 	padding-inline-end: 2px !important;
-	color: var(--chrome-color) !important;
-}
-
-#TabsToolbar:-moz-lwtheme-darktext:not(:-moz-window-inactive),
-#main-window[privatebrowsingmode] #TabsToolbar
-{
-	-moz-appearance: none !important;
 }
 
 .titlebar-placeholder
@@ -197,9 +190,10 @@
 	fill-opacity: 1 !important;
 }
 
-.tabbrowser-tab[visuallyselected] .tab-close-button
+.tabbrowser-tab[visuallyselected] .tab-close-button,
+:root:not([privatebrowsingmode]) .tab-close-button:hover
 {
-	color: var(--toolbar-color) !important;
+ 	color: var(--toolbar-color) !important;
 }
 
 .tab-throbber,
