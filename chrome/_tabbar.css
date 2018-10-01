@@ -1,7 +1,13 @@
 #TabsToolbar
 {
+	/* More consistant with Chrome*/
+	margin-top: 8px;
+
 	padding-inline-end: 2px !important;
 	color: var(--chrome-color) !important;
+
+	/* Fixes light mode fullscreen flicker */
+	-moz-appearance: none !important;
 }
 
 #TabsToolbar:-moz-lwtheme-darktext:not(:-moz-window-inactive),
@@ -200,6 +206,11 @@
 .tabbrowser-tab[visuallyselected] .tab-close-button
 {
 	color: var(--toolbar-color) !important;
+}
+
+#TabsToolbar[inFullscreen] .tabbrowser-tab:first-of-type{
+	/* Adds margin to left of first tab in fullscreen */
+	margin-left: 8px !important;
 }
 
 .tab-throbber,
