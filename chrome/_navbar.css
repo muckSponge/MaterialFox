@@ -244,6 +244,11 @@
 	background-color: transparent !important;
 }
 
+.urlbar-icon
+{
+	padding: 4px 8px !important;
+}
+
 .urlbar-icon:hover:not([disabled]),
 #identity-box:hover:not(.no-hover)
 {
