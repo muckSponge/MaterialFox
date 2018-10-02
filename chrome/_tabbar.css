@@ -190,12 +190,6 @@
 	fill-opacity: 1 !important;
 }
 
-.tabbrowser-tab[visuallyselected] .tab-close-button,
-:root:not([privatebrowsingmode]) .tab-close-button:hover
-{
- 	color: var(--toolbar-color) !important;
-}
-
 .tab-throbber,
 .tab-throbber-fallback
 {

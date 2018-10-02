@@ -1,24 +1,21 @@
 @media (-moz-windows-compositor)
 {
-    @media not all and (-moz-os-version: windows-win7)
-    {
-        @media not all and (-moz-os-version: windows-win8)
-        {
-            @media (-moz-windows-default-theme)
+	@media not all and (-moz-os-version: windows-win7)
+	{
+		@media not all and (-moz-os-version: windows-win8)
+		{
+			@media (-moz-windows-default-theme)
 			{
-                #main-window[tabsintitlebar]:not(:-moz-lwtheme):-moz-window-inactive
+				:root[sizemode=normal][tabsintitlebar]:-moz-window-inactive:not(:-moz-lwtheme)
 				{
-                    background-color: hsl(0, 0%, 50%) !important;
-                }
-				
-				#main-window[tabsintitlebar] toolbar:-moz-any(#TabsToolbar, #toolbar-menubar)[brighttext]:not(:-moz-lwtheme)
-				{
-					color: hsl(206, 6%, 78%) !important;
+					border-top-color: hsl(0, 0%, 64%) !important;
+					background-color: -moz-win-accentcolor !important;
+					background-image: linear-gradient(hsla(0, 0%, 100%, .5), hsla(0, 0%, 100%, .5)) !important;
 				}
-
-				#main-window[tabsintitlebar] toolbar:-moz-any(#TabsToolbar, #toolbar-menubar):not(:-moz-lwtheme):-moz-window-inactive
+				
+				:root[tabsintitlebar] #titlebar-buttonbox
 				{
-					color: hsl(0, 0%, 100%) !important;
+					padding-bottom: 13px !important;
 				}
 			}
 		}

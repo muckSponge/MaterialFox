@@ -42,21 +42,28 @@
 
 :root:not(:-moz-lwtheme)
 {
+	--toolbar-bgcolor: hsl(0, 0%, 100%) !important;
 	--toolbar-color: hsl(213, 5%, 39%) !important;
 	--toolbox-border-bottom-color: hsl(0, 0%, 70%) !important;
 }
 
+:root:-moz-lwtheme-darktext
+{
+	--tab-hover-fill-opacity: .6 !important;
+	--tab-focus-fill-opacity: .8 !important;
+}
+
 :root:-moz-lwtheme-darktext,
 :root toolbar:not([brighttext]),
-:root:not(:-moz-lwtheme-darktext) .tabbrowser-tab[visuallyselected] .tab-close-button,
-:root:not(:-moz-lwtheme-darktext):not([privatebrowsingmode]) .tab-close-button:hover
+.tabbrowser-tab[visuallyselected]
 {
-	--toolbarbutton-hover-background: var(--lwt-toolbarbutton-hover-background, hsl(0, 0%, 93%)) !important;
-    --toolbarbutton-active-background: var(--lwt-toolbarbutton-active-background, hsl(0, 0%, 89%)) !important;
+	--toolbarbutton-hover-background: var(--lwt-toolbarbutton-hover-background, hsla(0, 0%, 0%, .07)) !important;
+    --toolbarbutton-active-background: var(--lwt-toolbarbutton-active-background, hsla(0, 0%, 0%, .11)) !important;
 }
 
 :root:-moz-lwtheme-brighttext,
-:root toolbar[brighttext]
+:root toolbar[brighttext],
+.tabbrowser-tab[visuallyselected]:-moz-lwtheme-brighttext
 {
     --toolbarbutton-hover-background: var(--lwt-toolbarbutton-hover-background, hsla(0, 0%, 100%, .1)) !important;
     --toolbarbutton-active-background: var(--lwt-toolbarbutton-active-background, hsla(0, 0%, 100%, .17)) !important;
