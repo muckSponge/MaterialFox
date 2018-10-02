@@ -15,7 +15,13 @@
 				
 				:root[tabsintitlebar] #titlebar-buttonbox
 				{
-					padding-bottom: 13px !important;
+					height: 29px !important;
+					margin-bottom: 5px !important;
+				}
+				
+				:root[tabsintitlebar][sizemode=normal] #titlebar-buttonbox
+				{
+					margin-bottom: calc(5px + var(--space-above-tabbar)) !important;
 				}
 			}
 		}

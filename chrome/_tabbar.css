@@ -10,7 +10,8 @@
 
 .titlebar-placeholder[type=pre-tabs]
 {
-	width: 12px !important;
+	width: 8px !important;
+	display: -moz-box !important;
 }
 
 .titlebar-placeholder[type=post-tabs]
