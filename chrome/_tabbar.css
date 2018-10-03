@@ -1,6 +1,18 @@
 #TabsToolbar
 {
 	padding-inline-end: 2px !important;
+	-moz-appearance: none !important;
+}
+
+@media (-moz-overlay-scrollbars)
+{
+	:root:-moz-any([inFullscreen], [tabsintitlebar]) #TabsToolbar:not(:-moz-lwtheme)
+	{
+		background-color: #dee1e5 !important;
+		color: #606367 !important;
+		--toolbarbutton-hover-background: #cbced2 !important;
+		--toolbarbutton-active-background: #bec0c5 !important;
+	}
 }
 
 .titlebar-placeholder

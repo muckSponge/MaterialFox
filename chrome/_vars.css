@@ -47,6 +47,20 @@
 	--toolbox-border-bottom-color: hsl(0, 0%, 70%) !important;
 }
 
+@media (-moz-overlay-scrollbars)
+{
+	:root
+	{
+		--tab-hover-fill-opacity: .6 !important;
+		--tab-focus-fill-opacity: .8 !important;
+	}
+	
+	:root[extradragspace]
+	{
+		--space-above-tabbar: 8px !important;
+	}
+}
+
 :root:-moz-lwtheme-darktext
 {
 	--tab-hover-fill-opacity: .6 !important;
