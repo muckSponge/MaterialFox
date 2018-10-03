@@ -300,6 +300,11 @@
 	margin-inline-start: 0 !important;
 }
 
+#pocket-button-box[animate] > #pocket-animatable-box
+{
+	margin-inline-start: 6px !important;
+}
+
 #star-button
 {
 	list-style-image: url(star-1x.svg) !important;
