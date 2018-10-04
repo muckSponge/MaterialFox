@@ -261,6 +261,11 @@
 	background-color: var(--toolbarbutton-hover-background) !important;
 }
 
+.tab-close-button:hover:active
+{
+	background-color: var(--toolbarbutton-active-background) !important;
+}
+
 .tab-throbber
 {
 	-moz-context-properties: fill, fill-opacity !important;
