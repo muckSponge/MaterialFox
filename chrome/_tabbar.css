@@ -13,6 +13,11 @@
 		--toolbarbutton-hover-background: #cbced2 !important;
 		--toolbarbutton-active-background: #bec0c5 !important;
 	}
+	
+	:root:-moz-any([inFullscreen], [tabsintitlebar]) #TabsToolbar:not(:-moz-lwtheme):-moz-window-inactive
+	{
+		background-color: #e7eaed !important;
+	}
 }
 
 .titlebar-placeholder
