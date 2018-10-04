@@ -1,5 +1,5 @@
-@import "_vars.css";
-@import "_browser.css";
-@import "_tabbar.css";
-@import "_navbar.css";
-@import "_personalbar.css";
+@import "global/variables.css";
+@import "global/global.css";
+@import "tabbar/tabbar.css";
+@import "navbar/navbar.css";
+@import "personalbar/personalbar.css";
