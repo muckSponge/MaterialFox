@@ -23,7 +23,7 @@ Some steps involve accessing the about:config page. You can get there by typing 
 Replicate Chrome's color scheme:
 * Right click on toolbar -> Customize.
 * Click Themes.
-* Select Default theme.
+* Select Default theme (or Light theme if you're using Dark mode with macOS Mojave).
 
 Add space above tab bar:
 * Right click on toolbar -> Customize.
