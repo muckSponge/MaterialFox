@@ -14,16 +14,16 @@ This is a userChrome.css theme, which means you must manually add it to your Fir
 ## Installation
 Some steps involve accessing the about:config page. You can get there by typing it into your urlbar.
 
-### Mandatory steps
+### Mandatory instructions
 1. Copy the chrome folder into your Firefox profile directory. To find your profile directory, go to about:support. Alternatively, you can symlink your chrome folder instead of copying.
 2. [about:config] Set ```svg.context-properties.content.enabled``` to ```true``` (default is ```false```).
 3. Restart Firefox.
 
-### Optional steps
-Replicate Chrome's light color scheme:
+### Recommended instructions
+Replicate Chrome's color scheme:
 * Right click on toolbar -> Customize.
 * Click Themes.
-* Select Light theme.
+* Select Default theme.
 
 Add space above tab bar:
 * Right click on toolbar -> Customize.
@@ -38,9 +38,7 @@ Allow tabs to shrink more; tabs in overflow will look the same as pinned tabs:
 Replicate Chrome's "Not Secure" on HTTP:
 * [about:config] Set ```security.insecure_connection_text.enabled``` to ```true```.
 
-Remove pocket button from Address Bar:
-* Right click on pocket button -> Remove from Address Bar
-
 ## Please note
 * Linux is not frequently tested; last tested on 07/09/2018.
-* Some customisation settings may no longer work (compact density, some custom themes).
+* Some customisation settings may no longer work (such as compact density).
+* Some themes, including built in Light and Dark may clash with address bar.
