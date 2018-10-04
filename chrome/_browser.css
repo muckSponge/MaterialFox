@@ -1,11 +1,36 @@
+@media (-moz-windows-compositor)
+{
+	@media not all and (-moz-os-version: windows-win7)
+	{
+		@media not all and (-moz-os-version: windows-win8)
+		{
+			@media (-moz-windows-default-theme)
+			{
+				:root[sizemode=normal][tabsintitlebar]:-moz-window-inactive:not(:-moz-lwtheme)
+				{
+					border-top-color: hsl(0, 0%, 64%) !important;
+					background-color: -moz-win-accentcolor !important;
+					background-image: linear-gradient(hsla(0, 0%, 100%, .5), hsla(0, 0%, 100%, .5)) !important;
+				}
+				
+				:root[tabsintitlebar] #titlebar-buttonbox
+				{
+					height: 29px !important;
+					margin-bottom: 5px !important;
+				}
+				
+				:root[tabsintitlebar][sizemode=normal] #titlebar-buttonbox
+				{
+					margin-bottom: calc(5px + var(--space-above-tabbar)) !important;
+				}
+			}
+		}
+	}
+}
+
 #navigator-toolbox :-moz-any(toolbar, #nav-bar-customization-target)
 {
 	-moz-box-align: center !important;
-}
-
-#navigator-toolbox > toolbar:not(#TabsToolbar)
-{
-	color: var(--toolbar-color) !important;
 }
 
 #navigator-toolbox :-moz-any(.toolbarbutton-1, .bookmark-item:not(.subviewbutton), .scrollbutton-up, .scrollbutton-down)
