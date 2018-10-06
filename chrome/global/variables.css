@@ -61,6 +61,16 @@
 	}
 }
 
+/* Ubuntu */
+@media (-moz-gtk-csd-available)
+{
+	:root:not(:-moz-lwtheme)
+	{
+		--toolbar-bgcolor: -moz-dialog !important;
+		--toolbar-color: -moz-dialogtext !important;
+	}
+}
+
 :root:-moz-lwtheme-darktext
 {
 	--tab-hover-fill-opacity: .6 !important;

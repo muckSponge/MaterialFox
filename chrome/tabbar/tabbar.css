@@ -1,11 +1,15 @@
 #TabsToolbar
 {
 	padding-inline-end: 2px !important;
-	-moz-appearance: none !important;
 }
 
 @media (-moz-mac-yosemite-theme)
 {
+	#TabsToolbar
+	{
+		-moz-appearance: none !important;
+	}
+	
 	:root:-moz-any([inFullscreen], [tabsintitlebar]) #TabsToolbar:not(:-moz-lwtheme)
 	{
 		background-color: #dee1e5 !important;
