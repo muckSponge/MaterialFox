@@ -34,6 +34,10 @@ Add space above tab bar:
 * Right click on toolbar -> Customize.
 * Check Drag Space checkbox.
 
+Emulate Chrome's profile switcher button:
+* Right click on toolbar -> Customize.
+* Drag Synced Tabs to the toolbar.
+
 Replicate Chrome behaviour for clipped tabs:
 * [about:config] Set ```browser.tabs.tabClipWidth``` to ```83``` (default is ```144```).
 
