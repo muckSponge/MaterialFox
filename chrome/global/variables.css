@@ -47,7 +47,7 @@
 	--toolbox-border-bottom-color: hsl(0, 0%, 70%) !important;
 }
 
-@media (-moz-overlay-scrollbars)
+@media (-moz-mac-yosemite-theme)
 {
 	:root
 	{
