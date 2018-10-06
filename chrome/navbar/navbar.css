@@ -28,6 +28,16 @@
 	list-style-image: url(menu.svg) !important;
 }
 
+#navigator-toolbox #PanelUI-menu-button[badge-status|="update"]
+{
+	list-style-image: url(menu-update.svg) !important;
+}
+
+#navigator-toolbox #PanelUI-menu-button[badge-status|="update"] .toolbarbutton-badge
+{
+	display: none !important;
+}
+
 #navigator-toolbox #reload-button
 {
 	list-style-image: url(refresh-1x.svg) !important;
@@ -329,12 +339,12 @@
 	{
 		list-style-image: url(arrow-back-2x.svg) !important;
 	}
-
-	#navigator-toolbox #PanelUI-menu-button .toolbarbutton-icon
+	
+	#navigator-toolbox #PanelUI-menu-button:not([badge-status|="update"]) .toolbarbutton-icon
 	{
 		transform: translate(-.5px, -.5px) !important;
 	}
-
+	
 	#navigator-toolbox #stop-button
 	{
 		list-style-image: url(stop-2x.svg) !important;
