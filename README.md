@@ -20,10 +20,15 @@ Some steps involve accessing the about:config page. You can get there by typing 
 3. Restart Firefox.
 
 ### Recommended instructions
-Replicate Chrome's color scheme:
+Disable any existing lightweight themes (or, see next paragraph):
 * Right click on toolbar -> Customize.
 * Click Themes.
 * Select Default theme.
+
+For better theme/color control:
+* Install [MaterialFox Helper](https://addons.mozilla.org/en-US/firefox/addon/materialfox-helper/).
+* Click the MaterialFox Helper button and select Light (Material) or Dark (Material) depending on taste.
+* Useful on macOS Mojave (dark mode) to force a better looking dark theme.
 
 Add space above tab bar:
 * Right click on toolbar -> Customize.
