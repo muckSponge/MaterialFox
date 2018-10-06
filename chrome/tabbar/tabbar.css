@@ -24,6 +24,32 @@
 	}
 }
 
+@media (-moz-os-version: windows-win7)
+{
+	#TabsToolbar:not(:-moz-lwtheme)
+	{
+		color: #808387 !important;
+		--toolbarbutton-hover-background: rgba(196, 198, 204, .8) !important;
+		--toolbarbutton-active-background: #bec0c6 !important;
+	}
+	
+	#TabsToolbar toolbarbutton:not(:-moz-lwtheme):not(:hover):not([open])
+	{
+		background-color: rgba(218, 220, 227, .8) !important;
+	}
+	
+	.tabbrowser-tab:not([visuallyselected]) .tab-background:not(:-moz-lwtheme)
+	{
+		fill: rgba(218, 220, 227, .8) !important;
+		fill-opacity: 1 !important;
+	}
+	
+	.tabbrowser-tab:hover:not([visuallyselected]) .tab-background:not(:-moz-lwtheme)
+	{
+		fill: #e9ebef !important;
+	}
+}
+
 .titlebar-placeholder
 {
 	border: 0 !important;
@@ -74,6 +100,8 @@
 	min-height: var(--tab-min-height) !important;
 	overflow: visible !important;
 	font-size: 12px !important;
+	background: 0 !important;
+	border: 0 !important;
 }
 
 /* neighbouring tabs should "pinch" together */
@@ -174,7 +202,9 @@
 	background-attachment: local !important;
 	margin: 0 -8px !important;
 	border: 0 !important;
-	transition: fill-opacity .2s var(--ease-basic) !important;
+	transition:
+		fill .2s var(--ease-basic),
+		fill-opacity .2s var(--ease-basic) !important;
 	fill: var(--toolbar-bgcolor) !important;
 	fill-opacity: 0 !important;
 	
