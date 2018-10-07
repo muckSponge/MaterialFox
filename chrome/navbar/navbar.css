@@ -75,6 +75,13 @@
 	padding: 0 5px !important;
 }
 
+.searchbar-textbox
+{
+	color: inherit !important;
+	font-size: inherit !important;
+	min-height: auto !important;
+}
+
 #urlbar,
 #searchbar
 {
@@ -397,7 +404,7 @@
 
 	#identity-icon-labels,
 	.urlbar-input,
-	.searchbar-input
+	.searchbar-textbox
 	{
 		transform: translateY(-.5px) !important;
 	}
