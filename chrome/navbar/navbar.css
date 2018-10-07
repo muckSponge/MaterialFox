@@ -339,6 +339,33 @@
 	display: none !important;
 }
 
+/* incognito icon */
+:root[privatebrowsingmode] #nav-bar::after
+{
+	content: "" !important;
+	background-image: url(incognito.svg) !important;
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	-moz-context-properties: fill, fill-opacity !important;
+	display: -moz-box !important;
+	fill: currentColor !important;
+	color: inherit !important;
+	width: var(--button-size) !important;
+	height: var(--button-size) !important;
+}
+
+/* replaces sync-button if present */
+:root[privatebrowsingmode] #navigator-toolbox #sync-button,
+.private-browsing-indicator
+{
+	display: none !important;
+}
+
+#PanelUI-button
+{
+	-moz-box-ordinal-group: 2 !important;
+}
+
 /* high DPI adjustments */
 @media (min--moz-device-pixel-ratio: 2)
 {
