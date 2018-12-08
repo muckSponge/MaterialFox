@@ -122,11 +122,6 @@
 	margin-inline-start: -2px !important;
 }
 
-.tabbrowser-tab[fadein]
-{
-	max-width: 240px !important;
-}
-
 .tab-content
 {
 	position: relative !important;
