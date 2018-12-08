@@ -432,6 +432,11 @@
 	{
 		-moz-box-align: start !important;
 		margin-inline-start: 0 !important;
+		margin-block-start: 10px !important;
+	}
+	
+	:root[extradragspace] #titlebar-buttonbox-container
+	{
 		margin-block-start: 13px !important;
 	}
 }
@@ -455,6 +460,11 @@
 	@media (-moz-mac-yosemite-theme)
 	{
 		#titlebar-buttonbox-container
+		{
+			margin-block-start: 9.5px !important;
+		}
+		
+		:root[extradragspace] #titlebar-buttonbox-container
 		{
 			margin-block-start: 13.5px !important;
 		}
