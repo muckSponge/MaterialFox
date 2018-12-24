@@ -104,6 +104,12 @@
 	background: 0 !important;
 }
 
+.menu-iconic,
+.menuitem-iconic
+{
+	fill: currentColor !important;
+}
+
 /* high DPI adjustments */
 @media (min--moz-device-pixel-ratio: 2)
 {
