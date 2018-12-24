@@ -1,4 +1,4 @@
-#navigator-toolbox .bookmark-item
+#navigator-toolbox toolbarbutton.bookmark-item:not(.subviewbutton)
 {
 	padding: 6px !important;
 }
