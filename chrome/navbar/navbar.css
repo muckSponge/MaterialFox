@@ -373,12 +373,12 @@
 	{
 		list-style-image: url(arrow-back-2x.svg) !important;
 	}
-	
+
 	#navigator-toolbox #PanelUI-menu-button:not([badge-status|="update"]) .toolbarbutton-icon
 	{
 		transform: translate(-.5px, -.5px) !important;
 	}
-	
+
 	#navigator-toolbox #stop-button
 	{
 		list-style-image: url(stop-2x.svg) !important;
@@ -388,7 +388,7 @@
 	{
 		list-style-image: url(refresh-2x.svg) !important;
 	}
-	
+
 	#navigator-toolbox #home-button
 	{
 		list-style-image: url(home-2x.svg) !important;
@@ -398,7 +398,7 @@
 	{
 		list-style-image: url(star-2x.svg) !important;
 	}
-	
+
 	#identity-icon-labels
 	{
 		padding-inline-end: .5px !important;
@@ -409,12 +409,12 @@
 		list-style-image: url(info-2x.svg) !important;
 		transform: translate(.5px, .5px) !important;
 	}
-	
+
 	#urlbar[pageproxystate=valid] > #identity-box:-moz-any(.verifiedDomain, .verifiedIdentity) > #identity-icon
 	{
 		list-style-image: url(connection-2x.svg) !important;
 	}
-	
+
 	#urlbar[pageproxystate=valid] > #identity-box:-moz-any(
 	.certUserOverridden,
 	.weakCipher,
@@ -423,7 +423,7 @@
 	{
 		list-style-image: url(connection-warning-2x.svg) !important;
 	}
-	
+
 	#connection-icon
 	{
 		list-style-image: url(naughty-shield-2x.svg) !important;
@@ -435,4 +435,45 @@
 	{
 		transform: translateY(-.5px) !important;
 	}
+}
+
+#PopupAutoCompleteRichResult {
+	 -moz-appearance: none !important;
+   background: transparent !important;
+   border: 0px !important;
+   box-shadow: none !important;
+}
+
+#PopupAutoCompleteRichResult .autocomplete-richlistbox {
+    background-color: rgb(255, 255, 255) !important;
+    border-radius: 0px 0px 10px 10px !important;
+    box-shadow: rgba(0, 0, 0, 0.16) 2px 0px 6px 0px, rgba(0, 0, 0, 0.16) -2px 0px 6px 0px, rgba(0, 0, 0, 0.16) 0px 4px 6px -6px, rgba(0, 0, 0, 0.16) 0px 4px 6px -6px !important;
+    font-family: "Google Sans", "Source Han Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif !important;
+    font-size: 14px !important;
+    color: rgb(33, 33, 33) !important;
+    margin: 0 var(--item-padding-end) 16px calc(var(--item-padding-start) + 20px) !important;
+    padding: 0 0 10px 0 !important;
+}
+
+#PopupAutoCompleteRichResult .autocomplete-richlistitem {
+    padding-inline-start: 0 !important;
+    border-inline-end: 0 !important;
+}
+
+#PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-type-icon {
+    width: 0 !important;
+    margin-right: 0 !important;
+}
+
+#urlbar[open],
+#searchbar[open] {
+    height: 36px !important;
+    background-color: var(--toolbar-field-focus-background-color) !important;
+    border: 0px !important;
+    border-radius: 10px 10px 0 0 !important;
+    box-shadow: rgba(0, 0, 0, 0.16) 2px 4px 6px 0px, rgba(0, 0, 0, 0.16) -2px 4px 6px 0px !important;
+}
+
+#PopupAutoCompleteRichResult hbox.search-one-offs {
+    display: none !important;
 }
