@@ -68,6 +68,11 @@
 	transform: scale(calc(1 + 1 / 16));
 }
 
+#nav-bar-customization-target
+{
+	overflow: visible !important;
+}
+
 #urlbar-container,
 #searchbar-container
 {
@@ -105,12 +110,32 @@
 }
 
 #urlbar[focused],
-#searchbar[focused]
+#urlbar[open],
+#searchbar[focused],
+#searchbar[open]
 {
 	background-color: var(--toolbar-field-focus-background-color) !important;
+}
+
+#urlbar[focused],
+#searchbar[focused]
+{
 	border: 2px solid var(--toolbar-field-focus-border-color) !important;
 	padding: 1px !important;
 	margin: 0 !important;
+}
+
+#urlbar[open],
+#searchbar[open]
+{
+	border: 0 !important;
+	padding: 0 5px 0 !important;
+	border-radius: 8px 8px 0 0 !important;
+	min-height: 37px !important;
+	margin: 0 -5px -1px !important;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .25) !important;
+	position: relative !important;
+	z-index: 99999 !important;
 }
 
 #identity-box
@@ -364,6 +389,65 @@
 #PanelUI-button
 {
 	-moz-box-ordinal-group: 2 !important;
+}
+
+/* urlbar and searchbar autocomplete popup */
+#PopupAutoCompleteRichResult
+{
+	background: 0 !important;
+	border-radius: 0 0 8px 8px !important;
+	margin-top: -3px !important;
+	color: inherit !important;
+}
+
+#PopupAutoCompleteRichResult .autocomplete-richlistbox,
+#PopupAutoCompleteRichResult [anonid="footer"]
+{
+	background-color: var(--toolbar-field-focus-background-color) !important;
+	margin-inline-start: calc(var(--item-padding-start) + 22px - 2px) !important;
+	margin-inline-end: calc(var(--item-padding-end) - 10px) !important;
+}
+
+#PopupAutoCompleteRichResult .autocomplete-richlistbox
+{
+	padding: 0 !important;
+	/* comment to keep footer */
+	border-radius: 0 0 8px 8px !important;
+	overflow: hidden !important;
+}
+
+#PopupAutoCompleteRichResult .autocomplete-richlistitem
+{
+	border: 0 !important;
+	border-radius: 0 !important;
+	padding: 0 !important;
+	height: 36px !important;
+}
+
+.ac-type-icon
+{
+	display: none !important;
+}
+
+.ac-site-icon
+{
+	margin-inline-start: 16px !important;
+	margin-inline-end: 16px !important;
+}
+
+/* footer is hidden by default */
+#PopupAutoCompleteRichResult [anonid="footer"]
+{
+	margin-top: -8px !important;
+	border-radius: 0 0 8px 8px !important;
+	/* comment to keep footer */
+	display: none !important;
+}
+
+.search-panel-header,
+.search-panel-one-offs
+{
+	background: 0 !important;
 }
 
 /* high DPI adjustments */
