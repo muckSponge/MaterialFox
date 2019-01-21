@@ -133,9 +133,21 @@
 	border-radius: 8px 8px 0 0 !important;
 	min-height: 37px !important;
 	margin: 0 -5px -1px !important;
-	box-shadow: 0 0 10px rgba(0, 0, 0, .25) !important;
+	box-shadow:
+		0 3px 10px rgba(0, 0, 0, .2),
+		0 0 1px rgba(0, 0, 0, .25) !important;
 	position: relative !important;
 	z-index: 99999 !important;
+}
+
+/* windows-specific tweaks */
+@media (-moz-windows-compositor)
+{
+	#urlbar[open],
+	#searchbar[open]
+	{
+		box-shadow: 0 3px 10px rgba(0, 0, 0, .2) !important;
+	}
 }
 
 #identity-box
@@ -395,9 +407,20 @@
 #PopupAutoCompleteRichResult
 {
 	background: 0 !important;
-	border-radius: 0 0 8px 8px !important;
 	margin-top: -3px !important;
 	color: inherit !important;
+}
+
+/* windows-specific tweaks */
+@media (-moz-windows-compositor)
+{
+	#PopupAutoCompleteRichResult
+	{
+		border: 0 !important;
+		filter: drop-shadow(0 12px 6px rgba(0, 0, 0, .25)) !important;
+		overflow: visible !important;
+		padding-bottom: 28px !important;
+	}
 }
 
 #PopupAutoCompleteRichResult .autocomplete-richlistbox,
