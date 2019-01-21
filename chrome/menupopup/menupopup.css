@@ -1,0 +1,144 @@
+panel,
+menupopup {
+    -moz-appearance: none !important;
+    background: transparent !important;
+    border: 0px !important;
+    box-shadow: none !important;
+}
+
+panel .panel-arrowcontainer,
+menupopup arrowscrollbox,
+menupopup .popup-internal-box {
+    -moz-appearance: none !important;
+    margin: 10px !important;
+    background-color: rgb(255, 255, 255) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12) !important;
+    font-family: 'Google Sans', 'Source Han Sans', Roboto, RobotoDraft, Helvetica, Arial, sans-serif !important;
+    font-size: 14px !important;
+    color: rgb(33, 33, 33) !important;
+}
+
+panel .panel-arrowcontent,
+menupopup scrollbox {
+    margin: 10px 0 !important;
+    background: transparent !important;
+    border: 0px !important;
+    box-shadow: none !important;
+}
+
+panel toolbarseparator,
+menupopup menuseparator {
+    -moz-appearance: none !important;
+    padding: 0px !important;
+    border-color: rgb(242,242,242) !important;
+}
+
+/*
+    Context Menu
+*/
+menupopup menu,
+menupopup menuitem {
+    padding: 10px 0 10px 10px !important;
+    margin: 4px 0 4px 8px !important;
+    min-width: 300px !important;
+}
+
+menupopup menu:hover,
+menupopup menuitem:hover {
+    background-color:rgb(237, 237, 237) !important;
+    color: rgb(33,33,33) !important;
+    border-radius: 25px 0 0 25px !important;
+    -moz-appearance: none !important;
+}
+
+/*
+    Panel
+*/
+panel .panel-arrowbox {
+    display: none !important;
+}
+
+panel toolbaritem {
+    padding: 5px 0 5px 10px !important;
+    margin: 4px 0 4px 8px !important;
+}
+
+panel toolbaritem:hover {
+    background-color:rgb(237, 237, 237) !important;
+    border-radius: 25px 0 0 25px !important;
+    -moz-appearance: none !important;
+}
+
+/*
+    Bookmark
+*/
+panel#editBookmarkPanel box.panel-arrowcontent {
+    margin: 10px !important;
+}
+
+panel#editBookmarkPanel #editBMPanel_folderMenuList menupopup scrollbox {
+    margin: 0 !important;
+}
+
+panel#editBookmarkPanel #editBMPanel_folderMenuList menupopup scrollbox .scrollbox-innerbox {
+    border-radius: 16px !important;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12) !important;
+    background-color: #fff !important;
+    margin: 6px !important;
+    padding: 10px 0 !important;
+}
+
+panel#editBookmarkPanel #editBMPanel_folderMenuList menupopup menuitem {
+    min-width: 128px !important;
+}
+
+richlistbox#editBMPanel_tagsSelector,
+tree#editBMPanel_folderTree,
+textbox#editBMPanel_tagsField,
+textbox#editBMPanel_namePicker,
+menulist#editBMPanel_folderMenuList {
+    -moz-appearance: none !important;
+    border: 1px solid !important;
+    border-radius: 16px !important;
+    border-color: rgb(237,237,237) !important;
+    padding: 8px 16px !important;
+}
+
+tree#editBMPanel_folderTree {
+    min-height: 320px !important;
+}
+
+button#editBMPanel_newFolderButton {
+    -moz-appearance: none !important;
+    border: 1px solid !important;
+    border-radius: 26px !important;
+    border-color: rgb(237,237,237) !important;
+    padding: 8px 16px !important;
+}
+
+button#editBMPanel_tagsSelectorExpander,
+button#editBMPanel_foldersExpander {
+    -moz-appearance: none !important;
+}
+
+button#editBookmarkPanelRemoveButton,
+button#editBookmarkPanelDoneButton {
+    border-radius: 26px !important;
+}
+
+button#editBookmarkPanelRemoveButton {
+    border: 1px solid !important;
+    border-color: rgb(237,237,237) !important;
+}
+
+hbox#editBookmarkPanelBottomButtons {
+    background: transparent !important;
+    margin: 0 0 6px 0 !important;
+}
+
+#context-navigation,
+#context-sep-navigation {
+  display:none !important;
+}
+
