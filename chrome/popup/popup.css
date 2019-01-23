@@ -1,0 +1,145 @@
+menupopup
+{
+	-moz-appearance: none !important;
+	background: 0 !important;
+	color: var(--arrowpanel-color) !important;
+	position: relative !important;
+}
+
+.popup-internal-box
+{
+	background: var(--arrowpanel-background) !important;
+	border-radius: 8px !important;
+	padding: 8px 0 !important;
+	overflow: hidden !important;
+}
+
+/* dark themes get a contrasty border */
+.popup-internal-box:-moz-lwtheme-brighttext
+{
+	box-shadow:
+		0 0 0 .5px #000 inset,
+		0 0 0 1.5px var(--arrowpanel-border-color) inset !important;
+}
+
+menu,
+menuitem,
+.popup-internal-box > .scrollbutton-up,
+.popup-internal-box > .scrollbutton-down
+{
+	background: 0 !important;
+	-moz-appearance: none !important;
+	color: inherit !important;
+}
+
+menu,
+menuitem
+{
+	padding: 0 24px 0 !important;
+	min-height: 28px !important;
+}
+
+menu[open],
+menu:not([disabled]):hover,
+menuitem:not([disabled]):hover
+{
+	background-color: var(--autocomplete-popup-highlight-background) !important;
+	color: var(--autocomplete-popup-highlight-color) !important;
+}
+
+menu[disabled],
+menuitem[disabled]
+{
+	opacity: .5 !important;
+}
+
+menuseparator
+{
+	-moz-appearance: none !important;
+	background: currentColor !important;
+	opacity: .1 !important;
+	border: 0 !important;
+	padding: 0 !important;
+	height: 1px !important;
+}
+
+.menu-iconic-icon,
+.menu-right
+{
+	fill: currentColor !important;
+	-moz-context-properties: fill, stroke, fill-opacity, stroke-opacity !important;
+}
+
+.menu-iconic-icon
+{
+	margin-inline-end: 8px !important;
+}
+
+.menu-right
+{
+	-moz-appearance: none !important;
+	list-style-image: url(menu-right-1x.svg) !important;
+}
+
+#context-navigation
+{
+	padding: 0 8px 3px !important;
+}
+
+/* could perhaps make this more generalised */
+#context-navigation > .menuitem-iconic
+{
+	padding: 0 !important;
+	border-radius: 99px !important;
+}
+
+#context-back,
+#context-forward
+{
+	list-style-image: url(../navbar/arrow-back-1x.svg) !important;
+}
+
+#context-forward
+{
+	transform: scaleX(-1) !important;
+}
+
+#context-reload
+{
+	list-style-image: url(../navbar/refresh-1x.svg) !important;
+}
+
+#context-bookmarkpage
+{
+	list-style-image: url(../navbar/star-1x.svg) !important;
+}
+
+#context-bookmarkpage:not([starred]) .menu-iconic-icon
+{
+	fill-opacity: 0 !important;
+}
+
+/* high DPI adjustments */
+@media (min--moz-device-pixel-ratio: 2)
+{
+	.menu-right
+	{
+		list-style-image: url(menu-right-2x.svg) !important;
+	}
+	
+	#context-back,
+	#context-forward
+	{
+		list-style-image: url(../navbar/arrow-back-2x.svg) !important;
+	}
+	
+	#context-reload
+	{
+		list-style-image: url(../navbar/refresh-2x.svg) !important;
+	}
+	
+	#context-bookmarkpage
+	{
+		list-style-image: url(../navbar/star-2x.svg) !important;
+	}
+}
