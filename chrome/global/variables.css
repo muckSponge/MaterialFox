@@ -1,3 +1,98 @@
+/* light mode */
+:root[style="--lwt-accent-color:rgb(227, 228, 230); --lwt-text-color:rgba(24, 25, 26); --arrowpanel-background:rgb(255, 255, 255); --panel-disabled-color:rgba(12, 12, 13, 0.5); --arrowpanel-color:rgba(12, 12, 13, 1); --arrowpanel-border-color:rgb(204, 204, 204); --lwt-toolbar-field-background-color:rgb(255, 255, 255); --lwt-toolbar-field-border-color:rgb(204, 204, 204); --toolbar-bgcolor:rgb(245, 246, 247); --toolbox-border-bottom-color:rgb(204, 204, 204); --autocomplete-popup-background:rgb(255, 255, 255); --autocomplete-popup-color:rgb(12, 12, 13); --autocomplete-popup-border-color:rgb(204, 204, 204);"]
+{
+	/* accentcolor */
+	--lwt-accent-color: #dee1e6 !important;
+	
+	/* textcolor */
+	--lwt-text-color: #606368 !important;
+	
+	/* toolbar */
+	--toolbar-bgcolor: #fff !important;
+	
+	/* toolbar_text */
+	--toolbar-color: #606368 !important;
+	
+	/* toolbar_bottom_separator */
+	--toolbox-border-bottom-color: #b3b1b3 !important;
+	
+	/* icons */
+	--lwt-toolbarbutton-icon-fill: #606368 !important;
+	
+	/* icons_attention */
+	--lwt-toolbarbutton-icon-fill-attention: #5086ec !important;
+	
+	/* button_background_hover */
+	--lwt-toolbarbutton-hover-background: rgba(0, 0, 0, .07) !important;
+	
+	/* button_background_active */
+	--lwt-toolbarbutton-active-background: rgba(0, 0, 0, .11) !important;
+}
+
+/* dark mode */
+:root[style="--lwt-accent-color:rgb(12, 12, 13); --lwt-text-color:rgba(249, 249, 250); --arrowpanel-background:rgb(74, 74, 79); --panel-disabled-color:rgba(249, 249, 250, 0.5); --arrowpanel-color:rgba(249, 249, 250, 1); --arrowpanel-border-color:rgb(39, 39, 43); --lwt-toolbar-field-background-color:rgb(71, 71, 73); --lwt-toolbar-field-border-color:rgba(249, 249, 250, 0.2); --toolbar-bgcolor:rgb(50, 50, 52); --toolbox-border-bottom-color:rgb(12, 12, 13); --autocomplete-popup-background:rgb(74, 74, 79); --autocomplete-popup-color:rgb(249, 249, 250); --autocomplete-popup-border-color:rgb(39, 39, 43); --lwt-toolbar-field-color:rgba(249, 249, 250, 1); --urlbar-separator-color:rgb(95, 102, 112);"]
+{
+	/* accentcolor */
+	--lwt-accent-color: #202124 !important;
+	
+	/* textcolor */
+	--lwt-text-color: #9ba0a5 !important;
+	
+	/* toolbar */
+	--toolbar-bgcolor: #333639 !important;
+	
+	/* toolbar_text */
+	--toolbar-color: #f1f3ee !important;
+	
+	/* toolbar_bottom_separator */
+	--toolbox-border-bottom-color: #282828 !important;
+	
+	/* icons */
+	--lwt-toolbarbutton-icon-fill: #f2f3f3 !important;
+	
+	/* icons_attention */
+	--lwt-toolbarbutton-icon-fill-attention: #5086ec !important;
+	
+	/* button_background_hover */
+	--lwt-toolbarbutton-hover-background: #434649 !important;
+	
+	/* button_background_active */
+	--lwt-toolbarbutton-active-background: #4e5153 !important;
+	
+	/* popup */
+	--arrowpanel-background: #373737 !important;
+	
+	/* popup_text */
+	--autocomplete-popup-color: #fff !important;
+	
+	/* popup_border */
+	--autocomplete-popup-border-color: #555 !important;
+	
+	/* popup_highlight */
+	--autocomplete-popup-highlight-background: #0056d9 !important;
+	
+	/* popup_highlight_text */
+	--autocomplete-popup-highlight-color: #fff !important;
+}
+
+:-moz-any(#sidebar-box, #sidebar)[style="--sidebar-background-color:rgb(56, 56, 61); --sidebar-text-color:rgb(249, 249, 250);"]
+{
+	/* sidebar */
+	--sidebar-background-color: #333639 !important;
+	
+	/* sidebar_text */
+	--sidebar-text-color: #f1f3ee !important;
+}
+
+:-moz-any(.sidebar-panel, body)[style="--newtab-background-color:rgba(42, 42, 46, 1); --newtab-text-primary-color:rgba(249, 249, 250, 1); --lwt-sidebar-background-color:rgb(56, 56, 61); --lwt-sidebar-text-color:rgba(249, 249, 250, 1);"]
+{
+	/* sidebar */
+	--lwt-sidebar-background-color: #333639 !important;
+	
+	/* sidebar_text */
+	--lwt-sidebar-text-color: #f1f3ee !important;
+}
+
 :root
 {
     --ease-in: cubic-bezier(.4, 0, 1, 1);
