@@ -63,9 +63,11 @@
 	--arrowpanel-background: #373737 !important;
 	
 	/* popup_text */
+	--arrowpanel-color: #fff !important;
 	--autocomplete-popup-color: #fff !important;
 	
 	/* popup_border */
+	--arrowpanel-border-color: #555 !important;
 	--autocomplete-popup-border-color: #555 !important;
 	
 	/* popup_highlight */
