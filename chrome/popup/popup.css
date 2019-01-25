@@ -6,20 +6,33 @@ menupopup
 	position: relative !important;
 }
 
-.popup-internal-box
+.popup-internal-box,
+.panel-arrowcontent
 {
 	background: var(--arrowpanel-background) !important;
 	border-radius: 8px !important;
 	padding: 8px 0 !important;
 	overflow: hidden !important;
+	margin: 0 !important;
 }
 
 /* dark themes get a contrasty border */
-.popup-internal-box:-moz-lwtheme-brighttext
+.popup-internal-box:-moz-lwtheme-brighttext,
+.panel-arrowcontent:-moz-lwtheme-brighttext
 {
 	box-shadow:
 		0 0 0 .5px #000 inset,
 		0 0 0 1.5px var(--arrowpanel-border-color) inset !important;
+}
+
+.panel-arrowbox
+{
+	display: none !important;
+}
+
+.PanelUI-subView
+{
+	background: none !important;
 }
 
 menu,
