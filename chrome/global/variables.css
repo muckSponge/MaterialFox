@@ -1,5 +1,5 @@
 /* light mode */
-:root[style="--lwt-accent-color:rgb(227, 228, 230); --lwt-text-color:rgba(24, 25, 26); --arrowpanel-background:rgb(255, 255, 255); --panel-disabled-color:rgba(12, 12, 13, 0.5); --arrowpanel-color:rgba(12, 12, 13, 1); --arrowpanel-border-color:rgb(204, 204, 204); --lwt-toolbar-field-background-color:rgb(255, 255, 255); --lwt-toolbar-field-border-color:rgb(204, 204, 204); --toolbar-bgcolor:rgb(245, 246, 247); --toolbox-border-bottom-color:rgb(204, 204, 204); --autocomplete-popup-background:rgb(255, 255, 255); --autocomplete-popup-color:rgb(12, 12, 13); --autocomplete-popup-border-color:rgb(204, 204, 204);"]
+:root[style*="--lwt-accent-color:rgb(227, 228, 230);"]
 {
 	/* accentcolor */
 	--lwt-accent-color: #dee1e6 !important;
@@ -29,8 +29,10 @@
 	--lwt-toolbarbutton-active-background: rgba(0, 0, 0, .11) !important;
 }
 
+/* don't bother with sidebar in light mode */
+
 /* dark mode */
-:root[style="--lwt-accent-color:rgb(12, 12, 13); --lwt-text-color:rgba(249, 249, 250); --arrowpanel-background:rgb(74, 74, 79); --panel-disabled-color:rgba(249, 249, 250, 0.5); --arrowpanel-color:rgba(249, 249, 250, 1); --arrowpanel-border-color:rgb(39, 39, 43); --lwt-toolbar-field-background-color:rgb(71, 71, 73); --lwt-toolbar-field-border-color:rgba(249, 249, 250, 0.2); --toolbar-bgcolor:rgb(50, 50, 52); --toolbox-border-bottom-color:rgb(12, 12, 13); --autocomplete-popup-background:rgb(74, 74, 79); --autocomplete-popup-color:rgb(249, 249, 250); --autocomplete-popup-border-color:rgb(39, 39, 43); --lwt-toolbar-field-color:rgba(249, 249, 250, 1); --urlbar-separator-color:rgb(95, 102, 112);"]
+:root[style*="--lwt-accent-color:rgb(12, 12, 13);"]
 {
 	/* accentcolor */
 	--lwt-accent-color: #202124 !important;
@@ -77,7 +79,7 @@
 	--autocomplete-popup-highlight-color: #fff !important;
 }
 
-:-moz-any(#sidebar-box, #sidebar)[style="--sidebar-background-color:rgb(56, 56, 61); --sidebar-text-color:rgb(249, 249, 250);"]
+:-moz-any(#sidebar-box, #sidebar)[style*="--sidebar-background-color:rgb(56, 56, 61);"]
 {
 	/* sidebar */
 	--sidebar-background-color: #333639 !important;
@@ -86,7 +88,7 @@
 	--sidebar-text-color: #f1f3ee !important;
 }
 
-:-moz-any(.sidebar-panel, body)[style="--newtab-background-color:rgba(42, 42, 46, 1); --newtab-text-primary-color:rgba(249, 249, 250, 1); --lwt-sidebar-background-color:rgb(56, 56, 61); --lwt-sidebar-text-color:rgba(249, 249, 250, 1);"]
+:-moz-any(.sidebar-panel, body)[style*="--lwt-sidebar-background-color:rgb(56, 56, 61);"]
 {
 	/* sidebar */
 	--lwt-sidebar-background-color: #333639 !important;
