@@ -135,6 +135,12 @@ menuseparator
 	fill-opacity: 0 !important;
 }
 
+.ac-type-icon[type="keyword"],
+.ac-site-icon[type="searchengine"]
+{
+    list-style-image: url(../navbar/search.svg) !important;
+}
+
 /* windows-specific tweaks */
 @media (-moz-windows-compositor)
 {
