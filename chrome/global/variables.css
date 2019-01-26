@@ -32,7 +32,8 @@
 /* don't bother with sidebar in light mode */
 
 /* dark mode */
-:root[style*="--lwt-accent-color:rgb(12, 12, 13);"]
+:root[style*="--lwt-accent-color:rgb(12, 12, 13);"],
+:root[privatebrowsingmode]
 {
 	/* accentcolor */
 	--lwt-accent-color: #202124 !important;
@@ -67,6 +68,7 @@
 	/* popup_text */
 	--arrowpanel-color: #fff !important;
 	--autocomplete-popup-color: #fff !important;
+	--panel-disabled-color: hsla(0, 0%, 100%, .5) !important;
 	
 	/* popup_border */
 	--arrowpanel-border-color: #555 !important;
@@ -190,22 +192,6 @@
 {
     --toolbarbutton-hover-background: var(--lwt-toolbarbutton-hover-background, hsla(0, 0%, 100%, .1)) !important;
     --toolbarbutton-active-background: var(--lwt-toolbarbutton-active-background, hsla(0, 0%, 100%, .17)) !important;
-}
-
-:root[privatebrowsingmode]
-{
-	--toolbar-color: hsl(180, 4%, 95%) !important;
-	--toolbar-bgcolor: hsl(206, 7%, 21%) !important;
-	--chrome-secondary-background-color: hsl(206, 7%, 21%) !important;
-	--toolbox-border-bottom-color: hsl(0, 0%, 16%) !important;
-}
-
-:root[privatebrowsingmode] toolbar:not(#TabsToolbar):not(#toolbar-menubar),
-:root[privatebrowsingmode] .tabbrowser-tab[visuallyselected] .tab-close-button
-{
-	--chrome-color: hsl(180, 4%, 95%) !important;
-	--toolbarbutton-hover-background: hsla(0, 0%, 100%, .1) !important;
-    --toolbarbutton-active-background: hsla(0, 0%, 100%, .17) !important;
 }
 
 /* special case for urlbar buttons */
