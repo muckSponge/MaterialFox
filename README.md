@@ -9,7 +9,7 @@ This theme is powered by blood, sweat, and coffee. If you like it, please consid
 ## What this does
 Inspired by Google's Material Design and their latest Google Chrome UI, this theme turns your Firefox into a Material-styled web browser. The aim was to style the browser as closely as possible to the latest Google Chrome dev builds, where practical.
 
-This is a userChrome.css theme, which means you must manually add it to your Firefox profile. The theme overrides certain browser styles. Currently, only the UI at the top of the browser is affected. Other elements of the UI may be styled later.
+This is a userChrome.css theme, which means you must manually add it to your Firefox profile. The theme overrides certain browser styles. Currently, only the main UI is affected (settings pages, etc. are not). More elements of the UI may be styled in the future.
 
 ## Installation
 Some steps involve accessing the about:config page. You can get there by typing it into your urlbar.
@@ -20,16 +20,6 @@ Some steps involve accessing the about:config page. You can get there by typing 
 3. Restart Firefox.
 
 ### Recommended instructions
-Disable any existing lightweight themes (or, see next paragraph):
-* Right click on toolbar -> Customize.
-* Click Themes.
-* Select Default theme.
-
-For better theme/color control:
-* Install [MaterialFox Helper](https://addons.mozilla.org/en-US/firefox/addon/materialfox-helper/).
-* Click the MaterialFox Helper button and select Light (Material) or Dark (Material) depending on taste.
-* Useful on macOS Mojave (dark mode) to force a better looking dark theme.
-
 Add space above tab bar:
 * Right click on toolbar -> Customize.
 * Check Drag Space checkbox.
@@ -50,4 +40,4 @@ Replicate Chrome's "Not Secure" on HTTP:
 ## Please note
 * Linux is not frequently tested; last tested on 07/09/2018.
 * Some customisation settings may no longer work (such as compact density).
-* Some themes, including built in Light and Dark may clash with address bar.
+* Some custom themes may clash with address bar.
