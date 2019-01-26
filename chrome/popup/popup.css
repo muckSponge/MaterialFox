@@ -2,6 +2,7 @@ menupopup
 {
 	-moz-appearance: none !important;
 	background: 0 !important;
+	border: 0 !important;
 	color: var(--arrowpanel-color) !important;
 	position: relative !important;
 }
@@ -74,6 +75,7 @@ menuseparator
 	border: 0 !important;
 	padding: 0 !important;
 	height: 1px !important;
+	margin: 5px 0 !important;
 }
 
 .menu-iconic-icon,
@@ -97,6 +99,7 @@ menuseparator
 #context-navigation
 {
 	padding: 0 8px 3px !important;
+	background: 0 !important;
 }
 
 /* could perhaps make this more generalised */
@@ -130,6 +133,61 @@ menuseparator
 #context-bookmarkpage:not([starred]) .menu-iconic-icon
 {
 	fill-opacity: 0 !important;
+}
+
+/* windows-specific tweaks */
+@media (-moz-windows-compositor)
+{
+	menupopup
+	{
+		padding: 6px 12px 24px !important;
+		margin: -6px -12px -24px !important;
+	}
+	
+	.popup-internal-box
+	{
+		box-shadow:
+			0 0 6px rgba(0, 0, 0, .08),
+			0 12px 12px rgba(0, 0, 0, .125) !important;
+	}
+	
+	/*
+	   panels are magically positioned and cropped, which means
+	   we can't use margins to compensate for box-shadow, so we
+	   reduce the shadow size so the padded offset is tolerable
+	*/
+	panel[type="arrow"]
+	{
+		/* must pad because overflow: visible doesn't work */
+		padding: 3px 3px 7px !important;
+	}
+	
+	.panel-arrowcontent
+	{
+		border: 0 !important;
+		box-shadow:
+			0 0 3px rgba(0, 0, 0, .17),
+			0 4px 3px rgba(0, 0, 0, .1) !important;
+	}
+	
+	/* dark themes get a contrasty border */
+	.popup-internal-box:-moz-lwtheme-brighttext
+	{
+		box-shadow:
+		    0 0 0 .5px #000 inset,
+		    0 0 0 1.5px var(--arrowpanel-border-color) inset,
+		    0 0 6px rgba(0, 0, 0, .08),
+		    0 12px 12px rgba(0, 0, 0, .125) !important;
+	}
+	
+	.panel-arrowcontent:-moz-lwtheme-brighttext
+	{
+		box-shadow:
+		    0 0 0 .5px #000 inset,
+		    0 0 0 1.5px var(--arrowpanel-border-color) inset,
+		    0 0 3px rgba(0, 0, 0, .17),
+		    0 4px 13px rgba(0, 0, 0, .1) !important;
+	}
 }
 
 /* high DPI adjustments */
