@@ -1,0 +1,216 @@
+menupopup
+{
+	-moz-appearance: none !important;
+	background: 0 !important;
+	border: 0 !important;
+	color: var(--arrowpanel-color) !important;
+	position: relative !important;
+}
+
+.popup-internal-box,
+.panel-arrowcontent
+{
+	background: var(--arrowpanel-background) !important;
+	border-radius: 8px !important;
+	padding: 8px 0 !important;
+	overflow: hidden !important;
+	margin: 0 !important;
+}
+
+/* dark themes get a contrasty border */
+.popup-internal-box:-moz-lwtheme-brighttext,
+.panel-arrowcontent:-moz-lwtheme-brighttext
+{
+	box-shadow:
+		0 0 0 .5px #000 inset,
+		0 0 0 1.5px var(--arrowpanel-border-color) inset !important;
+}
+
+.panel-arrowbox
+{
+	display: none !important;
+}
+
+.PanelUI-subView
+{
+	background: none !important;
+}
+
+menu,
+menuitem,
+.popup-internal-box > .scrollbutton-up,
+.popup-internal-box > .scrollbutton-down
+{
+	background: 0 !important;
+	-moz-appearance: none !important;
+	color: inherit !important;
+}
+
+menu,
+menuitem
+{
+	padding: 0 24px 0 !important;
+	min-height: 28px !important;
+}
+
+menu[open],
+menu:not([disabled]):hover,
+menuitem:not([disabled]):hover
+{
+	background-color: var(--autocomplete-popup-highlight-background) !important;
+	color: var(--autocomplete-popup-highlight-color) !important;
+}
+
+menu[disabled],
+menuitem[disabled]
+{
+	opacity: .5 !important;
+}
+
+menuseparator
+{
+	-moz-appearance: none !important;
+	background: currentColor !important;
+	opacity: .1 !important;
+	border: 0 !important;
+	padding: 0 !important;
+	height: 1px !important;
+	margin: 5px 0 !important;
+}
+
+.menu-iconic-icon,
+.menu-right
+{
+	fill: currentColor !important;
+	-moz-context-properties: fill, stroke, fill-opacity, stroke-opacity !important;
+}
+
+.menu-iconic-icon
+{
+	margin-inline-end: 8px !important;
+}
+
+.menu-right
+{
+	-moz-appearance: none !important;
+	list-style-image: url(menu-right-1x.svg) !important;
+}
+
+#context-navigation
+{
+	padding: 0 8px 3px !important;
+	background: 0 !important;
+}
+
+/* could perhaps make this more generalised */
+#context-navigation > .menuitem-iconic
+{
+	padding: 0 !important;
+	border-radius: 99px !important;
+}
+
+#context-back,
+#context-forward
+{
+	list-style-image: url(../navbar/arrow-back-1x.svg) !important;
+}
+
+#context-forward
+{
+	transform: scaleX(-1) !important;
+}
+
+#context-reload
+{
+	list-style-image: url(../navbar/refresh-1x.svg) !important;
+}
+
+#context-bookmarkpage
+{
+	list-style-image: url(../navbar/star-1x.svg) !important;
+}
+
+#context-bookmarkpage:not([starred]) .menu-iconic-icon
+{
+	fill-opacity: 0 !important;
+}
+
+/* windows-specific tweaks */
+@media (-moz-windows-compositor)
+{
+	menupopup
+	{
+		padding: 6px 12px 24px !important;
+		margin: -6px -12px -24px !important;
+	}
+	
+	.popup-internal-box
+	{
+		box-shadow:
+			0 0 6px rgba(0, 0, 0, .08),
+			0 12px 12px rgba(0, 0, 0, .125) !important;
+	}
+	
+	/*
+	   panels are magically positioned and cropped, which means
+	   we can't use margins to compensate for box-shadow, so we
+	   reduce the shadow size so the padded offset is tolerable
+	*/
+	panel[type="arrow"]
+	{
+		/* must pad because overflow: visible doesn't work */
+		padding: 3px 3px 7px !important;
+	}
+	
+	.panel-arrowcontent
+	{
+		border: 0 !important;
+		box-shadow:
+			0 0 3px rgba(0, 0, 0, .17),
+			0 4px 3px rgba(0, 0, 0, .1) !important;
+	}
+	
+	/* dark themes get a contrasty border */
+	.popup-internal-box:-moz-lwtheme-brighttext
+	{
+		box-shadow:
+		    0 0 0 .5px #000 inset,
+		    0 0 0 1.5px var(--arrowpanel-border-color) inset,
+		    0 0 6px rgba(0, 0, 0, .08),
+		    0 12px 12px rgba(0, 0, 0, .125) !important;
+	}
+	
+	.panel-arrowcontent:-moz-lwtheme-brighttext
+	{
+		box-shadow:
+		    0 0 0 .5px #000 inset,
+		    0 0 0 1.5px var(--arrowpanel-border-color) inset,
+		    0 0 3px rgba(0, 0, 0, .17),
+		    0 4px 13px rgba(0, 0, 0, .1) !important;
+	}
+}
+
+/* high DPI adjustments */
+@media (min--moz-device-pixel-ratio: 2)
+{
+	.menu-right
+	{
+		list-style-image: url(menu-right-2x.svg) !important;
+	}
+	
+	#context-back,
+	#context-forward
+	{
+		list-style-image: url(../navbar/arrow-back-2x.svg) !important;
+	}
+	
+	#context-reload
+	{
+		list-style-image: url(../navbar/refresh-2x.svg) !important;
+	}
+	
+	#context-bookmarkpage
+	{
+		list-style-image: url(../navbar/star-2x.svg) !important;
+	}
+}
