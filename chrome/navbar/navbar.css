@@ -101,6 +101,7 @@
 	background-clip: padding-box !important;
 	min-height: 28px !important;
 	transition: background-color .1s var(--ease-basic) !important;
+	-moz-box-align: center !important;
 }
 
 #urlbar:hover,
@@ -129,7 +130,7 @@
 #searchbar[open]
 {
 	border: 0 !important;
-	padding: 0 5px 0 !important;
+	padding: 0 8px 0 !important;
 	border-radius: 8px 8px 0 0 !important;
 	min-height: 37px !important;
 	margin: 0 -5px -1px !important;
@@ -170,7 +171,18 @@
 	color: inherit !important;
 }
 
-#urlbar[pageproxystate=valid] #identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden),
+#urlbar[open] #identity-icon-labels
+{
+	display: none !important;
+}
+
+#urlbar[open] #identity-box
+{
+	pointer-events: none !important;
+	margin-inline-end: 8px !important;
+}
+
+#urlbar[pageproxystate=valid]:not([open]) #identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden),
 #urlbar-display-box
 {
 	overflow: visible !important;
@@ -178,7 +190,7 @@
 }
 
 /* separator */
-#urlbar[pageproxystate=valid] #identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden)::after,
+#urlbar[pageproxystate=valid]:not([open]) #identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden)::after,
 #urlbar-display-box::after
 {
 	content: "" !important;
@@ -228,6 +240,11 @@
 {
 	display: none !important;
 	list-style-image: url(naughty-shield-1x.svg) !important;
+}
+
+#urlbar[pageproxystate="invalid"] #identity-icon
+{
+	list-style-image: url(search.svg) !important;
 }
 
 #identity-box:-moz-any(
@@ -310,6 +327,11 @@
 	padding: 4px 8px !important;
 }
 
+#urlbar[open] #page-action-buttons
+{
+	display: none !important;
+}
+
 .urlbar-icon:hover:not([disabled]),
 #identity-box:hover:not(.no-hover)
 {
@@ -374,6 +396,18 @@
 #star-button-animatable-box
 {
 	display: none !important;
+}
+
+#urlbar[open] .urlbar-go-button,
+#searchbar[open] .search-go-button
+{
+	height: 32px !important;
+}
+
+.urlbar-go-button,
+.search-go-button
+{
+    list-style-image: url(go.svg) !important;
 }
 
 /* incognito icon */
