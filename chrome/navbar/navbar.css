@@ -134,20 +134,20 @@
 	border-radius: 8px 8px 0 0 !important;
 	min-height: 37px !important;
 	margin: 0 -5px -1px !important;
-	box-shadow:
-		0 3px 10px rgba(0, 0, 0, .2),
-		0 0 1px rgba(0, 0, 0, .25) !important;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, .2) !important;
 	position: relative !important;
 	z-index: 99999 !important;
 }
 
-/* windows-specific tweaks */
-@media (-moz-windows-compositor)
+/* mac-specific tweaks */
+@media (-moz-mac-yosemite-theme)
 {
 	#urlbar[open],
 	#searchbar[open]
 	{
-		box-shadow: 0 3px 10px rgba(0, 0, 0, .2) !important;
+		box-shadow:
+			0 3px 10px rgba(0, 0, 0, .2),
+			0 0 1px rgba(0, 0, 0, .25) !important;
 	}
 }
 
@@ -441,28 +441,21 @@
 #PopupAutoCompleteRichResult
 {
 	background: 0 !important;
-	margin-top: -3px !important;
+	margin-top: -4px !important;
 	color: inherit !important;
-}
-
-/* windows-specific tweaks */
-@media (-moz-windows-compositor)
-{
-	#PopupAutoCompleteRichResult
-	{
-		border: 0 !important;
-		filter: drop-shadow(0 12px 6px rgba(0, 0, 0, .25)) !important;
-		overflow: visible !important;
-		padding-bottom: 28px !important;
-	}
+	
+	border: 0 !important;
+	filter: drop-shadow(0 12px 6px rgba(0, 0, 0, .25)) !important;
+	overflow: visible !important;
+	padding-bottom: 28px !important;
 }
 
 #PopupAutoCompleteRichResult .autocomplete-richlistbox,
 #PopupAutoCompleteRichResult [anonid="footer"]
 {
 	background-color: var(--toolbar-field-focus-background-color) !important;
-	margin-inline-start: calc(var(--item-padding-start) + 18px - 4px) !important;
-	margin-inline-end: calc(var(--item-padding-end) - 4px) !important;
+	margin-inline-start: calc(var(--item-padding-start) + 20px - 0px) !important;
+	margin-inline-end: calc(var(--item-padding-end) - 10px) !important;
 }
 
 #PopupAutoCompleteRichResult .autocomplete-richlistbox
@@ -479,6 +472,26 @@
 	border-radius: 0 !important;
 	padding: 0 !important;
 	height: 36px !important;
+}
+
+/* mac-specific tweaks */
+@media (-moz-mac-yosemite-theme)
+{
+	#PopupAutoCompleteRichResult
+	{
+		filter: none !important;
+		padding-bottom: 0 !important;
+		margin-top: -3px !important;
+		
+	}
+	
+	#PopupAutoCompleteRichResult .autocomplete-richlistbox,
+	#PopupAutoCompleteRichResult [anonid="footer"]
+	{
+		background-color: var(--toolbar-field-focus-background-color) !important;
+		margin-inline-start: calc(var(--item-padding-start) + 18px - 4px) !important;
+		margin-inline-end: calc(var(--item-padding-end) - 4px) !important;
+	}
 }
 
 .ac-type-icon
