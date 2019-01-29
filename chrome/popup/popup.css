@@ -15,7 +15,6 @@ panel[type="autocomplete-richlistbox"]
 	background: var(--arrowpanel-background) !important;
 	border-radius: 8px !important;
 	padding: 8px 0 !important;
-	overflow: hidden !important;
 	margin: 0 !important;
 }
 
