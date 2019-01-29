@@ -50,18 +50,19 @@
 	}
 }
 
-.titlebar-placeholder
+ /* < FF 65, >= FF 65 */
+:-moz-any(.titlebar-placeholder, .titlebar-spacer)
 {
 	border: 0 !important;
 }
 
-.titlebar-placeholder[type=pre-tabs]
+:-moz-any(.titlebar-placeholder, .titlebar-spacer)[type=pre-tabs]
 {
 	width: 8px !important;
 	display: -moz-box !important;
 }
 
-.titlebar-placeholder[type=post-tabs]
+:-moz-any(.titlebar-placeholder, .titlebar-spacer)type=post-tabs]
 {
 	width: 0 !important;
 }
@@ -73,7 +74,7 @@
 	[currentset$="tabbrowser-tabs,new-tab-button"],
 	[currentset$="tabbrowser-tabs,alltabs-button,new-tab-button"],
 	[currentset$="tabbrowser-tabs,new-tab-button,alltabs-button"]
-) .titlebar-placeholder[type=post-tabs]
+) :-moz-any(.titlebar-placeholder, .titlebar-spacer)[type=post-tabs]
 {
 	width: 46px !important;
 }
