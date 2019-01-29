@@ -143,12 +143,12 @@ menuseparator
 	fill-opacity: 0 !important;
 }
 
-:not(menulist) > menupopup > menuitem:-moz-any([checked=false], [selected=false], [type=radio])
+:not(menulist) > menupopup > menuitem:-moz-any([type=checkbox], [type=radio])
 {
 	list-style-image: url(checkbox-empty.svg) !important;
 }
 
-:not(menulist) > menupopup > menuitem:-moz-any([checked=true], [selected=true])
+:not(menulist) > menupopup > menuitem:-moz-any([type=checkbox], [type=radio]):-moz-any([checked=true], [selected=true])
 {
 	list-style-image: url(checkbox-checked.svg) !important;
 }
