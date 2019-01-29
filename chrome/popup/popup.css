@@ -147,6 +147,16 @@ menuseparator
     list-style-image: url(../navbar/search.svg) !important;
 }
 
+:not(menulist) > menupopup > menuitem:-moz-any([checked=false], [selected=false])
+{
+	list-style-image: url(checkbox-empty.svg) !important;
+}
+
+:not(menulist) > menupopup > menuitem:-moz-any([checked=true], [selected=true])
+{
+	list-style-image: url(checkbox-checked.svg) !important;
+}
+
 /* windows-specific tweaks */
 @media (-moz-windows-compositor)
 {
