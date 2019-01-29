@@ -1,4 +1,5 @@
-menupopup
+menupopup,
+panel[type="autocomplete-richlistbox"]
 {
 	-moz-appearance: none !important;
 	background: 0 !important;
@@ -8,7 +9,8 @@ menupopup
 }
 
 .popup-internal-box,
-.panel-arrowcontent
+.panel-arrowcontent,
+.autocomplete-richlistbox
 {
 	background: var(--arrowpanel-background) !important;
 	border-radius: 8px !important;
@@ -38,6 +40,7 @@ menupopup
 
 menu,
 menuitem,
+.autocomplete-richlistitem,
 .popup-internal-box > .scrollbutton-up,
 .popup-internal-box > .scrollbutton-down
 {
@@ -47,7 +50,8 @@ menuitem,
 }
 
 menu,
-menuitem
+menuitem,
+.autocomplete-richlistitem
 {
 	padding: 0 24px 0 !important;
 	min-height: 28px !important;
@@ -55,14 +59,16 @@ menuitem
 
 menu[open],
 menu:not([disabled]):hover,
-menuitem:not([disabled]):hover
+menuitem:not([disabled]):hover,
+.autocomplete-richlistitem:not([disabled]):hover
 {
 	background-color: var(--autocomplete-popup-highlight-background) !important;
 	color: var(--autocomplete-popup-highlight-color) !important;
 }
 
 menu[disabled],
-menuitem[disabled]
+menuitem[disabled],
+.autocomplete-richlistitem[disabled]
 {
 	opacity: .5 !important;
 }
