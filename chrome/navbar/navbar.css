@@ -494,15 +494,21 @@
 	}
 }
 
-.ac-type-icon
+#PopupAutoCompleteRichResult .ac-type-icon
 {
 	display: none !important;
 }
 
-.ac-site-icon
+#PopupAutoCompleteRichResult .ac-site-icon
 {
 	margin-inline-start: 16px !important;
 	margin-inline-end: 16px !important;
+}
+
+#PopupAutoCompleteRichResult .ac-type-icon[type="keyword"],
+#PopupAutoCompleteRichResult .ac-site-icon[type="searchengine"]
+{
+    list-style-image: url(../navbar/search.svg) !important;
 }
 
 /* footer is hidden by default */
