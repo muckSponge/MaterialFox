@@ -158,6 +158,12 @@ menuseparator
 	list-style-image: url(checkbox-checked.svg) !important;
 }
 
+/* unset fill-opacity for menus nested in buttons */
+.bookmark-item > menupopup
+{
+	fill-opacity: initial !important;
+}
+
 /* windows-specific tweaks */
 @media (-moz-windows-compositor)
 {
