@@ -181,9 +181,9 @@ menuseparator
 	}
 	
 	/*
-	   panels are magically positioned and cropped, which means
-	   we can't use margins to compensate for box-shadow, so we
-	   reduce the shadow size so the padded offset is tolerable
+		panels are magically positioned and cropped, which means
+		we can't use margins to compensate for box-shadow, so we
+		reduce the shadow size so the padded offset is tolerable
 	*/
 	panel[type="arrow"]
 	{
@@ -216,6 +216,15 @@ menuseparator
 		    0 0 0 1.5px var(--arrowpanel-border-color) inset,
 		    0 0 3px rgba(0, 0, 0, .17),
 		    0 4px 13px rgba(0, 0, 0, .1) !important;
+	}
+	
+	/*
+    	padding refuses to override so we'll cheat and use
+    	negative margin to counter it
+	*/
+	.menu-text
+	{
+		margin-inline-start: -1.45em !important;
 	}
 }
 
