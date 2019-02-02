@@ -58,10 +58,17 @@ menuitem,
 	min-height: 28px !important;
 }
 
-menu[open],
-menu:not([disabled]):hover,
+/* hover */
+menu:not([disabled]):not([open]):hover,
 menuitem:not([disabled]):hover,
-.autocomplete-richlistitem:not([disabled]):hover
+.autocomplete-richlistitem:not([disabled]):not([selected]):hover
+{
+	background-color: var(--arrowpanel-dimmed) !important;
+}
+
+/* selected/open */
+menu[open],
+.autocomplete-richlistitem[selected]
 {
 	background-color: var(--autocomplete-popup-highlight-background) !important;
 	color: var(--autocomplete-popup-highlight-color) !important;
