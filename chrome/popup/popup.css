@@ -10,7 +10,8 @@ panel[type="autocomplete-richlistbox"]
 
 .popup-internal-box,
 .panel-arrowcontent,
-.autocomplete-richlistbox
+.autocomplete-richlistbox,
+#PopupSearchAutoComplete
 {
 	background: var(--arrowpanel-background) !important;
 	border-radius: 8px !important;
@@ -20,7 +21,8 @@ panel[type="autocomplete-richlistbox"]
 
 /* dark themes get a contrasty border */
 .popup-internal-box:-moz-lwtheme-brighttext,
-.panel-arrowcontent:-moz-lwtheme-brighttext
+.panel-arrowcontent:-moz-lwtheme-brighttext,
+#PopupSearchAutoComplete:-moz-lwtheme-brighttext
 {
 	box-shadow:
 		0 0 0 .5px #000 inset,
@@ -162,6 +164,114 @@ menuseparator
 .bookmark-item > menupopup
 {
 	fill-opacity: initial !important;
+}
+
+.search-panel-tree
+{
+	background: 0 !important;
+	border-radius: 0 !important;
+	box-shadow: 0 !important;
+	padding: 0 !important;
+}
+
+.search-panel-current-engine,
+#searchbar-anon-search-settings,
+.addengine-item
+{
+	padding: 0 24px 0 !important;
+	min-height: 28px !important;
+	border-radius: 0 !important;
+	border: 0 !important;
+	font-size: inherit !important;
+	text-align: start !important;
+}
+
+.search-panel-current-engine
+{
+	-moz-box-ordinal-group: 0 !important;
+}
+
+/* a sneaky separator */
+#PopupSearchAutoComplete::before
+{
+	-moz-box-ordinal-group: 1 !important;
+}
+
+.searchbar-engine-image
+{
+	margin-inline-end: 2px !important;
+}
+
+.search-panel-one-offs-header
+{
+	display: none !important;
+}
+
+.search-panel-one-offs,
+#searchbar-anon-search-settings
+{
+	border: 0 !important;
+}
+
+/* separators */
+#PopupSearchAutoComplete::before,
+.search-panel-one-offs::before,
+.search-panel-one-offs::after
+{
+	content: "" !important;
+	display: -moz-box !important;
+	height: 1px !important;
+	width: 100% !important;
+	background: currentColor !important;
+	opacity: .1 !important;
+	margin: 4px 0 !important;
+}
+
+.searchbar-engine-one-off-item
+{
+	border: 0 !important;
+	background: 0 !important;
+}
+
+.searchbar-engine-one-off-item .button-box
+{
+	border-radius: 99px !important;
+	margin: 2px 0 !important;
+}
+
+.searchbar-engine-one-off-item:first-of-type .button-box,
+.searchbar-engine-one-off-item.last-of-row + .searchbar-engine-one-off-item .button-box
+{
+	margin-inline-start: 4px !important;
+}
+
+.searchbar-engine-one-off-item.last-of-row .button-box
+{
+	margin-inline-end: 4px !important;
+}
+
+/* unfortunately these don't support focus */
+.searchbar-engine-one-off-item:hover .button-box,
+#searchbar-anon-search-settings:hover,
+.search-panel-current-engine:hover,
+.addengine-item:hover
+{
+	background-color: var(--autocomplete-popup-highlight-background) !important;
+}
+
+.searchbar-engine-one-off-item.dummy
+{
+	display: none !important;
+}
+
+.search-panel-tree .ac-type-icon[type="null"]
+{
+	display: none !important;
+}
+
+.search-add-engines
+{
+	background: 0 !important;
 }
 
 /* windows-specific tweaks */
