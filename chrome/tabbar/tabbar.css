@@ -3,6 +3,11 @@
 	padding-inline-end: 2px !important;
 }
 
+:-moz-any(.titlebar-placeholder, .titlebar-spacer)[type=pre-tabs]
+{
+	width: 0 !important;
+}
+
 @media (-moz-mac-yosemite-theme)
 {
 	#TabsToolbar
@@ -21,6 +26,11 @@
 	:root:-moz-any([inFullscreen], [tabsintitlebar]) #TabsToolbar:not(:-moz-lwtheme):-moz-window-inactive
 	{
 		background-color: #e7eaed !important;
+	}
+	
+	:-moz-any(.titlebar-placeholder, .titlebar-spacer)[type=pre-tabs]
+	{
+		width: 12px !important;
 	}
 }
 
@@ -58,7 +68,6 @@
 
 :-moz-any(.titlebar-placeholder, .titlebar-spacer)[type=pre-tabs]
 {
-	width: 8px !important;
 	display: -moz-box !important;
 }
 
@@ -82,6 +91,7 @@
 #tabbrowser-tabs:not([overflow]) .arrowscrollbox-scrollbox
 {
 	margin: 0 -8px !important;
+	padding-inline-start: 8px !important;
 }
 
 #tabbrowser-tabs .scrollbox-innerbox
