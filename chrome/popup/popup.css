@@ -65,7 +65,7 @@ menuitem,
 
 /* hover */
 menu:not([disabled]):not([open]):hover,
-menuitem:not([disabled]):hover,
+menuitem:not([disabled]):not([_moz-menuactive]):hover,
 .autocomplete-richlistitem:not([disabled]):not([selected]):hover
 {
 	background-color: var(--arrowpanel-dimmed) !important;
@@ -73,7 +73,8 @@ menuitem:not([disabled]):hover,
 
 /* selected/open */
 menu[open],
-.autocomplete-richlistitem[selected]
+.autocomplete-richlistitem[selected],
+menuitem[_moz-menuactive]
 {
 	background-color: var(--autocomplete-popup-highlight-background) !important;
 	color: var(--autocomplete-popup-highlight-color) !important;
