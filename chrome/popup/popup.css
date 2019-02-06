@@ -50,6 +50,11 @@ menuitem,
 	color: inherit !important;
 }
 
+richlistbox
+{
+	color: inherit !important;
+}
+
 menu,
 menuitem,
 .autocomplete-richlistitem
