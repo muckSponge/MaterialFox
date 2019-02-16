@@ -64,9 +64,9 @@ menuitem,
 }
 
 /* hover */
-menu:not([disabled]):not([open]):hover,
-menuitem:not([disabled]):not([_moz-menuactive]):hover,
-.autocomplete-richlistitem:not([disabled]):not([selected]):hover
+menu:not([disabled=true]):not([open]):hover,
+menuitem:not([disabled=true]):not([_moz-menuactive]):hover,
+.autocomplete-richlistitem:not([disabled=true]):not([selected]):hover
 {
 	background-color: var(--arrowpanel-dimmed) !important;
 }
@@ -80,9 +80,9 @@ menuitem[_moz-menuactive]
 	color: var(--autocomplete-popup-highlight-color) !important;
 }
 
-menu[disabled],
-menuitem[disabled],
-.autocomplete-richlistitem[disabled]
+menu[disabled=true],
+menuitem[disabled=true],
+.autocomplete-richlistitem[disabled=true]
 {
 	opacity: .5 !important;
 }
