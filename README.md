@@ -17,8 +17,8 @@ Some steps involve accessing the about:config page. You can get there by typing 
 ### Mandatory instructions
 1. Copy the chrome folder into your Firefox profile directory. To find your profile directory, go to about:support. Alternatively, you can symlink your chrome folder instead of copying.
 2. [about:config] Set ```svg.context-properties.content.enabled``` to ```true``` (default is ```false```).
-3. Restart Firefox.
-
+3. Open "Customize" from the context menu and drag "flexable space" to the left side of the tab bar.
+4. Restart Firefox.
 ### Recommended instructions
 Add space above tab bar:
 * Right click on toolbar -> Customize.
