@@ -1,3 +1,6 @@
+toolbarspring {
+    max-width: 10px !important;
+}
 #TabsToolbar
 {
 	padding-inline-end: 2px !important;
