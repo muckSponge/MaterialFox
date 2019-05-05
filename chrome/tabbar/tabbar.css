@@ -184,38 +184,38 @@
 
 .tab-background
 {
-	-moz-context-properties: fill, fill-opacity !important;
-	background-color: transparent !important;
-	background-image:
-		-moz-image-rect(url(tab.svg), 0, 25%, 25%, 0),
-		-moz-image-rect(url(tab.svg), 0, 100%, 25%, 75%),
-		-moz-image-rect(url(tab.svg), 25%, 25%, 75%, 0),
-		-moz-image-rect(url(tab.svg), 25%, 100%, 75%, 75%),
-		-moz-image-rect(url(tab.svg), 75%, 25%, 100%, 0),
-		-moz-image-rect(url(tab.svg), 75%, 100%, 100%, 75%),
-		-moz-image-rect(url(tab.svg), 0, 75%, 100%, 25%) !important;
-	background-size:
-		16px 8px, 16px 8px,
-		16px calc(100% - 16px), 16px calc(100% - 16px),
-		16px 8px, 16px 8px,
-		calc(100% - 32px) 100% !important;
-	background-position:
-		left top, right top,
-		left 8px, right 8px,
-		left bottom, right bottom,
-		16px top !important;
-	background-repeat: no-repeat !important;
-	background-attachment: local !important;
-	margin: 0 -8px !important;
+	background: var(--toolbar-bgcolor) !important;
+	/* rounded top corners */
+	border-radius: 8px 8px 0 0 !important;
+	position: relative !important;
 	border: 0 !important;
-	transition:
-		fill .2s var(--ease-basic),
-		fill-opacity .2s var(--ease-basic) !important;
-	fill: var(--toolbar-bgcolor) !important;
-	fill-opacity: 0 !important;
-	
-	/* required due to negative margin */
-	pointer-events: none !important;
+	transition: opacity .2s var(--ease-basic) !important;
+	opacity: 0 !important;
+}
+
+/* rounded bottom corners */
+.tab-background::before,
+.tab-background::after
+{
+	content: "" !important;
+	display: -moz-box !important;
+	position: absolute !important;
+	width: 16px !important;
+	height: 16px !important;
+	bottom: 0 !important;
+	border-radius: 16px !important;
+}
+
+.tab-background::before
+{
+	left: -16px !important;
+	box-shadow: 8px 8px 0 0 var(--toolbar-bgcolor) !important;
+}
+
+.tab-background::after
+{
+	right: -16px !important;
+	box-shadow: -8px 8px 0 0 var(--toolbar-bgcolor) !important;
 }
 
 .tabbrowser-tab[visuallyselected][style*=transform] + .tabbrowser-tab[style*=transform] .tab-content::after,
@@ -229,12 +229,12 @@
 
 .tabbrowser-tab:hover .tab-background
 {
-	fill-opacity: var(--tab-hover-fill-opacity) !important;
+	opacity: var(--tab-hover-fill-opacity) !important;
 }
 
 .tabbrowser-tab[multiselected] .tab-background
 {
-	fill-opacity: var(--tab-focus-fill-opacity) !important;
+	opacity: var(--tab-focus-fill-opacity) !important;
 }
 
 .tabbrowser-tab[visuallyselected]
@@ -245,7 +245,7 @@
 .tabbrowser-tab[visuallyselected] .tab-background
 {
 	transition: none !important;
-	fill-opacity: 1 !important;
+	opacity: 1 !important;
 }
 
 .tab-throbber,
