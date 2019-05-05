@@ -104,6 +104,21 @@
 	background: 0 !important;
 }
 
+/*
+	hack: fix customization screen popping bug when changing ui density
+	icon size is enforced and it doesn't like it when the normal density
+	nav-bar height is less than 38px (it's 36px due to smaller back icon)
+*/
+:root:not([uidensity=compact]) #customization-content-container
+{
+	padding-top: 1px !important;
+}
+
+:root:not([uidensity=compact]) :-moz-any(#customization-palette-container, #customization-panel-container)
+{
+	margin-top: -1px !important;
+}
+
 .menu-iconic,
 .menuitem-iconic
 {
