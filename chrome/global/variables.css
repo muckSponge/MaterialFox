@@ -14,7 +14,8 @@
 	--toolbar-color: #606368 !important;
 	
 	/* toolbar_bottom_separator */
-	--toolbox-border-bottom-color: #b3b1b3 !important;
+	--toolbox-border-bottom-color: #b3b1b3 !important; /* legacy */
+	--chrome-content-separator-color: #b3b1b3 !important;
 	
 	/* icons */
 	--lwt-toolbarbutton-icon-fill: #606368 !important;
@@ -45,13 +46,14 @@
 	--toolbar-bgcolor: #333639 !important;
 	
 	/* toolbar_text */
-	--toolbar-color: #f1f3ee !important;
+	--toolbar-color: #fff !important;
 	
 	/* toolbar_bottom_separator */
-	--toolbox-border-bottom-color: #282828 !important;
+	--toolbox-border-bottom-color: #282828 !important; /* legacy */
+	--chrome-content-separator-color: #282828 !important;
 	
 	/* icons */
-	--lwt-toolbarbutton-icon-fill: #f2f3f3 !important;
+	--lwt-toolbarbutton-icon-fill: #fff !important;
 	
 	/* icons_attention */
 	--lwt-toolbarbutton-icon-fill-attention: #5086ec !important;
