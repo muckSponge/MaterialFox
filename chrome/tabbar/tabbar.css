@@ -423,17 +423,7 @@
 /* macOS */
 @media (-moz-mac-yosemite-theme)
 {
-	#titlebar-buttonbox-container
-	{
-		-moz-box-align: start !important;
-		margin-inline-start: 0 !important;
-		margin-block-start: 10px !important;
-	}
-	
-	:root[extradragspace] #titlebar-buttonbox-container
-	{
-		margin-block-start: 13px !important;
-	}
+
 }
 
 /* high DPI adjustments */
@@ -454,14 +444,10 @@
 	/* macOS */
 	@media (-moz-mac-yosemite-theme)
 	{
-		#titlebar-buttonbox-container
+		.titlebar-buttonbox
 		{
-			margin-block-start: 9.5px !important;
-		}
-		
-		:root[extradragspace] #titlebar-buttonbox-container
-		{
-			margin-block-start: 13.5px !important;
+			margin-top: .5px !important;
+			margin-bottom: -.5px !important;
 		}
 	}
 }
