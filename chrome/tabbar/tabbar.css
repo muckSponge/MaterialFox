@@ -30,7 +30,7 @@
 	
 	:-moz-any(.titlebar-placeholder, .titlebar-spacer)[type=pre-tabs]
 	{
-		width: 12px !important;
+		width: 4px !important;
 	}
 }
 
@@ -95,6 +95,11 @@
 	font-size: 12px !important;
 	background: 0 !important;
 	border: 0 !important;
+}
+
+.tabbrowser-tab:not([pinned])
+{
+	max-width: 240px !important;
 }
 
 /* neighbouring tabs should "pinch" together */
