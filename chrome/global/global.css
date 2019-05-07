@@ -125,6 +125,18 @@
 	fill: currentColor !important;
 }
 
+/* legacy */
+#navigator-toolbox
+{
+	border-bottom: 1px solid var(--chrome-content-separator-color, var(--toolbox-border-bottom-color)) !important;
+}
+
+/* legacy */
+#navigator-toolbox::after
+{
+	display: none !important;
+}
+
 /* high DPI adjustments */
 @media (min--moz-device-pixel-ratio: 2)
 {
