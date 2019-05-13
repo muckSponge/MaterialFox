@@ -1,27 +1,28 @@
-<svg style="transform: scaleX(-1)" stroke="context-fill" stroke-opacity="context-fill-opacity" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
 	<style>
-		.spinner
+		:root
 		{
-			animation: rotator 3s linear infinite;
+			--circumference: calc(2 * 3.1415926536 * 37.5%);
+			--max-gap: calc(var(--circumference) * .9999);
+			--min-gap: calc(var(--circumference) * .5);
+		}
+	
+		@keyframes stroke-rotate
+		{
+			0% {   stroke-dashoffset: var(--max-gap); }
+			100% { stroke-dashoffset: var(--min-gap); }
+		}
+		
+		circle
+		{
+			fill: transparent;
+			stroke: context-fill;
+			stroke-width: 12.5%;
+			stroke-dasharray: var(--circumference);
+			stroke-linecap: round;
 			transform-origin: center;
-			--pi: 3.14;
-			--radius: 6;
-			--dash: calc(2 * var(--pi) * var(--radius) * .35);
-		}
-
-		@keyframes rotator
-		{
-			0% { transform: rotate(0deg); }
-			100% { transform: rotate(360deg); }
-		}
-
-		.path
-		{
-			stroke-dasharray: var(--dash);
-			stroke-dashoffset: 0;
+			animation: stroke-rotate 1.333s cubic-bezier(.35, 0, .25,1) both;
 		}
 	</style>
-	<g class="spinner">
-		<circle class="path" fill="none" stroke-width="2" stroke-linecap="round" cx="8" cy="8" r="6"/>
-	</g>
+	<circle cx="50%" cy="50%" r="37.5%"/>
 </svg>

@@ -121,7 +121,7 @@
 {
 	#tabbrowser-tabs
 	{
-		--tab-min-width: 36px !important;
+		--tab-min-width: 32px !important;
 	}
 }
 
