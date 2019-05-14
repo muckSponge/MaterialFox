@@ -76,7 +76,7 @@
 	}
 }
 
-.arrowscrollbox-scrollbox
+#tabbrowser-tabs .arrowscrollbox-scrollbox
 {
 	padding-inline-start: 8px !important;
 	padding-inline-end: 8px !important;
@@ -472,8 +472,8 @@
 	margin-inline-start: 8px !important;
 }
 
-.arrowscrollbox-overflow-start-indicator,
-.arrowscrollbox-overflow-end-indicator
+#tabbrowser-tabs .arrowscrollbox-overflow-start-indicator,
+#tabbrowser-tabs .arrowscrollbox-overflow-end-indicator
 {
 	display: none !important;
 }
@@ -482,8 +482,8 @@
 @media (min--moz-device-pixel-ratio: 2)
 {
 	.tabbrowser-tab::before,
-	.arrowscrollbox-overflow-start-indicator,
-	.arrowscrollbox-overflow-end-indicator
+	#tabbrowser-tabs .arrowscrollbox-overflow-start-indicator,
+	#tabbrowser-tabs .arrowscrollbox-overflow-end-indicator
 	{
 		transform: translateY(.5px) !important;
 	}
