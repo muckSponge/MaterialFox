@@ -72,6 +72,24 @@
 	list-style-image: url(profile.svg) !important;
 }
 
+:root[privatebrowsingmode] #fxa-avatar-image
+{
+	list-style-image: url(incognito.svg) !important;
+}
+
+:root[privatebrowsingmode] #fxa-toolbar-menu-button
+{
+	pointer-events: none !important;
+}
+
+:root[privatebrowsingmode] #fxa-toolbar-menu-button::before
+{
+	content: "Private" !important;
+	display: -moz-box !important;
+	margin-inline-start: 12px !important;
+	margin-inline-end: 6px !important;
+}
+
 #nav-bar-customization-target
 {
 	overflow: visible !important;
@@ -414,23 +432,6 @@
     list-style-image: url(go.svg) !important;
 }
 
-/* incognito icon */
-:root[privatebrowsingmode] #nav-bar::after
-{
-	content: "" !important;
-	background-image: url(incognito.svg) !important;
-	background-position: center !important;
-	background-repeat: no-repeat !important;
-	-moz-context-properties: fill, fill-opacity !important;
-	display: -moz-box !important;
-	fill: currentColor !important;
-	color: inherit !important;
-	width: var(--button-size) !important;
-	height: var(--button-size) !important;
-}
-
-/* replaces sync-button if present */
-:root[privatebrowsingmode] #navigator-toolbox #sync-button,
 .private-browsing-indicator
 {
 	display: none !important;
