@@ -82,7 +82,8 @@
 	pointer-events: none !important;
 }
 
-:root[privatebrowsingmode] #fxa-toolbar-menu-button::before
+/* show "Private" label for en languages only */
+:root[titlemodifier="(Private Browsing)"] #fxa-toolbar-menu-button::before
 {
 	content: "Private" !important;
 	display: -moz-box !important;
