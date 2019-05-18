@@ -127,8 +127,8 @@
 
 :root
 {	
-	--tab-hover-fill-opacity: .1 !important;
-	--tab-focus-fill-opacity: .2 !important;
+	--tab-hover-fill-opacity: .6 !important;
+	--tab-focus-fill-opacity: .8 !important;
 	--tab-separator-opacity: .35 !important;
 	
 	--toolbar-field-background-color: hsl(200, 12%, 95%) !important;
@@ -152,12 +152,6 @@
 
 @media (-moz-mac-yosemite-theme)
 {
-	:root
-	{
-		--tab-hover-fill-opacity: .6 !important;
-		--tab-focus-fill-opacity: .8 !important;
-	}
-	
 	:root[extradragspace]
 	{
 		--space-above-tabbar: 8px !important;
@@ -172,6 +166,12 @@
 		--toolbar-bgcolor: -moz-dialog !important;
 		--toolbar-color: -moz-dialogtext !important;
 	}
+}
+
+:root:-moz-lwtheme-brighttext
+{
+	--tab-hover-fill-opacity: .1 !important;
+	--tab-focus-fill-opacity: .2 !important;
 }
 
 :root:-moz-lwtheme-darktext
