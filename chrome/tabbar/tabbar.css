@@ -96,42 +96,12 @@
 	font-size: 12px !important;
 	background: 0 !important;
 	border: 0 !important;
-	opacity: 1 !important;
-	transition:
-		min-width .2s cubic-bezier(.4, 0, .2, 1),
-		max-width .2s cubic-bezier(.4, 0, .2, 1),
-		opacity .1s linear !important;
 }
 
 /* regular */
 .tabbrowser-tab[fadein]:not([pinned])
 {
 	max-width: 240px !important;
-/* 	transition-duration: .2s, .2s, .1s !important; */
-}
-
-/* collapsing */
-.tabbrowser-tab:not([fadein]):not([pinned])
-{
-	display: -moz-box !important;
-	visibility: visible !important;
-	opacity: 0 !important;
-	pointer-events: none !important;
-}
-
-/* show label while collapsing */
-.tab-label:not([fadein]):not([pinned])
-{
-	display: -moz-box !important;
-}
-
-/* show tab contents while collapsing */
-.tab-icon-pending:not([fadein]),
-.tab-icon-image:not([fadein]),
-.tab-close-button:not([fadein]),
-.tab-background:not([fadein])
-{
-	visibility: visible !important;
 }
 
 /* neighbouring tabs should "pinch" together */
