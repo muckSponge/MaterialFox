@@ -2,11 +2,11 @@
 	<style>
 		:root
 		{
-			--circumference: calc(2 * 3.1415926536 * 37.5%);
-			--max-gap: calc(var(--circumference) * .9999);
-			--min-gap: calc(var(--circumference) * .25);
+			--radius: 37.5;
+			--max-gap: calc(var(--radius) * .99);
+			--min-gap: calc(var(--radius) * .25);
 		}
-		
+
 		@keyframes stroke-rotate
 		{
 			0% {			  stroke-dashoffset: var(--max-gap);		 }
@@ -31,9 +31,9 @@
 		circle
 		{
 			fill: transparent;
+			stroke-dasharray: var(--radius);
 			stroke: context-fill;
 			stroke-width: 12.5%;
-			stroke-dasharray: var(--circumference);
 			stroke-linecap: round;
 			transform-origin: center;
 			animation: stroke-rotate calc(1.333s * 4) cubic-bezier(.35, 0, .25, 1) infinite both;
