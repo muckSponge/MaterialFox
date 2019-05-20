@@ -116,7 +116,6 @@
 	font-size: 14px !important;
 	border-radius: 99px !important;
 	background-color: var(--toolbar-field-background-color) !important;
-	color: inherit !important;
 	border: 0 !important;
 	box-shadow: none !important;
 	margin: 1px !important;
@@ -125,6 +124,12 @@
 	min-height: 28px !important;
 	transition: background-color .1s var(--ease-basic) !important;
 	-moz-box-align: center !important;
+}
+
+#urlbar:not(:-moz-lwtheme),
+#searchbar:not(:-moz-lwtheme)
+{
+	color: inherit !important;
 }
 
 #urlbar:hover,
