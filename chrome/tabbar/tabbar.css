@@ -82,8 +82,8 @@
 	padding-inline-end: 8px !important;
 }
 
-/* vertically center buttons in tab scroll area */
-#tabbrowser-tabs :-moz-any(.toolbarbutton-1, .scrollbutton-up, .scrollbutton-down)
+/* vertically center buttons in tab bar */
+#TabsToolbar :-moz-any(.toolbarbutton-1, .scrollbutton-up, .scrollbutton-down)
 {
 	margin-top: calc((var(--tab-min-height) - var(--button-size)) / 2) !important;
 	margin-bottom: calc((var(--tab-min-height) - var(--button-size)) / 2) !important;

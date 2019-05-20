@@ -79,7 +79,7 @@
 	background-clip: padding-box !important;
 }
 
-#navigator-toolbox :-moz-any(.toolbarbutton-1, scrollbutton-up, .scrollbutton-down)
+#navigator-toolbox :-moz-any(.toolbarbutton-1, .scrollbutton-up, .scrollbutton-down)
 {
 	max-height: 32px !important;
 	height: 32px !important;
