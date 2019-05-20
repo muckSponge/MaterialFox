@@ -28,6 +28,8 @@
 	
 	/* button_background_active */
 	--lwt-toolbarbutton-active-background: rgba(0, 0, 0, .11) !important;
+	
+	--lwt-toolbar-field-color: #606368 !important;
 }
 
 /* don't bother with sidebar in light mode */
@@ -63,6 +65,8 @@
 	
 	/* button_background_active */
 	--lwt-toolbarbutton-active-background: #4e5153 !important;
+	
+	--lwt-toolbar-field-color: #fff !important;
 	
 	/* popup */
 	--arrowpanel-background: #373737 !important;
@@ -127,8 +131,6 @@
 
 :root
 {	
-	--tab-hover-fill-opacity: .6 !important;
-	--tab-focus-fill-opacity: .8 !important;
 	--tab-separator-opacity: .35 !important;
 	
 	--toolbar-field-background-color: hsl(200, 12%, 95%) !important;
@@ -166,18 +168,6 @@
 		--toolbar-bgcolor: -moz-dialog !important;
 		--toolbar-color: -moz-dialogtext !important;
 	}
-}
-
-:root:-moz-lwtheme-brighttext
-{
-	--tab-hover-fill-opacity: .1 !important;
-	--tab-focus-fill-opacity: .2 !important;
-}
-
-:root:-moz-lwtheme-darktext
-{
-	--tab-hover-fill-opacity: .6 !important;
-	--tab-focus-fill-opacity: .8 !important;
 }
 
 :root:-moz-lwtheme-darktext,
