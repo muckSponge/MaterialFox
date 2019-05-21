@@ -375,12 +375,28 @@
 	transition-duration: 0 !important;
 }
 
+#star-button-box
+{
+	-moz-box-ordinal-group: 98 !important;
+}
+
 #pageActionButton
 {
 	list-style-image: url(menu.svg) !important;
+	-moz-box-ordinal-group: 99 !important;
 }
 
-.urlbar-page-action:not(#star-button-box)
+.urlbar-page-action:-moz-any(
+	#reader-mode-button,
+	#pageActionButton,
+	#pocket-button-box,
+	#pageAction-urlbar-screenshots_mozilla_org,
+	#pageAction-urlbar-sendToDevice,
+	#pageAction-urlbar-emailLink,
+	#pageAction-urlbar-copyURL,
+	#pageAction-urlbar-shareURL,
+	#pageAction-urlbar-addSearchEngine
+)
 {
 	transition:
 		background-color .2s var(--ease-basic),
@@ -392,8 +408,28 @@
 	margin-inline-start: -32px !important;
 }
 
-#urlbar:hover .urlbar-page-action:not(#star-button-box),
-.urlbar-page-action:not(#star-button-box):-moz-any(:hover, [open], [readeractive])
+#urlbar:hover .urlbar-page-action:-moz-any(
+	#reader-mode-button,
+	#pageActionButton,
+	#pocket-button-box,
+	#pageAction-urlbar-screenshots_mozilla_org,
+	#pageAction-urlbar-sendToDevice,
+	#pageAction-urlbar-emailLink,
+	#pageAction-urlbar-copyURL,
+	#pageAction-urlbar-shareURL,
+	#pageAction-urlbar-addSearchEngine
+),
+.urlbar-page-action:-moz-any(
+	#reader-mode-button,
+	#pageActionButton,
+	#pocket-button-box,
+	#pageAction-urlbar-screenshots_mozilla_org,
+	#pageAction-urlbar-sendToDevice,
+	#pageAction-urlbar-emailLink,
+	#pageAction-urlbar-copyURL,
+	#pageAction-urlbar-shareURL,
+	#pageAction-urlbar-addSearchEngine
+):-moz-any(:hover, [open], [readeractive])
 {
 	transition:
 		background-color .2s var(--ease-basic),
