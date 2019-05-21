@@ -24,9 +24,9 @@ Add space above tab bar:
 * Right click on toolbar -> Customize.
 * Check Drag Space checkbox.
 
-Emulate Chrome's profile switcher button:
+Emulate Chrome's profile switcher button (Firefox 67+ only):
 * Right click on toolbar -> Customize.
-* Drag Synced Tabs to the toolbar.
+* Drag Firefox Account to the toolbar.
 
 Replicate Chrome behaviour for clipped tabs:
 * [about:config] Set ```browser.tabs.tabClipWidth``` to ```83``` (default is ```144```).
@@ -38,6 +38,6 @@ Replicate Chrome's "Not Secure" on HTTP:
 * [about:config] Set ```security.insecure_connection_text.enabled``` to ```true```.
 
 ## Please note
-* Linux is not frequently tested; last tested on 07/09/2018.
-* Some customisation settings may no longer work (such as compact density).
+* Linux is not frequently tested; last tested on 21/05/2019.
+* Some customisation settings may no longer work (such as compact/touch density).
 * Some custom themes may clash with address bar.
