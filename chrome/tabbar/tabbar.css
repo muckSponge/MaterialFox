@@ -177,11 +177,12 @@
 {
 	--tab-opacity: 0;
 	--tab-bgcolor: #000;
+	--tab-transition-duration: .2s;
 }
-
 
 #TabsToolbar[brighttext] .tabbrowser-tab
 {
+	--tab-opacity: 0;
 	--tab-bgcolor: #fff;
 }
 
@@ -197,9 +198,9 @@
 	--tab-opacity: .06;
 }
 
-.tabbrowser-tab[visuallyselected]
+#TabsToolbar .tabbrowser-tab[visuallyselected]
 {
-	--tab-bgcolor: var(--toolbar-bgcolor) !important;
+	--tab-bgcolor: var(--toolbar-bgcolor);
 	--tab-opacity: 1;
 }
 
@@ -210,7 +211,9 @@
 	border-radius: 8px 8px 0 0 !important;
 	position: relative !important;
 	border: 0 !important;
-	transition: opacity .2s var(--ease-basic) !important;
+	transition:
+		opacity var(--tab-transition-duration) var(--ease-basic),
+		background-color 0s var(--tab-transition-duration) var(--ease-basic) !important;
 	opacity: var(--tab-opacity) !important;
 	visibility: visible !important;
 }
@@ -226,6 +229,7 @@
 	height: 8px !important;
 	bottom: 0 !important;
 	pointer-events: none !important;
+	transition: box-shadow 0s var(--tab-transition-duration) var(--ease-basic) !important;
 }
 
 .tab-background::before
@@ -258,9 +262,9 @@
 	opacity: 0 !important;
 }
 
-.tabbrowser-tab[visuallyselected] .tab-background
+.tabbrowser-tab[visuallyselected]
 {
-	transition: none !important;
+	--tab-transition-duration: 0s;
 }
 
 .tab-throbber,
@@ -271,7 +275,7 @@
 
 .tab-icon-image
 {
-	margin: 0 !Important;
+	margin: 0 !important;
 }
 
 /* hide new tab favicon */
