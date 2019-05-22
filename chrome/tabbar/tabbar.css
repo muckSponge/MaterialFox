@@ -99,7 +99,7 @@
 }
 
 /* regular */
-.tabbrowser-tab[fadein]:not([pinned])
+.tabbrowser-tab[fadein]:not([pinned]):not([style*="max-width"])
 {
 	max-width: 240px !important;
 }
