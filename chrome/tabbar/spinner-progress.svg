@@ -2,7 +2,7 @@
 	<style>
 		:root
 		{
-			--radius: 37.5;
+			--radius: calc(2 * 3.1415926536 * 37.5%);
 			--max-gap: calc(var(--radius) * .99);
 			--min-gap: calc(var(--radius) * .25);
 		}
