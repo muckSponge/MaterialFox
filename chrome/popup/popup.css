@@ -1,381 +1,108 @@
 menupopup,
-panel[type="autocomplete-richlistbox"]
+menupopup menuitem,
+menupopup menu,
+menupopup menuseparator
 {
 	-moz-appearance: none !important;
+}
+
+menupopup
+{
+	-moz-window-shadow: none !important;
 	background: 0 !important;
-	border: 0 !important;
 	color: var(--arrowpanel-color) !important;
-	position: relative !important;
+	margin-left: -14px !important;
+	margin-top: -19px !important;
 }
 
-.popup-internal-box,
-.panel-arrowcontent,
-.autocomplete-richlistbox,
-#PopupSearchAutoComplete
+.popup-internal-box
 {
-	background: var(--arrowpanel-background) !important;
-	border-radius: 8px !important;
+	margin: 11px 14px 18px !important;
 	padding: 8px 0 !important;
-	margin: 0 !important;
-}
-
-/* dark themes get a contrasty border */
-.popup-internal-box:-moz-lwtheme-brighttext,
-.panel-arrowcontent:-moz-lwtheme-brighttext,
-#PopupSearchAutoComplete:-moz-lwtheme-brighttext
-{
+	background: var(--arrowpanel-background) !important;
+	border-radius: 4px !important;
 	box-shadow:
-		0 0 0 .5px #000 inset,
-		0 0 0 1.5px var(--arrowpanel-border-color) inset !important;
+		0 5px 5px -3px rgba(0,0,0,.2),
+		0 8px 10px 1px rgba(0,0,0,.14),
+		0 3px 14px 2px rgba(0,0,0,.12) !important;
 }
 
-.panel-arrowbox
+menupopup menuseparator
 {
-	display: none !important;
+	margin: 8px 0 !important;
+	padding: 0 !important;
+	height: 1px !important;
+	background: currentColor !important;
+	opacity: .12 !important;
 }
 
-.PanelUI-subView
+menupopup menuitem,
+menupopup menu
 {
-	background: none !important;
-}
-
-menu,
-menuitem,
-.autocomplete-richlistitem,
-.popup-internal-box > .scrollbutton-up,
-.popup-internal-box > .scrollbutton-down
-{
-	background: 0 !important;
-	-moz-appearance: none !important;
-	color: inherit !important;
-}
-
-richlistbox,
-.ac-title
-{
-	color: inherit !important;
-}
-
-menu,
-menuitem,
-.autocomplete-richlistitem
-{
-	padding: 0 24px 0 !important;
-	min-height: 28px !important;
+	height: 32px !important;
+	padding: 0 16px !important;
 	border: 0 !important;
+	background: 0 !important;
 }
 
-/* hover */
-menu:not([disabled=true]):not([open]):hover,
-menuitem:not([disabled=true]):not([_moz-menuactive]):hover,
-.autocomplete-richlistitem:not([disabled=true]):not([selected]):hover
+menupopup menuitem:hover:not([disabled=true]),
+menupopup menu:hover:not([disabled=true])
 {
 	background-color: var(--arrowpanel-dimmed) !important;
 }
 
-/* selected/open */
-menu[open],
-.autocomplete-richlistitem[selected],
-menuitem[_moz-menuactive]
+menupopup menuitem:hover:active:not([disabled=true]),
+menupopup menu:hover:active:not([disabled=true])
 {
-	background-color: var(--autocomplete-popup-highlight-background) !important;
-	color: var(--autocomplete-popup-highlight-color) !important;
+	background-color: var(--arrowpanel-dimmed-further) !important;
 }
 
-menu[disabled=true],
-menuitem[disabled=true],
-.autocomplete-richlistitem[disabled=true]
+.menu-iconic-icon
 {
-	opacity: .5 !important;
-}
-
-menuseparator
-{
-	-moz-appearance: none !important;
-	background: currentColor !important;
-	opacity: .1 !important;
-	border: 0 !important;
-	padding: 0 !important;
-	height: 1px !important;
-	margin: 5px 0 !important;
-}
-
-.menu-iconic-icon,
-.menu-right,
-.ac-site-icon,
-.ac-type-icon
-{
-	fill: currentColor !important;
-	-moz-context-properties: fill, stroke, fill-opacity, stroke-opacity !important;
-}
-
-.menu-iconic-icon,
-.ac-type-icon,
-.ac-site-icon
-{
-	margin-inline-start: 0 !important;
-	margin-inline-end: 8px !important;
+	-moz-context-properties: fill !important;
+	margin-inline-end: 16px !important;
+	width: 24px !important;
+	height: 24px !important;
+	padding: 4px !important;
 }
 
 .menu-right
 {
 	-moz-appearance: none !important;
-	list-style-image: url(menu-right-1x.svg) !important;
+	-moz-context-properties: fill !important;
+	fill: currentColor !important;
+	list-style-image: url(menu-right-2x.svg) !important;
+	margin-inline-end: 0 !important;
+	margin-inline-start: 16px !important;
 }
 
-#context-navigation
+#context-navigation .menuitem-iconic
 {
-	padding: 0 8px 3px !important;
 	background: 0 !important;
+	padding: 0 !important;
+	margin: 0 !important;
 }
 
-/* could perhaps make this more generalised */
-#context-navigation > .menuitem-iconic
+#context-navigation .menu-iconic-left
 {
-	padding: 0 !important;
-	border-radius: 99px !important;
+	border-radius: 50% !important;
+	padding: 8px !important;
 }
 
 #context-navigation .menu-iconic-icon
 {
-	margin: 0 !important;
-}
-
-#context-back,
-#context-forward
-{
-	list-style-image: url(../navbar/arrow-back-1x.svg) !important;
-}
-
-#context-forward
-{
-	transform: scaleX(-1) !important;
-}
-
-#context-reload
-{
-	list-style-image: url(../navbar/refresh-1x.svg) !important;
-}
-
-#context-bookmarkpage
-{
-	list-style-image: url(../navbar/star-1x.svg) !important;
-}
-
-#context-bookmarkpage:not([starred]) .menu-iconic-icon
-{
-	fill-opacity: 0 !important;
-}
-
-:not(menulist) > menupopup > menuitem:-moz-any([type=checkbox], [type=radio])
-{
-	list-style-image: url(checkbox-empty.svg) !important;
-}
-
-:not(menulist) > menupopup > menuitem:-moz-any([type=checkbox], [type=radio]):-moz-any([checked=true], [selected=true])
-{
-	list-style-image: url(checkbox-checked.svg) !important;
-}
-
-/* unset fill-opacity for menus nested in buttons */
-.bookmark-item > menupopup, .toolbarbutton-1 > menupopup
-{
-	fill-opacity: initial !important;
-}
-
-.search-panel-tree
-{
-	background: 0 !important;
-	border-radius: 0 !important;
-	box-shadow: 0 !important;
 	padding: 0 !important;
+	margin: 0 !important;
+	width: 16px !important;
+	height: 16px !important;
 }
 
-.search-panel-current-engine,
-#searchbar-anon-search-settings,
-.addengine-item
+#context-navigation .menuitem-iconic:hover:not([disabled]) .menu-iconic-left
 {
-	padding: 0 24px 0 !important;
-	min-height: 28px !important;
-	border-radius: 0 !important;
-	border: 0 !important;
-	font-size: inherit !important;
-	text-align: start !important;
+	background-color: var(--arrowpanel-dimmed) !important;
 }
 
-.search-panel-current-engine
+#context-navigation .menuitem-iconic:hover:active:not([disabled]) .menu-iconic-left
 {
-	-moz-box-ordinal-group: 0 !important;
-}
-
-/* a sneaky separator */
-#PopupSearchAutoComplete::before
-{
-	-moz-box-ordinal-group: 1 !important;
-}
-
-.searchbar-engine-image
-{
-	margin-inline-end: 2px !important;
-}
-
-.search-panel-one-offs-header
-{
-	display: none !important;
-}
-
-.search-panel-one-offs,
-#searchbar-anon-search-settings
-{
-	border: 0 !important;
-}
-
-/* separators */
-#PopupSearchAutoComplete::before,
-.search-panel-one-offs::before,
-.search-panel-one-offs::after
-{
-	content: "" !important;
-	display: -moz-box !important;
-	height: 1px !important;
-	width: 100% !important;
-	background: currentColor !important;
-	opacity: .1 !important;
-	margin: 4px 0 !important;
-}
-
-.searchbar-engine-one-off-item
-{
-	border: 0 !important;
-	background: 0 !important;
-}
-
-.searchbar-engine-one-off-item .button-box
-{
-	border-radius: 99px !important;
-	margin: 2px 0 !important;
-}
-
-.searchbar-engine-one-off-item:first-of-type .button-box,
-.searchbar-engine-one-off-item.last-of-row + .searchbar-engine-one-off-item .button-box
-{
-	margin-inline-start: 4px !important;
-}
-
-.searchbar-engine-one-off-item.last-of-row .button-box
-{
-	margin-inline-end: 4px !important;
-}
-
-/* unfortunately these don't support focus */
-.searchbar-engine-one-off-item:hover .button-box,
-#searchbar-anon-search-settings:hover,
-.search-panel-current-engine:hover,
-.addengine-item:hover
-{
-	background-color: var(--autocomplete-popup-highlight-background) !important;
-}
-
-.searchbar-engine-one-off-item.dummy
-{
-	display: none !important;
-}
-
-.search-panel-tree .ac-type-icon[type="null"]
-{
-	display: none !important;
-}
-
-.search-add-engines
-{
-	background: 0 !important;
-}
-
-/* windows-specific tweaks */
-@media (-moz-windows-compositor)
-{
-	menupopup
-	{
-		padding: 6px 12px 24px !important;
-		margin: -6px -12px -24px !important;
-	}
-	
-	.popup-internal-box
-	{
-		box-shadow:
-			0 0 6px rgba(0, 0, 0, .08),
-			0 12px 12px rgba(0, 0, 0, .125) !important;
-	}
-	
-	/*
-		panels are magically positioned and cropped, which means
-		we can't use margins to compensate for box-shadow, so we
-		reduce the shadow size so the padded offset is tolerable
-	*/
-	panel[type="arrow"]
-	{
-		/* must pad because overflow: visible doesn't work */
-		padding: 3px 3px 7px !important;
-	}
-	
-	.panel-arrowcontent
-	{
-		border: 0 !important;
-		box-shadow:
-			0 0 3px rgba(0, 0, 0, .17),
-			0 4px 3px rgba(0, 0, 0, .1) !important;
-	}
-	
-	/* dark themes get a contrasty border */
-	.popup-internal-box:-moz-lwtheme-brighttext
-	{
-		box-shadow:
-		    0 0 0 .5px #000 inset,
-		    0 0 0 1.5px var(--arrowpanel-border-color) inset,
-		    0 0 6px rgba(0, 0, 0, .08),
-		    0 12px 12px rgba(0, 0, 0, .125) !important;
-	}
-	
-	.panel-arrowcontent:-moz-lwtheme-brighttext
-	{
-		box-shadow:
-		    0 0 0 .5px #000 inset,
-		    0 0 0 1.5px var(--arrowpanel-border-color) inset,
-		    0 0 3px rgba(0, 0, 0, .17),
-		    0 4px 13px rgba(0, 0, 0, .1) !important;
-	}
-	
-	/*
-    	padding refuses to override so we'll cheat and use
-    	negative margin to counter it
-	*/
-	.menu-text
-	{
-		margin-inline-start: -1.45em !important;
-	}
-}
-
-/* high DPI adjustments */
-@media (min--moz-device-pixel-ratio: 2)
-{
-	.menu-right
-	{
-		list-style-image: url(menu-right-2x.svg) !important;
-	}
-	
-	#context-back,
-	#context-forward
-	{
-		list-style-image: url(../navbar/arrow-back-2x.svg) !important;
-	}
-	
-	#context-reload
-	{
-		list-style-image: url(../navbar/refresh-2x.svg) !important;
-	}
-	
-	#context-bookmarkpage
-	{
-		list-style-image: url(../navbar/star-2x.svg) !important;
-	}
+	background-color: var(--arrowpanel-dimmed-further) !important;
 }

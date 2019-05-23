@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <defs>
+        <style>
+            .cls-1 { filter: url(#filter); }
+        </style>
+        <filter id="filter" x="0" y="0" width="17" height="17" filterUnits="userSpaceOnUse">
+            <feOffset result="offset" dy="1" in="SourceAlpha"/>
+            <feGaussianBlur result="blur" stdDeviation="2"/>
+            <feFlood result="flood" flood-opacity="0.3"/>
+            <feComposite result="composite" operator="in" in2="blur"/>
+            <feBlend result="blend" in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <rect fill="context-fill"
+          fill-opacity="context-fill-opacity"
+          class="cls-1"
+          x="3.5" y="2.5"
+          width="9" height="9"
+          rx="4" ry="4"/>
+</svg>
