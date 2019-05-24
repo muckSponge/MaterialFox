@@ -100,14 +100,16 @@
 
 #fxa-avatar-image
 {
-	border-radius: 0 !important;
-	list-style-image: url(profile-inactive.svg) !important;
-	
 	/* icon should be 20px, but we don't want to affect button size */
 	transform: scale(1.25) !important;
 }
 
-:root[fxastatus=signedin] #fxa-avatar-image
+:root:not([fxastatus=signedin]) #fxa-avatar-image
+{
+	list-style-image: url(profile-inactive.svg) !important;
+}
+
+:root[fxastatus=signedin]:not([style*="--avatar-image-url"]) #fxa-avatar-image
 {
 	list-style-image: url(profile.svg) !important;
 }
