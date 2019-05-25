@@ -102,6 +102,7 @@
 {
 	/* icon should be 20px, but we don't want to affect button size */
 	transform: scale(1.25) !important;
+	border-radius: 50% !important;
 }
 
 :root:not([fxastatus=signedin]) #fxa-avatar-image
