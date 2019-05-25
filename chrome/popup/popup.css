@@ -178,7 +178,7 @@ menuseparator
 }
 
 /* unset fill-opacity for menus nested in buttons */
-.bookmark-item > menupopup
+.bookmark-item > menupopup, .toolbarbutton-1 > menupopup
 {
 	fill-opacity: initial !important;
 }
