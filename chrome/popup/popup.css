@@ -43,11 +43,13 @@ menupopup menu
 	padding: 0 16px !important;
 	border: 0 !important;
 	background: 0 !important;
+	color: inherit !important;
 }
 
 menupopup menuitem:hover:not([disabled=true]),
 menupopup menu:hover:not([disabled=true])
 {
+	
 	background-color: var(--arrowpanel-dimmed) !important;
 }
 
@@ -57,9 +59,16 @@ menupopup menu:hover:active:not([disabled=true])
 	background-color: var(--arrowpanel-dimmed-further) !important;
 }
 
+menupopup menuitem[disabled=true],
+menupopup menu[disabled=true]
+{
+	opacity: .5 !important;
+}
+
 .menu-iconic-icon
 {
-	-moz-context-properties: fill !important;
+	fill: inherit !important;
+	-moz-context-properties: fill, fill-opacity, stroke, stroke-opacity !important;
 	margin-inline-end: 16px !important;
 	width: 24px !important;
 	height: 24px !important;
@@ -74,6 +83,13 @@ menupopup menu:hover:active:not([disabled=true])
 	list-style-image: url(menu-right-2x.svg) !important;
 	margin-inline-end: 0 !important;
 	margin-inline-start: 16px !important;
+}
+
+menuitem[checked=true] .menu-iconic-icon
+{
+	/* checkmark is 18px, not 16px, hence reduced padding */
+	list-style-image: url(checkmark-18dp.svg) !important;
+	padding: 3px !important;
 }
 
 #context-navigation .menuitem-iconic

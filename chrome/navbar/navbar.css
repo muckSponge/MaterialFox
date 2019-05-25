@@ -11,7 +11,9 @@
 	opacity: 1 !important;
 }
 
-.toolbarbutton-1:-moz-any(#back-button, #forward-button)
+.toolbarbutton-1:-moz-any(#back-button, #forward-button),
+#context-back,
+#context-forward
 {
 	list-style-image: url(arrow-back-1x.svg) !important;
 }
@@ -38,7 +40,8 @@
 	display: none !important;
 }
 
-#reload-button
+#reload-button,
+#context-reload
 {
 	list-style-image: url(refresh-1x.svg) !important;
 }
@@ -48,7 +51,8 @@
 	list-style-image: url(stop-1x.svg) !important;
 }
 
-.toolbarbutton-1#forward-button
+.toolbarbutton-1#forward-button,
+#context-forward
 {
 	transform: scaleX(-1) !important;
 }
@@ -56,6 +60,20 @@
 #home-button
 {
 	list-style-image: url(home-1x.svg) !important;
+}
+
+#star-button,
+#context-bookmarkpage
+{
+	list-style-image: url(star-1x.svg) !important;
+	fill-opacity: 0 !important;
+}
+
+#star-button[starred],
+#context-bookmarkpage[starred]
+{
+	fill: var(--toolbarbutton-icon-fill-attention) !important;
+	fill-opacity: 1 !important;
 }
 
 #bookmarks-menu-button
@@ -488,18 +506,6 @@
 	margin-inline-start: 6px !important;
 }
 
-#star-button
-{
-	list-style-image: url(star-1x.svg) !important;
-	fill-opacity: 0 !important;
-}
-
-#star-button[starred]
-{
-	fill: var(--toolbarbutton-icon-fill-attention) !important;
-	fill-opacity: 1 !important;
-}
-
 #star-button-animatable-box
 {
 	display: none !important;
@@ -609,7 +615,9 @@
 /* high DPI adjustments */
 @media (min--moz-device-pixel-ratio: 2)
 {
-	.toolbarbutton-1:-moz-any(#back-button, #forward-button)
+	.toolbarbutton-1:-moz-any(#back-button, #forward-button),
+	#context-back,
+	#context-forward
 	{
 		list-style-image: url(arrow-back-2x.svg) !important;
 	}
@@ -624,7 +632,8 @@
 		list-style-image: url(stop-2x.svg) !important;
 	}
 
-	#reload-button
+	#reload-button,
+	#context-reload
 	{
 		list-style-image: url(refresh-2x.svg) !important;
 	}
@@ -634,14 +643,10 @@
 		list-style-image: url(home-2x.svg) !important;
 	}
 
-	#star-button
+	#star-button,
+	#context-bookmarkpage
 	{
 		list-style-image: url(star-2x.svg) !important;
-	}
-	
-	#bookmarks-menu-button
-	{
-		list-style-image: url(bookmark.svg) !important;
 	}
 	
 	#bookmarks-menu-button .toolbarbutton-icon
