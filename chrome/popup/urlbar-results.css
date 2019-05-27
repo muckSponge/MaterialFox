@@ -1,0 +1,89 @@
+#urlbar-results
+{
+	-moz-window-shadow: none !important;
+	background: 0 !important;
+	margin-top: 0 !important;
+}
+
+.urlbarView-body-outer,
+.search-one-offs
+{
+	margin: 0 !important;
+	margin-inline-start: calc(var(--item-padding-start) - 11px) !important;
+	margin-inline-end: calc(var(--item-padding-end) - 10px) !important;
+	background: var(--arrowpanel-background) !important;
+	box-shadow:
+		0 5px 5px -3px rgba(0,0,0,.2),
+		0 8px 10px 1px rgba(0,0,0,.14),
+		0 3px 14px 2px rgba(0,0,0,.12) !important;
+	color: inherit !important;
+}
+
+.search-one-offs
+{
+	border-radius: 0 0 8px 8px !important;
+	margin-bottom: 18px !important;
+}
+
+#urlbarView-results
+{
+	padding: 0 !important;
+}
+
+.urlbarView-row
+{
+	padding: 0 16px  !important;
+	height: 32px !important;
+	border-radius: 0 !important;
+}
+
+.urlbarView-row-inner
+{
+	height: 100% !important;
+	align-items: center !important;
+}
+
+.urlbarView-favicon
+{
+	margin-inline-end: 16px !important;
+}
+
+.urlbarView-title-separator
+{
+	flex: 1 !important;
+}
+
+.urlbarView-title-separator::before
+{
+	display: none !important;
+}
+
+.urlbarView-type-icon
+{
+	order: 1 !important;
+	margin-inline-start: 16px !important;
+	margin-inline-end: 0 !important;
+}
+
+.search-panel-one-offs
+{
+	padding: 4px !important;
+	display: -moz-box !important;
+	width: 100% !important;
+}
+
+.searchbar-engine-one-off-item
+{
+	min-width: 32px !important;
+	max-width: 32px !important;
+	height: 32px !important;
+	border-radius: 16px !important;
+	margin: 4px !important;
+	background-image: none !important;
+	color: inherit !important;
+}
+
+.searchbar-engine-one-off-item.dummy
+{
+	display: none !important;
+}

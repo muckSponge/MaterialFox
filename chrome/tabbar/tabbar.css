@@ -441,14 +441,6 @@
 	margin-inline-start: 6px !important;
 }
 
-.tabs-newtab-button,
-#new-tab-button,
-/* Simple New Tab Button */
-#TabsToolbar #_42b6f73f-e197-466e-9059-bd40982e88ce_-browser-action
-{
-	list-style-image: url(new-tab.svg) !important;
-}
-
 #tabbrowser-tabs[overflow] .arrowscrollbox-scrollbox
 {
 	border-radius: 8px 8px 0 0 !important;

@@ -6,18 +6,22 @@ menupopup menuseparator
 	-moz-appearance: none !important;
 }
 
-menupopup
+menupopup,
+panel[type="autocomplete-richlistbox"]
 {
 	-moz-window-shadow: none !important;
 	background: 0 !important;
 	color: var(--arrowpanel-color) !important;
 	margin-left: -14px !important;
 	margin-top: -19px !important;
+	padding: 11px 14px 18px !important;
+	box-sizing: content-box !important;
 }
 
-.popup-internal-box
+.popup-internal-box,
+.autocomplete-richlistbox
 {
-	margin: 11px 14px 18px !important;
+	margin: 0 !important;
 	padding: 8px 0 !important;
 	background: var(--arrowpanel-background) !important;
 	border-radius: 4px !important;
@@ -25,6 +29,7 @@ menupopup
 		0 5px 5px -3px rgba(0,0,0,.2),
 		0 8px 10px 1px rgba(0,0,0,.14),
 		0 3px 14px 2px rgba(0,0,0,.12) !important;
+	color: inherit !important;
 }
 
 menupopup menuseparator
@@ -37,37 +42,55 @@ menupopup menuseparator
 }
 
 menupopup menuitem,
-menupopup menu
+menupopup menu,
+.autocomplete-richlistitem
 {
 	height: 32px !important;
 	padding: 0 16px !important;
 	border: 0 !important;
 	background: 0 !important;
 	color: inherit !important;
+	fill-opacity: initial !important;
 }
 
 menupopup menuitem:hover:not([disabled=true]),
-menupopup menu:hover:not([disabled=true])
+menupopup menu:hover:not([disabled=true]),
+.autocomplete-richlistitem:hover:not([disabled=true]):not([selected=true])
 {
-	
 	background-color: var(--arrowpanel-dimmed) !important;
 }
 
 menupopup menuitem:hover:active:not([disabled=true]),
-menupopup menu:hover:active:not([disabled=true])
+menupopup menu:hover:active:not([disabled=true]),
+.autocomplete-richlistitem:hover:active:not([disabled=true]),
+.autocomplete-richlistitem[selected=true]
 {
 	background-color: var(--arrowpanel-dimmed-further) !important;
 }
 
 menupopup menuitem[disabled=true],
-menupopup menu[disabled=true]
+menupopup menu[disabled=true],
+.autocomplete-richlistitem[disabled=true]
 {
 	opacity: .5 !important;
 }
 
+/* force regular scrollbar for menus */
+menupopup .arrowscrollbox-scrollbox
+{
+	overflow-y: scroll !important;
+}
+
+/* why still use scroll buttons; is this the middle ages? */
+menupopup .scrollbutton-up,
+menupopup .scrollbutton-down
+{
+	display: none !important;
+}
+
 .menu-iconic-icon
 {
-	fill: inherit !important;
+	fill: currentColor !important;
 	-moz-context-properties: fill, fill-opacity, stroke, stroke-opacity !important;
 	margin-inline-end: 16px !important;
 	width: 24px !important;
@@ -121,4 +144,167 @@ menuitem[checked=true] .menu-iconic-icon
 #context-navigation .menuitem-iconic:hover:active:not([disabled]) .menu-iconic-left
 {
 	background-color: var(--arrowpanel-dimmed-further) !important;
+}
+
+panel:not(#urlbar-results)
+{
+	-moz-window-shadow: none !important;
+
+	margin-left: -14px !important;
+	margin-top: -19px !important;
+	
+	padding: 11px 14px 18px !important;
+}
+
+panel[type="arrow"][side="top"],
+panel[type="arrow"][side="bottom"]
+{
+	margin-left: -39px !important;
+	margin-right: -39px !important;
+}
+
+panel[type="arrow"][side="left"],
+panel[type="arrow"][side="right"]
+{
+	margin-top: -44px;
+	margin-bottom: -44px;
+}
+
+panel:not(.tooltip-xul-wrapper) .panel-arrowcontent
+{
+	border: 0 !important;
+	box-shadow:
+		0 5px 5px -3px rgba(0,0,0,.2),
+		0 8px 10px 1px rgba(0,0,0,.14),
+		0 3px 14px 2px rgba(0,0,0,.12) !important;
+}
+
+panel:not(.tooltip-xul-wrapper) .panel-arrowbox
+{
+	display: none !important;
+}
+
+/* .subview-subheader, */
+panelview .toolbarbutton-1,
+.subviewbutton,
+.widget-overflow-list .toolbarbutton-1
+{
+	min-height: 32px !important;
+	padding: 0 16px !important;
+}
+
+.subviewbutton .toolbarbutton-icon
+{
+	margin-inline-end: 16px !important;
+	width: 24px !important;
+	height: 24px !important;
+	padding: 4px !important;
+}
+
+.subviewbutton .toolbarbutton-text
+{
+	padding-inline-start: 0 !important;
+}
+
+#appMenu-zoom-controls > .subviewbutton,
+#appMenu-edit-controls > .subviewbutton
+{
+	min-width: 32px !important;
+	border-radius: 16px !important;
+	padding: 0 8px !important;
+	border: 0 !important;
+	margin-inline-start: 4px !important;
+}
+
+#appMenu-zoom-controls > toolbarseparator[orient="vertical"] + .subviewbutton
+{
+	margin-inline-start: 0 !important;
+}
+
+#appMenu-zoom-controls > .subviewbutton-iconic,
+#appMenu-edit-controls > .subviewbutton-iconic
+{
+	padding: 0 !important;
+}
+
+.toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]),
+[overflowedItem="true"]) > toolbarbutton > .toolbarbutton-icon
+{
+	margin: 0 !important;
+}
+
+panelmultiview .toolbaritem-combined-buttons > spacer.before-label
+{
+	width: 20px !important;
+}
+
+panelmultiview .toolbaritem-combined-buttons > spacer.after-label
+{
+	width: 14px !important;
+}
+
+.subviewbutton-back
+{
+	padding: 4px !important;
+	border-radius: 16px !important;
+}
+
+.subviewbutton-back .toolbarbutton-icon
+{
+	margin: 0 !important;
+}
+
+.subviewbutton[type="highlight-history"]::after
+{
+	transform: none !important;
+}
+
+.subviewbutton[type="highlight-history"]::after,
+.subviewbutton[shortcut]::after,
+.PanelUI-subView .subviewbutton-nav::after
+{
+    margin-inline-start: 14px !important;
+}
+
+.PanelUI-subView .subviewbutton-nav::after
+{
+	transform: none !important;
+	content: url(menu-right-1x.svg) !important;
+	fill-opacity: 1 !important;
+}
+
+.identity-popup-preferences-button
+{
+	border-radius: 16px !important;
+	background-image: none !important;
+}
+
+.identity-popup-preferences-button > .toolbarbutton-icon
+{
+	margin: 0 !important;
+}
+
+#identity-popup-permission-preferences-button
+{
+	padding: 0 !important;
+}
+
+#tracking-protection-preferences-button > .toolbarbutton-icon
+{
+	margin-inline-end: -8px !important;
+}
+
+#tracking-protection-preferences-button > .toolbarbutton-text
+{
+    padding-inline-end: 4px !important;
+	-moz-box-ordinal-group: 0 !important; 
+}
+
+/* high DPI adjustments */
+@media (min--moz-device-pixel-ratio: 2)
+{
+	.PanelUI-subView .subviewbutton-nav::after
+	{
+		content: url(menu-right-2x.svg) !important;
+	}
 }
