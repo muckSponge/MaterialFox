@@ -1,5 +1,6 @@
 /* light mode */
-:root[style*="--lwt-accent-color:rgb(227, 228, 230);"]
+:root[style*="--lwt-accent-color:rgb(227, 228, 230);"],
+:root[style*="--lwt-accent-color:white;"]
 {
 	/* accentcolor */
 	--lwt-accent-color: #dee1e6 !important;
@@ -30,6 +31,12 @@
 	--lwt-toolbarbutton-active-background: rgba(0, 0, 0, .11) !important;
 	
 	--lwt-toolbar-field-color: #606368 !important;
+	
+	/* popup_highlight */
+	--autocomplete-popup-highlight-background: #f2f2f2 !important;
+	
+	/* popup_highlight_text */
+	--autocomplete-popup-highlight-color: #202124 !important;
 }
 
 /* don't bother with sidebar in light mode */
@@ -81,7 +88,7 @@
 	--autocomplete-popup-border-color: #555 !important;
 	
 	/* popup_highlight */
-	--autocomplete-popup-highlight-background: #0056d9 !important;
+	--autocomplete-popup-highlight-background: #4c4f52 !important;
 	
 	/* popup_highlight_text */
 	--autocomplete-popup-highlight-color: #fff !important;
