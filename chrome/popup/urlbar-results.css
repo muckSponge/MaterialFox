@@ -3,26 +3,61 @@
 	-moz-window-shadow: none !important;
 	background: 0 !important;
 	margin-top: 0 !important;
+	
+	--padding-start: calc(var(--item-padding-start) - 11px) !important;
+	--padding-end: calc(var(--item-padding-end) - 10px) !important;
 }
 
-.urlbarView-body-outer,
-.search-one-offs
+.urlbarView-body-inner,
+.search-panel-one-offs-header,
+.search-panel-one-offs
 {
 	margin: 0 !important;
-	margin-inline-start: calc(var(--item-padding-start) - 11px) !important;
-	margin-inline-end: calc(var(--item-padding-end) - 10px) !important;
+	
 	background: var(--arrowpanel-background) !important;
-	box-shadow:
-		0 5px 5px -3px rgba(0,0,0,.2),
-		0 8px 10px 1px rgba(0,0,0,.14),
-		0 3px 14px 2px rgba(0,0,0,.12) !important;
+	
 	color: inherit !important;
+	border-radius: 0 !important;
+	
+	transform: translateX(var(--padding-start)) !important;
+	width: calc(100% - var(--padding-start) - var(--padding-end)) !important;
+	
+	box-shadow:
+		0 5px 5px -3px rgba(0, 0, 0, .2),
+		0 8px 10px 1px rgba(0, 0, 0, .14),
+		0 3px 14px 2px rgba(0, 0, 0, .12) !important;
+	
+	/* clip shadows such that they overlap themselves but not the content */
+	--top: -11px;
+	--bottom: calc(100% + 18px);
+	--left: -14px;
+	--right: calc(100% + 14px);
+	
+	clip-path: polygon(
+		var(--left) var(--top),
+		0 var(--top),
+		0 0,
+		100% 0,
+		100% var(--top),
+		var(--right) var(--top),
+		var(--right) var(--bottom),
+		100% var(--bottom),
+		100% 100%,
+		100% var(--bottom),
+		var(--left) var(--bottom)
+	) !important;
+	
 }
 
-.search-one-offs
+.search-panel-one-offs
 {
 	border-radius: 0 0 8px 8px !important;
 	margin-bottom: 18px !important;
+}
+
+.search-one-offs
+{
+	display: block !important;
 }
 
 #urlbarView-results
@@ -68,8 +103,6 @@
 .search-panel-one-offs
 {
 	padding: 4px !important;
-	display: -moz-box !important;
-	width: 100% !important;
 }
 
 .searchbar-engine-one-off-item
@@ -81,6 +114,7 @@
 	margin: 4px !important;
 	background-image: none !important;
 	color: inherit !important;
+	border: 0 !important;
 }
 
 .searchbar-engine-one-off-item.dummy
