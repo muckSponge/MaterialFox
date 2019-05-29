@@ -186,7 +186,8 @@ panel:not(.tooltip-xul-wrapper) .panel-arrowcontent
 		0 3px 14px 2px rgba(0,0,0,.12) !important;
 }
 
-.cui-widget-panel .panel-arrowbox
+.cui-widget-panel .panel-arrowbox,
+#downloadsPanel .panel-arrowbox
 {
 	display: none !important;
 }
