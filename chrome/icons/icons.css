@@ -128,12 +128,24 @@
 
 #pageAction-panel-webcompat-reporter_mozilla_org
 {
-	list-style-image: url("bug.svg") !important;
+	list-style-image: url(bug.svg) !important;
 }
 
 #pageAction-panel-webcompat-reporter_mozilla_org > .toolbarbutton-icon
 {
 	list-style-image: inherit !important;
+}
+
+#screenshots_mozilla_org-menuitem-_create-screenshot .menu-iconic-left
+{
+	background-image: url(screenshot.svg) !important;
+	background-position: 4px center !important;
+	background-repeat: no-repeat !important;
+}
+
+#screenshots_mozilla_org-menuitem-_create-screenshot .menu-iconic-icon
+{
+	visibility: hidden !important;
 }
 
 .tabs-newtab-button,
