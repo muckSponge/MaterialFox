@@ -18,6 +18,13 @@ panel[type="autocomplete-richlistbox"]:not(#PopupAutoCompleteRichResult)
 	box-sizing: content-box !important;
 }
 
+.panel-arrowcontent
+{
+	background: 0 !important;
+	padding: 0 !important;
+	box-shadow: none !important;
+}
+
 .popup-internal-box,
 :not(#PopupAutoCompleteRichResult) > .autocomplete-richlistbox
 {
@@ -179,7 +186,7 @@ panel:not(.tooltip-xul-wrapper) .panel-arrowcontent
 		0 3px 14px 2px rgba(0,0,0,.12) !important;
 }
 
-panel:not(.tooltip-xul-wrapper) .panel-arrowbox
+.cui-widget-panel .panel-arrowbox
 {
 	display: none !important;
 }
