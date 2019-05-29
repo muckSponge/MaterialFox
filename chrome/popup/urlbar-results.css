@@ -8,6 +8,63 @@
 	--padding-end: calc(var(--item-padding-end) - 10px) !important;
 }
 
+#PopupAutoCompleteRichResult
+{
+	-moz-window-shadow: none !important;
+	background: 0 !important;
+	margin-top: -3px !important;
+	
+	--padding-start: calc(var(--item-padding-start) + 20px) !important;
+	--padding-end: calc(var(--item-padding-end) - 10px) !important;
+}
+
+#PopupAutoCompleteRichResult .autocomplete-richlistbox
+{
+	padding: 0 !important;
+	
+	margin-inline-start: var(--padding-start) !important;
+	margin-inline-end: var(--padding-end) !important;
+	
+	background: var(--arrowpanel-background) !important;
+	
+	box-shadow:
+		0 5px 5px -3px rgba(0, 0, 0, .2),
+		0 8px 10px 1px rgba(0, 0, 0, .14),
+		0 3px 14px 2px rgba(0, 0, 0, .12) !important;
+}
+
+#PopupAutoCompleteRichResult .autocomplete-richlistitem
+{
+	padding: 0 16px  !important;
+	border: 0 !important;
+	display: flex !important;
+	align-items: center !important;
+	border-radius: 0 !important;
+}
+
+.ac-type-icon
+{
+	order: 9 !important;
+	margin-inline-start: 16px !important;
+	margin-inline-end: 0 !important;
+}
+
+.ac-site-icon
+{
+	margin-inline-end: 16px !important;
+}
+
+.ac-separator
+{
+	display: none !important;
+}
+
+.ac-title,
+.ac-url
+{
+	flex: 1 !important;
+}
+
 .urlbarView-body-inner,
 .search-panel-one-offs-header,
 .search-panel-one-offs
@@ -46,7 +103,6 @@
 		100% var(--bottom),
 		var(--left) var(--bottom)
 	) !important;
-	
 }
 
 .search-panel-one-offs
@@ -67,7 +123,7 @@
 
 .urlbarView-row
 {
-	padding: 0 16px  !important;
+	padding: 0 16px !important;
 	height: 32px !important;
 	border-radius: 0 !important;
 }

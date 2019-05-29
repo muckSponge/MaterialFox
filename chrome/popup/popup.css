@@ -7,7 +7,7 @@ menupopup menuseparator
 }
 
 menupopup,
-panel[type="autocomplete-richlistbox"]
+panel[type="autocomplete-richlistbox"]:not(#PopupAutoCompleteRichResult)
 {
 	-moz-window-shadow: none !important;
 	background: 0 !important;
@@ -19,7 +19,7 @@ panel[type="autocomplete-richlistbox"]
 }
 
 .popup-internal-box,
-.autocomplete-richlistbox
+:not(#PopupAutoCompleteRichResult) > .autocomplete-richlistbox
 {
 	margin: 0 !important;
 	padding: 8px 0 !important;
@@ -146,7 +146,7 @@ menuitem[checked=true] .menu-iconic-icon
 	background-color: var(--arrowpanel-dimmed-further) !important;
 }
 
-panel:not(#urlbar-results)
+panel:not(#urlbar-results):not(#PopupAutoCompleteRichResult)
 {
 	-moz-window-shadow: none !important;
 
