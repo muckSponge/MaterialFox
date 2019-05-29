@@ -1,4 +1,5 @@
 /* light mode */
+:root:not([style]),
 :root[style*="--lwt-accent-color:rgb(227, 228, 230);"],
 :root[style*="--lwt-accent-color:white;"]
 {
