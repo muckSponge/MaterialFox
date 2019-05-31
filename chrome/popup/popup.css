@@ -23,6 +23,7 @@ panel[type="autocomplete-richlistbox"]:not(#PopupAutoCompleteRichResult)
 	background: 0 !important;
 	padding: 0 !important;
 	box-shadow: none !important;
+	font: -moz-pull-down-menu !important;
 }
 
 .popup-internal-box,
@@ -187,7 +188,8 @@ panel:not(.tooltip-xul-wrapper) .panel-arrowcontent
 		0 3px 14px 2px rgba(0, 0, 0, .12) !important;
 }
 
-panel:not(.tooltip-xul-wrapper) .panel-arrowbox
+panel:not(.tooltip-xul-wrapper) .panel-arrowbox,
+.cui-widget-panel .panel-arrowbox
 {
 	display: none !important;
 }
@@ -233,6 +235,26 @@ panelview .toolbarbutton-1,
 #appMenu-edit-controls > .subviewbutton-iconic
 {
 	padding: 0 !important;
+}
+
+/* this is actually a button... */
+#appMenu-fxa-label
+{
+	padding-inline-start: 50px !important;
+	margin-inline-start: -34px !important;
+	border-radius: 0 16px 16px 0 !important;
+}
+
+#appMenu-fxa-status + toolbarseparator
+{
+	display: none !important;
+}
+
+#appMenu-fxa-icon
+{
+	border-radius: 16px !important;
+	padding: 0 !important;
+	width: 32px !important;
 }
 
 .toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]),
@@ -281,6 +303,11 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	fill-opacity: 1 !important;
 }
 
+#identity-popup > .panel-arrowcontainer > .panel-arrowcontent
+{
+	fill-opacity: inherit !important;
+}
+
 .identity-popup-preferences-button
 {
 	border-radius: 16px !important;
@@ -310,15 +337,17 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 
 .identity-popup-section
 {
-	padding: 8px 16px !important;
+	padding: 16px !important;
 	display: flex !important;
 }
 
 .identity-popup-security-content,
-#identity-popup-content-blocking-content
+#identity-popup-content-blocking-content,
+#identity-popup-permissions-content
 {
 	padding: 0 !important;
 	background: 0 !important;
+	fill-opacity: inherit !important;
 }
 
 .identity-popup-expander
@@ -327,11 +356,26 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	width: 32px !important;
 	max-height: 32px !important;
 	margin-inline-start: auto !important;
+	-moz-box-pack: center !important;
+	-moz-box-align: center !important;
+	background-image: none !important;
 }
 
 .identity-popup-expander > .button-box
 {
 	border: 0 !important;
+	display: flex !important;
+	justify-content: center !important;
+}
+
+.identity-popup-expander .button-icon
+{
+	margin: 0 !important;
+}
+
+.identity-popup-expander .button-text
+{
+	display: none !important;
 }
 
 .identity-popup-headline
@@ -339,15 +383,16 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	margin: 0 !important;
 }
 
-/* #tracking-protection-container
-{
-	flex-direction: column !important;
-} */
-
 .PanelUI-subView > .identity-popup-security-content,
 #identity-popup-securityView-body
 {
-	padding: 8px 16px !important;
+	padding: 16px !important;
+}
+
+#identity-popup-mainView-panel-header
+{
+	-moz-box-align: start !important;
+	padding: 16px !important;
 }
 
 #identity-popup-securityView-body
@@ -355,14 +400,16 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	margin: 0 !important;
 }
 
-#identity-popup-content-blocking-content
+#identity-popup-content-blocking-content,
+#identity-popup-permissions-content
 {
 	display: flex !important;
 	flex-direction: column !important;
 	width: 100% !important;
 }
 
-#identity-popup-content-blocking-content > hbox:first-child
+#identity-popup-content-blocking-content > hbox:first-child,
+#identity-popup-permissions-content > hbox:first-child
 {
 	display: flex !important;
 }
@@ -379,6 +426,25 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 .identity-popup-content-blocking-category
 {
 	height: 32px !important;
+	padding: 0 16px !important;
+}
+
+.identity-popup-content-blocking-category-icon
+{
+	margin: 0 !important;
+	margin-inline-end: 16px !important;
+}
+
+.identity-popup-content-blocking-category-label
+{
+	margin: 0 !important;
+}
+
+.identity-popup-content-blocking-category::after
+{
+	transform: translateY(1px) !important;
+	content: url(menu-right-1x.svg) !important;
+	margin: 0 !important;
 }
 
 .identity-popup-preferences-button
@@ -386,10 +452,167 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	margin-inline-start: auto !important;
 }
 
+.tracking-protection-button,
+#identity-popup-content-blocking-report-breakage
+{
+	margin: 0 -16px !important;
+	height: 32px !important;
+	padding: 0 16px !important;
+	background: 0 !important;
+	color: inherit !important;
+}
+
+#identity-popup-content-blocking-report-breakage
+{
+	padding-inline-start: 48px !important;
+	line-height: 32px !important;
+	text-decoration: none !important;
+	cursor: auto !important;
+}
+
+.tracking-protection-button:hover:not([disabled=true]),
+#identity-popup-content-blocking-report-breakage:hover
+{
+	background-color: var(--arrowpanel-dimmed) !important;
+}
+
+.tracking-protection-button:hover:active:not([disabled=true]),
+#identity-popup-content-blocking-report-breakage:hover:active
+{
+	background-color: var(--arrowpanel-dimmed-further) !important;
+}
+
+.identity-popup-content-blocking-empty-label,
+#tracking-protection-preferences-button > .toolbarbutton-text,
+.tracking-protection-button,
+#identity-popup-trackersView-strict-info > label,
+.identity-popup-cookiesView-list-header,
+.identity-popup-content-blocking-list-item > label,
+#identity-popup-mainView-panel-header > label,
+#identity-popup-trackersView > .panel-header,
+#identity-popup-securityView > .panel-header,
+#identity-popup-breakageReportView > .panel-header,
+#identity-popup-content-blocking-report-breakage,
+.identity-popup-content-blocking-category-label,
+.identity-popup-content-blocking-category-state-label,
+.identity-popup-permission-label,
+.identity-popup-permission-state-label,
+#identity-popup-security-descriptions > description,
+#identity-popup-securityView-body > description,
+#identity-popup-permissions-content > description,
+#identity-popup-content-blocking-content > description
+{
+	font-size: 100% !important;
+}
+
+.panel-header > label
+{
+	text-align: start !important;
+	margin-inline-start: 4px !important;
+}
+
+.identity-popup-headline
+{
+	font-size: 110% !important;
+}
+
+.identity-popup-security-content > description,
+#identity-popup-content-blocking-content > description,
+#identity-popup-permissions-content > description,
+.identity-popup-content-blocking-category-state-label
+{
+	font-size: 85% !important;
+}
+
+#identity-popup-permissions-content > description,
+#identity-popup-content-blocking-content > description
+{
+    color: inherit !important;
+	opacity: .6 !important;
+}
+
+.identity-popup-content-blocking-category-state-label
+{
+	transform: translateY(1px) !important;
+}
+
+.tracking-protection-button > .button-box,
+.panel-footer button > .button-box
+{
+	display: flex !important;
+	align-items: center !important;
+}
+
+.tracking-protection-button .button-icon,
+.panel-footer button .button-icon
+{
+	padding-inline-end: 16px !important;
+}
+
+.tracking-protection-button .button-text,
+.panel-footer button .button-text
+{
+	margin: 0 !important;
+}
+
+.panel-footer
+{
+	padding: 4px !important;
+	background: 0 !important;
+	border-top: 1px solid var(--panel-separator-color) !important;
+	justify-content: end !important;
+	display: flex !important;
+}
+
+.panel-footer button
+{
+	border: 0 !important;
+	border-radius: 4px !important;
+	margin: 4px !important;
+	height: 32px !important;
+	padding: 0 !important;
+	flex: 0 0 auto !important;
+	position: relative !important;
+}
+
+.panel-footer button > .button-box
+{
+	position: relative !important;
+	padding-inline-end: 16px !important;
+}
+
+.panel-footer button:not([default]) > .button-box::before
+{
+	content: "" !important;
+	display: block !important;
+	border-radius: 4px !important;
+	position: absolute !important;
+	left: 0 !important;
+	top: 0 !important;
+	width: 100% !important;
+	height: 100% !important;
+	border: 1px solid currentColor !important;
+	opacity: .42 !important;
+	box-sizing: border-box !important;
+}
+
+.panel-footer button:not([default]):hover:active:not([disabled]) > .button-box::before
+{
+	border-width: 0 !important;
+}
+
+.panel-footer button:not([default]):hover:active:not([disabled])
+{
+	border-width: 0 !important;
+	background: #002275 !important;
+	color: #FFF !important;
+}
+
 /* high DPI adjustments */
 @media (min--moz-device-pixel-ratio: 2)
 {
-	.PanelUI-subView .subviewbutton-nav::after
+	.PanelUI-subView .subviewbutton-nav::after,
+	.identity-popup-content-blocking-category::after
 	{
 		content: url(menu-right-2x.svg) !important;
 	}
