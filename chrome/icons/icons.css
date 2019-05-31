@@ -1,7 +1,8 @@
 .toolbarbutton-1:-moz-any(#back-button, #forward-button),
 #context-back,
 #context-forward,
-.subviewbutton-back
+.subviewbutton-back,
+.identity-popup-expander
 {
 	list-style-image: url(arrow-back-1x.svg) !important;
 }
@@ -40,7 +41,8 @@
 
 #star-button,
 #context-bookmarkpage,
-#pageAction-panel-bookmark
+#pageAction-panel-bookmark,
+#panelMenuBookmarkThisPage
 {
 	list-style-image: url(star-1x.svg) !important;
 	fill-opacity: 0 !important;
@@ -59,7 +61,8 @@
 }
 
 #bookmarks-menu-button,
-#appMenu-library-bookmarks-button
+#appMenu-library-bookmarks-button,
+#panelMenu_toggleBookmarksMenu
 {
 	list-style-image: url(bookmark.svg) !important;
 }
@@ -184,7 +187,8 @@
 #urlbar[pageproxystate="invalid"] #identity-icon,
 #PopupAutoCompleteRichResult .ac-type-icon[type="keyword"],
 #PopupAutoCompleteRichResult .ac-site-icon[type="searchengine"],
-#appMenu-find-button
+#appMenu-find-button,
+#panelMenu_searchBookmarks
 {
 	list-style-image: url(search.svg) !important;
 }
@@ -204,7 +208,10 @@
 	list-style-image: url(paste.svg) !important;
 }
 
-#appMenu-fxa-label
+#appMenu-fxa-label,
+#PanelUI-fxa-menu-syncnow-button,
+#appMenu-fxa-icon,
+#PanelUI-remotetabs-syncnow
 {
 	list-style-image: url(sync.svg) !important;
 }
@@ -215,7 +222,8 @@
 	.toolbarbutton-1:-moz-any(#back-button, #forward-button),
 	#context-back,
 	#context-forward,
-	.subviewbutton-back
+	.subviewbutton-back,
+	.identity-popup-expander
 	{
 		list-style-image: url(arrow-back-2x.svg) !important;
 	}
@@ -243,7 +251,8 @@
 	
 	#star-button,
 	#context-bookmarkpage,
-	#pageAction-panel-bookmark
+	#pageAction-panel-bookmark,
+	#panelMenuBookmarkThisPage
 	{
 		list-style-image: url(star-2x.svg) !important;
 	}
