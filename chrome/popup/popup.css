@@ -308,6 +308,84 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	-moz-box-ordinal-group: 0 !important; 
 }
 
+.identity-popup-section
+{
+	padding: 8px 16px !important;
+	display: flex !important;
+}
+
+.identity-popup-security-content,
+#identity-popup-content-blocking-content
+{
+	padding: 0 !important;
+	background: 0 !important;
+}
+
+.identity-popup-expander
+{
+	border-radius: 16px !important;
+	width: 32px !important;
+	max-height: 32px !important;
+	margin-inline-start: auto !important;
+}
+
+.identity-popup-expander > .button-box
+{
+	border: 0 !important;
+}
+
+.identity-popup-headline
+{
+	margin: 0 !important;
+}
+
+/* #tracking-protection-container
+{
+	flex-direction: column !important;
+} */
+
+.PanelUI-subView > .identity-popup-security-content,
+#identity-popup-securityView-body
+{
+	padding: 8px 16px !important;
+}
+
+#identity-popup-securityView-body
+{
+	margin: 0 !important;
+}
+
+#identity-popup-content-blocking-content
+{
+	display: flex !important;
+	flex-direction: column !important;
+	width: 100% !important;
+}
+
+#identity-popup-content-blocking-content > hbox:first-child
+{
+	display: flex !important;
+}
+
+#identity-popup-content-blocking-category-list
+{
+	display: flex !important;
+	flex-direction: column !important;
+	margin: 0 -16px !important;
+	width: calc(100% + 32px) !important;
+	padding-top: 8px !important;
+}
+
+.identity-popup-content-blocking-category
+{
+	height: 32px !important;
+}
+
+.identity-popup-preferences-button
+{
+	margin-inline-start: auto !important;
+}
+
 /* high DPI adjustments */
 @media (min--moz-device-pixel-ratio: 2)
 {
