@@ -1,18 +1,10 @@
-#urlbar-results
-{
-	-moz-window-shadow: none !important;
-	background: 0 !important;
-	margin-top: 0 !important;
-	
-	--padding-start: calc(var(--item-padding-start) - 11px) !important;
-	--padding-end: calc(var(--item-padding-end) - 10px) !important;
-}
-
+/* < 68 */
 #PopupAutoCompleteRichResult
 {
 	-moz-window-shadow: none !important;
 	background: 0 !important;
 	margin-top: -3px !important;
+	border: 0 !important;
 	
 	--padding-start: calc(var(--item-padding-start) + 20px) !important;
 	--padding-end: calc(var(--item-padding-end) - 10px) !important;
@@ -63,6 +55,18 @@
 .ac-url
 {
 	flex: 1 !important;
+}
+
+/* >= 68 */
+#urlbar-results
+{
+	-moz-window-shadow: none !important;
+	background: 0 !important;
+	margin-top: 0 !important;
+	border: 0 !important;
+	
+	--padding-start: calc(var(--item-padding-start) - 11px) !important;
+	--padding-end: calc(var(--item-padding-end) - 10px) !important;
 }
 
 .urlbarView-body-inner,
