@@ -555,6 +555,11 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	margin: 0 !important;
 }
 
+#confirmation-hint .panel-arrowcontent
+{
+	padding: 16px !important;
+}
+
 .panel-footer
 {
 	padding: 4px !important;
