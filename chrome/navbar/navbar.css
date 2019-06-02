@@ -285,12 +285,12 @@
 
 #star-button-box
 {
-	-moz-box-ordinal-group: 98 !important;
+	-moz-box-ordinal-group: 99 !important;
 }
 
 #pageActionButton
 {
-	-moz-box-ordinal-group: 99 !important;
+	-moz-box-ordinal-group: 98 !important;
 }
 
 .urlbar-page-action:-moz-any(
