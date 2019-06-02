@@ -121,6 +121,8 @@
 
 	--button-size: 32px; /* is this used? */
 	--icon-size: 24px; /* is this used? */
+	
+	--downloads-item-height: 72px !important;
 }
 
 #titlebar,

@@ -186,6 +186,7 @@ panel:not(.tooltip-xul-wrapper) .panel-arrowcontent
 		0 5px 5px -3px rgba(0, 0, 0, .2),
 		0 8px 10px 1px rgba(0, 0, 0, .14),
 		0 3px 14px 2px rgba(0, 0, 0, .12) !important;
+	color: var(--arrowpanel-color) !important;
 }
 
 panel:not(.tooltip-xul-wrapper) .panel-arrowbox,
@@ -555,6 +556,48 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	margin: 0 !important;
 }
 
+#downloadsPanel-multiView
+{
+	padding-top: 8px !important;
+}
+
+#downloadsListBox .downloadMainArea
+{
+	padding: 16px !important;
+	margin-inline-end: -48px !important;
+	padding-inline-end: 48px !important;
+}
+
+#downloadsListBox .downloadTypeIcon
+{
+	margin: 0 !important;
+	margin-inline-end: 16px !important;
+}
+
+#downloadsListBox .downloadTarget
+{
+	font-size: 1.2em !important;
+}
+
+#downloadsListBox .downloadDetails
+{
+	font-size: 1em !important;
+}
+
+#downloadsListBox > richlistitem > toolbarseparator
+{
+	display: none !important;
+}
+
+#downloadsListBox .downloadButton
+{
+	margin: calc((var(--downloads-item-height) - 32px) / 2) 10px !important;
+	min-width: 32px !important;
+	border-radius: 16px !important;
+	fill: currentColor !important;
+	-moz-context-properties: fill, fill-opacity !important;
+}
+
 #confirmation-hint .panel-arrowcontent
 {
 	padding: 16px !important;
@@ -578,6 +621,7 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	padding: 0 !important;
 	flex: 0 0 auto !important;
 	position: relative !important;
+	outline: 0 !important;
 }
 
 .panel-footer button > .button-box
