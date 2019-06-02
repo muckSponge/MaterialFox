@@ -10,7 +10,7 @@
 		-moz-appearance: none !important;
 	}
 	
-	:root:-moz-any([inFullscreen], [tabsintitlebar]) #TabsToolbar:not(:-moz-lwtheme)
+	:root:-moz-any([inFullscreen], [tabsintitlebar]):not([privatebrowsingmode=temporary]) #TabsToolbar:not(:-moz-lwtheme)
 	{
 		background-color: #dee1e5 !important;
 		color: #606367 !important;
@@ -18,7 +18,7 @@
 		--toolbarbutton-active-background: #bec0c5 !important;
 	}
 	
-	:root:-moz-any([inFullscreen], [tabsintitlebar]) #TabsToolbar:not(:-moz-lwtheme):-moz-window-inactive
+	:root:-moz-any([inFullscreen], [tabsintitlebar]):not([privatebrowsingmode=temporary]) #TabsToolbar:not(:-moz-lwtheme):-moz-window-inactive
 	{
 		background-color: #e7eaed !important;
 	}
@@ -31,25 +31,25 @@
 
 @media (-moz-os-version: windows-win7)
 {
-	#TabsToolbar:not(:-moz-lwtheme)
+	:root:not([privatebrowsingmode=temporary]) #TabsToolbar:not(:-moz-lwtheme)
 	{
 		color: #808387 !important;
 		--toolbarbutton-hover-background: rgba(196, 198, 204, .8) !important;
 		--toolbarbutton-active-background: #bec0c6 !important;
 	}
 	
-	#TabsToolbar toolbarbutton:not(:-moz-lwtheme):not(:hover):not([open])
+	:root:not([privatebrowsingmode=temporary]) #TabsToolbar toolbarbutton:not(:-moz-lwtheme):not(:hover):not([open])
 	{
 		background-color: rgba(218, 220, 227, .8) !important;
 	}
 	
-	.tabbrowser-tab:not([visuallyselected]):not(:-moz-lwtheme)
+	:root:not([privatebrowsingmode=temporary]) .tabbrowser-tab:not([visuallyselected]):not(:-moz-lwtheme)
 	{
 		--tab-bgcolor: rgb(218, 220, 227) !important;
 		--tab-opacity: .8 !important;
 	}
 	
-	.tabbrowser-tab:hover:not([visuallyselected]):not(:-moz-lwtheme)
+	:root:not([privatebrowsingmode=temporary]) .tabbrowser-tab:hover:not([visuallyselected]):not(:-moz-lwtheme)
 	{
 		--tab-bgcolor: #e9ebef !important;
 	}
@@ -96,6 +96,11 @@
 	font-size: 12px !important;
 	background: 0 !important;
 	border: 0 !important;
+}
+
+.tabbrowser-tab[visuallyselected]
+{
+	color: var(--toolbar-color) !important;
 }
 
 /* regular */
@@ -180,7 +185,7 @@
 	--tab-transition-duration: .2s;
 }
 
-#TabsToolbar[brighttext] .tabbrowser-tab
+:-moz-any(:root[privatebrowsingmode=temporary], #TabsToolbar[brighttext]) .tabbrowser-tab
 {
 	--tab-opacity: 0;
 	--tab-bgcolor: #fff;
@@ -192,13 +197,13 @@
 	--tab-opacity: .1;
 }
 
-#TabsToolbar[brighttext] .tabbrowser-tab:not([selected=true]):hover,
-#TabsToolbar[brighttext] .tabbrowser-tab[multiselected]:not([selected=true])
+:-moz-any(:root[privatebrowsingmode=temporary], #TabsToolbar[brighttext]) .tabbrowser-tab:not([selected=true]):hover,
+:-moz-any(:root[privatebrowsingmode=temporary], #TabsToolbar[brighttext]) .tabbrowser-tab[multiselected]:not([selected=true])
 {
 	--tab-opacity: .06;
 }
 
-#TabsToolbar .tabbrowser-tab[visuallyselected]
+:-moz-any(#TabsToolbar) .tabbrowser-tab[visuallyselected]
 {
 	--tab-bgcolor: var(--toolbar-bgcolor);
 	--tab-opacity: 1;

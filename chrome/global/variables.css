@@ -44,7 +44,7 @@
 
 /* dark mode */
 :root[style*="--lwt-accent-color:rgb(12, 12, 13);"],
-:root[privatebrowsingmode]
+:root[privatebrowsingmode=temporary]
 {
 	/* accentcolor */
 	--lwt-accent-color: #202124 !important;
@@ -123,6 +123,9 @@
 	--icon-size: 24px; /* is this used? */
 	
 	--downloads-item-height: 72px !important;
+	
+	--toolbar-non-lwt-bgcolor: var(--toolbar-bgcolor) !important;
+	--toolbar-non-lwt-textcolor: var(--toolbar-color) !important;
 }
 
 #titlebar,
@@ -148,14 +151,14 @@
 	--toolbar-field-focus-background-color: hsl(0, 0%, 100%) !important;
 }
 
-:root:-moz-any(:-moz-lwtheme-brighttext, [privatebrowsingmode])
+:root:-moz-any(:-moz-lwtheme-brighttext, [privatebrowsingmode=temporary])
 {
 	--toolbar-field-background-color: hsl(206, 8%, 17%) !important;
 	--toolbar-field-hover-background-color: hsl(206, 7%, 20%) !important;
 	--toolbar-field-focus-background-color: hsl(206, 6%, 25%) !important;
 }
 
-:root:not(:-moz-lwtheme)
+:root:not(:-moz-lwtheme):not([privatebrowsingmode=temporary])
 {
 	--toolbar-bgcolor: hsl(0, 0%, 100%) !important;
 	--toolbar-color: hsl(213, 5%, 39%) !important;
@@ -173,7 +176,7 @@
 /* Ubuntu */
 @media (-moz-gtk-csd-available)
 {
-	:root:not(:-moz-lwtheme)
+	:root:not(:-moz-lwtheme):not([privatebrowsingmode=temporary])
 	{
 		--toolbar-bgcolor: -moz-dialog !important;
 		--toolbar-color: -moz-dialogtext !important;
@@ -203,7 +206,7 @@
 	--toolbarbutton-active-background: hsl(210, 4%, 80%) !important;
 }
 
-:root:-moz-any([privatebrowsingmode], :-moz-lwtheme-brighttext) :-moz-any(#urlbar, #searchbar)
+:root:-moz-any([privatebrowsingmode=temporary], :-moz-lwtheme-brighttext) :-moz-any(#urlbar, #searchbar)
 {
 	--toolbarbutton-hover-background: hsl(206, 5%, 26%) !important;
 	--toolbarbutton-active-background: hsl(210, 4%, 31%) !important;

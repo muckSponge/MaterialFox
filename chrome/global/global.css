@@ -23,13 +23,13 @@
 				
         		@media (-moz-windows-accent-color-in-titlebar: 0)
 				{					
-        		  	:root[tabsintitlebar]:not(:-moz-lwtheme)
+        		  	:root[tabsintitlebar]:not(:-moz-lwtheme):not([privatebrowsingmode=temporary])
 					{
         		    	background-color: #dee1e6 !important;
         		    	color: #3c4043 !important;
         		  	}
 					
-					:root[tabsintitlebar]:not(:-moz-lwtheme):-moz-window-inactive
+					:root[tabsintitlebar]:not(:-moz-lwtheme):not([privatebrowsingmode=temporary]):-moz-window-inactive
 					{
         		    	background-color: #e7eaed !important;
         		    	color: #666a6d !important;
