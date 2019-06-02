@@ -216,6 +216,30 @@
 	list-style-image: url(sync.svg) !important;
 }
 
+.tab-icon-image:not([src])
+{
+    list-style-image: url(globe.svg) !important;
+}
+
+.tab-icon-image[src="chrome://browser/skin/settings.svg"]
+{
+	display: none !important;
+}
+
+.tab-icon-image[src="chrome://browser/skin/settings.svg"] ~ .tab-icon-overlay
+{
+	display: -moz-box !important;
+	margin: 0 !important;
+	list-style-image: url(settings.svg) !important;
+	-moz-context-properties: fill, fill-opacity !important;
+	fill: currentColor !important;
+}
+
+.downloadIconShow .button-icon
+{
+	list-style-image: url(folder.svg) !important;
+}
+
 /* high DPI adjustments */
 @media (min--moz-device-pixel-ratio: 2)
 {
