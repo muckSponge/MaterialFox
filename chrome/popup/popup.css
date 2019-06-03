@@ -11,6 +11,7 @@ panel[type="autocomplete-richlistbox"]:not(#PopupAutoCompleteRichResult)
 {
 	-moz-window-shadow: none !important;
 	background: 0 !important;
+	border: 0 !important;
 	color: var(--arrowpanel-color) !important;
 	margin-left: -14px !important;
 	margin-top: -19px !important;
@@ -86,7 +87,7 @@ menupopup menu[disabled=true],
 /* force regular scrollbar for menus */
 menupopup .arrowscrollbox-scrollbox
 {
-	overflow-y: scroll !important;
+	overflow-y: auto !important;
 }
 
 /* why still use scroll buttons; is this the middle ages? */
@@ -94,6 +95,11 @@ menupopup .scrollbutton-up,
 menupopup .scrollbutton-down
 {
 	display: none !important;
+}
+
+.menu-iconic-left
+{
+	-moz-appearance: none !important;
 }
 
 .menu-iconic-icon
@@ -116,11 +122,27 @@ menupopup .scrollbutton-down
 	margin-inline-start: 16px !important;
 }
 
-menuitem[checked=true] .menu-iconic-icon
+
+/* override !important padding-inline-start */
+/* this stylesheet is loaded before it and selector specificity isn't working */
+.menu-text
 {
+	margin-inline-start: -30px !important;
+}
+
+menuitem[type="checkbox"] > .menu-iconic-left > .menu-iconic-icon,
+menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon,
+menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon
+{
+	display: -moz-box !important;
 	/* checkmark is 18px, not 16px, hence reduced padding */
 	list-style-image: url(checkmark-18dp.svg) !important;
 	padding: 3px !important;
+}
+
+#context-navigation
+{
+	background: 0 !important;
 }
 
 #context-navigation .menuitem-iconic
@@ -182,6 +204,7 @@ panel:not(.tooltip-xul-wrapper) .panel-arrowcontent
 {
 	background: var(--arrowpanel-background) !important;
 	border: 0 !important;
+	border-radius: 4px !important;
 	box-shadow:
 		0 5px 5px -3px rgba(0, 0, 0, .2),
 		0 8px 10px 1px rgba(0, 0, 0, .14),
@@ -461,6 +484,16 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	padding: 0 16px !important;
 	background: 0 !important;
 	color: inherit !important;
+}
+
+.tracking-protection-button > .button-box
+{
+	padding: 0 !important;
+}
+
+.tracking-protection-button .button-icon
+{
+	margin: 0 !important;
 }
 
 #identity-popup-content-blocking-report-breakage
