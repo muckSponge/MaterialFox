@@ -122,12 +122,13 @@ menupopup .scrollbutton-down
 	margin-inline-start: 16px !important;
 }
 
-
-/* override !important padding-inline-start */
-/* this stylesheet is loaded before it and selector specificity isn't working */
-.menu-text
+/* padding-inline-start of 30px is enforced in Windows and can't be overriden */
+@media (-moz-windows-compositor)
 {
-	margin-inline-start: -30px !important;
+	.menu-text
+	{
+		margin-inline-start: -30px !important;
+	}
 }
 
 menuitem[type="checkbox"] > .menu-iconic-left > .menu-iconic-icon,
