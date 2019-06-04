@@ -45,11 +45,6 @@
 	-moz-box-align: center !important;
 }
 
-.toolbarbutton-icon
-{
-	-moz-context-properties: fill, fill-opacity !important;
-}
-
 #navigator-toolbox :-moz-any(.toolbarbutton-1, toolbarbutton.bookmark-item:not(.subviewbutton), .scrollbutton-up, .scrollbutton-down)
 {
 	border-radius: 99px !important;
