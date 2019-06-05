@@ -131,11 +131,8 @@ menupopup .scrollbutton-down
 	}
 }
 
-menuitem[type="checkbox"] > .menu-iconic-left > .menu-iconic-icon,
-menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon,
-menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon
+menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon
 {
-	display: -moz-box !important;
 	/* checkmark is 18px, not 16px, hence reduced padding */
 	list-style-image: url(checkmark-18dp.svg) !important;
 	padding: 3px !important;
