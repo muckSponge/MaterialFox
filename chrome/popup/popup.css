@@ -436,7 +436,8 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	display: flex !important;
 }
 
-#identity-popup-content-blocking-category-list
+#identity-popup-content-blocking-category-list,
+#identity-popup-permission-list
 {
 	display: flex !important;
 	flex-direction: column !important;
@@ -445,19 +446,43 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	padding-top: 8px !important;
 }
 
-.identity-popup-content-blocking-category
+.identity-popup-permission-item
+{
+	display: flex !important;
+	align-items: center !important;
+}
+
+.identity-popup-permission-label,
+#identity-popup-content-blocking-report-breakage
+{
+	flex: 1 !important;
+	text-decoration: none !important;
+	cursor: auto !important;
+	color: inherit !important;
+}
+
+.identity-popup-content-blocking-category,
+.identity-popup-permission-item
 {
 	height: 32px !important;
 	padding: 0 16px !important;
 }
 
-.identity-popup-content-blocking-category-icon
+.identity-popup-content-blocking-category-icon,
+.identity-popup-permission-icon
 {
 	margin: 0 !important;
 	margin-inline-end: 16px !important;
 }
 
-.identity-popup-content-blocking-category-label
+.popup-notification-icon,
+.identity-popup-permission-icon
+{
+	fill-opacity: 1 !important;
+}
+
+.identity-popup-content-blocking-category-label,
+.identity-popup-permission-label
 {
 	margin: 0 !important;
 }
@@ -474,6 +499,11 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	margin-inline-start: auto !important;
 }
 
+.identity-popup-permission-remove-button
+{
+	opacity: 1 !important;
+}
+
 .tracking-protection-button,
 #identity-popup-content-blocking-report-breakage
 {
@@ -482,6 +512,12 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	padding: 0 16px !important;
 	background: 0 !important;
 	color: inherit !important;
+	line-height: 32px !important;
+}
+
+#identity-popup-content-blocking-report-breakage
+{
+	padding-inline-start: 50px !important;
 }
 
 .tracking-protection-button > .button-box
@@ -494,7 +530,7 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	margin: 0 !important;
 }
 
-#identity-popup-content-blocking-report-breakage
+#identity-popup-content-blocking-report-breakage,
 {
 	padding-inline-start: 48px !important;
 	line-height: 32px !important;
@@ -503,13 +539,15 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 }
 
 .tracking-protection-button:hover:not([disabled=true]),
-#identity-popup-content-blocking-report-breakage:hover
+#identity-popup-content-blocking-report-breakage:hover,
+#blocked-popup-indicator-item:hover
 {
 	background-color: var(--arrowpanel-dimmed) !important;
 }
 
 .tracking-protection-button:hover:active:not([disabled=true]),
-#identity-popup-content-blocking-report-breakage:hover:active
+#identity-popup-content-blocking-report-breakage:hover:active,
+#blocked-popup-indicator-item:hover:active
 {
 	background-color: var(--arrowpanel-dimmed-further) !important;
 }
@@ -551,7 +589,8 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 .identity-popup-security-content > description,
 #identity-popup-content-blocking-content > description,
 #identity-popup-permissions-content > description,
-.identity-popup-content-blocking-category-state-label
+.identity-popup-content-blocking-category-state-label,
+.identity-popup-permission-state-label
 {
 	font-size: 85% !important;
 }
@@ -629,7 +668,8 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	-moz-context-properties: fill, fill-opacity !important;
 }
 
-#confirmation-hint .panel-arrowcontent
+#confirmation-hint .panel-arrowcontent,
+#UITourTooltip .panel-arrowcontent
 {
 	padding: 16px !important;
 }
