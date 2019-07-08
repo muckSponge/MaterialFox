@@ -465,6 +465,10 @@
 	display: none !important;
 }
 
+.tab-loading-burst[bursting]::before {
+    display: none; !important
+}
+
 /* high DPI adjustments */
 @media (min--moz-device-pixel-ratio: 2)
 {
