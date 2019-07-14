@@ -466,7 +466,7 @@
 }
 
 .tab-loading-burst[bursting]::before {
-    display: none; !important
+    display: none !important;
 }
 
 /* high DPI adjustments */
