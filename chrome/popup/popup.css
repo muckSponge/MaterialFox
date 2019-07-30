@@ -178,9 +178,7 @@ panel:not(#urlbar-results):not(#PopupAutoCompleteRichResult)
 {
 	-moz-window-shadow: none !important;
 
-	margin-left: -14px !important;
-	margin-top: -19px !important;
-	
+	margin: -19px -14px -18px !important;	
 	padding: 11px 14px 18px !important;
 }
 
@@ -530,6 +528,11 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	margin: 0 !important;
 }
 
+#customization-lwtheme-menu-header
+{
+	display: none !important;
+}
+
 #identity-popup-content-blocking-report-breakage,
 {
 	padding-inline-start: 48px !important;
@@ -540,14 +543,18 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 
 .tracking-protection-button:hover:not([disabled=true]),
 #identity-popup-content-blocking-report-breakage:hover,
-#blocked-popup-indicator-item:hover
+#blocked-popup-indicator-item:hover,
+.customization-lwtheme-menu-theme:hover,
+#customization-lwtheme-menu-footer toolbarbutton:hover
 {
 	background-color: var(--arrowpanel-dimmed) !important;
 }
 
 .tracking-protection-button:hover:active:not([disabled=true]),
 #identity-popup-content-blocking-report-breakage:hover:active,
-#blocked-popup-indicator-item:hover:active
+#blocked-popup-indicator-item:hover:active,
+.customization-lwtheme-menu-theme:hover:active,
+#customization-lwtheme-menu-footer toolbarbutton:hover:active
 {
 	background-color: var(--arrowpanel-dimmed-further) !important;
 }
@@ -697,9 +704,68 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 }
 
 #confirmation-hint .panel-arrowcontent,
-#UITourTooltip .panel-arrowcontent
+#UITourTooltip .panel-arrowcontent,
+#customization-lwtheme-menu .panel-arrowcontent
 {
 	padding: 16px !important;
+}
+
+#customization-lwtheme-menu .panel-arrowcontent
+{
+	padding-top: 8px !important;
+}
+
+.customization-lwtheme-menu-theme
+{
+	padding: 0 16px !important;
+	margin: 0 -16px !important;
+	border: 0 !important;
+	height: 48px !important;
+}
+
+.customization-lwtheme-menu-theme .toolbarbutton-icon
+{
+	margin: 0 !important;
+	margin-inline-end: 16px !important;
+}
+
+.customization-lwtheme-menu-theme[active]:not(:hover):not(:active)
+{
+	background: 0 !important;
+}
+
+.customization-lwtheme-menu-theme[active]::after
+{
+	content: url(checkmark-18dp.svg) !important;
+	-moz-context-properties: fill, fill-opacity !important;
+	fill: currentColor !important;
+	display: -moz-box !important;
+	width: 18px !important;
+	height: 18px !important;
+}
+
+#customization-lwtheme-menu-footer
+{
+	padding: 0 !important;
+	background: 0 !important;
+	border: 0 !important;
+	display: flex !important;
+	flex-direction: column !important;
+}
+
+#customization-lwtheme-menu-footer toolbarbutton
+{
+	border: 0 !important;
+	margin: 0 -6px 0 !important;
+	height: 48px !important;
+	padding: 0 16px !important;
+	display: flex !important;
+	background-image: none !important;
+}
+
+#customization-lwtheme-menu-footer toolbarbutton .toolbarbutton-text
+{
+	text-align: start !important;
 }
 
 .panel-footer
@@ -727,6 +793,12 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 {
 	position: relative !important;
 	padding-inline-end: 16px !important;
+}
+
+.panel-footer button .button-menu-dropmarker
+{
+	margin-inline-start: 8px !important;
+	margin-inline-end: -8px !important;
 }
 
 .panel-footer button:not([default]) > .button-box::before
