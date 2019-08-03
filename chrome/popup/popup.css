@@ -277,6 +277,12 @@ panelview .toolbarbutton-1,
 	width: 32px !important;
 }
 
+#appMenu-fxa-avatar
+{
+	margin-inline-start: 20px !important;
+	margin-inline-end: 3px !important;
+}
+
 .toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]),
 [overflowedItem="true"]) > toolbarbutton > .toolbarbutton-icon
 {
