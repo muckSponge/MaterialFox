@@ -1,11 +1,11 @@
 @media (-moz-windows-compositor)
 {
 	@media not (-moz-os-version: windows-win7)
-  	{
-    	@media not (-moz-os-version: windows-win8)
+	{
+		@media not (-moz-os-version: windows-win8)
 		{
-      		@media (-moz-windows-default-theme)
-	  		{
+			@media (-moz-windows-default-theme)
+			{
 				:root[tabsintitlebar] .titlebar-buttonbox-container
 				{
 					height: 30px !important;
@@ -18,21 +18,27 @@
 				
 				:root[tabsintitlebar][sizemode=maximized] .titlebar-buttonbox-container
 				{
-					margin-block-start: calc(0px - (var(--space-above-tabbar))) !important;
+					margin-block-start: calc(2px - (var(--space-above-tabbar))) !important;
+				}
+					
+				:root[tabsintitlebar][sizemode=maximized]:not([extradragspace]) .titlebar-buttonbox-container
+				{
+					-moz-box-align: start !important;
+					margin-block-start: -4px !important;
 				}
 				
-        		@media (-moz-windows-accent-color-in-titlebar: 0)
+				@media (-moz-windows-accent-color-in-titlebar: 0)
 				{					
-        		  	:root[tabsintitlebar]:not(:-moz-lwtheme):not([privatebrowsingmode=temporary])
+					:root[tabsintitlebar]:not(:-moz-lwtheme):not([privatebrowsingmode=temporary])
 					{
-        		    	background-color: #dee1e6 !important;
-        		    	color: #3c4043 !important;
+						background-color: #dee1e6 !important;
+						color: #3c4043 !important;
         		  	}
 					
 					:root[tabsintitlebar]:not(:-moz-lwtheme):not([privatebrowsingmode=temporary]):-moz-window-inactive
 					{
-        		    	background-color: #e7eaed !important;
-        		    	color: #666a6d !important;
+						background-color: #e7eaed !important;
+						color: #666a6d !important;
         		  	}
         		}
       		}
