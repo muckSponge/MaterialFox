@@ -705,17 +705,20 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 
 #confirmation-hint .panel-arrowcontent,
 #UITourTooltip .panel-arrowcontent,
-#customization-lwtheme-menu .panel-arrowcontent
+#customization-lwtheme-menu .panel-arrowcontent,
+#customization-uidensity-menu .panel-arrowcontent
 {
 	padding: 16px !important;
 }
 
+#customization-uidensity-menu .panel-arrowcontent,
 #customization-lwtheme-menu .panel-arrowcontent
 {
 	padding-top: 8px !important;
 }
 
-.customization-lwtheme-menu-theme
+.customization-lwtheme-menu-theme,
+.customization-uidensity-menuitem
 {
 	padding: 0 16px !important;
 	margin: 0 -16px !important;
@@ -723,18 +726,24 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	height: 48px !important;
 }
 
-.customization-lwtheme-menu-theme .toolbarbutton-icon
+.customization-lwtheme-menu-theme .toolbarbutton-icon,
+.customization-uidensity-menuitem .menu-iconic-icon
 {
 	margin: 0 !important;
 	margin-inline-end: 16px !important;
+	padding: 0 !important;
+	width: 24px !important;
+	height: 24px !important;
 }
 
-.customization-lwtheme-menu-theme[active]:not(:hover):not(:active)
+.customization-lwtheme-menu-theme[active]:not(:hover):not(:active),
+.customization-uidensity-menuitem[active]:not(:hover):not(:active)
 {
 	background: 0 !important;
 }
 
-.customization-lwtheme-menu-theme[active]::after
+.customization-lwtheme-menu-theme[active]::after,
+.customization-uidensity-menuitem[active]::after
 {
 	content: url(checkmark-18dp.svg) !important;
 	-moz-context-properties: fill, fill-opacity !important;
@@ -742,6 +751,7 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	display: -moz-box !important;
 	width: 18px !important;
 	height: 18px !important;
+	margin-inline-start: 16px !important;
 }
 
 #customization-lwtheme-menu-footer
