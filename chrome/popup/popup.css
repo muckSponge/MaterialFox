@@ -25,6 +25,7 @@ panel[type="autocomplete-richlistbox"]:not(#PopupAutoCompleteRichResult)
 	padding: 0 !important;
 	box-shadow: none !important;
 	font: -moz-pull-down-menu !important;
+	border: 0 !important;
 }
 
 .popup-internal-box,
@@ -102,14 +103,27 @@ menupopup .scrollbutton-down
 	-moz-appearance: none !important;
 }
 
+/* hide icon if no image (default on macOS but not Windows) */
+.subviewbutton:not(:-moz-any([image], [targetURI], .bookmark-item)) > .menu-iconic-left
+{
+    display: none;
+}
+
 .menu-iconic-icon
 {
 	fill: currentColor !important;
 	-moz-context-properties: fill, fill-opacity, stroke, stroke-opacity !important;
+	margin-inline-start: 0 !important;
 	margin-inline-end: 16px !important;
 	width: 24px !important;
 	height: 24px !important;
 	padding: 4px !important;
+}
+
+.menu-text
+{
+	-moz-appearance: none !important;
+	padding: 0 !important;
 }
 
 .menu-right
@@ -122,20 +136,18 @@ menupopup .scrollbutton-down
 	margin-inline-start: 16px !important;
 }
 
-/* padding-inline-start of 30px is enforced in Windows and can't be overriden */
-@media (-moz-windows-compositor)
+menuitem[type="checkbox"] > .menu-iconic-left > .menu-iconic-icon,
+menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon,
+menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon
 {
-	.menu-text
-	{
-		margin-inline-start: -30px !important;
-	}
+	display: -moz-box !important;
+	padding: 3px !important;
 }
 
 menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon
 {
 	/* checkmark is 18px, not 16px, hence reduced padding */
 	list-style-image: url(checkmark-18dp.svg) !important;
-	padding: 3px !important;
 }
 
 #context-navigation
