@@ -240,6 +240,13 @@
 	list-style-image: url(folder.svg) !important;
 }
 
+.panel-banner-item[notificationid^="update"]
+{
+	list-style-image: url(menu-update.svg) !important;
+	-moz-context-properties: fill, fill-opacity !important;
+	fill: currentColor !important;
+}
+
 /* high DPI adjustments */
 @media (min--moz-device-pixel-ratio: 2)
 {

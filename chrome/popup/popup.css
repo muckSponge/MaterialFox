@@ -217,13 +217,15 @@ panel:not(.tooltip-xul-wrapper) .panel-arrowbox,
 /* .subview-subheader, */
 panelview .toolbarbutton-1,
 .subviewbutton,
-.widget-overflow-list .toolbarbutton-1
+.widget-overflow-list .toolbarbutton-1,
+.panel-banner-item
 {
 	min-height: 32px !important;
 	padding: 0 16px !important;
 }
 
-.subviewbutton .toolbarbutton-icon
+.subviewbutton .toolbarbutton-icon,
+.panel-banner-item .toolbarbutton-icon
 {
 	margin-inline-end: 16px !important;
 	width: 24px !important;
@@ -231,7 +233,8 @@ panelview .toolbarbutton-1,
 	padding: 4px !important;
 }
 
-.subviewbutton .toolbarbutton-text
+.subviewbutton label,
+.panel-banner-item label
 {
 	padding-inline-start: 0 !important;
 }
@@ -257,24 +260,40 @@ panelview .toolbarbutton-1,
 	padding: 0 !important;
 }
 
-/* this is actually a button... */
-#appMenu-fxa-label
+.panel-banner-item
 {
-	padding-inline-start: 50px !important;
-	margin-inline-start: -34px !important;
-	border-radius: 0 16px 16px 0 !important;
+	border: 0 !important;
 }
 
-#appMenu-fxa-status + toolbarseparator
+#appMenu-addon-banners:not(:empty) ~ #appMenu-fxa-status,
+.panel-banner-item:not([hidden]) + #appMenu-fxa-status
+{
+	border-top: 1px solid var(--panel-separator-color) !important;
+	margin-top: 5px !important;
+	padding-top: 5px !important;
+}
+
+#appMenu-fxa-avatar
 {
 	display: none !important;
 }
 
-#appMenu-fxa-icon
+#appMenu-fxa-status[fxastatus="signedin"] > #appMenu-fxa-label
 {
-	border-radius: 16px !important;
-	padding: 0 !important;
-	width: 32px !important;
+	list-style-image: var(--avatar-image-url) !important;
+	margin: 0 !important;
+}
+
+#appMenu-fxa-status[fxastatus="signedin"] > #appMenu-fxa-label > .toolbarbutton-icon
+{
+	display: -moz-box !important;
+	border-radius: 99px !important;
+	padding: 2px !important;
+}
+
+.panel-banner-item[notificationid="update-restart"]::after
+{
+	display: none !important;
 }
 
 .toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]),
