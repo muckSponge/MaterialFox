@@ -832,6 +832,7 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 
 .panel-footer button > .button-box
 {
+	-moz-appearance: none !important;
 	position: relative !important;
 	padding-inline-end: 16px !important;
 }
