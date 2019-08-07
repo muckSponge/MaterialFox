@@ -290,13 +290,13 @@ panelview .toolbarbutton-1,
 	display: none !important;
 }
 
-#appMenu-fxa-status[fxastatus="signedin"] > #appMenu-fxa-label
+:root[fxastatus="signedin"] #appMenu-fxa-label
 {
 	list-style-image: var(--avatar-image-url) !important;
 	margin: 0 !important;
 }
 
-#appMenu-fxa-status[fxastatus="signedin"] > #appMenu-fxa-label > .toolbarbutton-icon
+:root[fxastatus="signedin"] #appMenu-fxa-label > .toolbarbutton-icon
 {
 	display: -moz-box !important;
 	border-radius: 99px !important;
