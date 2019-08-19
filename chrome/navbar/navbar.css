@@ -95,7 +95,7 @@
 #urlbar[focused],
 #searchbar[focused]
 {
-	border: 2px solid var(--toolbar-field-focus-border-color) !important;
+	border: 2px solid #3e5b8a !important;
 	padding: 1px !important;
 	margin: 0 !important;
 }
