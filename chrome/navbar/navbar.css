@@ -398,23 +398,23 @@
 /* icons */
 #urlbar[pageproxystate=valid] > #identity-icon
 {
-	list-style-image: url(info-1x.svg) !important;
+	list-style-image: url(../icons/info-1x.svg) !important;
 }
 
 #urlbar[pageproxystate=valid] > #identity-box:-moz-any(.verifiedDomain, .verifiedIdentity) > #identity-icon
 {
-	list-style-image: url(connection-1x.svg) !important;
+	list-style-image: url(../icons/connection-1x.svg) !important;
 }
 
 #urlbar[pageproxystate=valid] > #identity-box.chromeUI > #identity-icon
 {
-	list-style-image: url(identity-icons-brand.svg) !important;
+	list-style-image: url(../icons/identity-icons-brand.svg) !important;
 }
 
 /* no longer used as a connection icon */
 #connection-icon
 {
-	list-style-image: url(naughty-shield-1x.svg) !important;
+	list-style-image: url(../icons/naughty-shield-1x.svg) !important;
 }
 
 #urlbar[pageproxystate=valid] > #identity-box:-moz-any(
@@ -424,13 +424,13 @@
 	.insecureLoginForms
 ) > #identity-icon
 {
-	list-style-image: url(connection-warning-1x.svg) !important;
+	list-style-image: url(../icons/connection-warning-1x.svg) !important;
 }
 
 .urlbar-go-button,
 .search-go-button
 {
-	list-style-image: url(go.svg) !important;
+	list-style-image: url(../icons/go.svg) !important;
 }
 
 /* high DPI adjustments */
@@ -443,13 +443,13 @@
 	
 	#urlbar[pageproxystate=valid] > #identity-box:-moz-any(.unknownIdentity, .notSecure) > #identity-icon
 	{
-		list-style-image: url(info-2x.svg) !important;
+		list-style-image: url(../icons/info-2x.svg) !important;
 		transform: translate(.5px, .5px) !important;
 	}
 	
 	#urlbar[pageproxystate=valid] > #identity-box:-moz-any(.verifiedDomain, .verifiedIdentity) > #identity-icon
 	{
-		list-style-image: url(connection-2x.svg) !important;
+		list-style-image: url(../icons/connection-2x.svg) !important;
 	}
 	
 	#urlbar[pageproxystate=valid] > #identity-box:-moz-any(
@@ -459,12 +459,12 @@
 		.insecureLoginForms
 	) > #identity-icon
 	{
-		list-style-image: url(connection-warning-2x.svg) !important;
+		list-style-image: url(../icons/connection-warning-2x.svg) !important;
 	}
 	
 	#connection-icon
 	{
-		list-style-image: url(naughty-shield-2x.svg) !important;
+		list-style-image: url(../icons/naughty-shield-2x.svg) !important;
 	}
 	
 	#identity-icon-labels,

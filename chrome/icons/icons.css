@@ -4,28 +4,28 @@
 .subviewbutton-back,
 .identity-popup-expander
 {
-	list-style-image: url(arrow-back-1x.svg) !important;
+	list-style-image: url(../icons/arrow-back-1x.svg) !important;
 }
 
 #PanelUI-menu-button
 {
-	list-style-image: url(menu.svg) !important;
+	list-style-image: url(../icons/menu.svg) !important;
 }
 
 #PanelUI-menu-button[badge-status|="update"]
 {
-	list-style-image: url(menu-update.svg) !important;
+	list-style-image: url(../icons/menu-update.svg) !important;
 }
 
 #reload-button,
 #context-reload
 {
-	list-style-image: url(refresh-1x.svg) !important;
+	list-style-image: url(../icons/refresh-1x.svg) !important;
 }
 
 #stop-button
 {
-	list-style-image: url(stop-1x.svg) !important;
+	list-style-image: url(../icons/stop-1x.svg) !important;
 }
 
 .toolbarbutton-1#forward-button,
@@ -36,7 +36,7 @@
 
 #home-button
 {
-	list-style-image: url(home-1x.svg) !important;
+	list-style-image: url(../icons/home-1x.svg) !important;
 }
 
 #star-button,
@@ -44,7 +44,7 @@
 #pageAction-panel-bookmark,
 #panelMenuBookmarkThisPage
 {
-	list-style-image: url(star-1x.svg) !important;
+	list-style-image: url(../icons/star-1x.svg) !important;
 	fill-opacity: 0 !important;
 }
 
@@ -64,13 +64,13 @@
 #appMenu-library-bookmarks-button,
 #panelMenu_toggleBookmarksMenu
 {
-	list-style-image: url(bookmark.svg) !important;
+	list-style-image: url(../icons/bookmark.svg) !important;
 }
 
 #library-button,
 #appMenu-library-button
 {
-	list-style-image: url(library-1x.svg) !important;
+	list-style-image: url(../icons/library-1x.svg) !important;
 }
 
 #preferences-button,
@@ -78,60 +78,60 @@
 .identity-popup-preferences-button,
 #urlbar-anon-search-settings-compact .button-icon
 {
-	list-style-image: url(settings.svg) !important;
+	list-style-image: url(../icons/settings.svg) !important;
 }
 
 #history-panelmenu,
 #appMenu-library-history-button
 {
-	list-style-image: url(history.svg) !important;
+	list-style-image: url(../icons/history.svg) !important;
 }
 
 #appMenu-logins-button
 {
-	list-style-image: url(key.svg) !important;
+	list-style-image: url(../icons/key.svg) !important;
 }
 
 .subviewbutton[type="highlight-history"]::after
 {
-	content: url(history.svg) !important;
+	content: url(../icons/history.svg) !important;
 }
 
 #panic-button
 {
-	list-style-image: url(forget.svg) !important;
+	list-style-image: url(../icons/forget.svg) !important;
 }
 
 #developer-button
 {
-	list-style-image: url(developer.svg) !important;
+	list-style-image: url(../icons/developer.svg) !important;
 }
 
 #add-ons-button,
 #appMenu-addons-button
 {
-	list-style-image: url(addons.svg) !important;
+	list-style-image: url(../icons/addons.svg) !important;
 }
 
 #email-link-button,
 #pageAction-panel-emailLink
 {
-	list-style-image: url(email.svg) !important;
+	list-style-image: url(../icons/email.svg) !important;
 }
 
 #pageAction-panel-shareURL
 {
-	list-style-image: url(share.svg) !important;
+	list-style-image: url(../icons/share.svg) !important;
 }
 
 #pageAction-panel-copyURL
 {
-	list-style-image: url(hyperlink.svg) !important;
+	list-style-image: url(../icons/hyperlink.svg) !important;
 }
 
 #pageAction-panel-webcompat-reporter_mozilla_org
 {
-	list-style-image: url(bug.svg) !important;
+	list-style-image: url(../icons/bug.svg) !important;
 }
 
 #pageAction-panel-webcompat-reporter_mozilla_org > .toolbarbutton-icon
@@ -141,7 +141,7 @@
 
 #screenshots_mozilla_org-menuitem-_create-screenshot .menu-iconic-left
 {
-	background-image: url(screenshot.svg) !important;
+	background-image: url(../icons/screenshot.svg) !important;
 	background-position: 4px center !important;
 	background-repeat: no-repeat !important;
 }
@@ -154,7 +154,7 @@
 .tabs-newtab-button,
 #new-tab-button
 {
-	list-style-image: url(new-tab.svg) !important;
+	list-style-image: url(../icons/new-tab.svg) !important;
 }
 
 #fxa-avatar-image
@@ -166,22 +166,22 @@
 
 :root:not([fxastatus=signedin]) #fxa-avatar-image
 {
-	list-style-image: url(profile-inactive.svg) !important;
+	list-style-image: url(../icons/profile-inactive.svg) !important;
 }
 
 :root[fxastatus=signedin]:not([style*="--avatar-image-url"]) #fxa-avatar-image
 {
-	list-style-image: url(profile.svg) !important;
+	list-style-image: url(../icons/profile.svg) !important;
 }
 
 :root[privatebrowsingmode] #fxa-avatar-image
 {
-	list-style-image: url(incognito.svg) !important;
+	list-style-image: url(../icons/incognito.svg) !important;
 }
 
 #pageActionButton
 {
-	list-style-image: url(menu.svg) !important;
+	list-style-image: url(../icons/menu.svg) !important;
 }
 
 #urlbar[pageproxystate="invalid"] #identity-icon,
@@ -190,22 +190,22 @@
 #appMenu-find-button,
 #panelMenu_searchBookmarks
 {
-	list-style-image: url(search.svg) !important;
+	list-style-image: url(../icons/search.svg) !important;
 }
 
 #appMenu-cut-button
 {
-	list-style-image: url(cut.svg) !important;
+	list-style-image: url(../icons/cut.svg) !important;
 }
 
 #appMenu-copy-button
 {
-	list-style-image: url(copy.svg) !important;
+	list-style-image: url(../icons/copy.svg) !important;
 }
 
 #appMenu-paste-button
 {
-	list-style-image: url(paste.svg) !important;
+	list-style-image: url(../icons/paste.svg) !important;
 }
 
 #appMenu-fxa-label,
@@ -213,12 +213,12 @@
 #appMenu-fxa-icon,
 #PanelUI-remotetabs-syncnow
 {
-	list-style-image: url(sync.svg) !important;
+	list-style-image: url(../icons/sync.svg) !important;
 }
 
 .tab-icon-image:not([src])
 {
-    list-style-image: url(globe.svg) !important;
+    list-style-image: url(../icons/globe.svg) !important;
 }
 
 .tab-icon-image[src="chrome://browser/skin/settings.svg"]
@@ -237,7 +237,7 @@
 
 .downloadIconShow .button-icon
 {
-	list-style-image: url(folder.svg) !important;
+	list-style-image: url(../icons/folder.svg) !important;
 }
 
 .panel-banner-item[notificationid^="update"]
@@ -256,7 +256,7 @@
 	.subviewbutton-back,
 	.identity-popup-expander
 	{
-		list-style-image: url(arrow-back-2x.svg) !important;
+		list-style-image: url(../icons/arrow-back-2x.svg) !important;
 	}
 	
 	#PanelUI-menu-button:not([badge-status|="update"]) .toolbarbutton-icon
@@ -266,18 +266,18 @@
 	
 	#stop-button
 	{
-		list-style-image: url(stop-2x.svg) !important;
+		list-style-image: url(../icons/stop-2x.svg) !important;
 	}
 	
 	#reload-button,
 	#context-reload
 	{
-		list-style-image: url(refresh-2x.svg) !important;
+		list-style-image: url(../icons/refresh-2x.svg) !important;
 	}
 	
 	#home-button
 	{
-		list-style-image: url(home-2x.svg) !important;
+		list-style-image: url(../icons/home-2x.svg) !important;
 	}
 	
 	#star-button,
@@ -285,7 +285,7 @@
 	#pageAction-panel-bookmark,
 	#panelMenuBookmarkThisPage
 	{
-		list-style-image: url(star-2x.svg) !important;
+		list-style-image: url(../icons/star-2x.svg) !important;
 	}
 	
 	#bookmarks-menu-button .toolbarbutton-icon
@@ -295,6 +295,6 @@
 	
 	#library-button
 	{
-		list-style-image: url(library-2x.svg) !important;
+		list-style-image: url(../icons/library-2x.svg) !important;
 	}
 }
