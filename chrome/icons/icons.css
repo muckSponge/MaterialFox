@@ -195,7 +195,7 @@
 
 #appMenu-cut-button
 {
-	list-style-image: urlcut.svg) !important;
+	list-style-image: url(cut.svg) !important;
 }
 
 #appMenu-copy-button
