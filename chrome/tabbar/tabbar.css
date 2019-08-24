@@ -308,7 +308,7 @@
 
 .tab-close-button
 {
-	list-style-image: url(close-tab.svg) !important;
+	list-style-image: url(../icons/close-tab.svg) !important;
 	width: 16px !important;
 	height: 16px !important;
 	margin: 0 !important;
@@ -340,7 +340,7 @@
 {
 	-moz-context-properties: fill !important;
 	fill: currentColor !important;
-	background-image: url(spinner-busy.svg) !important;
+	background-image: url(../icons/spinner-busy.svg) !important;
 	margin: 0 !important;
 	transform-origin: center !important;
 	animation: rotate-360 1.333s linear infinite reverse !important;
@@ -349,7 +349,7 @@
 
 .tab-throbber[progress]
 {
-	background-image: url(spinner-progress.svg) !important;
+	background-image: url(../icons/spinner-progress.svg) !important;
 	animation-direction: normal !important;
 }
 

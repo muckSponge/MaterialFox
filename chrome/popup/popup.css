@@ -131,7 +131,7 @@ menupopup .scrollbutton-down
 	-moz-appearance: none !important;
 	-moz-context-properties: fill !important;
 	fill: currentColor !important;
-	list-style-image: url(menu-right-2x.svg) !important;
+	list-style-image: url(../icons/menu-right-2x.svg) !important;
 	margin-inline-end: 0 !important;
 	margin-inline-start: 16px !important;
 }
@@ -147,7 +147,7 @@ menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon
 menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon
 {
 	/* checkmark is 18px, not 16px, hence reduced padding */
-	list-style-image: url(checkmark-18dp.svg) !important;
+	list-style-image: url(../icons/checkmark-18dp.svg) !important;
 }
 
 #context-navigation
@@ -350,7 +350,7 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 .PanelUI-subView .subviewbutton-nav::after
 {
 	transform: none !important;
-	content: url(menu-right-1x.svg) !important;
+	content: url(../icons/menu-right-1x.svg) !important;
 	fill-opacity: 1 !important;
 }
 
@@ -519,7 +519,7 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 .identity-popup-content-blocking-category::after
 {
 	transform: translateY(1px) !important;
-	content: url(menu-right-1x.svg) !important;
+	content: url(../icons/menu-right-1x.svg) !important;
 	margin: 0 !important;
 }
 
@@ -776,7 +776,7 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 .customization-lwtheme-menu-theme[active]::after,
 .customization-uidensity-menuitem[active]::after
 {
-	content: url(checkmark-18dp.svg) !important;
+	content: url(../icons/checkmark-18dp.svg) !important;
 	-moz-context-properties: fill, fill-opacity !important;
 	fill: currentColor !important;
 	display: -moz-box !important;
@@ -876,6 +876,6 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	.PanelUI-subView .subviewbutton-nav::after,
 	.identity-popup-content-blocking-category::after
 	{
-		content: url(menu-right-2x.svg) !important;
+		content: url(../icons/menu-right-2x.svg) !important;
 	}
 }
