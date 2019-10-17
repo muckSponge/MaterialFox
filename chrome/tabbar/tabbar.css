@@ -139,7 +139,7 @@
 .tab-content::after
 {
 	content: "" !important;
-	display: -moz-box !important;
+	display: block !important;
 	position: absolute !important;
 	background-color: currentColor !important;
 	width: 1px !important;
@@ -228,7 +228,7 @@
 .tab-background::after
 {
 	content: "" !important;
-	display: -moz-box !important;
+	display: block !important;
 	position: absolute !important;
 	width: 8px !important;
 	height: 8px !important;
