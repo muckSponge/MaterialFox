@@ -1,381 +1,881 @@
 menupopup,
-panel[type="autocomplete-richlistbox"]
+menupopup menuitem,
+menupopup menu,
+menupopup menuseparator
 {
 	-moz-appearance: none !important;
+}
+
+menupopup,
+panel[type="autocomplete-richlistbox"]:not(#PopupAutoCompleteRichResult)
+{
+	-moz-window-shadow: none !important;
 	background: 0 !important;
 	border: 0 !important;
 	color: var(--arrowpanel-color) !important;
-	position: relative !important;
+	margin-left: -14px !important;
+	margin-top: -19px !important;
+	padding: 11px 14px 18px !important;
+	box-sizing: content-box !important;
 }
 
-.popup-internal-box,
-.panel-arrowcontent,
-.autocomplete-richlistbox,
-#PopupSearchAutoComplete
-{
-	background: var(--arrowpanel-background) !important;
-	border-radius: 8px !important;
-	padding: 8px 0 !important;
-	margin: 0 !important;
-}
-
-/* dark themes get a contrasty border */
-.popup-internal-box:-moz-lwtheme-brighttext,
-.panel-arrowcontent:-moz-lwtheme-brighttext,
-#PopupSearchAutoComplete:-moz-lwtheme-brighttext
-{
-	box-shadow:
-		0 0 0 .5px #000 inset,
-		0 0 0 1.5px var(--arrowpanel-border-color) inset !important;
-}
-
-.panel-arrowbox
-{
-	display: none !important;
-}
-
-.PanelUI-subView
-{
-	background: none !important;
-}
-
-menu,
-menuitem,
-.autocomplete-richlistitem,
-.popup-internal-box > .scrollbutton-up,
-.popup-internal-box > .scrollbutton-down
+.panel-arrowcontent
 {
 	background: 0 !important;
-	-moz-appearance: none !important;
-	color: inherit !important;
-}
-
-richlistbox,
-.ac-title
-{
-	color: inherit !important;
-}
-
-menu,
-menuitem,
-.autocomplete-richlistitem
-{
-	padding: 0 24px 0 !important;
-	min-height: 28px !important;
+	padding: 0 !important;
+	box-shadow: none !important;
+	font: -moz-pull-down-menu !important;
 	border: 0 !important;
 }
 
-/* hover */
-menu:not([disabled=true]):not([open]):hover,
-menuitem:not([disabled=true]):not([_moz-menuactive]):hover,
-.autocomplete-richlistitem:not([disabled=true]):not([selected]):hover
+.popup-internal-box,
+:not(#PopupAutoCompleteRichResult) > .autocomplete-richlistbox
+{
+	margin: 0 !important;
+	padding: 8px 0 !important;
+	background: var(--arrowpanel-background) !important;
+	border-radius: 4px !important;
+	box-shadow:
+		0 5px 5px -3px rgba(0,0,0,.2),
+		0 8px 10px 1px rgba(0,0,0,.14),
+		0 3px 14px 2px rgba(0,0,0,.12) !important;
+	color: inherit !important;
+}
+
+menupopup menuseparator
+{
+	margin: 8px 0 !important;
+	padding: 0 !important;
+	height: 1px !important;
+	background: currentColor !important;
+	opacity: .12 !important;
+}
+
+menupopup menuitem,
+menupopup menu,
+.autocomplete-richlistitem
+{
+	height: 32px !important;
+	padding: 0 16px !important;
+	border: 0 !important;
+	background: 0 !important;
+	color: inherit !important;
+	fill-opacity: initial !important;
+}
+
+menupopup menuitem:hover:not([disabled=true]),
+menupopup menu:hover:not([disabled=true]),
+.autocomplete-richlistitem:hover:not([disabled=true]):not([selected=true])
 {
 	background-color: var(--arrowpanel-dimmed) !important;
 }
 
-/* selected/open */
-menu[open],
-.autocomplete-richlistitem[selected],
-menuitem[_moz-menuactive]
+menupopup menuitem:hover:active:not([disabled=true]),
+menupopup menu:hover:active:not([disabled=true]),
+.autocomplete-richlistitem:hover:active:not([disabled=true]),
+.autocomplete-richlistitem[selected=true]
 {
-	background-color: var(--autocomplete-popup-highlight-background) !important;
-	color: var(--autocomplete-popup-highlight-color) !important;
+	background-color: var(--arrowpanel-dimmed-further) !important;
 }
 
-menu[disabled=true],
-menuitem[disabled=true],
+menupopup menuitem[disabled=true],
+menupopup menu[disabled=true],
 .autocomplete-richlistitem[disabled=true]
 {
 	opacity: .5 !important;
 }
 
-menuseparator
+/* force regular scrollbar for menus */
+menupopup .arrowscrollbox-scrollbox
+{
+	overflow-y: auto !important;
+}
+
+/* why still use scroll buttons; is this the middle ages? */
+menupopup .scrollbutton-up,
+menupopup .scrollbutton-down
+{
+	display: none !important;
+}
+
+.menu-iconic-left
 {
 	-moz-appearance: none !important;
-	background: currentColor !important;
-	opacity: .1 !important;
-	border: 0 !important;
-	padding: 0 !important;
-	height: 1px !important;
-	margin: 5px 0 !important;
 }
 
-.menu-iconic-icon,
-.menu-right,
-.ac-site-icon,
-.ac-type-icon
+/* hide icon if no image (default on macOS but not Windows) */
+.subviewbutton:not(:-moz-any([image], [targetURI], .bookmark-item)) > .menu-iconic-left
+{
+    display: none;
+}
+
+.menu-iconic-icon
 {
 	fill: currentColor !important;
-	-moz-context-properties: fill, stroke, fill-opacity, stroke-opacity !important;
+	-moz-context-properties: fill, fill-opacity, stroke, stroke-opacity !important;
+	margin-inline-start: 0 !important;
+	margin-inline-end: 16px !important;
+	width: 24px !important;
+	height: 24px !important;
+	padding: 4px !important;
 }
 
-.menu-iconic-icon,
-.ac-type-icon,
-.ac-site-icon
+.menu-text
 {
-	margin-inline-start: 0 !important;
-	margin-inline-end: 8px !important;
+	-moz-appearance: none !important;
+	padding: 0 !important;
 }
 
 .menu-right
 {
 	-moz-appearance: none !important;
-	list-style-image: url(menu-right-1x.svg) !important;
+	-moz-context-properties: fill !important;
+	fill: currentColor !important;
+	list-style-image: url(menu-right-2x.svg) !important;
+	margin-inline-end: 0 !important;
+	margin-inline-start: 16px !important;
+}
+
+menuitem[type="checkbox"] > .menu-iconic-left > .menu-iconic-icon,
+menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon,
+menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon
+{
+	display: -moz-box !important;
+	padding: 3px !important;
+}
+
+menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon
+{
+	/* checkmark is 18px, not 16px, hence reduced padding */
+	list-style-image: url(checkmark-18dp.svg) !important;
 }
 
 #context-navigation
 {
-	padding: 0 8px 3px !important;
 	background: 0 !important;
 }
 
-/* could perhaps make this more generalised */
-#context-navigation > .menuitem-iconic
+#context-navigation .menuitem-iconic
 {
+	background: 0 !important;
 	padding: 0 !important;
-	border-radius: 99px !important;
+	margin: 0 !important;
+}
+
+#context-navigation .menu-iconic-left
+{
+	border-radius: 50% !important;
+	padding: 8px !important;
 }
 
 #context-navigation .menu-iconic-icon
 {
-	margin: 0 !important;
-}
-
-#context-back,
-#context-forward
-{
-	list-style-image: url(../navbar/arrow-back-1x.svg) !important;
-}
-
-#context-forward
-{
-	transform: scaleX(-1) !important;
-}
-
-#context-reload
-{
-	list-style-image: url(../navbar/refresh-1x.svg) !important;
-}
-
-#context-bookmarkpage
-{
-	list-style-image: url(../navbar/star-1x.svg) !important;
-}
-
-#context-bookmarkpage:not([starred]) .menu-iconic-icon
-{
-	fill-opacity: 0 !important;
-}
-
-:not(menulist) > menupopup > menuitem:-moz-any([type=checkbox], [type=radio])
-{
-	list-style-image: url(checkbox-empty.svg) !important;
-}
-
-:not(menulist) > menupopup > menuitem:-moz-any([type=checkbox], [type=radio]):-moz-any([checked=true], [selected=true])
-{
-	list-style-image: url(checkbox-checked.svg) !important;
-}
-
-/* unset fill-opacity for menus nested in buttons */
-.bookmark-item > menupopup
-{
-	fill-opacity: initial !important;
-}
-
-.search-panel-tree
-{
-	background: 0 !important;
-	border-radius: 0 !important;
-	box-shadow: 0 !important;
 	padding: 0 !important;
+	margin: 0 !important;
+	width: 16px !important;
+	height: 16px !important;
 }
 
-.search-panel-current-engine,
-#searchbar-anon-search-settings,
-.addengine-item
+#context-navigation .menuitem-iconic:hover:not([disabled]) .menu-iconic-left
 {
-	padding: 0 24px 0 !important;
-	min-height: 28px !important;
-	border-radius: 0 !important;
+	background-color: var(--arrowpanel-dimmed) !important;
+}
+
+#context-navigation .menuitem-iconic:hover:active:not([disabled]) .menu-iconic-left
+{
+	background-color: var(--arrowpanel-dimmed-further) !important;
+}
+
+panel:not(#urlbar-results):not(#PopupAutoCompleteRichResult)
+{
+	-moz-window-shadow: none !important;
+
+	margin: -19px -14px -18px !important;	
+	padding: 11px 14px 18px !important;
+}
+
+panel[type="arrow"][side="top"],
+panel[type="arrow"][side="bottom"]
+{
+	margin-left: -39px !important;
+	margin-right: -39px !important;
+}
+
+panel[type="arrow"][side="left"],
+panel[type="arrow"][side="right"]
+{
+	margin-top: -44px;
+	margin-bottom: -44px;
+}
+
+panel:not(.tooltip-xul-wrapper) .panel-arrowcontent
+{
+	background: var(--arrowpanel-background) !important;
 	border: 0 !important;
-	font-size: inherit !important;
-	text-align: start !important;
+	border-radius: 4px !important;
+	box-shadow:
+		0 5px 5px -3px rgba(0, 0, 0, .2),
+		0 8px 10px 1px rgba(0, 0, 0, .14),
+		0 3px 14px 2px rgba(0, 0, 0, .12) !important;
+	color: var(--arrowpanel-color) !important;
 }
 
-.search-panel-current-engine
-{
-	-moz-box-ordinal-group: 0 !important;
-}
-
-/* a sneaky separator */
-#PopupSearchAutoComplete::before
-{
-	-moz-box-ordinal-group: 1 !important;
-}
-
-.searchbar-engine-image
-{
-	margin-inline-end: 2px !important;
-}
-
-.search-panel-one-offs-header
+panel:not(.tooltip-xul-wrapper) .panel-arrowbox,
+.cui-widget-panel .panel-arrowbox
 {
 	display: none !important;
 }
 
-.search-panel-one-offs,
-#searchbar-anon-search-settings
+/* .subview-subheader, */
+panelview .toolbarbutton-1,
+.subviewbutton,
+.widget-overflow-list .toolbarbutton-1,
+.panel-banner-item
 {
+	min-height: 32px !important;
+	padding: 0 16px !important;
+}
+
+.subviewbutton .toolbarbutton-icon,
+.panel-banner-item .toolbarbutton-icon
+{
+	margin-inline-end: 16px !important;
+	width: 24px !important;
+	height: 24px !important;
+	padding: 4px !important;
+}
+
+.subviewbutton label,
+.panel-banner-item label
+{
+	padding-inline-start: 0 !important;
+}
+
+#appMenu-zoom-controls > .subviewbutton,
+#appMenu-edit-controls > .subviewbutton
+{
+	min-width: 32px !important;
+	border-radius: 16px !important;
+	padding: 0 8px !important;
 	border: 0 !important;
-}
-
-/* separators */
-#PopupSearchAutoComplete::before,
-.search-panel-one-offs::before,
-.search-panel-one-offs::after
-{
-	content: "" !important;
-	display: -moz-box !important;
-	height: 1px !important;
-	width: 100% !important;
-	background: currentColor !important;
-	opacity: .1 !important;
-	margin: 4px 0 !important;
-}
-
-.searchbar-engine-one-off-item
-{
-	border: 0 !important;
-	background: 0 !important;
-}
-
-.searchbar-engine-one-off-item .button-box
-{
-	border-radius: 99px !important;
-	margin: 2px 0 !important;
-}
-
-.searchbar-engine-one-off-item:first-of-type .button-box,
-.searchbar-engine-one-off-item.last-of-row + .searchbar-engine-one-off-item .button-box
-{
 	margin-inline-start: 4px !important;
 }
 
-.searchbar-engine-one-off-item.last-of-row .button-box
+#appMenu-zoom-controls > toolbarseparator[orient="vertical"] + .subviewbutton
 {
-	margin-inline-end: 4px !important;
+	margin-inline-start: 0 !important;
 }
 
-/* unfortunately these don't support focus */
-.searchbar-engine-one-off-item:hover .button-box,
-#searchbar-anon-search-settings:hover,
-.search-panel-current-engine:hover,
-.addengine-item:hover
+#appMenu-zoom-controls > .subviewbutton-iconic,
+#appMenu-edit-controls > .subviewbutton-iconic
 {
-	background-color: var(--autocomplete-popup-highlight-background) !important;
+	padding: 0 !important;
 }
 
-.searchbar-engine-one-off-item.dummy
+.panel-banner-item
+{
+	border: 0 !important;
+}
+
+#appMenu-addon-banners:not(:empty) ~ #appMenu-fxa-status,
+.panel-banner-item:not([hidden]) + #appMenu-fxa-status
+{
+	border-top: 1px solid var(--panel-separator-color) !important;
+	margin-top: 5px !important;
+	padding-top: 5px !important;
+}
+
+#appMenu-fxa-avatar
 {
 	display: none !important;
 }
 
-.search-panel-tree .ac-type-icon[type="null"]
+:root[fxastatus="signedin"] #appMenu-fxa-label
+{
+	list-style-image: var(--avatar-image-url) !important;
+	margin: 0 !important;
+}
+
+:root[fxastatus="signedin"] #appMenu-fxa-label > .toolbarbutton-icon
+{
+	display: -moz-box !important;
+	border-radius: 99px !important;
+	padding: 2px !important;
+}
+
+.panel-banner-item[notificationid="update-restart"]::after
 {
 	display: none !important;
 }
 
-.search-add-engines
+.toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]),
+[overflowedItem="true"]) > toolbarbutton > .toolbarbutton-icon
+{
+	margin: 0 !important;
+}
+
+panelmultiview .toolbaritem-combined-buttons > spacer.before-label
+{
+	width: 20px !important;
+}
+
+panelmultiview .toolbaritem-combined-buttons > spacer.after-label
+{
+	width: 14px !important;
+}
+
+.subviewbutton-back
+{
+	padding: 4px !important;
+	border-radius: 16px !important;
+}
+
+.subviewbutton-back .toolbarbutton-icon
+{
+	margin: 0 !important;
+}
+
+.subviewbutton[type="highlight-history"]::after
+{
+	transform: none !important;
+}
+
+.subviewbutton[type="highlight-history"]::after,
+.subviewbutton[shortcut]::after,
+.PanelUI-subView .subviewbutton-nav::after
+{
+    margin-inline-start: 14px !important;
+}
+
+.PanelUI-subView .subviewbutton-nav::after
+{
+	transform: none !important;
+	content: url(menu-right-1x.svg) !important;
+	fill-opacity: 1 !important;
+}
+
+#identity-popup > .panel-arrowcontainer > .panel-arrowcontent
+{
+	fill-opacity: inherit !important;
+}
+
+.identity-popup-preferences-button
+{
+	border-radius: 16px !important;
+	background-image: none !important;
+}
+
+.identity-popup-preferences-button > .toolbarbutton-icon
+{
+	margin: 0 !important;
+}
+
+#identity-popup-permission-preferences-button
+{
+	padding: 0 !important;
+}
+
+#tracking-protection-preferences-button > .toolbarbutton-icon
+{
+	margin-inline-end: -8px !important;
+}
+
+#tracking-protection-preferences-button > .toolbarbutton-text
+{
+    padding-inline-end: 4px !important;
+	-moz-box-ordinal-group: 0 !important; 
+}
+
+.identity-popup-section
+{
+	padding: 16px !important;
+	display: flex !important;
+}
+
+.identity-popup-security-content,
+#identity-popup-content-blocking-content,
+#identity-popup-permissions-content
+{
+	padding: 0 !important;
+	background: 0 !important;
+	fill-opacity: inherit !important;
+}
+
+.identity-popup-expander
+{
+	border-radius: 16px !important;
+	width: 32px !important;
+	max-height: 32px !important;
+	margin-inline-start: auto !important;
+	-moz-box-pack: center !important;
+	-moz-box-align: center !important;
+	background-image: none !important;
+}
+
+.identity-popup-expander > .button-box
+{
+	border: 0 !important;
+	display: flex !important;
+	justify-content: center !important;
+}
+
+.identity-popup-expander .button-icon
+{
+	margin: 0 !important;
+}
+
+.identity-popup-expander .button-text
+{
+	display: none !important;
+}
+
+.identity-popup-headline
+{
+	margin: 0 !important;
+}
+
+.PanelUI-subView > .identity-popup-security-content,
+#identity-popup-securityView-body
+{
+	padding: 16px !important;
+}
+
+#identity-popup-mainView-panel-header
+{
+	-moz-box-align: start !important;
+	padding: 16px !important;
+}
+
+#identity-popup-securityView-body
+{
+	margin: 0 !important;
+}
+
+#identity-popup-content-blocking-content,
+#identity-popup-permissions-content
+{
+	display: flex !important;
+	flex-direction: column !important;
+	width: 100% !important;
+}
+
+#identity-popup-content-blocking-content > hbox:first-child,
+#identity-popup-permissions-content > hbox:first-child
+{
+	display: flex !important;
+}
+
+#identity-popup-content-blocking-category-list,
+#identity-popup-permission-list
+{
+	display: flex !important;
+	flex-direction: column !important;
+	margin: 0 -16px !important;
+	width: calc(100% + 32px) !important;
+	padding-top: 8px !important;
+}
+
+.identity-popup-permission-item
+{
+	display: flex !important;
+	align-items: center !important;
+}
+
+.identity-popup-permission-label,
+#identity-popup-content-blocking-report-breakage
+{
+	flex: 1 !important;
+	text-decoration: none !important;
+	cursor: auto !important;
+	color: inherit !important;
+}
+
+.identity-popup-content-blocking-category,
+.identity-popup-permission-item
+{
+	height: 32px !important;
+	padding: 0 16px !important;
+}
+
+.identity-popup-content-blocking-category-icon,
+.identity-popup-permission-icon
+{
+	margin: 0 !important;
+	margin-inline-end: 16px !important;
+}
+
+.popup-notification-icon,
+.identity-popup-permission-icon
+{
+	fill-opacity: 1 !important;
+}
+
+.identity-popup-content-blocking-category-label,
+.identity-popup-permission-label
+{
+	margin: 0 !important;
+}
+
+.identity-popup-content-blocking-category::after
+{
+	transform: translateY(1px) !important;
+	content: url(menu-right-1x.svg) !important;
+	margin: 0 !important;
+}
+
+.identity-popup-preferences-button
+{
+	margin-inline-start: auto !important;
+}
+
+.identity-popup-permission-remove-button
+{
+	opacity: 1 !important;
+}
+
+.tracking-protection-button,
+#identity-popup-content-blocking-report-breakage
+{
+	margin: 0 -16px !important;
+	height: 32px !important;
+	padding: 0 16px !important;
+	background: 0 !important;
+	color: inherit !important;
+	line-height: 32px !important;
+}
+
+#identity-popup-content-blocking-report-breakage
+{
+	padding-inline-start: 50px !important;
+}
+
+.tracking-protection-button > .button-box
+{
+	padding: 0 !important;
+}
+
+.tracking-protection-button .button-icon
+{
+	margin: 0 !important;
+}
+
+#customization-lwtheme-menu-header
+{
+	display: none !important;
+}
+
+#identity-popup-content-blocking-report-breakage,
+{
+	padding-inline-start: 48px !important;
+	line-height: 32px !important;
+	text-decoration: none !important;
+	cursor: auto !important;
+}
+
+.tracking-protection-button:hover:not([disabled=true]),
+#identity-popup-content-blocking-report-breakage:hover,
+#blocked-popup-indicator-item:hover,
+.customization-lwtheme-menu-theme:hover,
+#customization-lwtheme-menu-footer toolbarbutton:hover
+{
+	background-color: var(--arrowpanel-dimmed) !important;
+}
+
+.tracking-protection-button:hover:active:not([disabled=true]),
+#identity-popup-content-blocking-report-breakage:hover:active,
+#blocked-popup-indicator-item:hover:active,
+.customization-lwtheme-menu-theme:hover:active,
+#customization-lwtheme-menu-footer toolbarbutton:hover:active
+{
+	background-color: var(--arrowpanel-dimmed-further) !important;
+}
+
+.identity-popup-content-blocking-empty-label,
+#tracking-protection-preferences-button > .toolbarbutton-text,
+.tracking-protection-button,
+#identity-popup-trackersView-strict-info > label,
+.identity-popup-cookiesView-list-header,
+.identity-popup-content-blocking-list-item > label,
+#identity-popup-mainView-panel-header > label,
+#identity-popup-trackersView > .panel-header,
+#identity-popup-securityView > .panel-header,
+#identity-popup-breakageReportView > .panel-header,
+#identity-popup-content-blocking-report-breakage,
+.identity-popup-content-blocking-category-label,
+.identity-popup-content-blocking-category-state-label,
+.identity-popup-permission-label,
+.identity-popup-permission-state-label,
+#identity-popup-security-descriptions > description,
+#identity-popup-securityView-body > description,
+#identity-popup-permissions-content > description,
+#identity-popup-content-blocking-content > description
+{
+	font-size: 100% !important;
+}
+
+.panel-header > label
+{
+	text-align: start !important;
+	margin-inline-start: 4px !important;
+}
+
+.identity-popup-headline
+{
+	font-size: 110% !important;
+}
+
+.identity-popup-security-content > description,
+#identity-popup-content-blocking-content > description,
+#identity-popup-permissions-content > description,
+.identity-popup-content-blocking-category-state-label,
+.identity-popup-permission-state-label
+{
+	font-size: 85% !important;
+}
+
+#identity-popup-permissions-content > description,
+#identity-popup-content-blocking-content > description
+{
+    color: inherit !important;
+	opacity: .6 !important;
+}
+
+.identity-popup-content-blocking-category-state-label
+{
+	transform: translateY(1px) !important;
+}
+
+.tracking-protection-button > .button-box,
+.panel-footer button > .button-box
+{
+	display: flex !important;
+	align-items: center !important;
+}
+
+.tracking-protection-button .button-icon,
+.panel-footer button .button-icon
+{
+	padding-inline-end: 16px !important;
+}
+
+.tracking-protection-button .button-text,
+.panel-footer button .button-text
+{
+	margin: 0 !important;
+}
+
+#downloadsPanel-multiView
+{
+	padding-top: 8px !important;
+}
+
+#downloadsListBox .download-state
+{
+	display: flex !important;
+	width: 100% !important;
+	align-items: center !important;
+}
+
+#downloadsListBox .downloadMainArea
+{
+	padding: 0 !important;
+	display: flex !important;
+	flex: 1 !important;
+	margin-inline-end: -48px !important;
+	padding-inline-end: 48px !important;
+	padding-inline-start: 16px !important;
+	height: 100% !important;
+	align-items: center !important;
+}
+
+#downloadsListBox .downloadContainer
+{
+	display: flex !important;
+	flex-direction: column !important;
+}
+
+#downloadsListBox .downloadTypeIcon
+{
+	margin: 0 !important;
+	margin-inline-end: 16px !important;
+}
+
+#downloadsListBox .downloadTarget
+{
+	font-size: 100% !important;
+}
+
+#downloadsListBox .downloadDetails
+{
+	font-size: 85% !important;
+}
+
+#downloadsListBox > richlistitem > toolbarseparator
+{
+	display: none !important;
+}
+
+#downloadsListBox .downloadButton
+{
+	margin-inline-end: 16px !important;
+	height: 32px !important;
+	min-width: 32px !important;
+	border-radius: 16px !important;
+	fill: currentColor !important;
+	-moz-context-properties: fill, fill-opacity !important;
+	display: block !important;
+}
+
+#downloadsListBox .downloadButton .button-box
+{
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	max-width: 32px !important;
+}
+
+#confirmation-hint .panel-arrowcontent,
+#UITourTooltip .panel-arrowcontent,
+#customization-lwtheme-menu .panel-arrowcontent,
+#customization-uidensity-menu .panel-arrowcontent
+{
+	padding: 16px !important;
+}
+
+#customization-uidensity-menu .panel-arrowcontent,
+#customization-lwtheme-menu .panel-arrowcontent
+{
+	padding-top: 8px !important;
+}
+
+.customization-lwtheme-menu-theme,
+.customization-uidensity-menuitem
+{
+	padding: 0 16px !important;
+	margin: 0 -16px !important;
+	border: 0 !important;
+	height: 48px !important;
+}
+
+.customization-lwtheme-menu-theme .toolbarbutton-icon,
+.customization-uidensity-menuitem .menu-iconic-icon
+{
+	margin: 0 !important;
+	margin-inline-end: 16px !important;
+	padding: 0 !important;
+	width: 24px !important;
+	height: 24px !important;
+}
+
+.customization-lwtheme-menu-theme[active]:not(:hover):not(:active),
+.customization-uidensity-menuitem[active]:not(:hover):not(:active)
 {
 	background: 0 !important;
 }
 
-/* windows-specific tweaks */
-@media (-moz-windows-compositor)
+.customization-lwtheme-menu-theme[active]::after,
+.customization-uidensity-menuitem[active]::after
 {
-	menupopup
-	{
-		padding: 6px 12px 24px !important;
-		margin: -6px -12px -24px !important;
-	}
-	
-	.popup-internal-box
-	{
-		box-shadow:
-			0 0 6px rgba(0, 0, 0, .08),
-			0 12px 12px rgba(0, 0, 0, .125) !important;
-	}
-	
-	/*
-		panels are magically positioned and cropped, which means
-		we can't use margins to compensate for box-shadow, so we
-		reduce the shadow size so the padded offset is tolerable
-	*/
-	panel[type="arrow"]
-	{
-		/* must pad because overflow: visible doesn't work */
-		padding: 3px 3px 7px !important;
-	}
-	
-	.panel-arrowcontent
-	{
-		border: 0 !important;
-		box-shadow:
-			0 0 3px rgba(0, 0, 0, .17),
-			0 4px 3px rgba(0, 0, 0, .1) !important;
-	}
-	
-	/* dark themes get a contrasty border */
-	.popup-internal-box:-moz-lwtheme-brighttext
-	{
-		box-shadow:
-		    0 0 0 .5px #000 inset,
-		    0 0 0 1.5px var(--arrowpanel-border-color) inset,
-		    0 0 6px rgba(0, 0, 0, .08),
-		    0 12px 12px rgba(0, 0, 0, .125) !important;
-	}
-	
-	.panel-arrowcontent:-moz-lwtheme-brighttext
-	{
-		box-shadow:
-		    0 0 0 .5px #000 inset,
-		    0 0 0 1.5px var(--arrowpanel-border-color) inset,
-		    0 0 3px rgba(0, 0, 0, .17),
-		    0 4px 13px rgba(0, 0, 0, .1) !important;
-	}
-	
-	/*
-    	padding refuses to override so we'll cheat and use
-    	negative margin to counter it
-	*/
-	.menu-text
-	{
-		margin-inline-start: -1.45em !important;
-	}
+	content: url(checkmark-18dp.svg) !important;
+	-moz-context-properties: fill, fill-opacity !important;
+	fill: currentColor !important;
+	display: -moz-box !important;
+	width: 18px !important;
+	height: 18px !important;
+	margin-inline-start: 16px !important;
+}
+
+#customization-lwtheme-menu-footer
+{
+	padding: 0 !important;
+	background: 0 !important;
+	border: 0 !important;
+	display: flex !important;
+	flex-direction: column !important;
+}
+
+#customization-lwtheme-menu-footer toolbarbutton
+{
+	border: 0 !important;
+	margin: 0 -6px 0 !important;
+	height: 48px !important;
+	padding: 0 16px !important;
+	display: flex !important;
+	background-image: none !important;
+}
+
+#customization-lwtheme-menu-footer toolbarbutton .toolbarbutton-text
+{
+	text-align: start !important;
+}
+
+.panel-footer
+{
+	padding: 4px !important;
+	background: 0 !important;
+	border-top: 1px solid var(--panel-separator-color) !important;
+	justify-content: end !important;
+	display: flex !important;
+}
+
+.panel-footer button
+{
+	border: 0 !important;
+	border-radius: 4px !important;
+	margin: 4px !important;
+	height: 32px !important;
+	padding: 0 !important;
+	flex: 0 0 auto !important;
+	position: relative !important;
+	outline: 0 !important;
+}
+
+.panel-footer button > .button-box
+{
+	-moz-appearance: none !important;
+	position: relative !important;
+	padding-inline-end: 16px !important;
+}
+
+.panel-footer button .button-menu-dropmarker
+{
+	margin-inline-start: 8px !important;
+	margin-inline-end: -8px !important;
+}
+
+.panel-footer button:not([default]) > .button-box::before
+{
+	content: "" !important;
+	display: block !important;
+	border-radius: 4px !important;
+	position: absolute !important;
+	left: 0 !important;
+	top: 0 !important;
+	width: 100% !important;
+	height: 100% !important;
+	border: 1px solid currentColor !important;
+	opacity: .42 !important;
+	box-sizing: border-box !important;
+}
+
+.panel-footer button:not([default]):hover:active:not([disabled]) > .button-box::before
+{
+	border-width: 0 !important;
+}
+
+.panel-footer button:not([default]):hover:active:not([disabled])
+{
+	border-width: 0 !important;
+	background: #002275 !important;
+	color: #FFF !important;
 }
 
 /* high DPI adjustments */
 @media (min--moz-device-pixel-ratio: 2)
 {
-	.menu-right
+	.PanelUI-subView .subviewbutton-nav::after,
+	.identity-popup-content-blocking-category::after
 	{
-		list-style-image: url(menu-right-2x.svg) !important;
-	}
-	
-	#context-back,
-	#context-forward
-	{
-		list-style-image: url(../navbar/arrow-back-2x.svg) !important;
-	}
-	
-	#context-reload
-	{
-		list-style-image: url(../navbar/refresh-2x.svg) !important;
-	}
-	
-	#context-bookmarkpage
-	{
-		list-style-image: url(../navbar/star-2x.svg) !important;
+		content: url(menu-right-2x.svg) !important;
 	}
 }

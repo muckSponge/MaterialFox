@@ -1,0 +1,183 @@
+/* < 68 */
+#PopupAutoCompleteRichResult
+{
+	-moz-window-shadow: none !important;
+	background: 0 !important;
+	margin-top: -3px !important;
+	border: 0 !important;
+	
+	--padding-start: calc(var(--item-padding-start) + 20px) !important;
+	--padding-end: calc(var(--item-padding-end) - 10px) !important;
+}
+
+#PopupAutoCompleteRichResult .autocomplete-richlistbox
+{
+	padding: 0 !important;
+	
+	margin-inline-start: var(--padding-start) !important;
+	margin-inline-end: var(--padding-end) !important;
+	
+	background: var(--arrowpanel-background) !important;
+	
+	box-shadow:
+		0 5px 5px -3px rgba(0, 0, 0, .2),
+		0 8px 10px 1px rgba(0, 0, 0, .14),
+		0 3px 14px 2px rgba(0, 0, 0, .12) !important;
+}
+
+#PopupAutoCompleteRichResult .autocomplete-richlistitem
+{
+	padding: 0 16px  !important;
+	border: 0 !important;
+	display: flex !important;
+	align-items: center !important;
+	border-radius: 0 !important;
+}
+
+.ac-type-icon
+{
+	order: 9 !important;
+	margin-inline-start: 16px !important;
+	margin-inline-end: 0 !important;
+}
+
+.ac-site-icon
+{
+	margin-inline-end: 16px !important;
+}
+
+.ac-separator
+{
+	display: none !important;
+}
+
+.ac-title,
+.ac-url
+{
+	flex: 1 !important;
+}
+
+/* >= 68 */
+#urlbar-results
+{
+	-moz-window-shadow: none !important;
+	background: 0 !important;
+	margin-top: 0 !important;
+	border: 0 !important;
+	
+	--padding-start: calc(var(--item-padding-start) - 11px) !important;
+	--padding-end: calc(var(--item-padding-end) - 10px) !important;
+}
+
+.urlbarView-body-inner,
+.search-panel-one-offs-header,
+.search-panel-one-offs
+{
+	margin: 0 !important;
+	
+	background: var(--arrowpanel-background) !important;
+	
+	color: inherit !important;
+	border-radius: 0 !important;
+	
+	transform: translateX(var(--padding-start)) !important;
+	width: calc(100% - var(--padding-start) - var(--padding-end)) !important;
+	
+	box-shadow:
+		0 5px 5px -3px rgba(0, 0, 0, .2),
+		0 8px 10px 1px rgba(0, 0, 0, .14),
+		0 3px 14px 2px rgba(0, 0, 0, .12) !important;
+	
+	/* clip shadows such that they overlap themselves but not the content */
+	--top: -11px;
+	--bottom: calc(100% + 18px);
+	--left: -14px;
+	--right: calc(100% + 14px);
+	
+	clip-path: polygon(
+		var(--left) var(--top),
+		0 var(--top),
+		0 0,
+		100% 0,
+		100% var(--top),
+		var(--right) var(--top),
+		var(--right) var(--bottom),
+		100% var(--bottom),
+		100% 100%,
+		100% var(--bottom),
+		var(--left) var(--bottom)
+	) !important;
+}
+
+.search-panel-one-offs
+{
+	border-radius: 0 0 8px 8px !important;
+	margin-bottom: 18px !important;
+}
+
+.search-one-offs
+{
+	display: block !important;
+}
+
+#urlbarView-results
+{
+	padding: 0 !important;
+}
+
+.urlbarView-row
+{
+	padding: 0 16px !important;
+	height: 32px !important;
+	border-radius: 0 !important;
+}
+
+.urlbarView-row-inner
+{
+	height: 100% !important;
+	align-items: center !important;
+}
+
+.urlbarView-favicon
+{
+	margin-inline-end: 16px !important;
+}
+
+.urlbarView-title-separator
+{
+	flex: 1 !important;
+}
+
+.urlbarView-title-separator::before
+{
+	display: none !important;
+}
+
+.urlbarView-type-icon
+{
+	order: 1 !important;
+	margin-inline-start: 16px !important;
+	margin-inline-end: 0 !important;
+}
+
+.search-panel-one-offs
+{
+	padding: 4px !important;
+}
+
+.searchbar-engine-one-off-item
+{
+	min-width: 32px !important;
+	max-width: 32px !important;
+	height: 32px !important;
+	border-radius: 16px !important;
+	margin: 4px !important;
+	background-image: none !important;
+	color: inherit !important;
+	border: 0 !important;
+}
+
+.searchbar-engine-one-off-item.dummy
+{
+	display: none !important;
+}

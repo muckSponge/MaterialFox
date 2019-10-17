@@ -11,70 +11,16 @@
 	opacity: 1 !important;
 }
 
-#navigator-toolbox :-moz-any(#back-button, #forward-button)
-{
-	list-style-image: url(arrow-back-1x.svg) !important;
-}
-
 /* Windows */
-#navigator-toolbox #PanelUI-button
+#PanelUI-button
 {
 	border: none !important;
 	margin: 0 !important;
 }
 
-#navigator-toolbox #PanelUI-menu-button
-{
-	list-style-image: url(menu.svg) !important;
-}
-
-#navigator-toolbox #PanelUI-menu-button[badge-status|="update"]
-{
-	list-style-image: url(menu-update.svg) !important;
-}
-
-#navigator-toolbox #PanelUI-menu-button[badge-status|="update"] .toolbarbutton-badge
+#PanelUI-menu-button[badge-status|="update"] .toolbarbutton-badge
 {
 	display: none !important;
-}
-
-#navigator-toolbox #reload-button
-{
-	list-style-image: url(refresh-1x.svg) !important;
-}
-
-#navigator-toolbox #stop-button
-{
-	list-style-image: url(stop-1x.svg) !important;
-}
-
-#navigator-toolbox #forward-button
-{
-	transform: scaleX(-1) !important;
-}
-
-#navigator-toolbox #home-button
-{
-	list-style-image: url(home-1x.svg) !important;
-}
-
-#fxa-avatar-image
-{
-	border-radius: 0 !important;
-	list-style-image: url(profile-inactive.svg) !important;
-	
-	/* icon should be 20px, but we don't want to affect button size */
-	transform: scale(1.25) !important;
-}
-
-:root[fxastatus=signedin] #fxa-avatar-image
-{
-	list-style-image: url(profile.svg) !important;
-}
-
-:root[privatebrowsingmode] #fxa-avatar-image
-{
-	list-style-image: url(incognito.svg) !important;
 }
 
 :root[privatebrowsingmode] #fxa-toolbar-menu-button
@@ -162,26 +108,17 @@
 	border-radius: 8px 8px 0 0 !important;
 	min-height: 37px !important;
 	margin: 0 -5px -1px !important;
-	box-shadow: 0 3px 10px rgba(0, 0, 0, .2) !important;
+	box-shadow:
+		0 5px 5px -3px rgba(0,0,0,.2),
+		0 8px 10px 1px rgba(0,0,0,.14),
+		0 3px 14px 2px rgba(0,0,0,.12) !important;
 	position: relative !important;
 	z-index: 99999 !important;
 }
 
-/* mac-specific tweaks */
-@media (-moz-mac-yosemite-theme)
+#identity-box,
+#urlbar-display-box
 {
-	#urlbar[open],
-	#searchbar[open]
-	{
-		box-shadow:
-			0 3px 10px rgba(0, 0, 0, .2),
-			0 0 1px rgba(0, 0, 0, .25) !important;
-	}
-}
-
-#identity-box
-{
-	padding: 0 8px !important;
 	margin: 0 !important;
 	border: 0 !important;
 	position: relative !important;
@@ -236,27 +173,6 @@
 	opacity: 0 !important;
 }
 
-#urlbar[pageproxystate=valid] > #identity-icon
-{
-	list-style-image: url(info-1x.svg) !important;
-}
-
-#urlbar[pageproxystate=valid] > #identity-box:-moz-any(.verifiedDomain, .verifiedIdentity) > #identity-icon
-{
-	list-style-image: url(connection-1x.svg) !important;
-}
-
-#urlbar[pageproxystate=valid] > #identity-box.chromeUI > #identity-icon
-{
-	list-style-image: url(identity-icons-brand.svg) !important;
-}
-
-#identity-box > image
-{
-	fill: currentColor !important;
-	fill-opacity: 1 !important;
-}
-
 #identity-box.extensionPage > #identity-icon
 {
 	list-style-image: none !important;
@@ -267,29 +183,15 @@
 #connection-icon
 {
 	display: none !important;
-	list-style-image: url(naughty-shield-1x.svg) !important;
-}
-
-#urlbar[pageproxystate="invalid"] #identity-icon
-{
-	list-style-image: url(search.svg) !important;
 }
 
 #identity-box:-moz-any(
-.mixedActiveBlocked,
-.mixedDisplayContentLoadedActiveBlocked,
-.mixedActiveContent) > #connection-icon
+	.mixedActiveBlocked,
+	.mixedDisplayContentLoadedActiveBlocked,
+	.mixedActiveContent
+) > #connection-icon
 {
 	display: -moz-box !important;
-}
-
-#urlbar[pageproxystate=valid] > #identity-box:-moz-any(
-.certUserOverridden,
-.weakCipher,
-.mixedActiveContent,
-.insecureLoginForms) > #identity-icon
-{
-	list-style-image: url(connection-warning-1x.svg) !important;
 }
 
 #identity-box:-moz-any(.certUserOverridden, .insecureLoginForms)
@@ -339,7 +241,8 @@
 }
 
 .urlbar-icon,
-#identity-box
+#identity-box,
+#urlbar-display-box
 {
 	min-width: 32px !important;
 	height: 24px !important;
@@ -348,6 +251,11 @@
 	fill-opacity: 1 !important;
 	transition: background-color .2s var(--ease-basic);
 	background-color: transparent !important;
+}
+
+#urlbar-display-box
+{
+	padding-inline-start: 0 !important;
 }
 
 .urlbar-icon
@@ -375,12 +283,27 @@
 	transition-duration: 0 !important;
 }
 
-#pageActionButton
+#star-button-box
 {
-	list-style-image: url(menu.svg) !important;
+	-moz-box-ordinal-group: 99 !important;
 }
 
-.urlbar-page-action:not(#star-button-box)
+#pageActionButton
+{
+	-moz-box-ordinal-group: 98 !important;
+}
+
+.urlbar-page-action:-moz-any(
+	#reader-mode-button,
+	#pageActionButton,
+	#pocket-button-box,
+	#pageAction-urlbar-screenshots_mozilla_org,
+	#pageAction-urlbar-sendToDevice,
+	#pageAction-urlbar-emailLink,
+	#pageAction-urlbar-copyURL,
+	#pageAction-urlbar-shareURL,
+	#pageAction-urlbar-addSearchEngine
+)
 {
 	transition:
 		background-color .2s var(--ease-basic),
@@ -392,8 +315,28 @@
 	margin-inline-start: -32px !important;
 }
 
-#urlbar:hover .urlbar-page-action:not(#star-button-box),
-.urlbar-page-action:not(#star-button-box):-moz-any(:hover, [open], [readeractive])
+#urlbar:hover .urlbar-page-action:-moz-any(
+	#reader-mode-button,
+	#pageActionButton,
+	#pocket-button-box,
+	#pageAction-urlbar-screenshots_mozilla_org,
+	#pageAction-urlbar-sendToDevice,
+	#pageAction-urlbar-emailLink,
+	#pageAction-urlbar-copyURL,
+	#pageAction-urlbar-shareURL,
+	#pageAction-urlbar-addSearchEngine
+),
+.urlbar-page-action:-moz-any(
+	#reader-mode-button,
+	#pageActionButton,
+	#pocket-button-box,
+	#pageAction-urlbar-screenshots_mozilla_org,
+	#pageAction-urlbar-sendToDevice,
+	#pageAction-urlbar-emailLink,
+	#pageAction-urlbar-copyURL,
+	#pageAction-urlbar-shareURL,
+	#pageAction-urlbar-addSearchEngine
+):-moz-any(:hover, [open], [readeractive])
 {
 	transition:
 		background-color .2s var(--ease-basic),
@@ -404,21 +347,15 @@
 	margin-inline-start: 0 !important;
 }
 
+.urlbar-display
+{
+	color: inherit !important;
+	margin: 0 !important;
+}
+
 #pocket-button-box[animate] > #pocket-animatable-box
 {
 	margin-inline-start: 6px !important;
-}
-
-#star-button
-{
-	list-style-image: url(star-1x.svg) !important;
-	fill-opacity: 0 !important;
-}
-
-#star-button[starred]
-{
-	fill: var(--toolbarbutton-icon-fill-attention) !important;
-	fill-opacity: 1 !important;
 }
 
 #star-button-animatable-box
@@ -432,12 +369,6 @@
 	height: 32px !important;
 }
 
-.urlbar-go-button,
-.search-go-button
-{
-    list-style-image: url(go.svg) !important;
-}
-
 .private-browsing-indicator
 {
 	display: none !important;
@@ -448,123 +379,68 @@
 	-moz-box-ordinal-group: 2 !important;
 }
 
-/* urlbar and searchbar autocomplete popup */
-#PopupAutoCompleteRichResult
-{
-	background: 0 !important;
-	margin-top: -4px !important;
-	
-	border: 0 !important;
-	filter: drop-shadow(0 12px 6px rgba(0, 0, 0, .25)) !important;
-	overflow: visible !important;
-	padding-bottom: 28px !important;
-}
-
-#PopupAutoCompleteRichResult .autocomplete-richlistbox,
-#PopupAutoCompleteRichResult [anonid="footer"]
-{
-	background-color: var(--toolbar-field-focus-background-color) !important;
-	margin-inline-start: calc(var(--item-padding-start) + 20px - 0px) !important;
-	margin-inline-end: calc(var(--item-padding-end) - 10px) !important;
-}
-
-#PopupAutoCompleteRichResult .autocomplete-richlistbox
-{
-	padding: 0 !important;
-	/* comment to keep footer */
-	border-radius: 0 0 8px 8px !important;
-	overflow: hidden !important;
-}
-
-#PopupAutoCompleteRichResult .autocomplete-richlistitem
-{
-	border: 0 !important;
-	border-radius: 0 !important;
-	padding: 0 !important;
-	height: 36px !important;
-}
-
-/* mac-specific tweaks */
-@media (-moz-mac-yosemite-theme)
-{
-	#PopupAutoCompleteRichResult
-	{
-		filter: none !important;
-		padding-bottom: 0 !important;
-		margin-top: -3px !important;
-	}
-}
-
-#PopupAutoCompleteRichResult .ac-type-icon
-{
-	display: none !important;
-}
-
-#PopupAutoCompleteRichResult .ac-site-icon
-{
-	margin-inline-start: 16px !important;
-	margin-inline-end: 16px !important;
-}
-
-#PopupAutoCompleteRichResult .ac-type-icon[type="keyword"],
-#PopupAutoCompleteRichResult .ac-site-icon[type="searchengine"]
-{
-    list-style-image: url(../navbar/search.svg) !important;
-}
-
-/* footer is hidden by default */
-#PopupAutoCompleteRichResult [anonid="footer"]
-{
-	margin-top: -8px !important;
-	border-radius: 0 0 8px 8px !important;
-	/* comment to keep footer */
-	display: none !important;
-}
-
-.search-panel-header,
-.search-panel-one-offs
-{
-	background: 0 !important;
-}
-
 /* high DPI adjustments */
 @media (min--moz-device-pixel-ratio: 2)
 {
-	#navigator-toolbox :-moz-any(#back-button, #forward-button)
-	{
-		list-style-image: url(arrow-back-2x.svg) !important;
-	}
-	
-	#navigator-toolbox #PanelUI-menu-button:not([badge-status|="update"]) .toolbarbutton-icon
-	{
-		transform: translate(-.5px, -.5px) !important;
-	}
-	
-	#navigator-toolbox #stop-button
-	{
-		list-style-image: url(stop-2x.svg) !important;
-	}
-
-	#navigator-toolbox #reload-button
-	{
-		list-style-image: url(refresh-2x.svg) !important;
-	}
-	
-	#navigator-toolbox #home-button
-	{
-		list-style-image: url(home-2x.svg) !important;
-	}
-
-	#navigator-toolbox #star-button
-	{
-		list-style-image: url(star-2x.svg) !important;
-	}
-	
 	#identity-icon-labels
 	{
 		padding-inline-end: .5px !important;
 	}
 
+	#identity-icon-labels,
+	.urlbar-input,
+	.searchbar-textbox
+	{
+		transform: translateY(-.5px) !important;
+	}
+}
+
+/* icons */
+#urlbar[pageproxystate=valid] > #identity-icon
+{
+	list-style-image: url(info-1x.svg) !important;
+}
+
+#urlbar[pageproxystate=valid] > #identity-box:-moz-any(.verifiedDomain, .verifiedIdentity) > #identity-icon
+{
+	list-style-image: url(connection-1x.svg) !important;
+}
+
+#urlbar[pageproxystate=valid] > #identity-box.chromeUI > #identity-icon
+{
+	list-style-image: url(identity-icons-brand.svg) !important;
+}
+
+/* no longer used as a connection icon */
+#connection-icon
+{
+	list-style-image: url(naughty-shield-1x.svg) !important;
+}
+
+#urlbar[pageproxystate=valid] > #identity-box:-moz-any(
+	.certUserOverridden,
+	.weakCipher,
+	.mixedActiveContent,
+	.insecureLoginForms
+) > #identity-icon
+{
+	list-style-image: url(connection-warning-1x.svg) !important;
+}
+
+.urlbar-go-button,
+.search-go-button
+{
+	list-style-image: url(go.svg) !important;
+}
+
+/* high DPI adjustments */
+@media (min--moz-device-pixel-ratio: 2)
+{
+	#identity-icon-labels
+	{
+		padding-inline-end: .5px !important;
+	}
+	
 	#urlbar[pageproxystate=valid] > #identity-box:-moz-any(.unknownIdentity, .notSecure) > #identity-icon
 	{
 		list-style-image: url(info-2x.svg) !important;
@@ -577,10 +453,11 @@
 	}
 	
 	#urlbar[pageproxystate=valid] > #identity-box:-moz-any(
-	.certUserOverridden,
-	.weakCipher,
-	.mixedActiveContent,
-	.insecureLoginForms) > #identity-icon
+		.certUserOverridden,
+		.weakCipher,
+		.mixedActiveContent,
+		.insecureLoginForms
+	) > #identity-icon
 	{
 		list-style-image: url(connection-warning-2x.svg) !important;
 	}
@@ -589,7 +466,7 @@
 	{
 		list-style-image: url(naughty-shield-2x.svg) !important;
 	}
-
+	
 	#identity-icon-labels,
 	.urlbar-input,
 	.searchbar-textbox
