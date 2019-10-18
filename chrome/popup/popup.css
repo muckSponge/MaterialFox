@@ -190,8 +190,8 @@ panel:not(#urlbar-results):not(#PopupAutoCompleteRichResult)
 {
 	-moz-window-shadow: none !important;
 
-	margin: -19px -14px -18px !important;	
-	padding: 11px 14px 18px !important;
+	margin: -10px -20px -18px !important;	
+	padding: 11px 0px 18px !important;
 }
 
 panel[type="arrow"][side="top"],
