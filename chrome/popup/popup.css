@@ -209,7 +209,8 @@ panel[type="arrow"][side="right"]
 	margin-bottom: -44px;
 }
 
-panel:not(.tooltip-xul-wrapper) .panel-arrowcontent
+panel:not(.tooltip-xul-wrapper) .panel-arrowcontent,
+.panel-arrowcontent
 {
 	background: var(--arrowpanel-background) !important;
 	border: 0 !important;
