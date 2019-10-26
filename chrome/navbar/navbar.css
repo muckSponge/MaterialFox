@@ -242,7 +242,8 @@
 
 .urlbar-icon,
 #identity-box,
-#urlbar-display-box
+#urlbar-display-box,
+#tracking-protection-icon-container
 {
 	min-width: 32px !important;
 	height: 24px !important;
@@ -269,7 +270,8 @@
 }
 
 .urlbar-icon:hover:not([disabled]),
-#identity-box:hover:not(.no-hover)
+#identity-box:hover:not(.no-hover),
+#tracking-protection-icon-container:hover:not(.no-hover)
 {
 	background-color: var(--toolbarbutton-hover-background) !important;
 }
@@ -277,7 +279,9 @@
 .urlbar-icon:hover:active:not([disabled]),
 .urlbar-icon[open],
 #identity-box:hover:active:not(.no-hover),
-#identity-box[open]:not(.no-hover)
+#identity-box[open]:not(.no-hover),
+#tracking-protection-icon-container:hover:not(.no-hover),
+#tracking-protection-icon-container[open]:not(.no-hover)
 {
 	background-color: var(--toolbarbutton-active-background) !important;
 	transition-duration: 0 !important;
