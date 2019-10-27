@@ -86,7 +86,8 @@ menupopup menu[disabled=true],
 }
 
 /* force regular scrollbar for menus */
-menupopup .arrowscrollbox-scrollbox
+menupopup .arrowscrollbox-scrollbox, /* <71 */
+menupopup scrollbox[part=scrollbox] /* 71+ */
 {
 	overflow-y: auto !important;
 }

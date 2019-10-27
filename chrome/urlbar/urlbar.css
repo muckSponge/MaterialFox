@@ -72,18 +72,27 @@
 	margin-inline-end: 0 !important;
 }
 
-/* .search-one-offs
+.search-one-offs
 {
 	padding: 4px !important;
 	display: flex !important;
-	flex-direction: column !important;
+	flex-direction: row !important;
+}
+
+.search-panel-one-offs-header
+{
+	margin-inline-start: 12px !important;
+	line-height: 40px !important;
+	transform: translateY(-1px) !important;
 }
 
 .search-panel-one-offs
 {
-	display: flex !important;
+	display: inline-flex !important;
 	flex-direction: row !important;
 	padding: 0 !important;
+	margin: 0 !important;
+	float: left !important;
 }
 
 .searchbar-engine-one-off-item
@@ -95,34 +104,7 @@
 	background-image: none !important;
 	color: inherit !important;
 	border: 0 !important;
-	display: flex !important;
-	justify-content: center !important;
-	align-items: center !important;
-	align-content: center !important;
 }
-
-.searchbar-engine-one-off-item > .button-box
-{
-	width: 16px !important;
-	max-height: 16px !important;
-	transform: translateY(50%) !important;
-}
-
-.searchbar-engine-one-off-item::after
-{
-	margin-inline-start: 8px !important;
-	content: attr(tooltiptext) !important;
-	line-height: 16px !important;
-	transform: translateY(calc(50% - 1px)) !important;
-}
-
-
-.searchbar-engine-one-off-item.dummy
-{
-	display: none !important;
-} */
-
-/* 70+ */
 
 #urlbar-container
 {
@@ -180,7 +162,7 @@
 {
 	border: 0 !important;
 	padding: 0 !important;
-	border-radius: 8px 8px 0 0 !important;
+	border-radius: 8px !important;
 	min-height: 37px !important;
 	margin: 0 -5px -1px !important;
 	box-shadow:
@@ -226,9 +208,8 @@
 	right: 0 !important;
 	position: relative !important;
 	box-shadow: none !important;
-	background: 0 !important;
 	border: 0 !important;
-	background: white !important;
+	background: 0 !important;
 }
 
 #urlbar[open] .urlbarView
@@ -322,7 +303,7 @@
 	display: none !important;
 }
 
-#identity-box:-moz-any(
+#urlbar[pageproxystate=valid] #identity-box:-moz-any(
 	.mixedActiveBlocked,
 	.mixedDisplayContentLoadedActiveBlocked,
 	.mixedActiveContent
@@ -331,7 +312,7 @@
 	display: -moz-box !important;
 }
 
-#identity-box:-moz-any(.certUserOverridden, .unknownIdentity)
+#urlbar[pageproxystate=valid] #identity-box:-moz-any(.certUserOverridden, .unknownIdentity)
 {
 	color: #c94031 !important;
 }
@@ -515,18 +496,24 @@
 	fill: currentColor !important;
 }
 
-#urlbar[open] .urlbar-go-button,
-#searchbar[open] .search-go-button
+#urlbar[open] #urlbar-go-button,
+#searchbar[open] #search-go-button
 {
 	height: 32px !important;
+}
+
+#urlbar-go-button,
+#search-go-button
+{
+	list-style-image: url(go.svg) !important;
 }
 
 /* icons 1x */
 #urlbar
 {
-	--info-icon: url(../navbar/info-1x.svg);
-	--lock-icon: url(../navbar/connection-1x.svg);
-	--warning-icon: url(../navbar/connection-warning-1x.svg);
+	--info-icon: url(info-1x.svg);
+	--lock-icon: url(connection-1x.svg);
+	--warning-icon: url(connection-warning-1x.svg);
 }
 
 /* icons 2x */
@@ -534,9 +521,9 @@
 {
 	#urlbar
 	{
-		--info-icon: url(../navbar/info-2x.svg);
-		--lock-icon: url(../navbar/connection-2x.svg);
-		--warning-icon: url(../navbar/connection-warning-2x.svg);
+		--info-icon: url(info-2x.svg);
+		--lock-icon: url(connection-2x.svg);
+		--warning-icon: url(connection-warning-2x.svg);
 	}
 }
 
