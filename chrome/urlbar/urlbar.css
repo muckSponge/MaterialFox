@@ -162,7 +162,7 @@
 {
 	border: 0 !important;
 	padding: 0 !important;
-	border-radius: 8px 8px 0 0 !important;
+	border-radius: 8px !important;
 	min-height: 37px !important;
 	margin: 0 -5px -1px !important;
 	box-shadow:
@@ -208,9 +208,8 @@
 	right: 0 !important;
 	position: relative !important;
 	box-shadow: none !important;
-	background: 0 !important;
 	border: 0 !important;
-	background: white !important;
+	background: 0 !important;
 }
 
 #urlbar[open] .urlbarView
