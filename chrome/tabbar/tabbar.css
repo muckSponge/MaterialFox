@@ -441,7 +441,7 @@
 	} 
 }
 
-#tabbrowser-tabs .tabs-newtab-button
+#tabbrowser-tabs #tabs-newtab-button
 {
 	margin-inline-start: 6px !important;
 }

@@ -151,7 +151,7 @@
 	visibility: hidden !important;
 }
 
-.tabs-newtab-button,
+#tabs-newtab-button,
 #new-tab-button
 {
 	list-style-image: url(new-tab.svg) !important;
