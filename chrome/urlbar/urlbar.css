@@ -255,6 +255,7 @@
 #identity-box,
 #urlbar-display-box
 {
+	display: flex !important;
 	position: relative !important;
 }
 
@@ -281,7 +282,7 @@
 
 #urlbar[pageproxystate=valid]:not([open]) #identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden) #identity-icon-labels
 {
-	display: -moz-box !important;
+	display: flex !important;
 }
 
 
