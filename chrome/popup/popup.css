@@ -209,7 +209,6 @@ panel[type="arrow"][side="right"]
 	margin-bottom: -44px;
 }
 
-panel:not(.tooltip-xul-wrapper) .panel-arrowcontent,
 .panel-arrowcontent
 {
 	background: var(--arrowpanel-background) !important;
@@ -217,14 +216,13 @@ panel:not(.tooltip-xul-wrapper) .panel-arrowcontent,
 	border-radius: 4px !important;
 	box-shadow:
 		0 5px 5px -3px rgba(0, 0, 0, .2),
-		0 8px 5px 1px rgba(0, 0, 0, .14),
-		0 3px 5px 2px rgba(0, 0, 0, .12) !important;
+		0 8px 10px 1px rgba(0, 0, 0, .14),
+		0 3px 14px 2px rgba(0, 0, 0, .12) !important;
 	color: var(--arrowpanel-color) !important;
 }
 
-panel:not(.tooltip-xul-wrapper) .panel-arrowbox,
-.cui-widget-panel .panel-arrowbox,
-.panel-arrowbox
+.panel-arrowbox,
+.cui-widget-panel .panel-arrowbox
 {
 	display: none !important;
 }
