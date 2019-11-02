@@ -185,6 +185,7 @@
 }
 
 #urlbar[pageproxystate="invalid"] #identity-icon,
+.searchbar-search-icon,
 #PopupAutoCompleteRichResult .ac-type-icon[type="keyword"],
 #PopupAutoCompleteRichResult .ac-site-icon[type="searchengine"],
 #appMenu-find-button,

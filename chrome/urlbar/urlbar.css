@@ -179,14 +179,15 @@
 	display: none !important;
 }
 
-#urlbar-input-container
+#urlbar-input-container,
+#searchbar
 {
-	width: 100% !important;
 	display: flex !important;
 	align-items: center !important;
 }
 
-.urlbar-input-box
+.urlbar-input-box,
+.searchbar-textbox
 {
 	flex: 1 !important;
 }
@@ -335,6 +336,19 @@
 	background: 0 !important;
 	box-shadow: none !important;
 	margin: 0 !important;
+	-moz-appearance: none !important;
+}
+
+.searchbar-search-icon
+{
+	margin: 0 !important;
+	fill-opacity: 1 !important;
+}
+
+.searchbar-search-icon-overlay
+{
+	margin-inline-start: -11px !important;
+	margin-inline-end: 0 !important;
 }
 
 #page-action-buttons > #pageActionSeparator,
@@ -354,6 +368,7 @@
 }
 
 .urlbar-icon,
+.searchbar-search-button,
 #identity-box,
 #tracking-protection-icon-container
 {
@@ -386,6 +401,7 @@
 }
 
 .urlbar-icon:hover:not([disabled]),
+.searchbar-search-button:hover,
 #identity-box:hover:not(.no-hover),
 #tracking-protection-icon-container:hover
 {
@@ -394,6 +410,7 @@
 
 .urlbar-icon:hover:active:not([disabled]),
 .urlbar-icon[open],
+.searchbar-search-button:hover:active,
 #identity-box:hover:active:not(.no-hover),
 #identity-box[open]:not(.no-hover),
 #tracking-protection-icon-container[open]
