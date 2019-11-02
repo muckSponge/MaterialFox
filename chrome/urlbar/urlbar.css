@@ -173,6 +173,12 @@
 	z-index: 99999 !important;
 }
 
+/* 71+ */
+#urlbar-background
+{
+	display: none !important;
+}
+
 #urlbar-input-container
 {
 	width: 100% !important;
