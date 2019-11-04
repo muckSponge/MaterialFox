@@ -28,8 +28,9 @@ panel[type="autocomplete-richlistbox"]:not(#PopupAutoCompleteRichResult)
 	border: 0 !important;
 }
 
-.popup-internal-box,
-:not(#PopupAutoCompleteRichResult) > .autocomplete-richlistbox
+/* themes a menupopup (or other root level / shadow dom popup) as a panel */
+/* Mozilla's use of shadow dom means we can't use a menupopup > .popup-internal-box */
+.popup-internal-box
 {
 	margin: 0 !important;
 	padding: 8px 0 !important;
@@ -40,6 +41,25 @@ panel[type="autocomplete-richlistbox"]:not(#PopupAutoCompleteRichResult)
 		0 8px 10px 1px rgba(0,0,0,.14),
 		0 3px 14px 2px rgba(0,0,0,.12) !important;
 	color: inherit !important;
+}
+
+/* reset non-layout props when embedded in a panel
+   (panel handles panel theming in this case) */
+.panel-arrowcontent > .popup-internal-box
+{
+	background: 0 !important;
+	border-radius: 0 !important;
+	box-shadow: none !important;
+}
+
+/* shotgun approach to undo this selector...
+   #BMB_bookmarksPopup menupopup[placespopup="true"]:-moz-lwtheme::part(innerbox)
+   ...without being able to use ::part() in userChrome.css */
+[part="innerbox"]
+{
+	/* this could cause side effects elsewhere */
+	box-shadow: none !important;
+	margin: 0 !important;
 }
 
 menupopup menuseparator
@@ -191,8 +211,8 @@ panel:not(#urlbar-results):not(#PopupAutoCompleteRichResult)
 {
 	-moz-window-shadow: none !important;
 
-	margin: -19px -14px -18px !important;	
-	padding: 11px 14px 18px !important;
+	margin: 0px -34px -18px !important;	
+	padding: 0px 14px 18px !important;
 }
 
 panel[type="arrow"][side="top"],
@@ -209,7 +229,7 @@ panel[type="arrow"][side="right"]
 	margin-bottom: -44px;
 }
 
-panel:not(.tooltip-xul-wrapper) .panel-arrowcontent
+.panel-arrowcontent
 {
 	background: var(--arrowpanel-background) !important;
 	border: 0 !important;
@@ -221,7 +241,7 @@ panel:not(.tooltip-xul-wrapper) .panel-arrowcontent
 	color: var(--arrowpanel-color) !important;
 }
 
-panel:not(.tooltip-xul-wrapper) .panel-arrowbox,
+.panel-arrowbox,
 .cui-widget-panel .panel-arrowbox
 {
 	display: none !important;
