@@ -244,14 +244,13 @@
 	min-height: auto !important;
 }
 
-#urlbar[pageproxystate=valid] > #identity-box:not(.no-hover) > #identity-icon
+#identity-icon
 {
 	fill-opacity: 1 !important;
 }
 
 #identity-icon-labels
 {
-	transform: translateY(-3px) !important;
 	color: inherit !important;
 	opacity: 1 !important;
 	padding: 0 !important;
@@ -259,30 +258,33 @@
 	display: none !important;
 }
 
-#identity-box,
-#urlbar-display-box
+#identity-box
 {
 	display: flex !important;
 	position: relative !important;
 }
 
+#urlbar-label-box
+{
+	border: 0 !important;
+	padding: 0 !important;
+}
+
 /* separator */
-#urlbar[pageproxystate=valid]:not([open]) #identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden)::after,
-#urlbar-display-box::after
+#identity-icon-labels::after
 {
 	content: "" !important;
-	display: -moz-box !important;
+	display: block !important;
 	position: absolute !important;
-	top: 4px !important;
-	bottom: 4px !important;
-	right: 0 !important;
+	height: 16px !important;
+	right: -8px !important;
 	background: #9d9e9f !important;
 	width: 1px !important;
 	transition: opacity .2s var(--ease-basic) !important;
 }
 
 #urlbar[pageproxystate=valid]:not([open]) #identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden),
-#urlbar-display-box
+#urlbar-label-box
 {
 	margin-inline-end: 8px !important;
 }
@@ -293,8 +295,7 @@
 }
 
 
-#urlbar[pageproxystate=valid] #identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden):hover:not(.no-hover)::after,
-#urlbar[pageproxystate=valid] #identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden)[open]::after
+#urlbar[pageproxystate=valid] #identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden):not(.no-hover):-moz-any([open], :hover) #identity-icon-labels::after
 {
 	opacity: 0 !important;
 }
