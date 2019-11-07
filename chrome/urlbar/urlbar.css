@@ -234,7 +234,7 @@
 #searchbar-container
 {
 	overflow: visible !important;
-	padding: 0 5px !important;
+	padding: 0 6px !important;
 }
 
 .searchbar-textbox
@@ -258,6 +258,13 @@
 	display: none !important;
 }
 
+/* fix text alignment */
+#identity-icon-label,
+#urlbar-label-box
+{
+	transform: translateY(-1px) !important;
+}
+
 #identity-box
 {
 	display: flex !important;
@@ -277,7 +284,7 @@
 	display: block !important;
 	position: absolute !important;
 	height: 16px !important;
-	right: -8px !important;
+	right: 0 !important;
 	background: #9d9e9f !important;
 	width: 1px !important;
 	transition: opacity .2s var(--ease-basic) !important;
@@ -350,6 +357,9 @@
 {
 	margin-inline-start: -11px !important;
 	margin-inline-end: 0 !important;
+	
+	/* not really useful anyway */
+	display: none !important;
 }
 
 #page-action-buttons > #pageActionSeparator,
@@ -383,6 +393,12 @@
 	transition: background-color .2s var(--ease-basic) !important;
 	background: 0 !important;
 	background-color: transparent !important;
+}
+
+#tracking-protection-icon-box
+{
+	position: relative !important;
+	display: block !important;
 }
 
 #identity-box #notification-popup-box
@@ -522,15 +538,31 @@
 }
 
 #urlbar[open] #urlbar-go-button,
-#searchbar[open] #search-go-button
+#searchbar[open] #search-go-button,
+/* < 71 */
+#urlbar[open] .urlbar-go-button,
+#searchbar[open] .search-go-button
 {
 	height: 32px !important;
 }
 
 #urlbar-go-button,
-#search-go-button
+#search-go-button,
+/* < 71 */
+.urlbar-go-button,
+.search-go-button
 {
 	list-style-image: url(go.svg) !important;
+}
+
+.search-go-container
+{
+	display: flex !important;
+}
+
+#searchbar .textbox-input
+{
+	padding: 0 !important;
 }
 
 /* icons 1x */
@@ -585,8 +617,9 @@
 		transform: translate(.5px, .5px) !important;
 	}
 	
-	#identity-icon-labels,
-	.urlbar-input,
+	#urlbar-input,
+	#searchbar-input,
+	/* < 71 */
 	.searchbar-textbox
 	{
 		transform: translateY(-.5px) !important;
