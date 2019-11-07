@@ -424,6 +424,7 @@
 }
 
 #urlbar:hover #tracking-protection-icon-box,
+#tracking-protection-icon-container[open] #tracking-protection-icon-box,
 #tracking-protection-icon-box[active]
 {
 	transition:
