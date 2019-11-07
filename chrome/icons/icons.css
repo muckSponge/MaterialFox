@@ -179,6 +179,16 @@
 	list-style-image: url(incognito.svg) !important;
 }
 
+#tracking-protection-icon
+{
+	list-style-image: url(content-blocker-inactive.svg) !important;
+}
+
+#tracking-protection-icon-box[active] #tracking-protection-icon
+{
+	list-style-image: url(content-blocker-active.svg) !important;
+}
+
 #pageActionButton
 {
 	list-style-image: url(menu.svg) !important;
