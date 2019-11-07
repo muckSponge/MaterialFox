@@ -569,6 +569,52 @@
 	display: none !important;
 }
 
+#userContext-icons
+{
+	flex-direction: row !important;
+	align-items: center !important;
+	justify-content: center !important;
+	position: relative !important;
+	padding-inline: 8px !important;
+	margin: 0 !important;
+	color: var(--identity-tab-color) !important;
+}
+
+#userContext-icons:not([hidden])
+{
+	display: flex !important;
+}
+
+#userContext-icons > *
+{
+	z-index: 1 !important;
+	color: inherit !important;
+	fill: currentColor !important;
+}
+
+#userContext-label
+{
+	margin: 0 !important;
+}
+
+#userContext-label + #userContext-indicator
+{
+	margin-inline-start: 6px !important;
+}
+
+#userContext-icons::before
+{
+	content: '' !important;
+	position: absolute !important;
+	left: 0 !important;
+	right: 0 !important;
+	top: 0 !important;
+	bottom: 0 !important;
+	background: var(--identity-tab-color) !important;
+	border-radius: 99px !important;
+	opacity: .1 !important;
+}
+
 #cfr-label-container
 {
 	background: 0 !important;
