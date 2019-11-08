@@ -713,6 +713,7 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 {
 	display: flex !important;
 	flex-direction: column !important;
+	flex: 1 !important;
 }
 
 #downloadsListBox .downloadTypeIcon
