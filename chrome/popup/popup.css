@@ -607,6 +607,18 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	display: none !important;
 }
 
+#identity-popup-permissions-content {
+	padding-top: 0 !important;
+	padding-inline-start: 0 !important;
+}
+
+#identity-popup-permission-reload-hint, 
+#identity-popup-permission-empty-hint, 
+#identity-popup-permission-list:not(:empty) 
+{
+	padding-inline-start: 2em !important;
+}
+
 .panel-footer
 {
 	padding: 4px !important;
