@@ -401,226 +401,11 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	fill-opacity: 1 !important;
 }
 
-#identity-popup > .panel-arrowcontainer > .panel-arrowcontent
-{
-	fill-opacity: inherit !important;
-}
-
-.identity-popup-preferences-button
-{
-	border-radius: 16px !important;
-	background-image: none !important;
-}
-
-.identity-popup-preferences-button > .toolbarbutton-icon
-{
-	margin: 0 !important;
-}
-
-#identity-popup-permission-preferences-button
-{
-	padding: 0 !important;
-}
-
-#tracking-protection-preferences-button > .toolbarbutton-icon
-{
-	margin-inline-end: -8px !important;
-}
-
-#tracking-protection-preferences-button > .toolbarbutton-text
-{
-    padding-inline-end: 4px !important;
-	-moz-box-ordinal-group: 0 !important; 
-}
-
-.identity-popup-section
-{
-	padding: 16px !important;
-	display: flex !important;
-}
-
-.identity-popup-security-content,
-#identity-popup-content-blocking-content,
-#identity-popup-permissions-content
-{
-	padding: 0 !important;
-	background: 0 !important;
-	fill-opacity: inherit !important;
-}
-
-.identity-popup-expander
-{
-	border-radius: 16px !important;
-	width: 32px !important;
-	max-height: 32px !important;
-	margin-inline-start: auto !important;
-	-moz-box-pack: center !important;
-	-moz-box-align: center !important;
-	background-image: none !important;
-}
-
-.identity-popup-expander > .button-box
-{
-	border: 0 !important;
-	display: flex !important;
-	justify-content: center !important;
-}
-
-.identity-popup-expander .button-icon
-{
-	margin: 0 !important;
-}
-
-.identity-popup-expander .button-text
-{
-	display: none !important;
-}
-
-.identity-popup-headline
-{
-	margin: 0 !important;
-}
-
-.PanelUI-subView > .identity-popup-security-content,
-#identity-popup-securityView-body
-{
-	padding: 16px !important;
-}
-
-#identity-popup-mainView-panel-header
-{
-	-moz-box-align: start !important;
-	padding: 16px !important;
-}
-
-#identity-popup-securityView-body
-{
-	margin: 0 !important;
-}
-
-#identity-popup-content-blocking-content,
-#identity-popup-permissions-content
-{
-	display: flex !important;
-	flex-direction: column !important;
-	width: 100% !important;
-}
-
-#identity-popup-content-blocking-content > hbox:first-child,
-#identity-popup-permissions-content > hbox:first-child
-{
-	display: flex !important;
-}
-
-#identity-popup-content-blocking-category-list,
-#identity-popup-permission-list
-{
-	display: flex !important;
-	flex-direction: column !important;
-	margin: 0 -16px !important;
-	width: calc(100% + 32px) !important;
-	padding-top: 8px !important;
-}
-
-.identity-popup-permission-item
-{
-	display: flex !important;
-	align-items: center !important;
-}
-
-.identity-popup-permission-label,
-#identity-popup-content-blocking-report-breakage
-{
-	flex: 1 !important;
-	text-decoration: none !important;
-	cursor: auto !important;
-	color: inherit !important;
-}
-
-.identity-popup-content-blocking-category,
-.identity-popup-permission-item
-{
-	height: 32px !important;
-	padding: 0 16px !important;
-}
-
-.identity-popup-content-blocking-category-icon,
-.identity-popup-permission-icon
-{
-	margin: 0 !important;
-	margin-inline-end: 16px !important;
-}
-
-.popup-notification-icon,
-.identity-popup-permission-icon
-{
-	fill-opacity: 1 !important;
-}
-
-.identity-popup-content-blocking-category-label,
-.identity-popup-permission-label
-{
-	margin: 0 !important;
-}
-
-.identity-popup-content-blocking-category::after
-{
-	transform: translateY(1px) !important;
-	content: url(menu-right-1x.svg) !important;
-	margin: 0 !important;
-}
-
-.identity-popup-preferences-button
-{
-	margin-inline-start: auto !important;
-}
-
-.identity-popup-permission-remove-button
-{
-	opacity: 1 !important;
-}
-
-.tracking-protection-button,
-#identity-popup-content-blocking-report-breakage
-{
-	margin: 0 -16px !important;
-	height: 32px !important;
-	padding: 0 16px !important;
-	background: 0 !important;
-	color: inherit !important;
-	line-height: 32px !important;
-}
-
-#identity-popup-content-blocking-report-breakage
-{
-	padding-inline-start: 50px !important;
-}
-
-.tracking-protection-button > .button-box
-{
-	padding: 0 !important;
-}
-
-.tracking-protection-button .button-icon
-{
-	margin: 0 !important;
-}
-
 #customization-lwtheme-menu-header
 {
 	display: none !important;
 }
 
-#identity-popup-content-blocking-report-breakage,
-{
-	padding-inline-start: 48px !important;
-	line-height: 32px !important;
-	text-decoration: none !important;
-	cursor: auto !important;
-}
-
-.tracking-protection-button:hover:not([disabled=true]),
-#identity-popup-content-blocking-report-breakage:hover,
 #blocked-popup-indicator-item:hover,
 .customization-lwtheme-menu-theme:hover,
 #customization-lwtheme-menu-footer toolbarbutton:hover
@@ -628,8 +413,6 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	background-color: var(--arrowpanel-dimmed) !important;
 }
 
-.tracking-protection-button:hover:active:not([disabled=true]),
-#identity-popup-content-blocking-report-breakage:hover:active,
 #blocked-popup-indicator-item:hover:active,
 .customization-lwtheme-menu-theme:hover:active,
 #customization-lwtheme-menu-footer toolbarbutton:hover:active
@@ -637,78 +420,10 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	background-color: var(--arrowpanel-dimmed-further) !important;
 }
 
-.identity-popup-content-blocking-empty-label,
-#tracking-protection-preferences-button > .toolbarbutton-text,
-.tracking-protection-button,
-#identity-popup-trackersView-strict-info > label,
-.identity-popup-cookiesView-list-header,
-.identity-popup-content-blocking-list-item > label,
-#identity-popup-mainView-panel-header > label,
-#identity-popup-trackersView > .panel-header,
-#identity-popup-securityView > .panel-header,
-#identity-popup-breakageReportView > .panel-header,
-#identity-popup-content-blocking-report-breakage,
-.identity-popup-content-blocking-category-label,
-.identity-popup-content-blocking-category-state-label,
-.identity-popup-permission-label,
-.identity-popup-permission-state-label,
-#identity-popup-security-descriptions > description,
-#identity-popup-securityView-body > description,
-#identity-popup-permissions-content > description,
-#identity-popup-content-blocking-content > description
-{
-	font-size: 100% !important;
-}
-
 .panel-header > label
 {
 	text-align: start !important;
 	margin-inline-start: 4px !important;
-}
-
-.identity-popup-headline
-{
-	font-size: 110% !important;
-}
-
-.identity-popup-security-content > description,
-#identity-popup-content-blocking-content > description,
-#identity-popup-permissions-content > description,
-.identity-popup-content-blocking-category-state-label,
-.identity-popup-permission-state-label
-{
-	font-size: 85% !important;
-}
-
-#identity-popup-permissions-content > description,
-#identity-popup-content-blocking-content > description
-{
-    color: inherit !important;
-	opacity: .6 !important;
-}
-
-.identity-popup-content-blocking-category-state-label
-{
-	transform: translateY(1px) !important;
-}
-
-.tracking-protection-button > .button-box,
-.panel-footer button > .button-box
-{
-	display: flex !important;
-	align-items: center !important;
-}
-
-.tracking-protection-button .button-icon,
-.panel-footer button .button-icon
-{
-	padding-inline-end: 16px !important;
-}
-
-.tracking-protection-button .button-text,
-.panel-footer button .button-text
-{
-	margin: 0 !important;
 }
 
 #downloadsPanel-multiView
@@ -857,12 +572,22 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	text-align: start !important;
 }
 
+.identity-popup-content-blocking-category::after
+{
+	transform: translateY(1px) !important;
+	content: url(menu-right-1x.svg) !important;
+	margin: 0 !important;
+}
+
+.identity-popup-section {
+    border-top: none !important;
+}
+
 .panel-footer
 {
 	padding: 4px !important;
 	background: 0 !important;
 	border-top: 1px solid var(--panel-separator-color) !important;
-	justify-content: end !important;
 	display: flex !important;
 }
 
@@ -873,15 +598,12 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	margin: 4px !important;
 	height: 32px !important;
 	padding: 0 !important;
-	flex: 0 0 auto !important;
-	position: relative !important;
 	outline: 0 !important;
 }
 
 .panel-footer button > .button-box
 {
 	-moz-appearance: none !important;
-	position: relative !important;
 	padding-inline-end: 16px !important;
 }
 
@@ -894,14 +616,11 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 .panel-footer button:not([default]) > .button-box::before
 {
 	content: "" !important;
-	display: block !important;
 	border-radius: 4px !important;
-	position: absolute !important;
 	left: 0 !important;
 	top: 0 !important;
 	width: 100% !important;
 	height: 100% !important;
-	border: 1px solid currentColor !important;
 	opacity: .42 !important;
 	box-sizing: border-box !important;
 }
