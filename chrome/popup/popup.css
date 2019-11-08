@@ -572,6 +572,17 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	text-align: start !important;
 }
 
+.identity-popup-security-connection 
+{
+	background-image: none !important;
+}
+
+.identity-popup-security-connection,
+#identity-popup-security-description
+{
+	 padding-inline-start: 2em !important;
+}
+
 .identity-popup-expander
 {
 	border-radius: 16px !important;
@@ -599,7 +610,7 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 
 .identity-popup-section 
 {
-    border-top: none !important;
+  border-top: none !important;
 }
 
 #identity-popup-permissions-header 
