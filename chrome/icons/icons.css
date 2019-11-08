@@ -246,6 +246,18 @@
 	fill: currentColor !important;
 }
 
+.tab-icon-overlay[soundplaying],
+.tab-icon-sound
+{
+    list-style-image: url(audio.svg) !important;
+}
+
+.tab-icon-overlay[muted],
+.tab-icon-sound[muted]
+{
+    list-style-image: url(audio-muted.svg) !important;
+}
+
 .downloadIconShow .button-icon
 {
 	list-style-image: url(folder.svg) !important;
