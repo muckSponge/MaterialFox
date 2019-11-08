@@ -328,7 +328,7 @@
 	display: -moz-box !important;
 }
 
-#urlbar[pageproxystate=valid] #identity-box:-moz-any(.certUserOverridden, .unknownIdentity)
+#urlbar[pageproxystate=valid] #identity-box:-moz-any(.weakCipher, .certUserOverridden, .certErrorPage, .insecureLoginForms, .mixedActiveContent)
 {
 	color: #c94031 !important;
 }
@@ -680,24 +680,22 @@
 	}
 }
 
-/* info (not secure) */
-#identity-box[pageproxystate="valid"]:-moz-any(.notSecure, .insecureLoginForms, .mixedActiveContent) > #identity-icon
-{
-    list-style-image: var(--info-icon) !important;
-}
-
-#identity-box[pageproxystate="valid"]:-moz-any(
-	.certUserOverridden,
-	.weakCipher,
-	.unknownIdentity) > #identity-icon
-{
-    list-style-image: var(--warning-icon) !important;
-}
-
 /* lock (secure) */
 #identity-box[pageproxystate="valid"]:-moz-any(.verifiedDomain, .verifiedIdentity, .mixedActiveBlocked) > #identity-icon
 {
 	list-style-image: var(--lock-icon) !important;
+}
+
+/* info (not secure) */
+#identity-box[pageproxystate="valid"]:-moz-any(.mixedDisplayContent, .mixedDisplayContentLoadedActiveBlocked, .unknownIdentity) > #identity-icon
+{
+    list-style-image: var(--info-icon) !important;
+}
+
+/* warning (dangerous) */
+#identity-box[pageproxystate="valid"]:-moz-any(.notSecure, .weakCipher, .certUserOverridden, .certErrorPage, .insecureLoginForms, .mixedActiveContent) > #identity-icon
+{
+    list-style-image: var(--warning-icon) !important;
 }
 
 /* high DPI adjustments */
