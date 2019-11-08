@@ -613,6 +613,11 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
   border-top: none !important;
 }
 
+.identity-popup-security-content 
+{
+	border-bottom: none !important;
+}
+
 #identity-popup-permissions-header 
 {
 	display: none !important;
@@ -621,6 +626,12 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 #identity-popup-permissions-content {
 	padding-top: 0 !important;
 	padding-inline-start: 0 !important;
+}
+
+#identity-popup-securityView-body 
+{
+	padding-top: 0 !important;
+	margin-inline-start: 2em !important;
 }
 
 #identity-popup-permission-reload-hint, 
