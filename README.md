@@ -16,7 +16,7 @@ Some steps involve accessing the about:config page. You can get there by typing 
 
 ### Mandatory instructions
 1. Copy the chrome folder into your Firefox profile directory. To find your profile directory, go to about:support. Alternatively, you can symlink your chrome folder instead of copying.
-2. [Firefox 69+, about:config] Set ```toolkit.legacyUserProfileCustomizations.stylesheets``` to ```true``` (default is ```false```).
+2. [about:config] Set ```toolkit.legacyUserProfileCustomizations.stylesheets``` to ```true``` (default is ```false```).
 3. [about:config] Set ```svg.context-properties.content.enabled``` to ```true``` (default is ```false```).
 4. Restart Firefox.
 
@@ -25,17 +25,13 @@ Add space above tab bar:
 * Right click on toolbar -> Customize.
 * Check Drag Space checkbox.
 
-Emulate Chrome's profile switcher button (Firefox 67+ only):
-* Right click on toolbar -> Customize.
-* Drag Firefox Account to the toolbar.
-
 Replicate Chrome behaviour for clipped tabs:
 * [about:config] Set ```browser.tabs.tabClipWidth``` to ```83``` (default is ```144```).
 
 Allow tabs to shrink more; tabs in overflow will look the same as pinned tabs:
 * [about:config] Add new entry ```materialFox.reduceTabOverflow``` with value ```true```.
 
-Replicate Chrome's "Not Secure" on HTTP:
+Replicate Chrome's "Not Secure" text on HTTP:
 * [about:config] Set ```security.insecure_connection_text.enabled``` to ```true```.
 
 ## Please note
