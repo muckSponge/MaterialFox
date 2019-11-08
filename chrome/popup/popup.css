@@ -572,15 +572,39 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	text-align: start !important;
 }
 
-.identity-popup-content-blocking-category::after
+.identity-popup-expander
 {
-	transform: translateY(1px) !important;
-	content: url(menu-right-1x.svg) !important;
+	border-radius: 16px !important;
+	width: 32px !important;
+	max-height: 32px !important;
+	margin-inline-start: auto !important;
+	background-image: none !important;
+}
+
+.identity-popup-expander > .button-box
+{
+	border: 0 !important;
+	justify-content: center !important;
+}
+
+.identity-popup-expander .button-icon
+{
 	margin: 0 !important;
 }
 
-.identity-popup-section {
+.identity-popup-expander .button-text
+{
+	display: none !important;
+}
+
+.identity-popup-section 
+{
     border-top: none !important;
+}
+
+#identity-popup-permissions-header 
+{
+	display: none !important;
 }
 
 .panel-footer
