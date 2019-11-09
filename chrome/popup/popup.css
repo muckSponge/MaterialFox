@@ -7,16 +7,26 @@ menupopup menuseparator
 }
 
 menupopup,
-panel[type="autocomplete-richlistbox"]:not(#PopupAutoCompleteRichResult)
+panel[type="autocomplete-richlistbox"]
 {
 	-moz-window-shadow: none !important;
 	background: 0 !important;
 	border: 0 !important;
 	color: var(--arrowpanel-color) !important;
-	margin-left: -14px !important;
-	margin-top: -19px !important;
-	padding: 11px 14px 18px !important;
 	box-sizing: content-box !important;
+}
+
+menupopup
+{
+	padding: 11px 14px 18px !important;
+	margin: -19px -14px 0 !important;
+}
+
+/* needs to align with textbox but can't overlap it */
+panel[type="autocomplete-richlistbox"]
+{
+	padding: 1px 14px 18px !important;
+	margin: 0 -14px 0 !important;
 }
 
 .panel-arrowcontent
@@ -30,17 +40,33 @@ panel[type="autocomplete-richlistbox"]:not(#PopupAutoCompleteRichResult)
 
 /* themes a menupopup (or other root level / shadow dom popup) as a panel */
 /* Mozilla's use of shadow dom means we can't use a menupopup > .popup-internal-box */
-.popup-internal-box
+.popup-internal-box,
+panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox
 {
 	margin: 0 !important;
 	padding: 8px 0 !important;
 	background: var(--arrowpanel-background) !important;
 	border-radius: 4px !important;
+	color: inherit !important;
+}
+
+.popup-internal-box
+{
 	box-shadow:
 		0 5px 5px -3px rgba(0,0,0,.2),
 		0 8px 10px 1px rgba(0,0,0,.14),
 		0 3px 14px 2px rgba(0,0,0,.12) !important;
-	color: inherit !important;
+}
+
+/* autocomplete panel can't overlap the textbox, so shadow can't go up
+   more than 1px */
+panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox
+{
+	box-shadow:
+		0 0 0 1px rgba(0, 0, 0, .03),
+		0 5px 5px -3px rgba(0,0,0,.2),
+		0 8px 10px -0px rgba(0,0,0,.14),
+		0 3px 14px -5px rgba(0,0,0,.12) !important;
 }
 
 /* reset non-layout props when embedded in a panel
@@ -207,12 +233,12 @@ menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon
 	background-color: var(--arrowpanel-dimmed-further) !important;
 }
 
-panel:not(#urlbar-results):not(#PopupAutoCompleteRichResult)
+panel[type="arrow"]
 {
 	-moz-window-shadow: none !important;
 
-	margin: 0px -34px -18px !important;	
-	padding: 0px 14px 18px !important;
+	margin: 0 -14px -18px !important;	
+	padding: 0 14px 18px !important;
 }
 
 panel[type="arrow"][side="top"],
