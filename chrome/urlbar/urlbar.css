@@ -234,7 +234,8 @@
 #searchbar-container
 {
 	overflow: visible !important;
-	padding: 0 6px !important;
+	padding: 0 !important;
+	margin-inline: 6px !important;
 }
 
 .searchbar-textbox
