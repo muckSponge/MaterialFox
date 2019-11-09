@@ -88,7 +88,9 @@
 	list-style-image: url(history.svg) !important;
 }
 
-#appMenu-logins-button
+#appMenu-logins-button,
+richlistitem[originaltype="loginWithOrigin"] .ac-site-icon,
+richlistitem[originaltype="loginsFooter"] .ac-site-icon
 {
 	list-style-image: url(key.svg) !important;
 }

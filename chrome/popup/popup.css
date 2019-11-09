@@ -918,6 +918,44 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	color: #FFF !important;
 }
 
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="loginWithOrigin"]
+{
+	height: 48px !important;
+}
+
+richlistitem[originaltype="loginsFooter"],
+richlistitem[originaltype="generatedPassword"] > .two-line-wrapper
+{
+	display: flex !important;
+	align-items: center !important;
+}
+
+richlistitem:-moz-any(
+	[originaltype="generatedPassword"],
+	[originaltype="loginWithOrigin"],
+	[originaltype="login"],
+	[originaltype="loginsFooter"]) .ac-site-icon
+{
+	display: block !important;
+	align-self: center !important;
+	margin-inline: 0 16px !important;
+	fill: currentColor !important;
+}
+
+richlistitem[originaltype="loginsFooter"] .ac-site-icon
+{
+	visibility: hidden !important;
+}
+
+richlistitem:-moz-any(
+	[originaltype="generatedPassword"],
+	[originaltype="loginWithOrigin"],
+	[originaltype="login"],
+	[originaltype="loginsFooter"]) .ac-title
+{
+	margin: 0 !important;
+}
+
 /* high DPI adjustments */
 @media (min--moz-device-pixel-ratio: 2)
 {
