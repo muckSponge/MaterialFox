@@ -256,6 +256,11 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon
     list-style-image: url(audio-muted.svg) !important;
 }
 
+.tab-icon-overlay[activemedia-blocked]
+{
+	list-style-image: url(media-blocked.svg) !important;
+}
+
 .downloadIconShow .button-icon
 {
 	list-style-image: url(folder.svg) !important;
