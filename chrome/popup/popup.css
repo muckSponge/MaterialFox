@@ -608,6 +608,11 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	display: none !important;
 }
 
+.panel-header 
+{
+		border-bottom: none !important;
+}
+
 .identity-popup-section 
 {
   border-top: none !important;
