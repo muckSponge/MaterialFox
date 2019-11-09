@@ -643,7 +643,8 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 
 .panel-footer
 {
-	padding: 4px !important;
+	padding-top: 4px !important;
+	padding-bottom: 4px !important;
 	background: 0 !important;
 	border-top: 1px solid var(--panel-separator-color) !important;
 	display: flex !important;
@@ -652,16 +653,16 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 .panel-footer button
 {
 	border: 0 !important;
-	border-radius: 4px !important;
-	margin: 4px !important;
+	margin-top: 4px !important;
+	margin-bottom: 4px !important;
 	height: 32px !important;
 	padding: 0 !important;
 	outline: 0 !important;
+	width: 100% !important;
 }
 
 .panel-footer button > .button-box
 {
-	-moz-appearance: none !important;
 	padding-inline-end: 16px !important;
 }
 
@@ -677,10 +678,8 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	border-radius: 4px !important;
 	left: 0 !important;
 	top: 0 !important;
-	width: 100% !important;
 	height: 100% !important;
 	opacity: .42 !important;
-	box-sizing: border-box !important;
 }
 
 .panel-footer button:not([default]):hover:active:not([disabled]) > .button-box::before
