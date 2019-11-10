@@ -662,25 +662,6 @@
 	padding: 0 !important;
 }
 
-/* icons 1x */
-#urlbar
-{
-	--info-icon: url(info-1x.svg);
-	--lock-icon: url(connection-1x.svg);
-	--warning-icon: url(connection-warning-1x.svg);
-}
-
-/* icons 2x */
-@media (min--moz-device-pixel-ratio: 2)
-{
-	#urlbar
-	{
-		--info-icon: url(info-2x.svg);
-		--lock-icon: url(connection-2x.svg);
-		--warning-icon: url(connection-warning-2x.svg);
-	}
-}
-
 /* lock (secure) */
 #identity-box[pageproxystate="valid"]:-moz-any(.verifiedDomain, .verifiedIdentity, .mixedActiveBlocked) > #identity-icon
 {
@@ -699,24 +680,45 @@
     list-style-image: var(--warning-icon) !important;
 }
 
-/* high DPI adjustments */
+#urlbar-input,
+#searchbar-input,
+.searchbar-textbox /* < 71 */
+{
+	transform: translateY(var(--input-offset)) !important;
+}
+
+/* 1x */
+#urlbar
+{
+	--info-icon: url(info-1x.svg);
+	--lock-icon: url(connection-1x.svg);
+	--warning-icon: url(connection-warning-1x.svg);
+}
+
+#urlbar,
+#searchbar
+{
+	--input-offset: -1px;
+}
+
+/* 2x */
 @media (min--moz-device-pixel-ratio: 2)
 {
+	#urlbar
+	{
+		--info-icon: url(info-2x.svg);
+		--lock-icon: url(connection-2x.svg);
+		--warning-icon: url(connection-warning-2x.svg);
+	}
+	
+	#urlbar,
+	#searchbar
+	{
+		--input-offset: -.5px;
+	}
+	
 	#identity-icon-labels
 	{
 		padding-inline-end: .5px !important;
-	}
-	
-	#urlbar[pageproxystate=valid] > #identity-box:-moz-any(.unknownIdentity, .notSecure) > #identity-icon
-	{
-		transform: translate(.5px, .5px) !important;
-	}
-	
-	#urlbar-input,
-	#searchbar-input,
-	/* < 71 */
-	.searchbar-textbox
-	{
-		transform: translateY(-.5px) !important;
 	}
 }
