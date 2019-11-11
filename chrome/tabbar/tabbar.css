@@ -302,6 +302,11 @@
 	padding-inline-start: 8px !important;
 }
 
+.tabbrowser-tab[pinned]:-moz-any([soundplaying], [muted], [activemedia-blocked]) .tab-icon-image
+{
+	visibility: hidden !important;
+}
+
 .tabbrowser-tab[fadein] .tab-close-button
 {
 	visibility: visible !important;
@@ -314,21 +319,40 @@
 	height: 16px !important;
 	margin: 0 !important;
 	padding: 0 !important;
+}
+
+.tab-close-button,
+.tab-icon-overlay:-moz-any([soundplaying], [muted], [activemedia-blocked]),
+.tab-icon-sound
+{
 	border-radius: 99px !important;
+	color: inherit !important;
+	-moz-context-properties: fill, fill-opacity !important;
 	transition-property: fill-opacity, background-color !important;
 	transition-duration: .15s !important;
 	transition-timing-function: var(--ease-basic) !important;
 	fill-opacity: 1 !important;
+	opacity: 1 !important;
 }
 
-.tab-close-button:hover
+.tab-close-button:hover,
+.tab-icon-overlay:-moz-any([soundplaying], [muted], [activemedia-blocked]):hover,
+.tab-icon-sound:hover
 {
 	background-color: var(--toolbarbutton-hover-background) !important;
 }
 
-.tab-close-button:hover:active
+.tab-close-button:hover:active,
+.tab-icon-overlay:-moz-any([soundplaying], [muted], [activemedia-blocked]):hover:active,
+.tab-icon-sound:hover:active
 {
 	background-color: var(--toolbarbutton-active-background) !important;
+}
+
+.tab-icon-overlay[pinned]
+{
+	margin: 0 !important;
+	margin-inline-start: -16px !important;
 }
 
 @keyframes rotate-360

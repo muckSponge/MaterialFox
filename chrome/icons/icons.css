@@ -48,7 +48,8 @@
 	fill-opacity: 0 !important;
 }
 
-#star-button[starred]
+#star-button[starred],
+#tracking-protection-icon-box[active]
 {
 	fill: var(--toolbarbutton-icon-fill-attention) !important;
 }
@@ -87,7 +88,9 @@
 	list-style-image: url(history.svg) !important;
 }
 
-#appMenu-logins-button
+#appMenu-logins-button,
+richlistitem[originaltype="loginWithOrigin"] .ac-site-icon,
+richlistitem[originaltype="loginsFooter"] .ac-site-icon
 {
 	list-style-image: url(key.svg) !important;
 }
@@ -181,12 +184,7 @@
 
 #tracking-protection-icon
 {
-	list-style-image: url(content-blocker-inactive.svg) !important;
-}
-
-#tracking-protection-icon-box[active] #tracking-protection-icon
-{
-	list-style-image: url(content-blocker-active.svg) !important;
+	list-style-image: url(tracking-protection.svg) !important;
 }
 
 #pageActionButton
@@ -244,6 +242,23 @@
 	list-style-image: url(settings.svg) !important;
 	-moz-context-properties: fill, fill-opacity !important;
 	fill: currentColor !important;
+}
+
+.tab-icon-overlay[soundplaying],
+.tab-icon-sound
+{
+    list-style-image: url(audio.svg) !important;
+}
+
+.tab-icon-overlay[muted],
+.tab-icon-sound[muted]
+{
+    list-style-image: url(audio-muted.svg) !important;
+}
+
+.tab-icon-overlay[activemedia-blocked]
+{
+	list-style-image: url(media-blocked.svg) !important;
 }
 
 .downloadIconShow .button-icon

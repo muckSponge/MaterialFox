@@ -16,6 +16,7 @@
 {
 	border: none !important;
 	margin: 0 !important;
+	padding: 0 !important;
 }
 
 #PanelUI-menu-button[badge-status|="update"] .toolbarbutton-badge

@@ -234,7 +234,8 @@
 #searchbar-container
 {
 	overflow: visible !important;
-	padding: 0 6px !important;
+	padding: 0 !important;
+	margin-inline: 6px !important;
 }
 
 .searchbar-textbox
@@ -328,7 +329,7 @@
 	display: -moz-box !important;
 }
 
-#urlbar[pageproxystate=valid] #identity-box:-moz-any(.certUserOverridden, .unknownIdentity)
+#urlbar[pageproxystate=valid] #identity-box:-moz-any(.weakCipher, .certUserOverridden, .certErrorPage, .insecureLoginForms, .mixedActiveContent)
 {
 	color: #c94031 !important;
 }
@@ -379,6 +380,7 @@
 }
 
 .urlbar-icon,
+#page-action-buttons > toolbarbutton,
 .searchbar-search-button,
 #identity-box,
 #tracking-protection-icon-box
@@ -465,6 +467,7 @@
 }
 
 .urlbar-icon:hover:not([disabled]),
+#page-action-buttons > toolbarbutton:hover:not([disabled]),
 .searchbar-search-button:hover,
 #identity-box:hover:not(.no-hover),
 #tracking-protection-icon-container:hover #tracking-protection-icon-box
@@ -474,6 +477,7 @@
 
 .urlbar-icon:hover:active:not([disabled]),
 .urlbar-icon[open],
+#page-action-buttons > toolbarbutton:hover:active:not([disabled]),
 .searchbar-search-button:hover:active,
 #identity-box:hover:active:not(.no-hover),
 #identity-box[open]:not(.no-hover),
@@ -658,7 +662,32 @@
 	padding: 0 !important;
 }
 
-/* icons 1x */
+/* lock (secure) */
+#identity-box[pageproxystate="valid"]:-moz-any(.verifiedDomain, .verifiedIdentity, .mixedActiveBlocked) > #identity-icon
+{
+	list-style-image: var(--lock-icon) !important;
+}
+
+/* info (not secure) */
+#identity-box[pageproxystate="valid"]:-moz-any(.mixedDisplayContent, .mixedDisplayContentLoadedActiveBlocked, .unknownIdentity) > #identity-icon
+{
+    list-style-image: var(--info-icon) !important;
+}
+
+/* warning (dangerous) */
+#identity-box[pageproxystate="valid"]:-moz-any(.notSecure, .weakCipher, .certUserOverridden, .certErrorPage, .insecureLoginForms, .mixedActiveContent) > #identity-icon
+{
+    list-style-image: var(--warning-icon) !important;
+}
+
+#urlbar-input,
+#searchbar-input,
+.searchbar-textbox /* < 71 */
+{
+	transform: translateY(var(--input-offset)) !important;
+}
+
+/* 1x */
 #urlbar
 {
 	--info-icon: url(info-1x.svg);
@@ -666,7 +695,13 @@
 	--warning-icon: url(connection-warning-1x.svg);
 }
 
-/* icons 2x */
+#urlbar,
+#searchbar
+{
+	--input-offset: -1px;
+}
+
+/* 2x */
 @media (min--moz-device-pixel-ratio: 2)
 {
 	#urlbar
@@ -675,46 +710,15 @@
 		--lock-icon: url(connection-2x.svg);
 		--warning-icon: url(connection-warning-2x.svg);
 	}
-}
-
-/* info (not secure) */
-#identity-box[pageproxystate="valid"]:-moz-any(.notSecure, .insecureLoginForms, .mixedActiveContent) > #identity-icon
-{
-    list-style-image: var(--info-icon) !important;
-}
-
-#identity-box[pageproxystate="valid"]:-moz-any(
-	.certUserOverridden,
-	.weakCipher,
-	.unknownIdentity) > #identity-icon
-{
-    list-style-image: var(--warning-icon) !important;
-}
-
-/* lock (secure) */
-#identity-box[pageproxystate="valid"]:-moz-any(.verifiedDomain, .verifiedIdentity, .mixedActiveBlocked) > #identity-icon
-{
-	list-style-image: var(--lock-icon) !important;
-}
-
-/* high DPI adjustments */
-@media (min--moz-device-pixel-ratio: 2)
-{
+	
+	#urlbar,
+	#searchbar
+	{
+		--input-offset: -.5px;
+	}
+	
 	#identity-icon-labels
 	{
 		padding-inline-end: .5px !important;
-	}
-	
-	#urlbar[pageproxystate=valid] > #identity-box:-moz-any(.unknownIdentity, .notSecure) > #identity-icon
-	{
-		transform: translate(.5px, .5px) !important;
-	}
-	
-	#urlbar-input,
-	#searchbar-input,
-	/* < 71 */
-	.searchbar-textbox
-	{
-		transform: translateY(-.5px) !important;
 	}
 }

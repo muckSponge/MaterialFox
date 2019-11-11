@@ -162,6 +162,110 @@
 	display: none !important;
 }
 
+.pointerlockfswarning
+{
+	display: flex !important;
+	border-radius: 4px !important;
+	padding: 6px !important;
+	background: #333 !important;
+	border: 0 !important;
+	font-size: 14px !important;
+	box-shadow:
+		0 3px 5px -1px rgba(0,0,0,.2),
+		0 6px 10px 0 rgba(0,0,0,.14),
+		0 1px 18px 0 rgba(0,0,0,.12) !important;
+	color: hsla(0,0%,100%,.87) !important;
+	transition-timing-function: var(--ease-out), linear !important;
+	transition-property: transform, top !important;
+}
+
+#fullscreen-warning
+{
+	flex-direction: column !important;
+	min-width: 344px !important;
+}
+
+.pointerlockfswarning[hidden]
+{
+	visibility: hidden !important;
+}
+
+/* hack to keep it in same place as [ontop] */
+/* probably doesn't work for single-line */
+.pointerlockfswarning:not([hidden]):not([ontop])
+{
+	top: -32px !important;
+}
+
+.pointerlockfswarning[ontop]
+{
+	top: 28px !important;
+}
+
+.pointerlockfswarning::before
+{
+	display: none !important;
+}
+
+.pointerlockfswarning-domain-text
+{
+	margin-block: 8px 18px !important;
+	margin-inline: 10px !important;
+	font-size: unset !important;
+	font-weight: unset !important;
+	align-self: start !important;
+}
+
+.pointerlockfswarning-domain
+{
+	font-weight: unset !important;
+}
+
+#fullscreen-exit-button
+{
+	-moz-appearance: none !important;
+	border: 0 !important;
+	height: 32px !important;
+	display: flex !important;
+	align-items: center !important;
+	margin-inline: 8px 0 !important;
+	text-transform: uppercase !important;
+	font-weight: 500 !important;
+	letter-spacing: .0892857143em !important;
+	background: 0 !important;
+	position: relative !important;
+	color: var(--toolbarbutton-icon-fill-attention) !important;
+	align-self: end !important;
+	font-family: Roboto, inherit !important;
+}
+
+#fullscreen-exit-button::before
+{
+	content: "" !important;
+	display: block !important;
+	z-index: -1 !important;
+	position: absolute !important;
+	left: 0 !important;
+	right: 0 !important;
+	top: 0 !important;
+	bottom: 0 !important;
+	border-radius: 4px !important;
+	background: currentColor !important;
+	opacity: 0 !important;
+	transition: opacity .3s var(--ease-basic) !important;
+}
+
+#fullscreen-exit-button:hover::before
+{
+	opacity: .12 !important;
+}
+
+#fullscreen-exit-button:hover:active::before
+{
+	opacity: .24 !important;
+	transition-duration: .1s !important;
+}
+
 /* high DPI adjustments */
 @media (min--moz-device-pixel-ratio: 2)
 {
