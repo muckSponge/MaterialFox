@@ -42,3 +42,9 @@
 {
 	overflow: visible !important;
 }
+ 
+#fxa-avatar-image {
+    transform: scale(2) !important;
+    margin: 0px !important;
+    border-radius: 50% !important;
+}
