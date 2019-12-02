@@ -256,7 +256,8 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon
     list-style-image: url(audio-muted.svg) !important;
 }
 
-.tab-icon-overlay[activemedia-blocked]
+.tab-icon-overlay[activemedia-blocked],
+.tab-icon-sound[activemedia-blocked]
 {
 	list-style-image: url(media-blocked.svg) !important;
 }
