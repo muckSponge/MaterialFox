@@ -22,8 +22,9 @@ menupopup
 	margin: -19px -14px 0 !important;
 }
 
-/* needs to align with textbox but can't overlap it */
-panel[type="autocomplete-richlistbox"]
+/* needs to align with textbox/bookmark-button but can't overlap it */
+panel[type="autocomplete-richlistbox"],
+.bookmark-item:not(menu) > menupopup[placespopup]
 {
 	padding: 1px 14px 18px !important;
 	margin: 0 -14px 0 !important;
