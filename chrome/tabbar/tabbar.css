@@ -481,7 +481,7 @@
 
 #tabbrowser-tabs[overflow] .tabbrowser-tab[first-visible-tab]:not([pinned]),
 #tabbrowser-tabs[overflow] .tabbrowser-tab[pinned] + .tabbrowser-tab:not([pinned]),
-#tabbrowser-tabs:not([overflow]) .tabbrowser-tab:first-child
+#tabbrowser-tabs:not([overflow]) .tabbrowser-tab[first-visible-tab]
 {
 	margin-inline-start: 8px !important;
 }
