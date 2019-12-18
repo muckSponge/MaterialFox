@@ -487,19 +487,8 @@
 	transition-duration: 0 !important;
 }
 
-#star-button-box
-{
-	order: 99 !important;
-}
-
-#pageActionButton
-{
-	order: 98 !important;
-}
-
 #contextual-feature-recommendation
 {
-	order: 96 !important;
 	width: auto !important;
 }
 
@@ -546,7 +535,27 @@
 	#pageAction-urlbar-copyURL,
 	#pageAction-urlbar-shareURL,
 	#pageAction-urlbar-addSearchEngine
-):-moz-any(:hover, [open], [readeractive])
+):-moz-any(:hover, [open], [readeractive]),
+.urlbar-page-action:-moz-any(:hover, [open]) ~ .urlbar-page-action:-moz-any(
+	#reader-mode-button,
+	#pageActionButton,
+	#pocket-button-box,
+	#pageAction-urlbar-screenshots_mozilla_org,
+	#pageAction-urlbar-sendToDevice,
+	#pageAction-urlbar-emailLink,
+	#pageAction-urlbar-copyURL,
+	#pageAction-urlbar-shareURL,
+	#pageAction-urlbar-addSearchEngine),
+#tracking-protection-icon-container[open] ~ #page-action-buttons .urlbar-page-action:-moz-any(
+	#reader-mode-button,
+	#pageActionButton,
+	#pocket-button-box,
+	#pageAction-urlbar-screenshots_mozilla_org,
+	#pageAction-urlbar-sendToDevice,
+	#pageAction-urlbar-emailLink,
+	#pageAction-urlbar-copyURL,
+	#pageAction-urlbar-shareURL,
+	#pageAction-urlbar-addSearchEngine)
 {
 	transition:
 		background-color .2s var(--ease-basic),
