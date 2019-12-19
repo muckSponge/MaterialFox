@@ -40,26 +40,73 @@
 .urlbarView-row
 {
 	padding: 0 16px !important;
-	height: 32px !important;
+	height: 48px !important;
 	border-radius: 0 !important;
+	display: flex !important;
+	align-items: center !important;
 }
 
 .urlbarView-row-inner
 {
 	height: 100% !important;
+	width: 100% !important;
+	grid-template-columns: 32px 1fr 0 0 !important;
+	grid-template-rows: 16px 16px !important;
+	grid-template-areas:
+		"icon title . secondary-icon"
+		"icon secondary . secondary-icon" !important;
+	display: grid !important;
 	align-items: center !important;
+	align-content: center !important;
+}
+
+.urlbarView-row[type]
+{
+	height: 32px !important;
+}
+
+.urlbarView-row[type] .urlbarView-row-inner
+{
+	grid-template-columns: 32px 1fr auto 0 !important;
+	grid-template-rows: auto !important;
+	grid-template-areas:
+		"icon title secondary secondary-icon" !important;
+}
+
+.urlbarView-row[type=switchtab] .urlbarView-row-inner
+{
+	grid-template-columns: 32px 1fr auto 32px !important;
+}
+
+.urlbarView-row[type] .urlbarView-url
+{
+	display: none !important;
 }
 
 .urlbarView-favicon
 {
-	margin-inline-end: 16px !important;
+	grid-area: icon !important;
 }
 
-.urlbarView-title-separator
+.urlbarView-title
 {
-	flex: 1 !important;
+	padding-inline-end: 8px !important;
+	grid-area: title !important;
 }
 
+.urlbarView-title,
+.urlbarView-url
+{
+	text-overflow: ellipsis !important;
+	mask-image: none !important;
+}
+
+.urlbarView-secondary
+{
+	grid-area: secondary !important;
+}
+
+.urlbarView-title-separator,
 .urlbarView-title-separator::before
 {
 	display: none !important;
@@ -67,9 +114,9 @@
 
 .urlbarView-type-icon
 {
-	order: 1 !important;
-	margin-inline-start: 16px !important;
-	margin-inline-end: 0 !important;
+	justify-self: flex-end !important;
+	margin: 0 !important;
+	grid-area: secondary-icon !important;
 }
 
 .search-one-offs
