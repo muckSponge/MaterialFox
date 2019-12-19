@@ -76,14 +76,6 @@
 	}
 }
 
-#tabbrowser-tabs .arrowscrollbox-scrollbox, /* < 71 */
-#tabbrowser-tabs scrollbox[part=scrollbox], /* 71 */
-.tabbrowser-arrowscrollbox::part(scrollbox) /* >= 72 */
-{
-	padding-inline-start: 8px !important;
-	padding-inline-end: 8px !important;
-}
-
 /* vertically center buttons in tab bar */
 #TabsToolbar toolbarbutton,
 /* >= 72 */
@@ -490,6 +482,11 @@
 #tabbrowser-tabs:not([overflow]) .tabbrowser-tab[first-visible-tab]
 {
 	margin-inline-start: 8px !important;
+}
+
+#tabbrowser-tabs[overflow] .tabbrowser-tab[last-visible-tab]:not([pinned])
+{
+	margin-inline-end: 8px !important;
 }
 
 /* < 72 */
