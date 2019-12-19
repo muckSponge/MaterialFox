@@ -76,15 +76,22 @@
 	}
 }
 
-#tabbrowser-tabs .arrowscrollbox-scrollbox, /* <71 */
-#tabbrowser-tabs scrollbox[part=scrollbox] /* 71+ */
+#tabbrowser-tabs .arrowscrollbox-scrollbox, /* < 71 */
+#tabbrowser-tabs scrollbox[part=scrollbox], /* 71 */
+.tabbrowser-arrowscrollbox::part(scrollbox) /* >= 72 */
 {
 	padding-inline-start: 8px !important;
 	padding-inline-end: 8px !important;
 }
 
 /* vertically center buttons in tab bar */
-#TabsToolbar :-moz-any(.toolbarbutton-1, .scrollbutton-up, .scrollbutton-down)
+#TabsToolbar toolbarbutton,
+/* >= 72 */
+#TabsToolbar .tabbrowser-arrowscrollbox::part(scrollbutton-up),
+#TabsToolbar .tabbrowser-arrowscrollbox::part(scrollbutton-down),
+/* no ::part workaround - may have side effects */
+.scrollbutton-up[part="scrollbutton-up"],
+.scrollbutton-down[part="scrollbutton-down"]
 {
 	margin-top: calc((var(--tab-min-height) - var(--button-size)) / 2) !important;
 	margin-bottom: calc((var(--tab-min-height) - var(--button-size)) / 2) !important;
@@ -471,11 +478,10 @@
 	margin-inline-start: 6px !important;
 }
 
-#tabbrowser-tabs[overflow] .arrowscrollbox-scrollbox, /* <71 */
-#tabbrowser-tabs[overflow] scrollbox[part=scrollbox] /* 71+ */
+#tabbrowser-tabs[overflow] .tabbrowser-arrowscrollbox
 {
 	border-radius: 8px 8px 0 0 !important;
-	background-color: rgba(0, 0, 0, .2) !important;
+	background-color: rgba(0, 0, 0, .1) !important;
 	padding-inline-start: 0 !important;
 }
 
@@ -486,22 +492,28 @@
 	margin-inline-start: 8px !important;
 }
 
+/* < 72 */
 #tabbrowser-tabs .arrowscrollbox-overflow-start-indicator,
-#tabbrowser-tabs .arrowscrollbox-overflow-end-indicator
+#tabbrowser-tabs .arrowscrollbox-overflow-end-indicator,
+/* >= 72 */
+#tabbrowser-tabs::part(arrowscrollbox-overflow-start-indicator),
+#tabbrowser-tabs::part(arrowscrollbox-overflow-end-indicator),
+/* no ::part workaround - may have side effects */
+spacer[part="arrowscrollbox-overflow-start-indicator"],
+spacer[part="arrowscrollbox-overflow-end-indicator"]
 {
 	display: none !important;
 }
 
-.tab-loading-burst[bursting]::before {
-    display: none !important;
+.tab-loading-burst[bursting]::before
+{
+	display: none !important;
 }
 
 /* high DPI adjustments */
 @media (min--moz-device-pixel-ratio: 2)
 {
-	.tabbrowser-tab::before,
-	#tabbrowser-tabs .arrowscrollbox-overflow-start-indicator,
-	#tabbrowser-tabs .arrowscrollbox-overflow-end-indicator
+	.tabbrowser-tab::before
 	{
 		transform: translateY(.5px) !important;
 	}
