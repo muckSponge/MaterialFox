@@ -303,14 +303,9 @@
 	opacity: 1 !important;
 	padding: 0 !important;
 	margin-inline-start: 8px !important;
+	margin-block-start: -1px !important;
 	display: none !important;
-}
-
-/* fix text alignment */
-#identity-icon-label,
-#urlbar-label-box
-{
-	transform: translateY(-1px) !important;
+	align-items: center !important;
 }
 
 #identity-box
