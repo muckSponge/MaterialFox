@@ -1,6 +1,7 @@
 .urlbarView-row
 {
 	padding: 0 16px !important;
+	border-radius: 0 !important;
 }
 
 .urlbarView-row-inner
@@ -20,28 +21,36 @@
 	max-width: 100% !important;
 }
 
-.urlbarView-row[has-url]:-moz-any([type=switchtab], [type=remotetab]) .urlbarView-row-inner
+.urlbarView-row[has-url][type]:not([type=bookmark]) .urlbarView-row-inner
 {
 	flex-direction: column !important;
 	align-items: flex-start !important;
 }
 
-.urlbarView-row[has-url]:-moz-any([type=switchtab], [type=remotetab]) .urlbarView-no-wrap
+.urlbarView-row[has-url][type]:not([type=bookmark]) .urlbarView-no-wrap
 {
 	height: auto !important;
 	align-self: flex-start !important;
 	width: 100% !important;
 }
 
-.urlbarView-row[has-url]:-moz-any([type=switchtab], [type=remotetab]) .urlbarView-title-separator,
-.urlbarView-type-icon
+.urlbarView-title-separator
 {
-	display: none !important;
+	visibility: visible !important;
 }
 
 .urlbarView-title-separator::before
 {
 	content: "-" !important;
+	color: inherit !important;
+}
+
+.urlbarView-title-separator,
+.urlbarView-action
+{
+	opacity: .6 !important;
+	color: inherit !important;
+	font-size: revert !important;
 }
 
 .urlbarView-favicon
@@ -50,6 +59,7 @@
 	left: 0 !important;
 	top: 50% !important;
 	transform: translateY(-50%) !important;
+	fill-opacity: .6 !important;
 }
 
 .urlbarView-title,
@@ -67,6 +77,8 @@
 .urlbarView-url
 {
 	max-width: 100% !important;
+	font-size: revert !important;
+	color: var(--urlbar-popup-url-color) !important;
 }
 
 .urlbarView-url:not(:empty)
@@ -77,6 +89,14 @@
 .urlbarView-action:not(:empty)
 {
     display: flex !important;
+}
+
+.urlbarView-row[type=search] ~ .urlbarView-row[type=search] .urlbarView-title-separator,
+.urlbarView-row[type=search] ~ .urlbarView-row[type=search] .urlbarView-action,
+.urlbarView-row[has-url][type]:not([type=bookmark]) .urlbarView-title-separator,
+.urlbarView-type-icon
+{
+	display: none !important;
 }
 
 .search-one-offs
