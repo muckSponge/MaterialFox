@@ -132,16 +132,15 @@ menupopup menu[disabled=true],
 	opacity: .5 !important;
 }
 
-/* force regular scrollbar for menus */
-menupopup .arrowscrollbox-scrollbox, /* <71 */
-menupopup scrollbox[part=scrollbox] /* 71+ */
+/* disable vertical menu scroll buttons and use a good ol' scrollbar */
+/* this is a shotgun approach, expect side effects */
+scrollbox[orient=vertical] /* >=71 */
 {
 	overflow-y: auto !important;
 }
 
 /* why still use scroll buttons; is this the middle ages? */
-menupopup .scrollbutton-up,
-menupopup .scrollbutton-down
+.menupopup-scrollbutton
 {
 	display: none !important;
 }
