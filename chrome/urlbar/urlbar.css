@@ -1,6 +1,11 @@
+.urlbarView-body-inner
+{
+	border: 0 !important;
+}
+
 .urlbarView-row
 {
-	padding: 0 16px !important;
+	padding: 0 !important;
 	border-radius: 0 !important;
 }
 
@@ -9,8 +14,9 @@
 	align-items: center !important;
 	position: relative !important;
 	padding: 12px 0 !important;
-	padding-inline-start: 32px !important;
+	padding-inline: 48px 16px !important;
 	max-width: 100% !important;
+	width: auto !important;
 }
 
 .urlbarView-no-wrap
@@ -56,10 +62,12 @@
 .urlbarView-favicon
 {
 	position: absolute !important;
-	left: 0 !important;
+	left: 16px !important;
 	top: 50% !important;
 	transform: translateY(-50%) !important;
 	fill-opacity: .6 !important;
+	flex: unset !important;
+	margin: unset !important;
 }
 
 .urlbarView-title,
@@ -72,6 +80,7 @@
 .urlbarView-title
 {
 	flex: 1 !important;
+	flex-basis: unset !important;
 }
 
 .urlbarView-url
@@ -97,6 +106,14 @@
 .urlbarView-type-icon
 {
 	display: none !important;
+}
+
+.urlbarView-row[type=tip] > .urlbarView-row-inner > .urlbarView-favicon,
+.urlbarView-row[type=tip] > .urlbarView-row-inner > .urlbarView-title,
+.urlbarView-tip-button,
+.urlbarView-tip-help
+{
+	margin-block-end: 0 !important;
 }
 
 .search-one-offs
@@ -150,11 +167,13 @@
 	padding: 2px !important;
 	background-clip: padding-box !important;
 	min-height: 28px !important;
+	height: 28px !important;
 	transition: background-color .1s var(--ease-basic) !important;
 	-moz-box-align: center !important;
 	
 	display: block !important;
 	margin: 0 !important;
+	position: relative !important; /* 74+ */
 }
 
 #urlbar:not(:-moz-lwtheme),
@@ -214,6 +233,12 @@
 	align-items: center !important;
 }
 
+#urlbar-input-container
+{
+	height: auto !important;
+	padding: 0 !important;
+}
+
 .urlbar-input-box,
 .searchbar-textbox
 {
@@ -245,6 +270,7 @@
 	box-shadow: none !important;
 	border: 0 !important;
 	background: 0 !important;
+	margin: 0 !important;
 }
 
 #urlbar[open] .urlbarView
@@ -484,7 +510,8 @@
 	order: 99 !important;
 }
 
-#urlbar[open] #page-action-buttons
+#urlbar[open] #page-action-buttons,
+#urlbar[open] #tracking-protection-icon-container
 {
 	display: none !important;
 }
