@@ -126,6 +126,10 @@
 	
 	--toolbar-non-lwt-bgcolor: var(--toolbar-bgcolor) !important;
 	--toolbar-non-lwt-textcolor: var(--toolbar-color) !important;
+
+	--toolbar-field-focus-border-color: #b9d5f8 !important;
+	
+	--toolbar-selected-text-bgcolor: #aecbfa;
 }
 
 #titlebar,

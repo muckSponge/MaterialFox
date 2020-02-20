@@ -325,3 +325,7 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon
 		list-style-image: url(library-2x.svg) !important;
 	}
 }
+
+.bookmark-item[container] {
+	list-style-image: url("bookmark-folder.svg") !important;
+}
