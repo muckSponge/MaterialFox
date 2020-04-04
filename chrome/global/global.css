@@ -290,6 +290,12 @@
 	transition-duration: .1s !important;
 }
 
+/* note: use Firefox account button instead */
+#TabsToolbar .private-browsing-indicator
+{
+	display: none !important;
+}
+
 /* high DPI adjustments */
 @media (min--moz-device-pixel-ratio: 2)
 {
