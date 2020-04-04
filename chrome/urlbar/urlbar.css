@@ -558,7 +558,7 @@
 		background-color .2s var(--ease-basic),
 		margin .15s var(--ease-in),
 		opacity .15s var(--ease-basic),
-		visibility 0s .2s !important;
+		visibility 0s 4s !important;
 	opacity: 0 !important;
 	visibility: hidden !important;
 	margin-inline-start: -32px !important;
