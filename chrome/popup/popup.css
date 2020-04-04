@@ -956,6 +956,18 @@ richlistitem:-moz-any(
 	margin: 0 !important;
 }
 
+#confirmation-hint-message-container,
+#confirmation-hint-checkmark-animation-container
+{
+	margin-block: 8px !important;
+	margin-inline: 8px !important;
+}
+
+#confirmation-hint-checkmark-animation-container
+{
+	margin-inline-end: 0 !important;
+}
+
 /* high DPI adjustments */
 @media (min--moz-device-pixel-ratio: 2)
 {
