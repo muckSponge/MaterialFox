@@ -116,21 +116,20 @@
 	margin-block-end: 0 !important;
 }
 
-.search-one-offs
+.urlbarView .search-one-offs
 {
 	padding: 4px !important;
 	display: flex !important;
-	flex-direction: row !important;
 }
 
-.search-panel-one-offs-header
+.urlbarView .search-panel-one-offs-header
 {
 	margin-inline-start: 12px !important;
 	line-height: 40px !important;
 	transform: translateY(-1px) !important;
 }
 
-.search-panel-one-offs
+.urlbarView .search-panel-one-offs
 {
 	border-radius: 0 0 8px 8px !important;
 	display: inline-flex !important;
@@ -138,9 +137,11 @@
 	padding: 0 !important;
 	margin: 0 !important;
 	float: left !important;
+	max-width: none !important;
+	height: auto !important;
 }
 
-.searchbar-engine-one-off-item
+.urlbarView .searchbar-engine-one-off-item
 {
 	height: 32px !important;
 	border-radius: 16px !important;
@@ -744,6 +745,7 @@
 .searchbar-textbox /* < 71 */
 {
 	transform: translateY(var(--input-offset)) !important;
+	line-height: 1.745em !important;
 }
 
 /* 1x */
