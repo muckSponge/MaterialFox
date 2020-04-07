@@ -2,6 +2,8 @@
 {
 	background-color: transparent !important;
 	background-image: url(../icons/search.svg) !important;
+	background-repeat: no-repeat !important;
+	background-position: 5px center !important;
 	fill-opacity: 1 !important;
 	border: 0 !important;
 	box-shadow: none !important;
