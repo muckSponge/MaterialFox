@@ -76,15 +76,14 @@
 	}
 }
 
-#tabbrowser-tabs .arrowscrollbox-scrollbox, /* <71 */
-#tabbrowser-tabs scrollbox[part=scrollbox] /* 71+ */
-{
-	padding-inline-start: 8px !important;
-	padding-inline-end: 8px !important;
-}
-
 /* vertically center buttons in tab bar */
-#TabsToolbar :-moz-any(.toolbarbutton-1, .scrollbutton-up, .scrollbutton-down)
+#TabsToolbar toolbarbutton,
+/* >= 72 */
+#TabsToolbar .tabbrowser-arrowscrollbox::part(scrollbutton-up),
+#TabsToolbar .tabbrowser-arrowscrollbox::part(scrollbutton-down),
+/* no ::part workaround - may have side effects */
+.scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton),
+.scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton)
 {
 	margin-top: calc((var(--tab-min-height) - var(--button-size)) / 2) !important;
 	margin-bottom: calc((var(--tab-min-height) - var(--button-size)) / 2) !important;
@@ -302,7 +301,7 @@
 	padding-inline-start: 8px !important;
 }
 
-.tabbrowser-tab[pinned][soundplaying] .tab-icon-image
+.tabbrowser-tab[pinned]:-moz-any([soundplaying], [muted], [activemedia-blocked]) .tab-icon-image
 {
 	visibility: hidden !important;
 }
@@ -322,8 +321,7 @@
 }
 
 .tab-close-button,
-.tab-icon-overlay[soundplaying],
-.tab-icon-overlay[muted],
+.tab-icon-overlay:-moz-any([soundplaying], [muted], [activemedia-blocked]),
 .tab-icon-sound
 {
 	border-radius: 99px !important;
@@ -337,16 +335,14 @@
 }
 
 .tab-close-button:hover,
-.tab-icon-overlay[soundplaying]:hover,
-.tab-icon-overlay[muted]:hover,
+.tab-icon-overlay:-moz-any([soundplaying], [muted], [activemedia-blocked]):hover,
 .tab-icon-sound:hover
 {
 	background-color: var(--toolbarbutton-hover-background) !important;
 }
 
 .tab-close-button:hover:active,
-.tab-icon-overlay[soundplaying]:hover:active,
-.tab-icon-overlay[muted]:hover:active,
+.tab-icon-overlay:-moz-any([soundplaying], [muted], [activemedia-blocked]):hover:active,
 .tab-icon-sound:hover:active
 {
 	background-color: var(--toolbarbutton-active-background) !important;
@@ -474,36 +470,84 @@
 	margin-inline-start: 6px !important;
 }
 
-#tabbrowser-tabs[overflow] .arrowscrollbox-scrollbox, /* <71 */
-#tabbrowser-tabs[overflow] scrollbox[part=scrollbox] /* 71+ */
+#tabbrowser-tabs[overflow] .tabbrowser-arrowscrollbox
 {
 	border-radius: 8px 8px 0 0 !important;
-	background-color: rgba(0, 0, 0, .2) !important;
+	background-color: rgba(0, 0, 0, .1) !important;
 	padding-inline-start: 0 !important;
 }
 
-#tabbrowser-tabs[overflow] .tabbrowser-tab[first-visible-tab]:not([pinned]),
-#tabbrowser-tabs[overflow] .tabbrowser-tab[pinned] + .tabbrowser-tab:not([pinned])
+#tabbrowser-tabs[overflow]
 {
 	margin-inline-start: 8px !important;
 }
 
-#tabbrowser-tabs .arrowscrollbox-overflow-start-indicator,
-#tabbrowser-tabs .arrowscrollbox-overflow-end-indicator
+#tabbrowser-tabs[overflow] .tabbrowser-tab[first-visible-tab]:not([pinned]),
+#tabbrowser-tabs[overflow] .tabbrowser-tab[pinned] + .tabbrowser-tab:not([pinned]),
+#tabbrowser-tabs:not([overflow]) .tabbrowser-tab[first-visible-tab]
+{
+	margin-inline-start: 8px !important;
+}
+
+#tabbrowser-tabs[overflow] .tabbrowser-tab[last-visible-tab]:not([pinned])
+{
+	margin-inline-end: 8px !important;
+}
+
+.tabbrowser-tab[usercontextid] > .tab-stack::after
+{
+	content: "" !important;
+	position: absolute !important;
+	display: flex !important;
+	bottom: 0 !important;
+	left: 8px !important;
+	width: calc(100% - 16px) !important;
+	height: 2px !important;
+	box-sizing: border-box !important;
+	border-radius: 99px 99px 0 0 !important;
+	transform: none !important;
+	background: var(--identity-tab-color) !important;
+	transition-property: top, bottom, left, right, width, height, border-radius;
+	transition-duration: .225s !important;
+	transition-timing-function: var(--ease-out) !important;
+}
+
+.tab-bottom-line
 {
 	display: none !important;
 }
 
-.tab-loading-burst[bursting]::before {
-    display: none !important;
+.tabbrowser-tab[usercontextid][selected] > .tab-stack::after
+{
+	bottom: calc(100% - 9px) !important;
+	left: calc(100% - 9px) !important;
+	width: 6px !important;
+	height: 6px !important;
+	border-radius: 99px !important;
+}
+
+/* < 72 */
+#tabbrowser-tabs .arrowscrollbox-overflow-start-indicator,
+#tabbrowser-tabs .arrowscrollbox-overflow-end-indicator,
+/* >= 72 */
+#tabbrowser-tabs::part(arrowscrollbox-overflow-start-indicator),
+#tabbrowser-tabs::part(arrowscrollbox-overflow-end-indicator),
+/* no ::part workaround - may have side effects */
+spacer[part="arrowscrollbox-overflow-start-indicator"],
+spacer[part="arrowscrollbox-overflow-end-indicator"]
+{
+	display: none !important;
+}
+
+.tab-loading-burst[bursting]::before
+{
+	display: none !important;
 }
 
 /* high DPI adjustments */
 @media (min--moz-device-pixel-ratio: 2)
 {
-	.tabbrowser-tab::before,
-	#tabbrowser-tabs .arrowscrollbox-overflow-start-indicator,
-	#tabbrowser-tabs .arrowscrollbox-overflow-end-indicator
+	.tabbrowser-tab::before
 	{
 		transform: translateY(.5px) !important;
 	}

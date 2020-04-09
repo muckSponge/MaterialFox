@@ -22,8 +22,9 @@ menupopup
 	margin: -19px -14px 0 !important;
 }
 
-/* needs to align with textbox but can't overlap it */
-panel[type="autocomplete-richlistbox"]
+/* needs to align with textbox/bookmark-button but can't overlap it */
+panel[type="autocomplete-richlistbox"],
+.bookmark-item:not(menu) > menupopup[placespopup]
 {
 	padding: 1px 14px 18px !important;
 	margin: 0 -14px 0 !important;
@@ -38,6 +39,13 @@ panel[type="autocomplete-richlistbox"]
 	border: 0 !important;
 }
 
+.popup-internal-box,
+panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
+#PopupSearchAutoComplete > *
+{
+	background: var(--arrowpanel-background) !important;
+}
+
 /* themes a menupopup (or other root level / shadow dom popup) as a panel */
 /* Mozilla's use of shadow dom means we can't use a menupopup > .popup-internal-box */
 .popup-internal-box,
@@ -45,7 +53,6 @@ panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox
 {
 	margin: 0 !important;
 	padding: 8px 0 !important;
-	background: var(--arrowpanel-background) !important;
 	border-radius: 4px !important;
 	color: inherit !important;
 }
@@ -58,15 +65,43 @@ panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox
 		0 3px 14px 2px rgba(0,0,0,.12) !important;
 }
 
+#PopupSearchAutoComplete > *
+{
+	border-radius: 0 !important;
+}
+
+#PopupSearchAutoComplete > :first-child
+{
+	border-radius: 4px 4px 0 0 !important;
+}
+
+#PopupSearchAutoComplete > :last-child
+{
+	border-radius: 0 0 4px 4px !important;
+}
+
 /* autocomplete panel can't overlap the textbox, so shadow can't go up
    more than 1px */
 panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox
 {
 	box-shadow:
 		0 0 0 1px rgba(0, 0, 0, .03),
-		0 5px 5px -3px rgba(0,0,0,.2),
-		0 8px 10px -0px rgba(0,0,0,.14),
-		0 3px 14px -5px rgba(0,0,0,.12) !important;
+		0 5px 5px -3px rgba(0, 0, 0, .2),
+		0 8px 10px -0px rgba(0, 0, 0, .14),
+		0 3px 14px -5px rgba(0, 0, 0, .12) !important;
+}
+
+/* search panel gets special treatment; it has multiple children */
+#PopupSearchAutoComplete > .autocomplete-richlistbox
+{
+	box-shadow: none !important;
+}
+
+#PopupSearchAutoComplete
+{
+	filter:
+		drop-shadow(0 8px 6px rgba(0, 0, 0, .25))
+		drop-shadow(0 1px 1px rgba(0, 0, 0, .125)) !important;
 }
 
 /* reset non-layout props when embedded in a panel
@@ -131,16 +166,15 @@ menupopup menu[disabled=true],
 	opacity: .5 !important;
 }
 
-/* force regular scrollbar for menus */
-menupopup .arrowscrollbox-scrollbox, /* <71 */
-menupopup scrollbox[part=scrollbox] /* 71+ */
+/* disable vertical menu scroll buttons and use a good ol' scrollbar */
+/* this is a shotgun approach, expect side effects */
+scrollbox[orient=vertical] /* >=71 */
 {
 	overflow-y: auto !important;
 }
 
 /* why still use scroll buttons; is this the middle ages? */
-menupopup .scrollbutton-up,
-menupopup .scrollbutton-down
+.menupopup-scrollbutton
 {
 	display: none !important;
 }
@@ -735,6 +769,18 @@ richlistitem:-moz-any(
 	[originaltype="loginsFooter"]) .ac-title
 {
 	margin: 0 !important;
+}
+
+#confirmation-hint-message-container,
+#confirmation-hint-checkmark-animation-container
+{
+	margin-block: 8px !important;
+	margin-inline: 8px !important;
+}
+
+#confirmation-hint-checkmark-animation-container
+{
+	margin-inline-end: 0 !important;
 }
 
 /* high DPI adjustments */

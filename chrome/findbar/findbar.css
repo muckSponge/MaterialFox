@@ -1,0 +1,65 @@
+.findbar-textbox
+{
+	background-color: transparent !important;
+	background-image: url(../icons/search.svg) !important;
+	background-repeat: no-repeat !important;
+	background-position: 5px center !important;
+	fill-opacity: 1 !important;
+	border: 0 !important;
+	box-shadow: none !important;
+	margin-inline-start: 2px !important;
+	padding-inline-start: 28px !important;
+}
+
+hbox[anonid="findbar-textbox-wrapper"]
+{
+	background-color: var(--toolbar-field-background-color) !important;
+	border-radius: 16px !important;
+	position: relative !important;
+	display: flex !important;
+	padding: 2px !important;
+	transition: background-color .1s var(--ease-basic) !important;
+}
+
+hbox[anonid="findbar-textbox-wrapper"]:hover
+{
+	background-color: var(--toolbar-field-hover-background-color) !important;
+}
+
+hbox[anonid="findbar-textbox-wrapper"]:focus-within
+{
+	background-color: var(--toolbar-field-focus-background-color) !important;
+	border: 2px solid var(--toolbar-field-focus-border-color) !important;
+	margin: -1px !important;
+	padding: 1px !important;
+}
+
+hbox[anonid="findbar-textbox-wrapper"] toolbarbutton
+{
+	border-radius: 99px !important;
+	border: 0 !important;
+	width: 24px !important;
+	height: 24px !important;
+	padding: 0 !important;
+	display: flex !important;
+	background: 0 !important;
+	transition: background-color .2s var(--ease-basic) !important;
+	margin: 0 !important;
+	box-shadow: none !important;
+}
+
+hbox[anonid="findbar-textbox-wrapper"] toolbarbutton .toolbarbutton-text
+{
+	visibility: collapse !important;
+}
+
+hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover
+{
+	background-color: var(--toolbarbutton-hover-background) !important;
+}
+
+hbox[anonid="findbar-textbox-wrapper"] toolbarbutton:not([disabled]):hover:active
+{
+	background-color: var(--toolbarbutton-active-background) !important;
+	transition-duration: 0 !important;
+}

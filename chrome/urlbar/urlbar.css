@@ -1,101 +1,147 @@
-.ac-type-icon
+.urlbarView-body-inner
 {
-	order: 9 !important;
-	margin-inline-start: 16px !important;
-	margin-inline-end: 0 !important;
-}
-
-.ac-site-icon
-{
-	margin-inline-end: 16px !important;
-}
-
-.ac-separator
-{
-	display: none !important;
-}
-
-.ac-title,
-.ac-url
-{
-	flex: 1 !important;
-}
-
-.search-panel-one-offs
-{
-	border-radius: 0 0 8px 8px !important;
-	margin-bottom: 18px !important;
-}
-
-.search-one-offs
-{
-	display: block !important;
-}
-
-#urlbarView-results
-{
-	padding: 0 !important;
+	border: 0 !important;
 }
 
 .urlbarView-row
 {
-	padding: 0 16px !important;
-	height: 32px !important;
+	padding: 0 !important;
 	border-radius: 0 !important;
 }
 
 .urlbarView-row-inner
 {
-	height: 100% !important;
 	align-items: center !important;
+	position: relative !important;
+	padding: 12px 0 !important;
+	padding-inline: 48px 16px !important;
+	max-width: 100% !important;
+	width: auto !important;
 }
 
-.urlbarView-favicon
+.urlbarView-no-wrap
 {
-	margin-inline-end: 16px !important;
+	height: 100% !important;
+	align-items: center !important;
+	margin-inline-start: 0 !important;
+	max-width: 100% !important;
+}
+
+.urlbarView-row[has-url][type]:not([type=bookmark]) .urlbarView-row-inner
+{
+	flex-direction: column !important;
+	align-items: flex-start !important;
+}
+
+.urlbarView-row[has-url][type]:not([type=bookmark]) .urlbarView-no-wrap
+{
+	height: auto !important;
+	align-self: flex-start !important;
+	width: 100% !important;
 }
 
 .urlbarView-title-separator
 {
-	flex: 1 !important;
+	visibility: visible !important;
 }
 
 .urlbarView-title-separator::before
 {
+	content: "-" !important;
+	color: inherit !important;
+}
+
+.urlbarView-title-separator,
+.urlbarView-action
+{
+	opacity: .6 !important;
+	color: inherit !important;
+	font-size: revert !important;
+}
+
+.urlbarView-favicon
+{
+	position: absolute !important;
+	left: 16px !important;
+	top: 50% !important;
+	transform: translateY(-50%) !important;
+	fill-opacity: .6 !important;
+	flex: unset !important;
+	margin: unset !important;
+}
+
+.urlbarView-title,
+.urlbarView-url
+{
+	text-overflow: ellipsis !important;
+	mask-image: none !important;
+}
+
+.urlbarView-title
+{
+	flex: 1 !important;
+	flex-basis: unset !important;
+}
+
+.urlbarView-url
+{
+	max-width: 100% !important;
+	font-size: revert !important;
+	color: var(--urlbar-popup-url-color) !important;
+}
+
+.urlbarView-url:not(:empty)
+{
+	visibility: visible !important;
+}
+
+.urlbarView-action:not(:empty)
+{
+    display: flex !important;
+}
+
+.urlbarView-row[type=search] ~ .urlbarView-row[type=search] .urlbarView-title-separator,
+.urlbarView-row[type=search] ~ .urlbarView-row[type=search] .urlbarView-action,
+.urlbarView-row[has-url][type]:not([type=bookmark]) .urlbarView-title-separator,
+.urlbarView-type-icon
+{
 	display: none !important;
 }
 
-.urlbarView-type-icon
+.urlbarView-row[type=tip] > .urlbarView-row-inner > .urlbarView-favicon,
+.urlbarView-row[type=tip] > .urlbarView-row-inner > .urlbarView-title,
+.urlbarView-tip-button,
+.urlbarView-tip-help
 {
-	order: 1 !important;
-	margin-inline-start: 16px !important;
-	margin-inline-end: 0 !important;
+	margin-block-end: 0 !important;
 }
 
-.search-one-offs
+.urlbarView .search-one-offs
 {
 	padding: 4px !important;
 	display: flex !important;
-	flex-direction: row !important;
 }
 
-.search-panel-one-offs-header
+.urlbarView .search-panel-one-offs-header
 {
 	margin-inline-start: 12px !important;
 	line-height: 40px !important;
 	transform: translateY(-1px) !important;
 }
 
-.search-panel-one-offs
+.urlbarView .search-panel-one-offs
 {
+	border-radius: 0 0 8px 8px !important;
 	display: inline-flex !important;
 	flex-direction: row !important;
 	padding: 0 !important;
 	margin: 0 !important;
 	float: left !important;
+	max-width: none !important;
+	height: auto !important;
 }
 
-.searchbar-engine-one-off-item
+.urlbarView .searchbar-engine-one-off-item
 {
 	height: 32px !important;
 	border-radius: 16px !important;
@@ -122,11 +168,13 @@
 	padding: 2px !important;
 	background-clip: padding-box !important;
 	min-height: 28px !important;
+	height: 28px !important;
 	transition: background-color .1s var(--ease-basic) !important;
 	-moz-box-align: center !important;
 	
 	display: block !important;
 	margin: 0 !important;
+	position: relative !important; /* 74+ */
 }
 
 #urlbar:not(:-moz-lwtheme),
@@ -186,6 +234,12 @@
 	align-items: center !important;
 }
 
+#urlbar-input-container
+{
+	height: auto !important;
+	padding: 0 !important;
+}
+
 .urlbar-input-box,
 .searchbar-textbox
 {
@@ -217,6 +271,7 @@
 	box-shadow: none !important;
 	border: 0 !important;
 	background: 0 !important;
+	margin: 0 !important;
 }
 
 #urlbar[open] .urlbarView
@@ -234,7 +289,8 @@
 #searchbar-container
 {
 	overflow: visible !important;
-	padding: 0 6px !important;
+	padding: 0 !important;
+	margin-inline: 6px !important;
 }
 
 .searchbar-textbox
@@ -255,14 +311,9 @@
 	opacity: 1 !important;
 	padding: 0 !important;
 	margin-inline-start: 8px !important;
+	margin-block-start: -1px !important;
 	display: none !important;
-}
-
-/* fix text alignment */
-#identity-icon-label,
-#urlbar-label-box
-{
-	transform: translateY(-1px) !important;
+	align-items: center !important;
 }
 
 #identity-box
@@ -328,7 +379,7 @@
 	display: -moz-box !important;
 }
 
-#urlbar[pageproxystate=valid] #identity-box:-moz-any(.certUserOverridden, .unknownIdentity)
+#urlbar[pageproxystate=valid] #identity-box:-moz-any(.weakCipher, .certUserOverridden, .certErrorPage, .insecureLoginForms, .mixedActiveContent)
 {
 	color: #c94031 !important;
 }
@@ -460,7 +511,8 @@
 	order: 99 !important;
 }
 
-#urlbar[open] #page-action-buttons
+#urlbar[open] #page-action-buttons,
+#urlbar[open] #tracking-protection-icon-container
 {
 	display: none !important;
 }
@@ -486,19 +538,8 @@
 	transition-duration: 0 !important;
 }
 
-#star-button-box
-{
-	order: 99 !important;
-}
-
-#pageActionButton
-{
-	order: 98 !important;
-}
-
 #contextual-feature-recommendation
 {
-	order: 96 !important;
 	width: auto !important;
 }
 
@@ -518,7 +559,7 @@
 		background-color .2s var(--ease-basic),
 		margin .15s var(--ease-in),
 		opacity .15s var(--ease-basic),
-		visibility 0s .2s !important;
+		visibility 0s 4s !important;
 	opacity: 0 !important;
 	visibility: hidden !important;
 	margin-inline-start: -32px !important;
@@ -545,7 +586,27 @@
 	#pageAction-urlbar-copyURL,
 	#pageAction-urlbar-shareURL,
 	#pageAction-urlbar-addSearchEngine
-):-moz-any(:hover, [open], [readeractive])
+):-moz-any(:hover, [open], [readeractive]),
+.urlbar-page-action:-moz-any(:hover, [open]) ~ .urlbar-page-action:-moz-any(
+	#reader-mode-button,
+	#pageActionButton,
+	#pocket-button-box,
+	#pageAction-urlbar-screenshots_mozilla_org,
+	#pageAction-urlbar-sendToDevice,
+	#pageAction-urlbar-emailLink,
+	#pageAction-urlbar-copyURL,
+	#pageAction-urlbar-shareURL,
+	#pageAction-urlbar-addSearchEngine),
+#tracking-protection-icon-container[open] ~ #page-action-buttons .urlbar-page-action:-moz-any(
+	#reader-mode-button,
+	#pageActionButton,
+	#pocket-button-box,
+	#pageAction-urlbar-screenshots_mozilla_org,
+	#pageAction-urlbar-sendToDevice,
+	#pageAction-urlbar-emailLink,
+	#pageAction-urlbar-copyURL,
+	#pageAction-urlbar-shareURL,
+	#pageAction-urlbar-addSearchEngine)
 {
 	transition:
 		background-color .2s var(--ease-basic),
@@ -661,7 +722,33 @@
 	padding: 0 !important;
 }
 
-/* icons 1x */
+/* lock (secure) */
+#identity-box[pageproxystate="valid"]:-moz-any(.verifiedDomain, .verifiedIdentity, .mixedActiveBlocked) > #identity-icon
+{
+	list-style-image: var(--lock-icon) !important;
+}
+
+/* info (not secure) */
+#identity-box[pageproxystate="valid"]:-moz-any(.mixedDisplayContent, .mixedDisplayContentLoadedActiveBlocked, .unknownIdentity) > #identity-icon
+{
+    list-style-image: var(--info-icon) !important;
+}
+
+/* warning (dangerous) */
+#identity-box[pageproxystate="valid"]:-moz-any(.notSecure, .weakCipher, .certUserOverridden, .certErrorPage, .insecureLoginForms, .mixedActiveContent) > #identity-icon
+{
+    list-style-image: var(--warning-icon) !important;
+}
+
+#urlbar-input,
+#searchbar-input,
+.searchbar-textbox /* < 71 */
+{
+	transform: translateY(var(--input-offset)) !important;
+	line-height: 1.745em !important;
+}
+
+/* 1x */
 #urlbar
 {
 	--info-icon: url(info-1x.svg);
@@ -669,7 +756,13 @@
 	--warning-icon: url(connection-warning-1x.svg);
 }
 
-/* icons 2x */
+#urlbar,
+#searchbar
+{
+	--input-offset: -1px;
+}
+
+/* 2x */
 @media (min--moz-device-pixel-ratio: 2)
 {
 	#urlbar
@@ -678,46 +771,15 @@
 		--lock-icon: url(connection-2x.svg);
 		--warning-icon: url(connection-warning-2x.svg);
 	}
-}
-
-/* info (not secure) */
-#identity-box[pageproxystate="valid"]:-moz-any(.notSecure, .insecureLoginForms, .mixedActiveContent) > #identity-icon
-{
-    list-style-image: var(--info-icon) !important;
-}
-
-#identity-box[pageproxystate="valid"]:-moz-any(
-	.certUserOverridden,
-	.weakCipher,
-	.unknownIdentity) > #identity-icon
-{
-    list-style-image: var(--warning-icon) !important;
-}
-
-/* lock (secure) */
-#identity-box[pageproxystate="valid"]:-moz-any(.verifiedDomain, .verifiedIdentity, .mixedActiveBlocked) > #identity-icon
-{
-	list-style-image: var(--lock-icon) !important;
-}
-
-/* high DPI adjustments */
-@media (min--moz-device-pixel-ratio: 2)
-{
+	
+	#urlbar,
+	#searchbar
+	{
+		--input-offset: -.5px;
+	}
+	
 	#identity-icon-labels
 	{
 		padding-inline-end: .5px !important;
-	}
-	
-	#urlbar[pageproxystate=valid] > #identity-box:-moz-any(.unknownIdentity, .notSecure) > #identity-icon
-	{
-		transform: translate(.5px, .5px) !important;
-	}
-	
-	#urlbar-input,
-	#searchbar-input,
-	/* < 71 */
-	.searchbar-textbox
-	{
-		transform: translateY(-.5px) !important;
 	}
 }

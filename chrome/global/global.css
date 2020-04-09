@@ -51,7 +51,10 @@
 	-moz-box-align: center !important;
 }
 
-#navigator-toolbox :-moz-any(.toolbarbutton-1, toolbarbutton.bookmark-item:not(.subviewbutton), .scrollbutton-up, .scrollbutton-down)
+#navigator-toolbox :-moz-any(.toolbarbutton-1, toolbarbutton.bookmark-item:not(.subviewbutton), .scrollbutton-up, .scrollbutton-down),
+/* no ::part workaround - may have side effects */
+.scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton),
+.scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton)
 {
 	border-radius: 99px !important;
 	transition-property:
@@ -76,7 +79,10 @@
 	background-color: transparent !important;
 }
 
-#navigator-toolbox :-moz-any(.toolbarbutton-1, toolbarbutton.bookmark-item:not(.subviewbutton), .scrollbutton-up, .scrollbutton-down)
+#navigator-toolbox :-moz-any(.toolbarbutton-1, toolbarbutton.bookmark-item:not(.subviewbutton), .scrollbutton-up, .scrollbutton-down),
+/* no ::part workaround - may have side effects */
+.scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton),
+.scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton)
 {
 	font-size: 12px !important;
 	padding: 0 !important;
@@ -85,31 +91,46 @@
 	background-clip: padding-box !important;
 }
 
-#navigator-toolbox :-moz-any(.toolbarbutton-1, .scrollbutton-up, .scrollbutton-down)
+#navigator-toolbox :-moz-any(.toolbarbutton-1, .scrollbutton-up, .scrollbutton-down),
+/* no ::part workaround - may have side effects */
+.scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton),
+.scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton)
 {
 	max-height: 32px !important;
 	height: 32px !important;
 	min-height: 32px !important;
 }
 
-#navigator-toolbox :-moz-any(.toolbarbutton-1, toolbarbutton.bookmark-item:not(.subviewbutton), .scrollbutton-up, .scrollbutton-down)[disabled]
+#navigator-toolbox :-moz-any(.toolbarbutton-1, toolbarbutton.bookmark-item:not(.subviewbutton), .scrollbutton-up, .scrollbutton-down)[disabled],
+/* no ::part workaround - may have side effects */
+.scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton)[disabled],
+.scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton)[disabled]
 {
 	opacity: .42 !important;
 }
 
 #navigator-toolbox :-moz-any(.toolbarbutton-1, toolbarbutton.bookmark-item:not(.subviewbutton), .scrollbutton-up, .scrollbutton-down):hover:not([disabled]),
-#navigator-toolbox :-moz-any(.toolbarbutton-1, toolbarbutton.bookmark-item:not(.subviewbutton), .scrollbutton-up, .scrollbutton-down):-moz-any(:hover:active, [checked], [open]):not([disabled])
+#navigator-toolbox :-moz-any(.toolbarbutton-1, toolbarbutton.bookmark-item:not(.subviewbutton), .scrollbutton-up, .scrollbutton-down):-moz-any(:hover:active, [checked], [open]):not([disabled]),
+/* no ::part workaround - may have side effects */
+.scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton):hover:not([disabled]),
+.scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton):hover:not([disabled])
 {
 	background-color: var(--toolbarbutton-hover-background) !important;
 }
 
-#navigator-toolbox :-moz-any(.toolbarbutton-1, toolbarbutton.bookmark-item:not(.subviewbutton), .scrollbutton-up, .scrollbutton-down):-moz-any(:hover:active, [checked], [open]):not([disabled])
+#navigator-toolbox :-moz-any(.toolbarbutton-1, toolbarbutton.bookmark-item:not(.subviewbutton), .scrollbutton-up, .scrollbutton-down):-moz-any(:hover:active, [checked], [open]):not([disabled]),
+/* no ::part workaround - may have side effects */
+.scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton):hover:active:not([disabled]),
+.scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton):hover:active:not([disabled])
 {
 	fill-opacity: .04 !important;
 	background-size: 100% !important;
 }
 
-#navigator-toolbox :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack)
+#navigator-toolbox :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack),
+/* no ::part workaround - may have side effects */
+.scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton) > .toolbarbutton-icon,
+.scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton) > .toolbarbutton-icon
 {
 	fill-opacity: 1 !important;
 	border: 0 !important;
@@ -123,7 +144,10 @@
 }
 
 #navigator-toolbox > #PersonalToolbar .toolbarbutton-1 > .toolbarbutton-icon,
-#navigator-toolbox :-moz-any(.toolbarbutton-1, .scrollbutton-up, .scrollbutton-down) > :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack)
+#navigator-toolbox :-moz-any(.toolbarbutton-1, .scrollbutton-up, .scrollbutton-down) > :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack),
+/* no ::part workaround - may have side effects */
+.scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton) > .toolbarbutton-icon,
+.scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton) > .toolbarbutton-icon
 {
 	padding: 6px !important;
 	background: 0 !important;
@@ -264,6 +288,12 @@
 {
 	opacity: .24 !important;
 	transition-duration: .1s !important;
+}
+
+/* note: use Firefox account button instead */
+#TabsToolbar .private-browsing-indicator
+{
+	display: none !important;
 }
 
 /* high DPI adjustments */
