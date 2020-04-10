@@ -41,7 +41,8 @@ panel[type="autocomplete-richlistbox"],
 
 .popup-internal-box,
 panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
-#PopupSearchAutoComplete > *
+#PopupSearchAutoComplete > *,
+.menupopup-arrowscrollbox
 {
 	background: var(--arrowpanel-background) !important;
 }
@@ -49,7 +50,8 @@ panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
 /* themes a menupopup (or other root level / shadow dom popup) as a panel */
 /* Mozilla's use of shadow dom means we can't use a menupopup > .popup-internal-box */
 .popup-internal-box,
-panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox
+panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
+.menupopup-arrowscrollbox
 {
 	margin: 0 !important;
 	padding: 8px 0 !important;
@@ -57,7 +59,8 @@ panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox
 	color: inherit !important;
 }
 
-.popup-internal-box
+.popup-internal-box,
+.menupopup-arrowscrollbox
 {
 	box-shadow:
 		0 5px 5px -3px rgba(0,0,0,.2),
