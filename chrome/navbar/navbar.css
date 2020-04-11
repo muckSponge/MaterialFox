@@ -4,6 +4,7 @@
 	box-shadow: none !important;
 	padding-left: 6px !important;
 	padding-right: 6px !important;
+	background-color: var(--toolbar-bgcolor) !important;
 }
 
 #reload-button[disabled]:not(:-moz-window-inactive) > .toolbarbutton-icon
