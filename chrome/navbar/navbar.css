@@ -2,8 +2,7 @@
 {
 	min-height: 36px !important;
 	box-shadow: none !important;
-	padding-left: 6px !important;
-	padding-right: 6px !important;
+	padding-inline: 5px 6px !important;
 	background-color: var(--toolbar-bgcolor) !important;
 }
 
