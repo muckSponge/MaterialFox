@@ -168,14 +168,15 @@
 	box-shadow: none !important;
 	padding: 2px !important;
 	background-clip: padding-box !important;
-	min-height: 28px !important;
-	height: 28px !important;
 	transition: background-color .1s var(--ease-basic) !important;
 	-moz-box-align: center !important;
-	
 	display: block !important;
 	margin: 0 !important;
 	position: relative !important; /* 74+ */
+	
+	--urlbar-height: 28px !important;
+	
+	min-height: var(--urlbar-height) !important;
 }
 
 #urlbar:not(:-moz-lwtheme),
@@ -239,6 +240,7 @@
 {
 	height: auto !important;
 	padding: 0 !important;
+	border: 0 !important;
 }
 
 .urlbar-input-box,
@@ -292,13 +294,6 @@
 	overflow: visible !important;
 	padding: 0 !important;
 	margin-inline: 6px !important;
-}
-
-.searchbar-textbox
-{
-	color: inherit !important;
-	font-size: inherit !important;
-	min-height: auto !important;
 }
 
 #identity-icon
