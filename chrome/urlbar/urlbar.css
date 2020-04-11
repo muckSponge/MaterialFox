@@ -254,6 +254,18 @@
 	width: 100% !important;
 }
 
+#urlbar-input,
+.searchbar-textbox
+{
+	color: var(--lwt-toolbar-field-color) !important;
+}
+
+#urlbar-input::placeholder,
+.searchbar-textbox::placeholder
+{
+	opacity: .66 !important;
+}
+
 #urlbar[open] #urlbar-input-container
 {
 	height: 37px !important;
