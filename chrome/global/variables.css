@@ -153,9 +153,9 @@
 
 :root:-moz-any(:-moz-lwtheme-brighttext, [privatebrowsingmode=temporary])
 {
-	--toolbar-field-background-color: hsl(206, 8%, 17%) !important;
-	--toolbar-field-hover-background-color: hsl(206, 7%, 20%) !important;
-	--toolbar-field-focus-background-color: hsl(206, 6%, 25%) !important;
+	--toolbar-field-background-color: #202124 !important;
+	--toolbar-field-hover-background-color: #292a2d !important;
+	--toolbar-field-focus-background-color: #202124 !important;
 }
 
 :root:not(:-moz-lwtheme):not([privatebrowsingmode=temporary])
