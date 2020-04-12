@@ -82,8 +82,8 @@
 #TabsToolbar .tabbrowser-arrowscrollbox::part(scrollbutton-up),
 #TabsToolbar .tabbrowser-arrowscrollbox::part(scrollbutton-down),
 /* no ::part workaround - may have side effects */
-.scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton),
-.scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton)
+#scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton),
+#scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton)
 {
 	margin-top: calc((var(--tab-min-height) - var(--button-size)) / 2) !important;
 	margin-bottom: calc((var(--tab-min-height) - var(--button-size)) / 2) !important;
@@ -533,8 +533,8 @@
 #tabbrowser-tabs::part(arrowscrollbox-overflow-start-indicator),
 #tabbrowser-tabs::part(arrowscrollbox-overflow-end-indicator),
 /* no ::part workaround - may have side effects */
-spacer[part="arrowscrollbox-overflow-start-indicator"],
-spacer[part="arrowscrollbox-overflow-end-indicator"]
+spacer[part="overflow-start-indicator"],
+spacer[part="overflow-end-indicator"]
 {
 	display: none !important;
 }
