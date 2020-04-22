@@ -26,7 +26,7 @@ Add space above tab bar:
 * Check Drag Space checkbox.
 
 Replicate Chrome behaviour for clipped tabs:
-* [about:config] Set ```browser.tabs.tabClipWidth``` to ```83``` (default is ```144```).
+* [about:config] Set ```browser.tabs.tabClipWidth``` to ```83``` (default is ```140```).
 
 Allow tabs to shrink more; tabs in overflow will look the same as pinned tabs:
 * [about:config] Add new entry ```materialFox.reduceTabOverflow``` with value ```true```.
