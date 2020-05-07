@@ -11,6 +11,9 @@ Inspired by Google's Material Design and their latest Google Chrome UI, this the
 
 This is a userChrome.css theme, which means you must manually add it to your Firefox profile. The theme overrides certain browser styles. Currently, only the main UI is affected (settings pages, etc. are not). More elements of the UI may be styled in the future.
 
+## What version do I use?
+Check the [releases](https://github.com/muckSponge/MaterialFox/releases) section. Each release version will match the compatible Firefox version. For example, if you're using Firefox 76, try a v76.x release. The master branch is compatible with stable Firefox; the beta branch is compatible with Firefox Beta. This requires a periodic rebase of master on beta as Mozilla update their release cycle (which doesn't always occur immediately).
+
 ## Installation
 Some steps involve accessing the about:config page. You can get there by typing it into your urlbar.
 
