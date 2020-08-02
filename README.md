@@ -15,13 +15,9 @@ This is a userChrome.css theme, which means you must manually add it to your Fir
 Check the [releases](https://github.com/muckSponge/MaterialFox/releases) section. Each release version will match the compatible Firefox version. For example, if you're using Firefox 76, try a v76.x release. The master branch is compatible with stable Firefox; the beta branch is compatible with Firefox Beta. This requires a periodic rebase of master on beta as Mozilla update their release cycle (which doesn't always occur immediately).
 
 ## Installation
-Some steps involve accessing the about:config page. You can get there by typing it into your urlbar.
-
-### Mandatory instructions
-1. Copy the chrome folder into your Firefox profile directory. To find your profile directory, go to about:support. Alternatively, you can symlink your chrome folder instead of copying.
-2. [about:config] Set ```toolkit.legacyUserProfileCustomizations.stylesheets``` to ```true``` (default is ```false```).
-3. [about:config] Set ```svg.context-properties.content.enabled``` to ```true``` (default is ```false```).
-4. Restart Firefox.
+1. Copy the chrome folder and user.js file into your Firefox profile directory. To find your profile directory, go to about:support or about:profiles.
+2. See [Recommended instructions](#recommended-instructions) if you'd prefer a more Chrome-like experience.
+3. Restart Firefox.
 
 ### Recommended instructions
 Add space above tab bar:
@@ -29,11 +25,7 @@ Add space above tab bar:
 * Check Drag Space checkbox.
 
 Replicate Chrome behaviour for clipped tabs:
-* [about:config] Set ```browser.tabs.tabClipWidth``` to ```83``` (default is ```144```).
-
-Allow tabs to shrink more; tabs in overflow will look the same as pinned tabs:
-* ~[about:config] Add new entry ```materialFox.reduceTabOverflow``` with value ```true```.~
-* Don't use this option for now – currently incompatible with recent versions of Firefox.
+* [about:config] Set ```browser.tabs.tabClipWidth``` to ```83``` (default is ```140```).
 
 Replicate Chrome's "Not Secure" text on HTTP:
 * [about:config] Set ```security.insecure_connection_text.enabled``` to ```true```.
