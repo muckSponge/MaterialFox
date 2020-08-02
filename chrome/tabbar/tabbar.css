@@ -431,7 +431,8 @@
 } 
 
 /* close button / favicon is centered within 36px tab */
-@supports -moz-bool-pref("materialFox.reduceTabOverflow")
+/* disabled for now because it's broken in recent version of Firefox */
+@supports -moz-bool-pref("materialFox.reduceTabOverflow disabled")
 {
 	#main-window
 	{
