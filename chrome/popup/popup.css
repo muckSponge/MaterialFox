@@ -197,6 +197,12 @@ menupopup
 	visibility: var(--scrollbutton-vis) !important;
 }
 
+.menuitem-iconic,
+.menu-iconic-icon /* .menu-iconic-icons not necessarily within a .menuitem-iconic (don't ask me why...) */
+{
+	fill: currentColor !important;
+	-moz-context-properties: fill, fill-opacity, stroke, stroke-opacity !important;
+}
 
 .menu-iconic-left
 {
@@ -211,8 +217,6 @@ menupopup
 
 .menu-iconic-icon
 {
-	fill: currentColor !important;
-	-moz-context-properties: fill, fill-opacity, stroke, stroke-opacity !important;
 	margin-inline-start: 0 !important;
 	margin-inline-end: 16px !important;
 	width: 24px !important;
