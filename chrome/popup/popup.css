@@ -645,7 +645,12 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 
 #customization-lwtheme-menu-header
 {
-	display: none !important;
+	height: 8px !important;
+	font-size: 0 !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	border: 0 !important;
+	visibility: hidden !important;
 }
 
 #identity-popup-content-blocking-report-breakage,
@@ -833,11 +838,18 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	padding-top: 8px !important;
 }
 
+#customization-lwtheme-menu,
+#customization-uidensity-menu
+{
+	margin-inline: -60px 0 !important;
+	margin-block-end: -20px !important;
+}
+
 .customization-lwtheme-menu-theme,
 .customization-uidensity-menuitem
 {
 	padding: 0 16px !important;
-	margin: 0 -16px !important;
+	margin: 0 !important;
 	border: 0 !important;
 	height: 48px !important;
 }
@@ -870,9 +882,20 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	margin-inline-start: 16px !important;
 }
 
+.customization-uidensity-menuitem:first-of-type
+{
+	margin-block-start: 8px !important;
+}
+
+.customization-uidensity-menuitem:last-of-type
+{
+	margin-block-end: 8px !important;
+}
+
 #customization-lwtheme-menu-footer
 {
-	padding: 0 !important;
+	padding: 0 0 8px !important;
+	margin: 0 !important;
 	background: 0 !important;
 	border: 0 !important;
 	display: flex !important;
@@ -882,7 +905,7 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 #customization-lwtheme-menu-footer toolbarbutton
 {
 	border: 0 !important;
-	margin: 0 -6px 0 !important;
+	margin: 0 !important;
 	height: 48px !important;
 	padding: 0 16px !important;
 	display: flex !important;
