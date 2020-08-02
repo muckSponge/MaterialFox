@@ -373,7 +373,7 @@
 	opacity: 0 !important;
 }
 
-#identity-box.extensionPage > #identity-icon
+#urlbar[pageproxystate=valid] #identity-box.extensionPage > #identity-icon
 {
 	list-style-image: none !important;
 	margin-inline-end: -16px !important;
