@@ -181,20 +181,20 @@ scrollbox[orient=vertical] /* >=71 */
 /* work around lack of ::part selector support */
 :root
 {
-	--scrollbutton-vis: visible !important;
+	--scrollbutton-display: -moz-box !important;
 }
 
 /* hide ancient-looking scrollbuttons in menupopups */
 /* add other selectors here to disable more scrollbuttons */
 menupopup
 {
-	--scrollbutton-vis: collapse !important;
+	--scrollbutton-display: none !important;
 }
 
 #scrollbutton-up[part],
 #scrollbutton-down[part]
 {
-	visibility: var(--scrollbutton-vis) !important;
+	display: var(--scrollbutton-display) !important;
 }
 
 .menuitem-iconic,
