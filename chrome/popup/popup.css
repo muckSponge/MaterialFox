@@ -204,6 +204,11 @@ menupopup
 	-moz-context-properties: fill, fill-opacity, stroke, stroke-opacity !important;
 }
 
+.menuitem-iconic[class*="identity-color"] .menu-iconic-icon
+{
+	fill: var(--identity-icon-color) !important;
+}
+
 .menu-iconic-left
 {
 	-moz-appearance: none !important;
