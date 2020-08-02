@@ -32,7 +32,8 @@ Replicate Chrome behaviour for clipped tabs:
 * [about:config] Set ```browser.tabs.tabClipWidth``` to ```83``` (default is ```144```).
 
 Allow tabs to shrink more; tabs in overflow will look the same as pinned tabs:
-* [about:config] Add new entry ```materialFox.reduceTabOverflow``` with value ```true```.
+* ~[about:config] Add new entry ```materialFox.reduceTabOverflow``` with value ```true```.~
+* Don't use this option for now – currently incompatible with recent versions of Firefox.
 
 Replicate Chrome's "Not Secure" text on HTTP:
 * [about:config] Set ```security.insecure_connection_text.enabled``` to ```true```.
