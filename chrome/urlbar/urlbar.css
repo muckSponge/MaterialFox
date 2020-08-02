@@ -173,6 +173,7 @@
 	display: block !important;
 	margin: 0 !important;
 	top: 0 !important;
+	color: inherit !important;
 	
 	--urlbar-height: 28px !important;
 	
@@ -222,7 +223,7 @@
 	padding: 0 !important;
 	border-radius: 8px !important;
 	min-height: 37px !important;
-	margin: -4px -5px -1px !important;
+	margin: -4px 0 -1px !important;
 	box-shadow:
 		0 5px 5px -3px rgba(0,0,0,.2),
 		0 8px 10px 1px rgba(0,0,0,.14),
