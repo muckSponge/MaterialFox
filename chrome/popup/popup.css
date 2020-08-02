@@ -176,11 +176,27 @@ scrollbox[orient=vertical] /* >=71 */
 	overflow-y: auto !important;
 }
 
-/* why still use scroll buttons; is this the middle ages? */
-.menupopup-scrollbutton
+
+/* this is a bit depressing... */
+/* work around lack of ::part selector support */
+:root
 {
-	display: none !important;
+	--scrollbutton-vis: visible !important;
 }
+
+/* hide ancient-looking scrollbuttons in menupopups */
+/* add other selectors here to disable more scrollbuttons */
+menupopup
+{
+	--scrollbutton-vis: collapse !important;
+}
+
+#scrollbutton-up[part],
+#scrollbutton-down[part]
+{
+	visibility: var(--scrollbutton-vis) !important;
+}
+
 
 .menu-iconic-left
 {
