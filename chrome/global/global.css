@@ -137,7 +137,7 @@
 	box-shadow: none !important;
 }
 
-#navigator-toolbox .toolbarbutton-1 > .toolbarbutton-icon
+#navigator-toolbox .toolbarbutton-1 > :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack)
 {
 	width: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
 	height: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
