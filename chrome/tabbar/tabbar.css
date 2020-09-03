@@ -568,3 +568,6 @@ spacer[part="overflow-end-indicator"]
 		}
 	}
 }
+
+// Prevent pinned tabs from clipping into the URL bar
+#TabsToolbar { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
