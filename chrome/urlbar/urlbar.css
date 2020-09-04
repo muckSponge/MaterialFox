@@ -463,6 +463,10 @@
 	background-color: transparent !important;
 }
 
+#identity-box {
+	border-radius: 99px 0 0 99px !important;
+}
+
 #star-button {
 	border-radius: 0 99px 99px 0 !important;
 }
