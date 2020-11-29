@@ -7,14 +7,14 @@
 	fill-opacity: 1 !important;
 	border: 0 !important;
 	box-shadow: none !important;
-	margin-inline-start: 2px !important;
+	margin-inline-start: 4px !important;
 	padding-inline-start: 28px !important;
 }
 
 hbox[anonid="findbar-textbox-wrapper"]
 {
 	background-color: var(--toolbar-field-background-color) !important;
-	border-radius: 16px !important;
+	border-radius: 26px !important;
 	position: relative !important;
 	display: flex !important;
 	padding: 2px !important;
@@ -38,8 +38,8 @@ hbox[anonid="findbar-textbox-wrapper"] toolbarbutton
 {
 	border-radius: 99px !important;
 	border: 0 !important;
-	width: 24px !important;
-	height: 24px !important;
+	width: 30px !important;
+	height: 30px !important;
 	padding: 0 !important;
 	display: flex !important;
 	background: 0 !important;

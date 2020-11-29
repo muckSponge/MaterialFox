@@ -93,7 +93,7 @@
 {
 	min-height: var(--tab-min-height) !important;
 	overflow: visible !important;
-	font-size: 12px !important;
+	font-size: 13px !important;
 	background: 0 !important;
 	border: 0 !important;
 }
@@ -106,7 +106,7 @@
 /* regular */
 .tabbrowser-tab[fadein]:not([pinned]):not([style*="max-width"])
 {
-	max-width: 220px !important;
+	max-width: 240px !important;
 }
 
 /* neighbouring tabs should "pinch" together */
@@ -322,7 +322,18 @@
 	padding: 0 !important;
 }
 
-.tab-close-button,
+.tabbrowser-tab[selected=true] .tab-close-button
+{
+	border-radius: 99px !important;
+	color: inherit !important;
+	-moz-context-properties: fill, fill-opacity !important;
+	transition-property: fill-opacity, background-color !important;
+	transition-duration: .15s !important;
+	transition-timing-function: var(--ease-basic) !important;
+	fill-opacity: 1 !important;
+	opacity: 1 !important;
+}
+
 .tab-icon-overlay:-moz-any([soundplaying], [muted], [activemedia-blocked]),
 .tab-icon-sound
 {
@@ -332,6 +343,26 @@
 	transition-property: fill-opacity, background-color !important;
 	transition-duration: .15s !important;
 	transition-timing-function: var(--ease-basic) !important;
+	fill-opacity: 1 !important;
+	opacity: 1 !important;
+}
+
+.tabbrowser-tab:not([selected=true]) .tab-close-button
+{
+	border-radius: 99px !important;
+	color: inherit !important;
+	-moz-context-properties: fill, fill-opacity !important;
+	transition-property: fill-opacity, background-color !important;
+	transition-duration: .15s !important;
+	transition-timing-function: var(--ease-basic) !important;
+	display: none;
+	fill-opacity: 0 !important;
+	opacity: 0 !important;
+}
+
+.tabbrowser-tab:not([selected=true]):hover .tab-close-button
+{
+	display: initial;
 	fill-opacity: 1 !important;
 	opacity: 1 !important;
 }

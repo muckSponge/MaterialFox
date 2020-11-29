@@ -11,7 +11,7 @@
 :root:not(:-moz-window-inactive) {
     background: transparent !important;
 }
-  
+
 :root #TabsToolbar,
 :root #titlebar,
 :root #tabbrowser-tabs {
