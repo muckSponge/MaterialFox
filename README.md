@@ -5,11 +5,13 @@
 
 ## What is the difference?
 * macOS Big Sur Style UI
-  * Applies the translucency and blur effect on the tab bar
-  * Removes the gray background from the URL & search bar
-  * Gives every icon a little bit more space to breathe
+  * macOS style translucent blur effect is applied on the tab bar.
+  * The gray background is removed from the URL & search bar.
+  * Every icon is given a little bit more space to breathe.
 * Cleaner Look
-  * Makes the bookmarks bar (aka PersonalToolbar) appear only when you hover over the top of the window
+  * The bookmarks bar (aka PersonalToolbar) appears only when you hover over the top of the window.
+  * The tab close button from inactive tabs are hidden. (You can hover over the tab to make it appear.)
+  * Animations have been refined.
 
 ## How do I install?
 Follow [Installation](#installation).  
