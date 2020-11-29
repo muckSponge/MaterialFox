@@ -106,7 +106,7 @@
 /* regular */
 .tabbrowser-tab[fadein]:not([pinned]):not([style*="max-width"])
 {
-	max-width: 240px !important;
+	max-width: 220px !important;
 }
 
 /* neighbouring tabs should "pinch" together */
@@ -317,6 +317,8 @@
 	width: 16px !important;
 	height: 16px !important;
 	margin: 0 !important;
+	margin-left: 4px !important;
+	margin-right: 2px !important;
 	padding: 0 !important;
 }
 
@@ -418,9 +420,9 @@
 
 .tab-content[pinned]
 {
-	width: 36px !important;
-	padding: 0 !important;
-	padding-inline-start: 10px !important;
+	width: 40px !important;
+	padding: 0px !important;
+	padding-inline-start: 12px !important;
 	padding-inline-end: 0 !important;
 }
 
@@ -431,8 +433,7 @@
 } 
 
 /* close button / favicon is centered within 36px tab */
-/* disabled for now because it's broken in recent version of Firefox */
-@supports -moz-bool-pref("materialFox.reduceTabOverflow disabled")
+@supports -moz-bool-pref("materialFox.reduceTabOverflow")
 {
 	#main-window
 	{
@@ -468,7 +469,9 @@
 
 #tabbrowser-tabs #tabs-newtab-button
 {
-	margin-inline-start: 6px !important;
+	margin-inline-start: 2px !important;
+	padding-left: 2px !important;
+	padding-right: 2px !important;
 }
 
 #tabbrowser-tabs[overflow] .tabbrowser-arrowscrollbox
@@ -492,7 +495,7 @@
 
 #tabbrowser-tabs[overflow] .tabbrowser-tab[last-visible-tab]:not([pinned])
 {
-	margin-inline-end: 7px !important;
+	margin-inline-end: 8px !important;
 }
 
 .tabbrowser-tab[usercontextid] > .tab-stack::after

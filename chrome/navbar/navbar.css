@@ -1,8 +1,8 @@
 #nav-bar
 {
-	min-height: 36px !important;
+	min-height: 46px !important;
 	box-shadow: none !important;
-	padding-inline: 5px 6px !important;
+	padding-inline: 6px 12px !important;
 	background-color: var(--toolbar-bgcolor) !important;
 }
 

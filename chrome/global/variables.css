@@ -16,8 +16,8 @@
 	--toolbar-color: #606368 !important;
 	
 	/* toolbar_bottom_separator */
-	--toolbox-border-bottom-color: #b3b1b3 !important; /* legacy */
-	--chrome-content-separator-color: #b3b1b3 !important;
+	--toolbox-border-bottom-color: none !important; /* legacy */
+	--chrome-content-separator-color: none !important;
 	
 	/* icons */
 	--lwt-toolbarbutton-icon-fill: #606368 !important;
@@ -66,7 +66,7 @@
 	--lwt-toolbarbutton-icon-fill: #fff !important;
 	
 	/* icons_attention */
-	--lwt-toolbarbutton-icon-fill-attention: #5086ec !important;
+	--lwt-toolbarbutton-icon-fill-attention: #ffffff !important;
 	
 	/* button_background_hover */
 	--lwt-toolbarbutton-hover-background: #434649 !important;
@@ -131,7 +131,7 @@
 #titlebar,
 #tabbrowser-tabs
 {
- 	--tab-min-height: 34px !important;
+ 	--tab-min-height: 36px !important;
 }
 
 @supports -moz-bool-pref("materialFox.reduceTabOverflow")
@@ -146,14 +146,14 @@
 {	
 	--tab-separator-opacity: .35 !important;
 	
-	--toolbar-field-background-color: hsl(200, 12%, 95%) !important;
+	--toolbar-field-background-color: none !important;
 	--toolbar-field-hover-background-color: hsl(216, 12%, 92%) !important;
 	--toolbar-field-focus-background-color: hsl(0, 0%, 100%) !important;
 }
 
 :root:-moz-any(:-moz-lwtheme-brighttext, [privatebrowsingmode=temporary])
 {
-	--toolbar-field-background-color: #202124 !important;
+	--toolbar-field-background-color: none !important;
 	--toolbar-field-hover-background-color: #292a2d !important;
 	--toolbar-field-focus-background-color: #202124 !important;
 }

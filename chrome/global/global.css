@@ -137,7 +137,7 @@
 	box-shadow: none !important;
 }
 
-#navigator-toolbox .toolbarbutton-1 > :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack)
+#navigator-toolbox .toolbarbutton-1 > .toolbarbutton-icon
 {
 	width: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
 	height: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
@@ -172,18 +172,6 @@
 .menuitem-iconic
 {
 	fill: currentColor !important;
-}
-
-/* legacy */
-#navigator-toolbox
-{
-	border-bottom: 1px solid var(--chrome-content-separator-color, var(--toolbox-border-bottom-color)) !important;
-}
-
-/* legacy */
-#navigator-toolbox::after
-{
-	display: none !important;
 }
 
 .pointerlockfswarning

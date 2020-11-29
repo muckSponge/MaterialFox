@@ -176,37 +176,10 @@ scrollbox[orient=vertical] /* >=71 */
 	overflow-y: auto !important;
 }
 
-
-/* this is a bit depressing... */
-/* work around lack of ::part selector support */
-:root
+/* why still use scroll buttons; is this the middle ages? */
+.menupopup-scrollbutton
 {
-	--scrollbutton-display: -moz-box !important;
-}
-
-/* hide ancient-looking scrollbuttons in menupopups */
-/* add other selectors here to disable more scrollbuttons */
-menupopup
-{
-	--scrollbutton-display: none !important;
-}
-
-#scrollbutton-up[part],
-#scrollbutton-down[part]
-{
-	display: var(--scrollbutton-display) !important;
-}
-
-.menuitem-iconic,
-.menu-iconic-icon /* .menu-iconic-icons not necessarily within a .menuitem-iconic (don't ask me why...) */
-{
-	fill: currentColor !important;
-	-moz-context-properties: fill, fill-opacity, stroke, stroke-opacity !important;
-}
-
-.menuitem-iconic[class*="identity-color"] .menu-iconic-icon
-{
-	fill: var(--identity-icon-color) !important;
+	display: none !important;
 }
 
 .menu-iconic-left
@@ -222,6 +195,8 @@ menupopup
 
 .menu-iconic-icon
 {
+	fill: currentColor !important;
+	-moz-context-properties: fill, fill-opacity, stroke, stroke-opacity !important;
 	margin-inline-start: 0 !important;
 	margin-inline-end: 16px !important;
 	width: 24px !important;
@@ -670,12 +645,7 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 
 #customization-lwtheme-menu-header
 {
-	height: 8px !important;
-	font-size: 0 !important;
-	padding: 0 !important;
-	margin: 0 !important;
-	border: 0 !important;
-	visibility: hidden !important;
+	display: none !important;
 }
 
 #identity-popup-content-blocking-report-breakage,
@@ -863,18 +833,11 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	padding-top: 8px !important;
 }
 
-#customization-lwtheme-menu,
-#customization-uidensity-menu
-{
-	margin-inline: -60px 0 !important;
-	margin-block-end: -20px !important;
-}
-
 .customization-lwtheme-menu-theme,
 .customization-uidensity-menuitem
 {
 	padding: 0 16px !important;
-	margin: 0 !important;
+	margin: 0 -16px !important;
 	border: 0 !important;
 	height: 48px !important;
 }
@@ -907,20 +870,9 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 	margin-inline-start: 16px !important;
 }
 
-.customization-uidensity-menuitem:first-of-type
-{
-	margin-block-start: 8px !important;
-}
-
-.customization-uidensity-menuitem:last-of-type
-{
-	margin-block-end: 8px !important;
-}
-
 #customization-lwtheme-menu-footer
 {
-	padding: 0 0 8px !important;
-	margin: 0 !important;
+	padding: 0 !important;
 	background: 0 !important;
 	border: 0 !important;
 	display: flex !important;
@@ -930,7 +882,7 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 #customization-lwtheme-menu-footer toolbarbutton
 {
 	border: 0 !important;
-	margin: 0 !important;
+	margin: 0 -6px 0 !important;
 	height: 48px !important;
 	padding: 0 16px !important;
 	display: flex !important;
