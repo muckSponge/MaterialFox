@@ -4,7 +4,7 @@
 ![Preview](https://user-images.githubusercontent.com/56245920/100540817-218e2380-3283-11eb-915f-e1cd2e319c0e.png)
 
 ## What is the difference?
-* Big-Sur Style UI
+* macOS Big Sur Style UI
   * Applies the translucency and blur effect on the tab bar
   * Removes the gray background from the URL & search bar
   * Gives every icon a little bit more space to breathe
