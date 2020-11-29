@@ -1,4 +1,29 @@
-# MaterialFox
+# MaterialFox-BigSur
+  Forked from [MaterialFox](https://github.com/muckSponge/MaterialFox)
+  
+![Preview](https://user-images.githubusercontent.com/56245920/100540817-218e2380-3283-11eb-915f-e1cd2e319c0e.png)
+
+## What is the difference?
+* Big-Sur Style UI
+  * Applies the translucency and blur effect on the tab bar
+  * Removes the gray background from the URL & search bar
+  * Gives every icon a little bit more space to breathe
+* Cleaner Look
+  * Makes the bookmarks bar (aka PersonalToolbar) appear only when you hover over the top of the window
+
+## How do I install?
+Follow [Installation](#installation).  
+Please note that this will only work properly on macOS.
+
+## Acknowledgements
+* [MaterialFox](https://github.com/muckSponge/MaterialFox)
+* [firefox-macos-native-tabbar](https://github.com/zvuc/firefox-macos-native-tabbar)
+* [firefox-sliding-bookmarks-bar](https://github.com/zvuc/firefox-sliding-bookmarks-bar)
+  
+***
+Below is the original README.md from MaterialFox.
+***
+
 *A Material Design-inspired userChrome.css theme for Firefox*
 
 ![Preview](https://user-images.githubusercontent.com/5405629/45172944-21d91900-b24a-11e8-8bc5-03814121b0de.png)
