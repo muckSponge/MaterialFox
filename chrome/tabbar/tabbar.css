@@ -191,7 +191,7 @@
 	--tab-transition-duration: .2s;
 }
 
-:-moz-any(:root[privatebrowsingmode=temporary], #TabsToolbar[brighttext]) .tabbrowser-tab
+:-moz-any(#TabsToolbar[brighttext]) .tabbrowser-tab
 {
 	--tab-bgcolor: var(--toolbar-bgcolor) !important;
 }
@@ -199,12 +199,11 @@
 .tabbrowser-tab:not([selected=true]):hover,
 .tabbrowser-tab[multiselected]:not([selected=true])
 {
-	--tab-opacity: 0.4 !important;
-	--tab-bgcolor: var(--toolbar-bgcolor) !important;
+	--tab-opacity: 0.5 !important;
 }
 
-:-moz-any(:root[privatebrowsingmode=temporary], #TabsToolbar[brighttext]) .tabbrowser-tab:not([selected=true]):hover,
-:-moz-any(:root[privatebrowsingmode=temporary], #TabsToolbar[brighttext]) .tabbrowser-tab[multiselected]:not([selected=true])
+:-moz-any(#TabsToolbar[brighttext]) .tabbrowser-tab:not([selected=true]):hover,
+:-moz-any(#TabsToolbar[brighttext]) .tabbrowser-tab[multiselected]:not([selected=true])
 {
 	--tab-opacity: .4;
 }
@@ -372,6 +371,11 @@
 	fill-opacity: 1 !important;
 	opacity: 1 !important;
 	color: var(--toolbar-color-unselected) !important;
+}
+
+.tabbrowser-tab[pinned] .tab-close-button
+{
+	visibility: hidden !important;
 }
 
 .tab-close-button:hover,

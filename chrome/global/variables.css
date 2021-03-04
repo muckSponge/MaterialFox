@@ -97,6 +97,12 @@
 	--autocomplete-popup-highlight-color: #fff !important;
 }
 
+/* private mode specific */
+:root[privatebrowsingmode=temporary]
+{
+	--private-accent-color: #421163 !important;
+}
+
 :-moz-any(#sidebar-box, #sidebar)[style*="--sidebar-background-color:rgb(56, 56, 61);"]
 {
 	/* sidebar */
@@ -153,11 +159,37 @@
 	--toolbar-field-focus-background-color: hsl(0, 0%, 100%) !important;
 }
 
-:root:-moz-any(:-moz-lwtheme-brighttext, [privatebrowsingmode=temporary])
+:root:-moz-lwtheme-brighttext
 {
 	--toolbar-field-background-color: none !important;
 	--toolbar-field-hover-background-color: #292a2d !important;
 	--toolbar-field-focus-background-color: #202124 !important;
+}
+
+:root[privatebrowsingmode=temporary]
+{	
+	--toolbar-field-background-color: none !important;
+	--toolbar-field-hover-background-color: rgba(0, 0, 0, 0.2) !important;
+	--toolbar-field-focus-background-color: rgba(0, 0, 0, 0.4) !important;
+
+	/* button_background_hover */
+	--lwt-toolbarbutton-hover-background: rgba(0, 0, 0, 0.2) !important;
+	
+	/* button_background_active */
+	--lwt-toolbarbutton-active-background: rgba(0, 0, 0, 0.4) !important;
+}
+
+:root[privatebrowsingmode=temporary] #urlbar
+{	
+	--toolbar-field-background-color: none !important;
+	--toolbar-field-hover-background-color: #350D50 !important;
+	--toolbar-field-focus-background-color: #2B0B41 !important;
+
+	/* button_background_hover */
+	--toolbarbutton-hover-background: #350D50 !important;
+	
+	/* button_background_active */
+	--toolbarbutton-active-background: #2B0B41 !important;
 }
 
 :root:not(:-moz-lwtheme):not([privatebrowsingmode=temporary])

@@ -30,8 +30,19 @@
 :root[lwthemetextcolor="bright"] #tabbrowser-tabs {
     -moz-appearance: -moz-mac-vibrancy-dark !important;
 }
-  
+
 :root[lwthemetextcolor="bright"]:-moz-window-inactive {
+    --lwt-accent-color-inactive: #282828 !important;
+}
+
+:-moz-any(:root[privatebrowsingmode=temporary]) #Tabstoolbar,
+:-moz-any(:root[privatebrowsingmode=temporary]) #titlebar,
+:-moz-any(:root[privatebrowsingmode=temporary]) #tabbrowser-tabs
+{
+    -moz-appearance: -moz-mac-vibrancy-dark !important;
+}
+
+:-moz-any(:root[privatebrowsingmode=temporary]):-moz-window-inactive {
     --lwt-accent-color-inactive: #282828 !important;
 }
 
@@ -107,4 +118,29 @@
 
 #tabbrowser-tabs {
     margin-left: 6px !important;
+}
+
+:-moz-any(:root[privatebrowsingmode=temporary]) .tab-background
+{
+	background: var(--private-accent-color) !important;
+}
+
+:-moz-any(:root[privatebrowsingmode=temporary]) #PersonalToolbar
+{
+    background-color: var(--private-accent-color) !important;
+}
+
+:-moz-any(:root[privatebrowsingmode=temporary]) #nav-bar
+{
+    background-color: var(--private-accent-color) !important;
+}
+
+:-moz-any(:root[privatebrowsingmode=temporary]) .tab-background::before
+{
+	box-shadow: 4px 4px 0 4px var(--private-accent-color) !important;
+}
+
+:-moz-any(:root[privatebrowsingmode=temporary]) .tab-background::after
+{
+	box-shadow: -4px 4px 0 4px var(--private-accent-color) !important;
 }
