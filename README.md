@@ -9,13 +9,20 @@
   * The gray background is removed from the URL & search bar.
   * Every icon is given a little bit more space to breathe.
 * Cleaner Look
-  * The bookmarks bar (aka PersonalToolbar) appears only when you hover over the top of the window.
+  * The bookmarks bar (aka PersonalToolbar) appears only when you hover over the top of the window. If you are not a fan of this, you can [disable it](#if-you-don't-like-the-auto-hiding-bookmark-bar).
   * The tab close button from inactive tabs are hidden. (You can hover over the tab to make it appear.)
   * Animations have been refined.
 
 ## How do I install?
 Follow [Installation](#installation).  
 Please note that you can install this on both Windows and macOS but it'll work as intended *only on macOS*.
+
+## If you don't like the auto-hiding bookmark bar
+After installation, open userChrome.css and *delete* the line 10, save the file, and then restart Firefox.  
+```css
+@import "bookmarkAutoHide.css";
+```
+You can also delete the file bookmarkAutoHide.css or keep it for later.
 
 ## Acknowledgements
 * [MaterialFox](https://github.com/muckSponge/MaterialFox)
