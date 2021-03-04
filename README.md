@@ -1,7 +1,7 @@
 # MaterialFox-BigSur
   Forked from [MaterialFox](https://github.com/muckSponge/MaterialFox)
   
-![Preview](https://user-images.githubusercontent.com/56245920/100540817-218e2380-3283-11eb-915f-e1cd2e319c0e.png)
+![Preview](https://i.imgur.com/uf9ui8u.png)
 
 ## What is the difference?
 * macOS Big Sur Style UI
