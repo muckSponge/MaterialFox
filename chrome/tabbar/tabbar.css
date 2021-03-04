@@ -101,6 +101,12 @@
 .tabbrowser-tab[visuallyselected]
 {
 	color: var(--toolbar-color) !important;
+	font-weight: 500 !important;
+}
+
+.tabbrowser-tab:not([visuallyselected])
+{
+	color: var(--toolbar-color-unselected) !important;
 }
 
 /* regular */
@@ -187,20 +193,20 @@
 
 :-moz-any(:root[privatebrowsingmode=temporary], #TabsToolbar[brighttext]) .tabbrowser-tab
 {
-	--tab-opacity: 0;
-	--tab-bgcolor: #fff;
+	--tab-bgcolor: var(--toolbar-bgcolor) !important;
 }
 
 .tabbrowser-tab:not([selected=true]):hover,
 .tabbrowser-tab[multiselected]:not([selected=true])
 {
-	--tab-opacity: .1;
+	--tab-opacity: 0.4 !important;
+	--tab-bgcolor: var(--toolbar-bgcolor) !important;
 }
 
 :-moz-any(:root[privatebrowsingmode=temporary], #TabsToolbar[brighttext]) .tabbrowser-tab:not([selected=true]):hover,
 :-moz-any(:root[privatebrowsingmode=temporary], #TabsToolbar[brighttext]) .tabbrowser-tab[multiselected]:not([selected=true])
 {
-	--tab-opacity: .06;
+	--tab-opacity: .4;
 }
 
 :-moz-any(#TabsToolbar) .tabbrowser-tab[visuallyselected]
@@ -325,7 +331,7 @@
 .tabbrowser-tab[selected=true] .tab-close-button
 {
 	border-radius: 99px !important;
-	color: inherit !important;
+	color: var(--toolbar-color) !important;
 	-moz-context-properties: fill, fill-opacity !important;
 	transition-property: fill-opacity, background-color !important;
 	transition-duration: .15s !important;
@@ -338,7 +344,7 @@
 .tab-icon-sound
 {
 	border-radius: 99px !important;
-	color: inherit !important;
+	color: var(--toolbar-color) !important;
 	-moz-context-properties: fill, fill-opacity !important;
 	transition-property: fill-opacity, background-color !important;
 	transition-duration: .15s !important;
@@ -350,21 +356,22 @@
 .tabbrowser-tab:not([selected=true]) .tab-close-button
 {
 	border-radius: 99px !important;
-	color: inherit !important;
+	color: var(--toolbar-color) !important;
 	-moz-context-properties: fill, fill-opacity !important;
-	transition-property: fill-opacity, background-color !important;
+	transition-property: fill-opacity, opacity, background-color !important;
 	transition-duration: .15s !important;
 	transition-timing-function: var(--ease-basic) !important;
-	display: none;
+	display: none !important;
 	fill-opacity: 0 !important;
 	opacity: 0 !important;
 }
 
 .tabbrowser-tab:not([selected=true]):hover .tab-close-button
 {
-	display: initial;
+	display: initial !important;
 	fill-opacity: 1 !important;
 	opacity: 1 !important;
+	color: var(--toolbar-color-unselected) !important;
 }
 
 .tab-close-button:hover,
@@ -503,6 +510,7 @@
 	margin-inline-start: 2px !important;
 	padding-left: 2px !important;
 	padding-right: 2px !important;
+	color: var(--toolbar-color) !important;
 }
 
 #tabbrowser-tabs[overflow] .tabbrowser-arrowscrollbox

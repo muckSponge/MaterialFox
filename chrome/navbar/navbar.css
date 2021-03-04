@@ -2,7 +2,7 @@
 {
 	min-height: 46px !important;
 	box-shadow: none !important;
-	padding-inline: 6px 12px !important;
+	padding-inline: 6px 6px !important;
 	background-color: var(--toolbar-bgcolor) !important;
 }
 

@@ -634,7 +634,9 @@
 	position: relative !important;
 	padding-inline: 8px !important;
 	margin: 0 !important;
+	margin-left: -4px !important;
 	color: var(--identity-tab-color) !important;
+	order: 999 !important;
 }
 
 #userContext-icons:not([hidden])
@@ -665,7 +667,6 @@
 	position: absolute !important;
 	left: 0 !important;
 	right: 0 !important;
-	top: 0 !important;
 	bottom: 0 !important;
 	background: var(--identity-tab-color) !important;
 	border-radius: 99px !important;
