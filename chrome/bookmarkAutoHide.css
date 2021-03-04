@@ -1,0 +1,69 @@
+#PersonalToolbar:not([customizing]) {
+    position: fixed !important;
+    margin-top: -44px !important;
+    padding-bottom: 5px !important;
+    height: 40px !important;
+    width: 100% !important;
+    border: none !important;
+    transform: scaleY(0.8);
+    transform-origin: center bottom;
+    transition: transform cubic-bezier(.22,.61,.36,1) 0.15s !important;
+    z-index: 2;
+}
+  
+#PersonalToolbar:not([customizing]) #personal-bookmarks {
+    opacity: 0;
+    transition: opacity 0.15s;
+}
+  
+#titlebar {
+    z-index: 4 !important;
+}
+  
+#nav-bar {
+    z-index: 3 !important;
+}
+  
+/* bring up nav-bar z-index when megabar is open */
+#nav-bar[urlbar-exceeds-toolbar-bounds="true"] {
+    z-index: 5 !important;
+}
+  
+.tabbrowser-tab[selected="true"] {
+    z-index: 4 !important;
+}
+  
+#navigator-toolbox:hover > #PersonalToolbar:not([customizing]) {
+    position: fixed !important;
+    transform: translateY(100%) scaleY(1);
+}
+  
+#navigator-toolbox:hover > #PersonalToolbar:not([customizing]) #personal-bookmarks {
+    opacity: 1;
+}
+  
+/* compact theme */
+:root[lwtheme="true"] #PersonalToolbar:not([customizing]) {
+    top: var(--toolbar-offset-height) !important;
+}
+  
+/* compact + titlebar active */
+:root[lwtheme="true"]:not([tabsintitlebar="true"])
+#nav-bar ~ #PersonalToolbar:not([customizing]) {
+    top: var(--toolbar-offset-height) !important;
+}
+  
+/* default theme */
+:root:not([lwtheme="true"]) #PersonalToolbar:not([customizing]) {
+    top: var(--toolbar-offset-height) !important;
+}
+  
+/* default + titlebar active */
+:root:not([lwtheme="true"]):not([tabsintitlebar="true"])
+#nav-bar ~ #PersonalToolbar:not([customizing]) {
+    top: var(--toolbar-offset-height) !important;
+}
+
+#tabbrowser-tabs {
+    margin-left: 6px !important;
+}
