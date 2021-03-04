@@ -1,7 +1,7 @@
 # MaterialFox-BigSur
   Forked from [MaterialFox](https://github.com/muckSponge/MaterialFox)
   
-![Preview](https://i.imgur.com/uf9ui8u.png)
+![Preview](https://i.imgur.com/qvgq4yP.png)
 
 ## What is the difference?
 * macOS Big Sur Style UI
@@ -15,7 +15,7 @@
 
 ## How do I install?
 Follow [Installation](#installation).  
-Please note that this will only work properly on macOS.
+Please note that you can install this on both Windows and macOS but it'll work as intended *only on macOS*.
 
 ## Acknowledgements
 * [MaterialFox](https://github.com/muckSponge/MaterialFox)
