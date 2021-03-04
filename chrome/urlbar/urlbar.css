@@ -756,6 +756,10 @@
 	--input-offset: -1px;
 }
 
+#urlbar:not([focused]) .urlbar-input-box {
+	text-align: center;
+}
+
 /* 2x */
 @media (min--moz-device-pixel-ratio: 2)
 {
