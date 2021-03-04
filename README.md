@@ -9,7 +9,7 @@
   * The gray background is removed from the URL & search bar.
   * Every icon is given a little bit more space to breathe.
 * Cleaner Look
-  * The bookmarks bar (aka PersonalToolbar) appears only when you hover over the top of the window. If you are not a fan of this, you can [disable it](#if-you-don't-like-the-auto-hiding-bookmark-bar).
+  * The bookmarks bar (aka PersonalToolbar) appears only when you hover over the top of the window. If you are not a fan of this, you can [disable it](#if-you-dont-like-the-auto-hiding-bookmark-bar).
   * The tab close button from inactive tabs are hidden. (You can hover over the tab to make it appear.)
   * Animations have been refined.
 
