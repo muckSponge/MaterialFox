@@ -344,38 +344,34 @@
 	background: none !important;
 }
 
-#urlbar-label-box
+#identity-icon-box
 {
 	border: 0 !important;
 	padding: 0 !important;
 }
 
 /* separator */
-#identity-icon-labels::after
+#urlbar[pageproxystate=valid] #identity-box:-moz-any(.chromeUI, .extensionPage, .notSecureText) #identity-icon-box::after
 {
 	content: "" !important;
 	display: block !important;
 	position: absolute !important;
 	height: 16px !important;
+	top: calc(50% - 8px) !important;
 	right: 0 !important;
 	background: #9d9e9f !important;
 	width: 1px !important;
 	transition: opacity .2s var(--ease-basic) !important;
 }
 
-#urlbar[pageproxystate=valid]:not([open]) #identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden),
-#urlbar-label-box
+
+#urlbar[pageproxystate=valid] #identity-box:-moz-any(.chromeUI, .extensionPage, .notSecureText)
 {
 	margin-inline-end: 8px !important;
 }
 
-#urlbar[pageproxystate=valid]:not([open]) #identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden) #identity-icon-labels
-{
-	display: flex !important;
-}
 
-
-#urlbar[pageproxystate=valid] #identity-box:-moz-any(.notSecureText, .verifiedIdentity, .chromeUI, .extensionPage, .certUserOverridden):not(.no-hover):-moz-any([open], :hover) #identity-icon-labels::after
+#urlbar[pageproxystate=valid] #identity-box:hover  #identity-icon-box::after
 {
 	opacity: 0 !important;
 }
@@ -384,6 +380,14 @@
 {
 	list-style-image: none !important;
 	margin-inline-end: -16px !important;
+}
+
+#identity-icon-label
+{
+	margin: 0 !important;
+	padding-inline-start: 8px !important;
+	transform: translateY(-1px) !important;
+	
 }
 
 /* no longer used as a connection icon */
@@ -745,19 +749,21 @@
 }
 
 /* lock (secure) */
-#identity-box[pageproxystate="valid"]:-moz-any(.verifiedDomain, .verifiedIdentity, .mixedActiveBlocked) > #identity-icon
+#identity-box[pageproxystate="valid"].verifiedDomain #identity-icon,
+#identity-box[pageproxystate="valid"].mixedActiveBlocked #identity-icon
 {
 	list-style-image: var(--lock-icon) !important;
 }
 
-/* info (not secure) */
-#identity-box[pageproxystate="valid"]:-moz-any(.mixedDisplayContent, .mixedDisplayContentLoadedActiveBlocked, .unknownIdentity) > #identity-icon
-{
-    list-style-image: var(--info-icon) !important;
-}
-
 /* warning (dangerous) */
-#identity-box[pageproxystate="valid"]:-moz-any(.notSecure, .weakCipher, .certUserOverridden, .certErrorPage, .insecureLoginForms, .mixedActiveContent) > #identity-icon
+#identity-box[pageproxystate="valid"].notSecure #identity-icon,
+#identity-box[pageproxystate="valid"].mixedActiveContent #identity-icon,
+#identity-box[pageproxystate="valid"].httpsOnlyErrorPage #identity-icon,
+#identity-box[pageproxystate="valid"].weakCipher #identity-icon,
+#identity-box[pageproxystate="valid"].mixedDisplayContent #identity-icon,
+#identity-box[pageproxystate="valid"].mixedDisplayContentLoadedActiveBlocked #identity-icon,
+#identity-box[pageproxystate="valid"].certUserOverridden #identity-icon,
+#identity-box[pageproxystate="valid"].certErrorPage #identity-icon
 {
     list-style-image: var(--warning-icon) !important;
 }
