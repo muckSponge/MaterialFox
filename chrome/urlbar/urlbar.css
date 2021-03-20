@@ -203,7 +203,8 @@
 #urlbar[focused],
 #searchbar[focused]
 {
-	border: 2px solid var(--toolbar-field-focus-border-color) !important;
+	/* -moz-accent-color won't work in a var... */
+	border: 2px solid -moz-accent-color !important;
 	padding: 0 !important;
 	margin: 0 !important;
 }

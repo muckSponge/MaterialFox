@@ -30,7 +30,8 @@ hbox[anonid="findbar-textbox-wrapper"]:hover
 hbox[anonid="findbar-textbox-wrapper"]:focus-within
 {
 	background-color: var(--toolbar-field-focus-background-color) !important;
-	border: 2px solid var(--toolbar-field-focus-border-color) !important;
+	/* won't work in a var... */
+	border: 2px solid -moz-accent-color !important;
 	margin: -1px !important;
 	padding: 1px !important;
 	height: 30px !important;
