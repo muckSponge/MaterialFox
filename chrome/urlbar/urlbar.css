@@ -338,6 +338,12 @@
 	position: relative !important;
 }
 
+.identity-box-button,
+#tracking-protection-icon-container
+{
+	background: none !important;
+}
+
 #urlbar-label-box
 {
 	border: 0 !important;
