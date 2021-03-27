@@ -38,8 +38,6 @@
 	
 	/* popup_highlight_text */
 	--autocomplete-popup-highlight-color: #202124 !important;
-	
-	--toolbar-field-fontsize: 14px !important;
 }
 
 /* don't bother with sidebar in light mode */
@@ -151,6 +149,8 @@
 	--toolbar-field-background-color: hsl(200, 12%, 95%) !important;
 	--toolbar-field-hover-background-color: hsl(216, 12%, 92%) !important;
 	--toolbar-field-focus-background-color: hsl(0, 0%, 100%) !important;
+	
+	--toolbar-field-fontsize: 14px !important;
 }
 
 :root:-moz-any(:-moz-lwtheme-brighttext, [privatebrowsingmode=temporary])
