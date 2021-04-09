@@ -39,6 +39,8 @@
 	
 	/* popup_highlight_text */
 	--autocomplete-popup-highlight-color: #202124 !important;
+	
+	--toolbar-field-fontsize: 14px !important;
 }
 
 /* don't bother with sidebar in light mode */

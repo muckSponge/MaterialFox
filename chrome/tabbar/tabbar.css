@@ -398,6 +398,11 @@
 	margin-inline-start: -16px !important;
 }
 
+.tab-sharing-icon-overlay
+{
+	margin-inline-start: -16px !important;
+}
+
 @keyframes rotate-360
 {
 	0% { transform: rotate(0); }
