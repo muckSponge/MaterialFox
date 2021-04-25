@@ -5,41 +5,42 @@
 {
 	/* accentcolor */
 	--lwt-accent-color: #dee1e6 !important;
-	
+
 	/* textcolor */
 	--lwt-text-color: #606368 !important;
-	
+
 	/* toolbar */
 	--toolbar-bgcolor: #fff !important;
-	
+
 	/* toolbar_text */
 	--toolbar-color: #606368 !important;
-	
+
 	/* toolbar_bottom_separator */
 	--toolbox-border-bottom-color: #b3b1b3 !important; /* legacy */
 	--chrome-content-separator-color: #b3b1b3 !important;
-	
+
 	/* icons */
 	--lwt-toolbarbutton-icon-fill: #606368 !important;
-	
+
 	/* icons_attention */
 	--lwt-toolbarbutton-icon-fill-attention: #5086ec !important;
-	
+
 	/* button_background_hover */
 	--lwt-toolbarbutton-hover-background: rgba(0, 0, 0, .07) !important;
-	
+
 	/* button_background_active */
 	--lwt-toolbarbutton-active-background: rgba(0, 0, 0, .11) !important;
-	
+
 	--lwt-toolbar-field-color: #202124 !important;
-	
+
 	/* popup_highlight */
 	--autocomplete-popup-highlight-background: #f2f2f2 !important;
-	
+
 	/* popup_highlight_text */
 	--autocomplete-popup-highlight-color: #202124 !important;
-	
+
 	--toolbar-field-fontsize: 14px !important;
+	--search-icon-url: url("../icons/search.svg");
 }
 
 /* don't bother with sidebar in light mode */
@@ -50,58 +51,59 @@
 {
 	/* accentcolor */
 	--lwt-accent-color: #202124 !important;
-	
+
 	/* textcolor */
 	--lwt-text-color: #9ba0a5 !important;
-	
+
 	/* toolbar */
 	--toolbar-bgcolor: #333639 !important;
-	
+
 	/* toolbar_text */
 	--toolbar-color: #fff !important;
-	
+
 	/* toolbar_bottom_separator */
 	--toolbox-border-bottom-color: #282828 !important; /* legacy */
 	--chrome-content-separator-color: #282828 !important;
-	
+
 	/* icons */
 	--lwt-toolbarbutton-icon-fill: #fff !important;
-	
+
 	/* icons_attention */
 	--lwt-toolbarbutton-icon-fill-attention: #5086ec !important;
-	
+
 	/* button_background_hover */
 	--lwt-toolbarbutton-hover-background: #434649 !important;
-	
+
 	/* button_background_active */
 	--lwt-toolbarbutton-active-background: #4e5153 !important;
-	
+
 	--lwt-toolbar-field-color: #fff !important;
-	
+
 	/* popup */
 	--arrowpanel-background: #373737 !important;
-	
+
 	/* popup_text */
 	--arrowpanel-color: #fff !important;
 	--autocomplete-popup-color: #fff !important;
 	--panel-disabled-color: hsla(0, 0%, 100%, .5) !important;
-	
+
 	/* popup_border */
 	--arrowpanel-border-color: #555 !important;
 	--autocomplete-popup-border-color: #555 !important;
-	
+
 	/* popup_highlight */
 	--autocomplete-popup-highlight-background: #4c4f52 !important;
-	
+
 	/* popup_highlight_text */
 	--autocomplete-popup-highlight-color: #fff !important;
+	--search-icon-url: url("../icons/search_dark.svg");
 }
 
 :-moz-any(#sidebar-box, #sidebar)[style*="--sidebar-background-color:rgb(56, 56, 61);"]
 {
 	/* sidebar */
 	--sidebar-background-color: #333639 !important;
-	
+
 	/* sidebar_text */
 	--sidebar-text-color: #f1f3ee !important;
 }
@@ -110,7 +112,7 @@
 {
 	/* sidebar */
 	--lwt-sidebar-background-color: #333639 !important;
-	
+
 	/* sidebar_text */
 	--lwt-sidebar-text-color: #f1f3ee !important;
 }
@@ -123,9 +125,9 @@
 
 	--button-size: 32px; /* is this used? */
 	--icon-size: 24px; /* is this used? */
-	
+
 	--downloads-item-height: 48px !important;
-	
+
 	--toolbar-non-lwt-bgcolor: var(--toolbar-bgcolor) !important;
 	--toolbar-non-lwt-textcolor: var(--toolbar-color) !important;
 }
@@ -145,9 +147,9 @@
 }
 
 :root
-{	
+{
 	--tab-separator-opacity: .35 !important;
-	
+
 	--toolbar-field-background-color: hsl(200, 12%, 95%) !important;
 	--toolbar-field-hover-background-color: hsl(216, 12%, 92%) !important;
 	--toolbar-field-focus-background-color: hsl(0, 0%, 100%) !important;
