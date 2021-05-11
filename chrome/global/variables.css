@@ -38,8 +38,6 @@
 	
 	/* popup_highlight_text */
 	--autocomplete-popup-highlight-color: #202124 !important;
-	
-	--toolbar-field-fontsize: 14px !important;
 }
 
 /* don't bother with sidebar in light mode */
@@ -128,6 +126,8 @@
 	
 	--toolbar-non-lwt-bgcolor: var(--toolbar-bgcolor) !important;
 	--toolbar-non-lwt-textcolor: var(--toolbar-color) !important;
+	
+	--toolbar-field-fontsize: 14px !important;
 }
 
 #titlebar,
