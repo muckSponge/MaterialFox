@@ -96,6 +96,7 @@
 	font-size: 12px !important;
 	background: 0 !important;
 	border: 0 !important;
+	padding: 0 !important;
 }
 
 .tabbrowser-tab[visuallyselected]
@@ -125,6 +126,12 @@
 #tabbrowser-tabs[overflow] .tabbrowser-tab[pinned] .tab-background
 {
 	margin: 0 -1px !important;
+}
+
+.tab-stack
+{
+	margin-top: 4px !important;
+	margin-bottom: -4px !important;
 }
 
 .tab-content
