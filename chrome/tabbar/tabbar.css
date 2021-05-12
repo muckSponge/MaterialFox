@@ -124,15 +124,21 @@
 	margin-inline-start: -.5px !important;
 }
 
+.tab-stack
+{
+	margin-top: 4px !important;
+	margin-bottom: -4px !important;
+}
+
 #tabbrowser-tabs[overflow] .tabbrowser-tab[pinned] .tab-background
 {
 	margin: 0 -1px !important;
 }
 
-.tab-stack
+#tabbrowser-tabs[overflow] .tabbrowser-tab[pinned] .tab-stack
 {
-	margin-top: 4px !important;
-	margin-bottom: -4px !important;
+	margin-top: 8px !important;
+	margin-bottom: 0 !important;
 }
 
 .tab-content
