@@ -151,6 +151,8 @@
 {
 	padding: 6px !important;
 	background: 0 !important;
+	width: auto !important;
+	height: auto !important;
 }
 
 /*
