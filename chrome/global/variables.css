@@ -1,6 +1,6 @@
 /* light mode */
 :root:not([style]),
-:root[style*="--lwt-accent-color:rgb(28, 27, 34);"],
+:root[style*="--lwt-accent-color:rgb(227, 228, 230);"],
 :root[style*="--lwt-accent-color:white;"]
 {
 	/* accentcolor */
@@ -43,7 +43,7 @@
 /* don't bother with sidebar in light mode */
 
 /* dark mode */
-:root[style*="--lwt-accent-color:rgb(12, 12, 13);"],
+:root[style*="--lwt-accent-color:rgb(28, 27, 34);"],
 :root[privatebrowsingmode=temporary]
 {
 	/* accentcolor */
