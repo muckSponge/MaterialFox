@@ -78,6 +78,7 @@
 
 /* vertically center buttons in tab bar */
 #TabsToolbar toolbarbutton,
+#TabsToolbar .toolbar-items toolbarbutton.toolbarbutton-1,
 /* >= 72 */
 #TabsToolbar .tabbrowser-arrowscrollbox::part(scrollbutton-up),
 #TabsToolbar .tabbrowser-arrowscrollbox::part(scrollbutton-down),
@@ -85,8 +86,8 @@
 #scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton),
 #scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton)
 {
-	margin-top: calc((var(--tab-min-height) - var(--button-size)) / 2) !important;
-	margin-bottom: calc((var(--tab-min-height) - var(--button-size)) / 2) !important;
+	margin-top: var(--tab-shadow-max-size) !important;
+	margin-bottom: var(--proton-tab-block-margin) !important;
 }
 
 .tabbrowser-tab
@@ -96,6 +97,7 @@
 	font-size: 12px !important;
 	background: 0 !important;
 	border: 0 !important;
+	padding: 0 !important;
 }
 
 .tabbrowser-tab[visuallyselected]
@@ -122,9 +124,21 @@
 	margin-inline-start: -.5px !important;
 }
 
+.tab-stack
+{
+	margin-top: 4px !important;
+	margin-bottom: -4px !important;
+}
+
 #tabbrowser-tabs[overflow] .tabbrowser-tab[pinned] .tab-background
 {
 	margin: 0 -1px !important;
+}
+
+#tabbrowser-tabs[overflow] .tabbrowser-tab[pinned] .tab-stack
+{
+	margin-top: 8px !important;
+	margin-bottom: 0 !important;
 }
 
 .tab-content

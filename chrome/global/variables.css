@@ -130,6 +130,8 @@
 
 	--toolbar-non-lwt-bgcolor: var(--toolbar-bgcolor) !important;
 	--toolbar-non-lwt-textcolor: var(--toolbar-color) !important;
+	
+	--toolbar-field-fontsize: 14px !important;
 }
 
 #titlebar,
