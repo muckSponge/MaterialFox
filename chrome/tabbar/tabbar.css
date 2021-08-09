@@ -235,6 +235,7 @@
 		background-color 0s var(--tab-transition-duration) var(--ease-basic) !important;
 	opacity: var(--tab-opacity) !important;
 	visibility: visible !important;
+	box-shadow: none !important;
 }
 
 /* rounded bottom corners */
