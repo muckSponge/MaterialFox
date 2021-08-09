@@ -1,7 +1,7 @@
 .findbar-textbox
 {
 	background-color: transparent !important;
-	background-image: url(../icons/search.svg) !important;
+	background: var(--search-icon-url) !important;
 	background-repeat: no-repeat !important;
 	background-position: 5px center !important;
 	fill-opacity: 1 !important;
