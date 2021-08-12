@@ -24,7 +24,7 @@ Backward compatible? Go do it yourself.
 
 ## Installation
 1. Download this project.
-2. Unzip the zip, and drug folder "chrome" into firefox profile dictionary.
+2. Unzip the zip, and drag folder "chrome" into firefox profile dictionary.
 3. Open ya browser, then enjoy😅.
 
 ## Please note
