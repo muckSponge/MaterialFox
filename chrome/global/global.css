@@ -35,9 +35,9 @@
 	-moz-box-align: center !important;
 }
 
-#navigator-toolbox :-moz-any(.toolbarbutton-1, toolbarbutton.bookmark-item:not(.subviewbutton)),
+/* #navigator-toolbox :-moz-any(.toolbarbutton-1, toolbarbutton.bookmark-item:not(.subviewbutton)), */
 /* no ::part workaround - may have side effects */
-#scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton),
+/* #scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton),
 #scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton)
 {
 	border-radius: 99px !important;
@@ -61,7 +61,7 @@
 	background-repeat: no-repeat !important;
 	background-position: center !important;
 	background-color: transparent !important;
-}
+} */
 
 #navigator-toolbox :-moz-any(.toolbarbutton-1, toolbarbutton.bookmark-item:not(.subviewbutton)),
 /* no ::part workaround - may have side effects */

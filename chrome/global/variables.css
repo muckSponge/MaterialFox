@@ -31,13 +31,13 @@
 	/* button_background_active */
 	--lwt-toolbarbutton-active-background: rgba(0, 0, 0, .11) !important;
 
-	--lwt-toolbar-field-color: #202124 !important;
+	--lwt-toolbar-field-color: #20212400 !important;
 
 	/* popup_highlight */
 	--autocomplete-popup-highlight-background: #f2f2f2 !important;
 
 	/* popup_highlight_text */
-	--autocomplete-popup-highlight-color: #202124 !important;
+	--autocomplete-popup-highlight-color: #20212400 !important;
 
 	--toolbar-field-fontsize: 14px !important;
 	--search-icon-url: url("../icons/search.svg");
@@ -50,7 +50,7 @@
 :root[privatebrowsingmode=temporary]
 {
 	/* accentcolor */
-	--lwt-accent-color: #202124 !important;
+	--lwt-accent-color: #20212400 !important;
 
 	/* textcolor */
 	--lwt-text-color: #9ba0a5 !important;
@@ -97,6 +97,7 @@
 	/* popup_highlight_text */
 	--autocomplete-popup-highlight-color: #fff !important;
 	--search-icon-url: url("../icons/search_dark.svg");
+	
 }
 
 :-moz-any(#sidebar-box, #sidebar)[style*="--sidebar-background-color:rgb(56, 56, 61);"]
@@ -151,7 +152,6 @@
 :root
 {
 	--tab-separator-opacity: .35 !important;
-
 	--toolbar-field-background-color: hsl(200, 12%, 95%) !important;
 	--toolbar-field-hover-background-color: hsl(216, 12%, 92%) !important;
 	--toolbar-field-focus-background-color: hsl(0, 0%, 100%) !important;
@@ -159,9 +159,9 @@
 
 :root:-moz-any(:-moz-lwtheme-brighttext, [privatebrowsingmode=temporary])
 {
-	--toolbar-field-background-color: #202124 !important;
-	--toolbar-field-hover-background-color: #292a2d !important;
-	--toolbar-field-focus-background-color: #202124 !important;
+	--toolbar-field-background-color: rgba(0, 0, 0, 0。144) !important;
+	--toolbar-field-hover-background-color: rgba(33, 33, 33, 0.144)!important;
+	--toolbar-field-focus-background-color: rgba(33, 33, 33, 0.144)!important;
 }
 
 :root:not(:-moz-lwtheme):not([privatebrowsingmode=temporary])
@@ -217,3 +217,12 @@
 	--toolbarbutton-hover-background: hsl(206, 5%, 26%) !important;
 	--toolbarbutton-active-background: hsl(210, 4%, 31%) !important;
 }
+/* customilaizor css */
+
+/* blur */
+/* background: rgba(0,0,0,0.01); */
+/* backdrop-filter: blur(5px) !important;  */
+
+/* border radius like Edge */
+/* border-radius: 4px; *//* bigger bar or some of menu in using 4px*/
+/* border-radius: 2px; *//* for icon use 2px*/

@@ -12,12 +12,15 @@ menu > menu,
 menupopup > menu
 {
 	appearance: none !important;
+	
 }
 
 menuitem[disabled],
 menu[disabled]
 {
 	pointer-events: none !important;
+		backdrop-filter: saturate(180%) blur(25px) !important;
+
 }
 
 .menu-right
