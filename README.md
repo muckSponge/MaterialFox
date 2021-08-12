@@ -27,7 +27,7 @@ Backward compatible? Go do it yourself.
 #### 要饭
 This theme is powered by blood, sweat, and coffee.
 
-But not mine, SO¡‼ If you like it, please consider helping origin repository author to support him continued development.
+But not mine¡ So If you like it, please consider helping origin repository author to support him continued development.
 
 [![Buy him a coffee](https://github.com/isNijikawa/MaterialFox-in-Microsoft-Edge-Style/blob/master/asset/icon.svg)](https://www.buymeacoffee.com/n4ho5QX2l)
 
