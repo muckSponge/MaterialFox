@@ -2,13 +2,14 @@
 # But In Microsoft Edge Style
 *this is how the internet working*
 
-![Preview](https://user-images.githubusercontent.com/5405629/45172944-21d91900-b24a-11e8-8bc5-03814121b0de.png)
+![Preview](https://github.com/isNijikawa/MaterialFox-in-Microsoft-Edge-Style/blob/master/asset/this%20is%20how%20the%20internet%20work.png)
 This theme is powered by blood, sweat, and coffee.
-But not from me, SO¡‼ If you like it, please consider helping origin repository author to support him continued development.
 
-[![Buy him a coffee]()](https://www.buymeacoffee.com/n4ho5QX2l)
+But not mine, SO¡‼ If you like it, please consider helping origin repository author to support him continued development.
 
-##### Me? oh Come on! I am all voluntary.
+[![Buy him a coffee](https://github.com/isNijikawa/MaterialFox-in-Microsoft-Edge-Style/blob/master/asset/icon.svg)](https://www.buymeacoffee.com/n4ho5QX2l)
+
+##### Me? oh Come'n! I am all voluntary.
 ## What this does
 Make firefox ui style turn into chrome 'en in to Edge.
 
