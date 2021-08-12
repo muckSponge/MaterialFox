@@ -2,7 +2,7 @@
 {
 	border: 0 !important;
 	background: rgba(0,0,0,0.01);
-	backdrop-filter: saturate(180%) blur(20px) !important;
+	backdrop-filter: saturate(120%) blur(20px) !important;
 }
 
 .urlbarView-row
@@ -124,7 +124,7 @@
 	padding: 4px !important;
 	display: flex !important;
 	background: rgba(0,0,0,0.01);
-	backdrop-filter: saturate(180%) blur(20px) !important;
+	backdrop-filter: saturate(120%) blur(20px) !important;
 	border-radius: 0 0 4px 4px;
 }
 

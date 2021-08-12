@@ -1,37 +1,30 @@
-# MaterialFox
-*A Material Design-inspired userChrome.css theme for Firefox*
+## MaterialFox
+# But In Microsoft Edge Style
+*this is how the internet working*
 
 ![Preview](https://user-images.githubusercontent.com/5405629/45172944-21d91900-b24a-11e8-8bc5-03814121b0de.png)
-This theme is powered by blood, sweat, and coffee. If you like it, please consider helping out to support its continued development.
+This theme is powered by blood, sweat, and coffee.
+But not from me, SO¡‼ If you like it, please consider helping origin repository author to support him continued development.
 
-[![Buy me a coffee](https://svgshare.com/i/8Yd.svg)](https://www.buymeacoffee.com/n4ho5QX2l)
+[![Buy him a coffee]()](https://www.buymeacoffee.com/n4ho5QX2l)
 
+##### Me? oh Come on! I am all voluntary.
 ## What this does
-Inspired by Google's Material Design and their latest Google Chrome UI, this theme turns your Firefox into a Material-styled web browser. The aim was to style the browser as closely as possible to Google Chrome, where practical.
+Make firefox ui style turn into chrome 'en in to Edge.
 
-This is a userChrome.css theme, which means you must manually add it to your Firefox profile. The theme overrides certain browser styles. Currently, only the main UI is affected (settings pages, etc. are not). More elements of the UI may be styled in the future but a broader scope becomes harder to maintain as Mozilla updates their browser code so some UI styles may be culled or redone if they become unmaintainable.
+I mean, why not? Edge is still chromium based!
 
 ## What version do I use?
-Check the [releases](https://github.com/muckSponge/MaterialFox/releases) section. Each release version will match the compatible Firefox version. For example, if you're using Firefox 88, try a v88.x release. If there's no matching release and you're not using an old version of Firefox, go for the latest one. If you're using a beta version of Firefox, you might want to try the master branch, which will have the latest bug fixes.
+I do modify style sheet which in FireFox 91.0 (64-bit).
+
+Thats meaning at least it work on FireFox 91.0 (64-bit). Don't know if this can work on subsequent versions.
+
+Backward compatible? Go do it yourself.
 
 ## Installation
-1. Copy the chrome folder and user.js file into your Firefox profile directory. To find your profile directory, go to about:support or about:profiles.
-2. See [Recommended instructions](#recommended-instructions) if you'd prefer a more Chrome-like experience.
-3. Restart Firefox.
-
-### Recommended instructions
-Add space above tab bar:
-* Right click on toolbar -> Customize.
-* Check Drag Space checkbox.
-
-Replicate Chrome behaviour for clipped tabs:
-* [about:config] Set ```browser.tabs.tabClipWidth``` to ```83``` (default is ```140```).
-
-Replicate Chrome's "Not Secure" text on HTTP:
-* [about:config] Set ```security.insecure_connection_text.enabled``` to ```true```.
+1. Download this project.
+2. Unzip the zip, and drug folder "chrome" into firefox profile dictionary.
+3. Open ya browser, then enjoy😅.
 
 ## Please note
-* Linux is no longer officially supported but you can give it a try – if you'd like to work on it feel free to make a PR.
-* Some customisation settings may no longer work (such as compact/touch density).
-* Some custom themes may clash with the address bar.
-* Some themes using transparency might not work.
++ If this thing not work, it's not work, I won't fix issue whether you New Issue.

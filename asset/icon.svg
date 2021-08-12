@@ -1,0 +1,78 @@
+<svg width="166" height="36" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <style>#button
+			{
+				cursor: pointer;
+			}
+		
+			.button-bg
+			{
+				fill: #35B0FF;
+			}
+			
+			.button-hover
+			{
+				fill: #fff;
+				fill-opacity: 0;
+			}
+
+			#button:hover &gt; .button-hover
+			{
+				fill-opacity: .08;
+			}
+			
+			.ripple
+			{
+				transition: transform .3s cubic-bezier(0, 0, .2, 1), fill-opacity .3s;
+				transform: scale(0);
+				transform-origin: 50%;
+				fill: #fff;
+				fill-opacity: 0;
+				transition-delay: .15s, 0s;
+			}
+			
+			#button:active &gt; .ripple
+			{
+				transform: scale(1, 1);
+				fill-opacity: .25;
+				transition-delay: 0s;
+			}
+
+			#label
+			{
+				font-size: 28px;
+				font-family: Roboto, system;
+				font-weight: 500;
+			}
+
+			#icon,
+			#label
+			{
+				fill: #fff;
+				pointer-events: none;
+			}
+
+			#icon
+			{
+				fill-rule: evenodd;
+			}</style>
+  <style media="screen" class="darkreader darkreader--sync"/>
+  <mask id="button-mask">
+   <rect style="--darkreader-inline-fill: #e8e6e3;" id="svg_1" ry="3" rx="3" height="36" width="166" fill="#fff"/>
+  </mask>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g transform="rotate(-180, 83, 18)" mask="url(#button-mask)" id="button">
+   <rect x="-11" y="0" id="svg_2" height="36" width="188" class="button-bg"/>
+   <rect x="-11" y="0" id="svg_3" height="36" width="188" class="button-hover"/>
+   <circle id="svg_4" r="90" cy="18" cx="72" class="ripple"/>
+   <text x="-22" y="0" transform="translate(38.345, 23.109) scale(0.5)" id="label">ƎℲℲOƆ ∀ WIH ⅄∩ઘ</text>
+   <path d="m14.25,20.5l-1.143999,0a5.5,5.5 0 0 1 -10.106001,-3l0,-3.25a0.75,0.75 0 0 1 0.75,-0.75l9.5,0a0.744,0.744 0 0 1 0.700001,0.5l0.299999,0a3.25,3.25 0 0 1 0,6.5zm0,-5l-0.25,0l0,2a5.493,5.493 0 0 1 -0.212,1.5l0.462,0a1.75,1.75 0 0 0 0,-3.5z" id="icon"/>
+  </g>
+ </g>
+</svg>
