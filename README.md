@@ -9,7 +9,7 @@ But not mine, SO¡‼ If you like it, please consider helping origin repository 
 
 [![Buy him a coffee](https://github.com/isNijikawa/MaterialFox-in-Microsoft-Edge-Style/blob/master/asset/icon.svg)](https://www.buymeacoffee.com/n4ho5QX2l)
 
-##### Me? oh Come on! I am all voluntary.
+##### Me? oh Come'n! I am all voluntary.
 ## What this does
 Make firefox ui style turn into chrome 'en in to Edge.
 
