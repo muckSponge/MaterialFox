@@ -17,9 +17,10 @@ Thats meaning at least it work on FireFox 91.0 (64-bit). Don't know if this can 
 Backward compatible? Go do it yourself.
 
 ## Installation
-1. Download this project.
-2. Unzip the zip, and drag folder "chrome" into firefox profile dictionary.
-3. Open ya browser, then enjoy😅.
+1. Enable "toolkit.legacyUserProfileCustomizations.stylesheets" & "layout.css.backdrop-filter.enabled" in about:config
+3. Download this project.
+4. Unzip the zip, and drag folder "chrome" into firefox profile dictionary.
+5. Open ya browser, then enjoy😅.
 
 ## Please note
 + If this thing not work, it's not work, I won't fix issue whether you New Issue.
