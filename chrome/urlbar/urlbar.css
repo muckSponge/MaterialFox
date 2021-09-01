@@ -515,7 +515,7 @@
 		background-color .2s var(--ease-basic),
 		width .3s var(--ease-out),
 		opacity .3s var(--ease-basic) !important;
-	opacity: 1 !important;
+	opacity: 0.8 !important;
 	visibility: visible !important;
 	width: 32px !important;
 }

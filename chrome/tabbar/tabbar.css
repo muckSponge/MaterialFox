@@ -214,7 +214,8 @@
 :-moz-any(:root[privatebrowsingmode=temporary], #TabsToolbar[brighttext]) .tabbrowser-tab:not([selected=true]):hover,
 :-moz-any(:root[privatebrowsingmode=temporary], #TabsToolbar[brighttext]) .tabbrowser-tab[multiselected]:not([selected=true])
 {
-	--tab-opacity: .06;
+	/* 标签鼠标划入高亮 */
+	--tab-opacity: .13;
 }
 
 :-moz-any(#TabsToolbar) .tabbrowser-tab[visuallyselected]

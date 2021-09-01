@@ -72,7 +72,7 @@
 	--lwt-toolbarbutton-icon-fill-attention: #5086ec !important;
 
 	/* button_background_hover */
-	--lwt-toolbarbutton-hover-background: #434649 !important;
+	--lwt-toolbarbutton-hover-background: rgba(255, 255, 255, 0.5) !important;
 
 	/* button_background_active */
 	--lwt-toolbarbutton-active-background: #4e5153 !important;
