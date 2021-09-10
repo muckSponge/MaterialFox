@@ -1,820 +1,602 @@
-.urlbarView-body-inner
-{
-	border: 0 !important;
-	background: rgba(0,0,0,0.01);
-	backdrop-filter: saturate(120%) blur(20px) !important;
+/* urlbar */
+
+.urlbarView-body-inner {
+    color: white;
+    padding: var(--s4);
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-fill-mode: both;
+    transition: 0.2s;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.266);
+    box-shadow: 2px 2px 8px #00000044;
 }
 
-.urlbarView-row
-{
-	padding: 0 !important;
-	border-radius: 0 !important;
+.urlbarView-body-inner::before {
+    content: "";
+    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(40px);
+    background-color: rgba(24, 24, 24, 0.658);
+    background-color: #181818a8;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -2;
+    transition: 0.2s;
 }
 
-.urlbarView-row-inner
-{
-	align-items: center !important;
-	position: relative !important;
-	padding: 12px 0 !important;
-	padding-inline: 48px 16px !important;
-	max-width: 100% !important;
-	width: auto !important;
+.urlbarView-body-inner::after {
+    content: "";
+    background-image: url("acrylic.png");
+    filter: grayscale(100%);
+    background-size: 128px;
+    opacity: 0.035;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
 }
 
-.urlbarView-no-wrap
-{
-	height: 100% !important;
-	align-items: center !important;
-	margin-inline-start: 0 !important;
-	max-width: 100% !important;
+.urlbarView-row {
+    padding: 0 !important;
+    border-radius: 0 !important;
 }
 
-.urlbarView-row[has-url][type]:not([type=bookmark]) .urlbarView-row-inner
-{
-	flex-direction: column !important;
-	align-items: flex-start !important;
+.urlbarView-row-inner {
+    align-items: center !important;
+    position: relative !important;
+    padding: 12px 0 !important;
+    padding-inline: 48px 16px !important;
+    max-width: 100% !important;
+    width: auto !important;
 }
 
-.urlbarView-row[has-url][type]:not([type=bookmark]) .urlbarView-no-wrap
-{
-	height: auto !important;
-	align-self: flex-start !important;
-	width: 100% !important;
+.urlbarView-no-wrap {
+    height: 100% !important;
+    align-items: center !important;
+    margin-inline-start: 0 !important;
+    max-width: 100% !important;
 }
 
-.urlbarView-title-separator
-{
-	visibility: visible !important;
+.urlbarView-row[has-url][type]:not([type=bookmark]) .urlbarView-row-inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
 }
 
-.urlbarView-title-separator::before
-{
-	content: "-" !important;
-	color: inherit !important;
+.urlbarView-row[has-url][type]:not([type=bookmark]) .urlbarView-no-wrap {
+    height: auto !important;
+    align-self: flex-start !important;
+    width: 100% !important;
 }
 
-.urlbarView-title-separator,
-.urlbarView-action
-{
-	opacity: .6 !important;
-	color: inherit !important;
-	font-size: revert !important;
+.urlbarView-title-separator {
+    visibility: visible !important;
 }
 
-.urlbarView-favicon
-{
-	position: absolute !important;
-	left: 16px !important;
-	top: 50% !important;
-	transform: translateY(-50%) !important;
-	fill-opacity: .6 !important;
-	flex: unset !important;
-	margin: unset !important;
+.urlbarView-title-separator::before {
+    content: "-" !important;
+    color: inherit !important;
 }
 
-.urlbarView-title,
-.urlbarView-url
-{
-	text-overflow: ellipsis !important;
-	mask-image: none !important;
+.urlbarView-title-separator, .urlbarView-action {
+    opacity: .6 !important;
+    color: inherit !important;
+    font-size: revert !important;
 }
 
-.urlbarView-title
-{
-	flex: 1 !important;
-	flex-basis: unset !important;
+.urlbarView-favicon {
+    /* this is search result box website logo icon */
+    position: absolute !important;
+    left: 16px !important;
+    /* top effect icon vertical location */
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    fill-opacity: .6 !important;
+    flex: unset !important;
+    margin: unset !important;
 }
 
-.urlbarView-url
-{
-	max-width: 100% !important;
-	font-size: revert !important;
-	color: var(--urlbar-popup-url-color) !important;
-	padding: 0 !important;
+.urlbarView-title, .urlbarView-url {
+    text-overflow: ellipsis !important;
+    mask-image: none !important;
 }
 
-.urlbarView-url:not(:empty)
-{
-	visibility: visible !important;
+.urlbarView-title {
+    flex: 1 !important;
+    flex-basis: unset !important;
 }
 
-.urlbarView-action:not(:empty)
-{
+.urlbarView-url {
+    max-width: 100% !important;
+    font-size: revert !important;
+    color: var(--urlbar-popup-url-color) !important;
+    padding: 0 !important;
+}
+
+.urlbarView-url:not(:empty) {
+    visibility: visible !important;
+}
+
+.urlbarView-action:not(:empty) {
     display: flex !important;
 }
 
-.urlbarView-row[type=search] ~ .urlbarView-row[type=search] .urlbarView-title-separator,
-.urlbarView-row[type=search] ~ .urlbarView-row[type=search] .urlbarView-action,
-.urlbarView-row[has-url][type]:not([type=bookmark]) .urlbarView-title-separator,
-.urlbarView-type-icon
-{
-	display: none !important;
+.urlbarView-row[type=search]~.urlbarView-row[type=search] .urlbarView-title-separator, .urlbarView-row[type=search]~.urlbarView-row[type=search] .urlbarView-action, .urlbarView-row[has-url][type]:not([type=bookmark]) .urlbarView-title-separator, .urlbarView-type-icon {
+    display: none !important;
 }
 
-.urlbarView-row[type=tip] > .urlbarView-row-inner > .urlbarView-favicon,
-.urlbarView-row[type=tip] > .urlbarView-row-inner > .urlbarView-title,
-.urlbarView-tip-button,
-.urlbarView-tip-help
-{
-	margin-block-end: 0 !important;
+.urlbarView-row[type=tip]>.urlbarView-row-inner>.urlbarView-favicon, .urlbarView-row[type=tip]>.urlbarView-row-inner>.urlbarView-title, .urlbarView-tip-button, .urlbarView-tip-help {
+    margin-block-end: 0 !important;
 }
+
 /* lower half pannel in url popup menu */
-.urlbarView .search-one-offs
-{
-	padding: 4px !important;
-	display: flex !important;
-	background: rgba(0,0,0,0.01);
-	backdrop-filter: saturate(120%) blur(20px) !important;
-	border-radius: 0 0 4px 4px;
+
+.urlbarView .search-one-offs {
+    padding: 4px !important;
+    display: flex !important;
+    background: rgba(0, 0, 0, 0.01);
+    backdrop-filter: saturate(120%) blur(20px) !important;
+    border-radius: 0 0 4px 4px;
 }
 
-.urlbarView .search-panel-one-offs-header
-{
-	margin-inline-start: 12px !important;
-	line-height: 40px !important;
-	transform: translateY(-1px) !important;
+.urlbarView .search-panel-one-offs-header {
+    margin-inline-start: 12px !important;
+    line-height: 40px !important;
+    transform: translateY(-1px) !important;
 }
 
-.urlbarView .search-panel-one-offs
-{
-	border-radius: 0 0 4px 4px !important;
-	display: inline-flex !important;
-	flex-direction: row !important;
-	padding: 0 !important;
-	margin: 0 !important;
-	float: left !important;
-	max-width: none !important;
-	height: auto !important;
+.urlbarView .search-panel-one-offs {
+    border-radius: 0 0 4px 4px !important;
+    display: inline-flex !important;
+    flex-direction: row !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    float: left !important;
+    max-width: none !important;
+    height: auto !important;
 }
 
-.urlbarView .searchbar-engine-one-off-item
-{
-	height: 32px !important;
-	border-radius: 2px !important;
-	padding: 0 8px !important;
-	margin: 4px !important;
-	background-image: none !important;
-	color: inherit !important;
-	border: 0 !important;
+.urlbarView .searchbar-engine-one-off-item {
+    height: 32px !important;
+    border-radius: 2px !important;
+    padding: 0 8px !important;
+    margin: 4px !important;
+    background-image: none !important;
+    color: inherit !important;
+    border: 0 !important;
 }
 
-#urlbar-container
-{
-	max-height: 36px !important;
+#urlbar-container {
+    max-height: 36px !important;
 }
 
-#urlbar,
-#searchbar
-{
-	font-size: var(--toolbar-field-fontsize) !important;
-	border-radius: 4px !important;
-	background-color: var(--toolbar-field-background-color) !important;
-	border: 0 !important;
-	box-shadow: none !important;
-	padding: 2px !important;
-	background-clip: padding-box !important;
-	transition: background-color .1s var(--ease-basic) !important;
-	-moz-box-align: center !important;
-	display: block !important;
-	margin: 0 !important;
-	top: 1px !important;
-	color: inherit !important;
-	
-	--urlbar-height: 28px !important;
-	
-	min-height: var(--urlbar-height) !important;
+/* 开始了 */
+
+/* #urlbar, #searchbar { 
+   font-size: var(--toolbar-field-fontsize) !important;
+   border-radius: 4px !important;
+   background-color: var(--toolbar-field-background-color) !important;
+   border: 0 !important;
+   box-shadow: none !important; 
+   padding: 0 0 2px 0 !important; 
+   background-clip: padding-box !important;
+   transition: background-color .1s var(--ease-basic) !important; 
+   -moz-box-align: center !important; 
+   display: block !important; 
+   margin: 0 !important; 
+   top: 1px !important; 
+    color: inherit !important;
+   --urlbar-height: 30px !important;
+   min-height: var(--urlbar-height) !important; 
+} */
+
+#urlbar-input {
+    width: 100% !important;
 }
 
-#urlbar:not(:-moz-lwtheme),
-#searchbar:not(:-moz-lwtheme)
-{
-	color: inherit !important;
+#urlbar-input, .searchbar-textbox {
+    color: var(--lwt-toolbar-field-color) !important;
 }
 
-#urlbar:hover,
-#searchbar:hover
-{
-	background-color: var(--toolbar-field-hover-background-color) !important;
+#urlbar-input::placeholder, .searchbar-textbox::placeholder {
+    opacity: .66 !important;
 }
 
-#urlbar[focused],
-#urlbar[open],
-#searchbar[focused],
-#searchbar[open]
-{
-	background-color: var(--toolbar-field-focus-background-color) !important;
+#urlbar[open] #urlbar-input-container {
+    height: 37px !important;
 }
 
-#urlbar[focused],
-#searchbar[focused]
-{
-	/* -moz-accent-color won't work in a var... */
-	border: 2px solid -moz-accent-color !important;
-	padding: 0 !important;
-	margin: 0 !important;
+#urlbar[open] #identity-box {
+    margin-inline-start: 8px !important;
+    margin-inline-end: 8px !important;
 }
 
-/* if only focused, don't break out the urlbar */
-#urlbar[focused]:not([open])
-{
-	width: 100% !important;
-	left: 0 !important;
-	right: 0 !important;
+.urlbarView {
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    position: relative !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    background: 0 !important;
+    margin: 0 !important;
 }
 
-#urlbar[open],
-#searchbar[open]
-{
-	border: 0 !important;
-	padding: 0 !important;
-	border-radius: 4px !important;
-	min-height: 37px !important;
-	margin: -4px 0 -1px !important;
-	box-shadow:
-		0 5px 5px -3px rgba(0,0,0,.2),
-		0 8px 10px 1px rgba(0,0,0,.14),
-		0 3px 14px 2px rgba(0,0,0,.12) !important;
-	z-index: 99999 !important;
+#urlbar[open] .urlbarView {
+    display: block !important;
+    width: 100% !important;
 }
 
-/* 71+ */
-#urlbar-background
-{
-	display: none !important;
+#urlbar-results {
+    padding: 0 !important;
 }
 
-#urlbar-input-container,
-#searchbar
-{
-	display: flex !important;
-	align-items: center !important;
+#urlbar-container, #searchbar-container {
+    overflow: visible !important;
+    padding: 0 0 2px 0!important;
+    margin-inline: 6px !important;
 }
 
-#urlbar-input-container
-{
-	height: auto !important;
-	padding: 0 !important;
-	border: 0 !important;
+#identity-icon {
+    fill-opacity: 1 !important;
 }
 
-.urlbar-input-box,
-.searchbar-textbox
-{
-	flex: 1 !important;
+#identity-icon-labels {
+    color: inherit !important;
+    opacity: 1 !important;
+    margin-inline-start: 8px !important;
+    margin-block-start: -1px !important;
+    display: none !important;
+    align-items: center !important;
 }
 
-#urlbar-input
-{
-	width: 100% !important;
+#identity-box {
+    display: flex !important;
+    position: relative !important;
 }
 
-#urlbar-input,
-.searchbar-textbox
-{
-	color: var(--lwt-toolbar-field-color) !important;
+.identity-box-button, #tracking-protection-icon-container {
+    background: none !important;
 }
 
-#urlbar-input::placeholder,
-.searchbar-textbox::placeholder
-{
-	opacity: .66 !important;
-}
-
-#urlbar[open] #urlbar-input-container
-{
-	height: 37px !important;
-}
-
-#urlbar[open] #identity-box
-{
-	margin-inline-start: 8px !important;
-	margin-inline-end: 8px !important;
-}
-
-.urlbarView
-{
-	top: 0 !important;
-	left: 0 !important;
-	right: 0 !important;
-	position: relative !important;
-	box-shadow: none !important;
-	border: 0 !important;
-	background: 0 !important;
-	margin: 0 !important;
-}
-
-#urlbar[open] .urlbarView
-{
-	display: block !important;
-	width: 100% !important;
-}
-
-#urlbar-results
-{
-	padding: 0 !important;
-}
-
-#urlbar-container,
-#searchbar-container
-{
-	overflow: visible !important;
-	padding: 0 !important;
-	margin-inline: 6px !important;
-}
-
-#identity-icon
-{
-	fill-opacity: 1 !important;
-}
-
-#identity-icon-labels
-{
-	color: inherit !important;
-	opacity: 1 !important;
-	padding: 0 !important;
-	margin-inline-start: 8px !important;
-	margin-block-start: -1px !important;
-	display: none !important;
-	align-items: center !important;
-}
-
-#identity-box
-{
-	display: flex !important;
-	position: relative !important;
-}
-
-.identity-box-button,
-#tracking-protection-icon-container
-{
-	background: none !important;
-}
-
-#identity-icon-box
-{
-	border: 0 !important;
-	padding: 0 !important;
+#identity-icon-box {
+    border: 0 !important;
+    padding: 0 !important;
 }
 
 /* separator */
-#urlbar[pageproxystate=valid] #identity-box:-moz-any(.chromeUI, .extensionPage, .notSecureText) #identity-icon-box::after
-{
-	content: "" !important;
-	display: block !important;
-	position: absolute !important;
-	height: 16px !important;
-	top: calc(50% - 8px) !important;
-	right: 0 !important;
-	background: #9d9e9f !important;
-	width: 1px !important;
-	transition: opacity .2s var(--ease-basic) !important;
+
+#urlbar[pageproxystate=valid] #identity-box:-moz-any(.chromeUI, .extensionPage, .notSecureText) #identity-icon-box::after {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    height: 16px !important;
+    top: calc(50% - 8px) !important;
+    right: 0 !important;
+    background: #9d9e9f !important;
+    width: 1px !important;
+    transition: opacity .2s var(--ease-basic) !important;
 }
 
-
-#urlbar[pageproxystate=valid] #identity-box:-moz-any(.chromeUI, .extensionPage, .notSecureText)
-{
-	margin-inline-end: 8px !important;
+#urlbar[pageproxystate=valid] #identity-box:-moz-any(.chromeUI, .extensionPage, .notSecureText) {
+    margin-inline-end: 8px !important;
 }
 
-
-#urlbar[pageproxystate=valid] #identity-box:hover  #identity-icon-box::after
-{
-	opacity: 0 !important;
+#urlbar[pageproxystate=valid] #identity-box:hover #identity-icon-box::after {
+    opacity: 0 !important;
 }
 
-#urlbar[pageproxystate=valid] #identity-box.extensionPage > #identity-icon
-{
-	list-style-image: none !important;
-	margin-inline-end: -16px !important;
+#urlbar[pageproxystate=valid] #identity-box.extensionPage>#identity-icon {
+    list-style-image: none !important;
+    margin-inline-end: -16px !important;
 }
 
-#identity-icon-label
-{
-	margin: 0 !important;
-	padding-inline-start: 8px !important;
-	transform: translateY(-1px) !important;
-	
+#identity-icon-label {
+    margin: 0 !important;
+    padding-inline-start: 8px !important;
+    transform: translateY(-1px) !important;
 }
 
 /* no longer used as a connection icon */
-#connection-icon
-{
-	display: none !important;
+
+#connection-icon {
+    display: none !important;
 }
 
-#urlbar[pageproxystate=valid] #identity-box:-moz-any(
-	.mixedActiveBlocked,
-	.mixedDisplayContentLoadedActiveBlocked,
-	.mixedActiveContent
-) > #connection-icon
-{
-	display: -moz-box !important;
+#urlbar[pageproxystate=valid] #identity-box:-moz-any(.mixedActiveBlocked, .mixedDisplayContentLoadedActiveBlocked, .mixedActiveContent)>#connection-icon {
+    display: -moz-box !important;
 }
 
-#urlbar[pageproxystate=valid] #identity-box:-moz-any(.weakCipher, .certUserOverridden, .certErrorPage, .insecureLoginForms, .mixedActiveContent)
-{
-	color: #c94031 !important;
+#urlbar[pageproxystate=valid] #identity-box:-moz-any(.weakCipher, .certUserOverridden, .certErrorPage, .insecureLoginForms, .mixedActiveContent) {
+    color: #c94031 !important;
 }
 
-.urlbar-input
-{
-	padding: 0 !important;
+.urlbar-input {
+    padding: 0 0 3px 0 !important;
 }
 
-.searchbar-textbox
-{
-	border: 0 !important;
-	background: 0 !important;
-	box-shadow: none !important;
-	margin: 0 !important;
-	-moz-appearance: none !important;
+.searchbar-textbox {
+    border: 0 !important;
+    background: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    -moz-appearance: none !important;
 }
 
-.searchbar-search-icon
-{
-	margin: 0 !important;
-	fill-opacity: 1 !important;
+.searchbar-search-icon {
+    margin: 0 !important;
+    fill-opacity: 1 !important;
 }
 
-.searchbar-search-icon-overlay
-{
-	margin-inline-start: -11px !important;
-	margin-inline-end: 0 !important;
-	
-	/* not really useful anyway */
-	display: none !important;
+.searchbar-search-icon-overlay {
+    margin-inline-start: -11px !important;
+    margin-inline-end: 0 !important;
+    /* not really useful anyway */
+    display: none !important;
 }
 
-#page-action-buttons > #pageActionSeparator,
-.urlbar-history-dropmarker
-{
-	display: none !important;
+#page-action-buttons>#pageActionSeparator, .urlbar-history-dropmarker {
+    display: none !important;
 }
 
-#pageActionSeparator
-{
-	height: 24px !important;
+#pageActionSeparator {
+    height: 24px !important;
 }
 
-.urlbar-icon-wrapper
-{
-	background: 0 !important;
+.urlbar-icon-wrapper {
+    background: 0 !important;
 }
 
-.urlbar-icon,
-#page-action-buttons > toolbarbutton,
-.searchbar-search-button,
-#identity-box,
-#tracking-protection-icon-box
-{
-	min-width: 32px !important;
-	height: 24px !important;
-	padding: 4px 8px !important;
-	margin: 0 !important;
-	border: 0 !important;
-	border-radius: 99px !important;
-	fill-opacity: 1 !important;
-	transition: background-color .2s var(--ease-basic) !important;
-	background: 0 !important;
-	background-color: transparent !important;
+.urlbar-icon, #page-action-buttons>toolbarbutton, #identity-box {
+    /* this thing do effect the mouse hover highlight*/
+    min-width: 26px !important;
+    margin: center !important;
+    border: 0 !important;
+    border-radius: 2px !important;
+    fill-opacity: 1 !important;
+    transition: background-color .2s var(--ease-basic) !important;
+    background: 0 !important;
+    background-color: transparent !important;
 }
 
-#tracking-protection-icon-container
-{
-	background: 0 !important;
-	border: 0 !important;
-	margin: 0 !important;
-	padding: 0 !important;
-	width: auto !important;
-	order: 97 !important;
+/* protect button due to the 92.0 update move on the left */
+
+#tracking-protection-icon-box {
+    min-width: 27px !important;
+    height: 20px !important;
+    padding: 2px 0 0 5px !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 2px !important;
+    fill-opacity: 1 !important;
+    transition: background-color .2s var(--ease-basic) !important;
+    background: 0 !important;
+    background-color: transparent !important;
 }
 
-#tracking-protection-icon-box
-{
-	display: block !important;
-	width: 32px !important;
+#tracking-protection-icon-container {
+    background: 0 !important;
+    border: 0 !important;
+    margin: 0 !important;
+    /* padding: 0 !important; */
+    width: auto !important;
+    order: 97 !important;
 }
 
-#tracking-protection-icon-box
-{
-	transition:
-		background-color .2s var(--ease-basic),
-		width .15s var(--ease-in),
-		opacity .15s var(--ease-basic),
-		visibility 0s .2s !important;
-	opacity: 0 !important;
-	visibility: hidden !important;
-	width: 0 !important;
+#tracking-protection-icon-box {
+    display: block !important;
+    width: 32px !important;
 }
 
-#urlbar:hover #tracking-protection-icon-box,
-#tracking-protection-icon-container[open] #tracking-protection-icon-box,
-#tracking-protection-icon-box[active]
-{
-	transition:
-		background-color .2s var(--ease-basic),
-		width .3s var(--ease-out),
-		opacity .3s var(--ease-basic) !important;
-	opacity: 0.8 !important;
-	visibility: visible !important;
-	width: 32px !important;
+#tracking-protection-icon-box {
+    transition: background-color .2s var(--ease-basic), width .15s var(--ease-in), opacity .15s var(--ease-basic), visibility 0s .2s !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    width: 0 !important;
 }
 
-#tracking-protection-icon
-{
-	display: block !important;
+#urlbar:hover #tracking-protection-icon-box, #tracking-protection-icon-container[open] #tracking-protection-icon-box, #tracking-protection-icon-box[active] {
+    transition: background-color .2s var(--ease-basic), width .3s var(--ease-out), opacity .3s var(--ease-basic) !important;
+    opacity: 0.8 !important;
+    visibility: visible !important;
+    width: 32px !important;
 }
 
-#tracking-protection-icon-animatable-box
-{
-	display: none !important;
+#tracking-protection-icon {
+    display: block !important;
 }
 
-#identity-box #notification-popup-box
-{
-	padding: 0 !important;
-	margin: 0 !important;
+#tracking-protection-icon-animatable-box {
+    display: none !important;
 }
 
-#page-action-buttons
-{
-	height: 24px !important;
-	display: flex !important;
-	order: 99 !important;
+#identity-box #notification-popup-box {
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-#urlbar[open] #page-action-buttons,
-#urlbar[open] #tracking-protection-icon-container
-{
-	display: none !important;
+/* seems mozilla call the bookmark icon as page-action in firefox
+#page-action-buttons {
+   height: 24px !important;
+   display: flex !important;
+   order: 99 !important;
+} */
+
+#urlbar[open] #page-action-buttons, #urlbar[open] #tracking-protection-icon-container {
+    display: none !important;
 }
 
-.urlbar-icon:hover:not([disabled]),
-#page-action-buttons > toolbarbutton:hover:not([disabled]),
-.searchbar-search-button:hover,
-#identity-box:hover:not(.no-hover),
-#tracking-protection-icon-container:hover #tracking-protection-icon-box
-{
-	background-color: var(--toolbarbutton-hover-background) !important;
+/* the 92.0 update make hover highlight position broken */
+
+/* #identity-box:hover:not(.no-hover), #tracking-protection-icon-container:hover #tracking-protection-icon-box {
+   background-color: var(--toolbarbutton-hover-background) !important;
+} */
+
+.urlbar-icon:hover:active:not([disabled]), .urlbar-icon[open], #page-action-buttons>toolbarbutton:hover:active:not([disabled]), .searchbar-search-button:hover:active, #identity-box:hover:active:not(.no-hover), #identity-box[open]:not(.no-hover), #tracking-protection-icon-container[open] #tracking-protection-icon-box {
+    background-color: var(--toolbarbutton-active-background) !important;
+    transition-duration: 0 !important;
 }
 
-.urlbar-icon:hover:active:not([disabled]),
-.urlbar-icon[open],
-#page-action-buttons > toolbarbutton:hover:active:not([disabled]),
-.searchbar-search-button:hover:active,
-#identity-box:hover:active:not(.no-hover),
-#identity-box[open]:not(.no-hover),
-#tracking-protection-icon-container[open] #tracking-protection-icon-box
-{
-	background-color: var(--toolbarbutton-active-background) !important;
-	transition-duration: 0 !important;
+#contextual-feature-recommendation {
+    width: auto !important;
 }
 
-#contextual-feature-recommendation
-{
-	width: auto !important;
+/* 邪恶继续 */
+
+/* i did nt like dotdotdot icon */
+
+.urlbar-page-action:-moz-any(#reader-mode-button, #pageActionButton, #pocket-button-box, #pageAction-urlbar-screenshots_mozilla_org, #pageAction-urlbar-sendToDevice, #pageAction-urlbar-emailLink, #pageAction-urlbar-copyURL, #pageAction-urlbar-shareURL, #pageAction-urlbar-addSearchEngine) {
+    transition: background-color .2s var(--ease-basic), margin .15s var(--ease-in), opacity .15s var(--ease-basic), visibility 0s 4s !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    margin-inline-start: -32px !important;
 }
 
-.urlbar-page-action:-moz-any(
-	#reader-mode-button,
-	#pageActionButton,
-	#pocket-button-box,
-	#pageAction-urlbar-screenshots_mozilla_org,
-	#pageAction-urlbar-sendToDevice,
-	#pageAction-urlbar-emailLink,
-	#pageAction-urlbar-copyURL,
-	#pageAction-urlbar-shareURL,
-	#pageAction-urlbar-addSearchEngine
-)
-{
-	transition:
-		background-color .2s var(--ease-basic),
-		margin .15s var(--ease-in),
-		opacity .15s var(--ease-basic),
-		visibility 0s 4s !important;
-	opacity: 0 !important;
-	visibility: hidden !important;
-	margin-inline-start: -32px !important;
+/* #urlbar:hover .urlbar-page-action:-moz-any(#reader-mode-button, #pageActionButton, #pocket-button-box, #pageAction-urlbar-screenshots_mozilla_org, #pageAction-urlbar-sendToDevice, #pageAction-urlbar-emailLink, #pageAction-urlbar-copyURL, #pageAction-urlbar-shareURL, #pageAction-urlbar-addSearchEngine), .urlbar-page-action:-moz-any(#reader-mode-button, #pageActionButton, #pocket-button-box, #pageAction-urlbar-screenshots_mozilla_org, #pageAction-urlbar-sendToDevice, #pageAction-urlbar-emailLink, #pageAction-urlbar-copyURL, #pageAction-urlbar-shareURL, #pageAction-urlbar-addSearchEngine):-moz-any(:hover, [open], [readeractive]), .urlbar-page-action:-moz-any(:hover, [open])~.urlbar-page-action:-moz-any(#reader-mode-button, #pageActionButton, #pocket-button-box, #pageAction-urlbar-screenshots_mozilla_org, #pageAction-urlbar-sendToDevice, #pageAction-urlbar-emailLink, #pageAction-urlbar-copyURL, #pageAction-urlbar-shareURL, #pageAction-urlbar-addSearchEngine), #tracking-protection-icon-container[open]~#page-action-buttons .urlbar-page-action:-moz-any(#reader-mode-button, #pageActionButton, #pocket-button-box, #pageAction-urlbar-screenshots_mozilla_org, #pageAction-urlbar-sendToDevice, #pageAction-urlbar-emailLink, #pageAction-urlbar-copyURL, #pageAction-urlbar-shareURL, #pageAction-urlbar-addSearchEngine) {
+   transition: background-color .2s var(--ease-basic), margin .3s var(--ease-out), opacity .3s var(--ease-basic) !important;
+   opacity: 1 !important;
+   visibility: visible !important;
+   margin-inline-start: 0 !important;
+} */
+
+.urlbar-display {
+    color: inherit !important;
+    margin: 0 !important;
 }
 
-#urlbar:hover .urlbar-page-action:-moz-any(
-	#reader-mode-button,
-	#pageActionButton,
-	#pocket-button-box,
-	#pageAction-urlbar-screenshots_mozilla_org,
-	#pageAction-urlbar-sendToDevice,
-	#pageAction-urlbar-emailLink,
-	#pageAction-urlbar-copyURL,
-	#pageAction-urlbar-shareURL,
-	#pageAction-urlbar-addSearchEngine
-),
-.urlbar-page-action:-moz-any(
-	#reader-mode-button,
-	#pageActionButton,
-	#pocket-button-box,
-	#pageAction-urlbar-screenshots_mozilla_org,
-	#pageAction-urlbar-sendToDevice,
-	#pageAction-urlbar-emailLink,
-	#pageAction-urlbar-copyURL,
-	#pageAction-urlbar-shareURL,
-	#pageAction-urlbar-addSearchEngine
-):-moz-any(:hover, [open], [readeractive]),
-.urlbar-page-action:-moz-any(:hover, [open]) ~ .urlbar-page-action:-moz-any(
-	#reader-mode-button,
-	#pageActionButton,
-	#pocket-button-box,
-	#pageAction-urlbar-screenshots_mozilla_org,
-	#pageAction-urlbar-sendToDevice,
-	#pageAction-urlbar-emailLink,
-	#pageAction-urlbar-copyURL,
-	#pageAction-urlbar-shareURL,
-	#pageAction-urlbar-addSearchEngine),
-#tracking-protection-icon-container[open] ~ #page-action-buttons .urlbar-page-action:-moz-any(
-	#reader-mode-button,
-	#pageActionButton,
-	#pocket-button-box,
-	#pageAction-urlbar-screenshots_mozilla_org,
-	#pageAction-urlbar-sendToDevice,
-	#pageAction-urlbar-emailLink,
-	#pageAction-urlbar-copyURL,
-	#pageAction-urlbar-shareURL,
-	#pageAction-urlbar-addSearchEngine)
-{
-	transition:
-		background-color .2s var(--ease-basic),
-		margin .3s var(--ease-out),
-		opacity .3s var(--ease-basic) !important;
-	opacity: 1 !important;
-	visibility: visible !important;
-	margin-inline-start: 0 !important;
+#pocket-button-box[animate]>#pocket-animatable-box {
+    margin-inline-start: 6px !important;
 }
 
-.urlbar-display
-{
-	color: inherit !important;
-	margin: 0 !important;
+#star-button-animatable-box {
+    display: none !important;
 }
 
-#pocket-button-box[animate] > #pocket-animatable-box
-{
-	margin-inline-start: 6px !important;
+#userContext-icons {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    padding-inline: 8px !important;
+    margin: 0 !important;
+    color: var(--identity-tab-color) !important;
 }
 
-#star-button-animatable-box
-{
-	display: none !important;
+#userContext-icons:not([hidden]) {
+    display: flex !important;
 }
 
-#userContext-icons
-{
-	flex-direction: row !important;
-	align-items: center !important;
-	justify-content: center !important;
-	position: relative !important;
-	padding-inline: 8px !important;
-	margin: 0 !important;
-	color: var(--identity-tab-color) !important;
+#userContext-icons>* {
+    z-index: 1 !important;
+    color: inherit !important;
+    fill: currentColor !important;
 }
 
-#userContext-icons:not([hidden])
-{
-	display: flex !important;
+#userContext-label {
+    margin: 0 !important;
 }
 
-#userContext-icons > *
-{
-	z-index: 1 !important;
-	color: inherit !important;
-	fill: currentColor !important;
+#userContext-label+#userContext-indicator {
+    margin-inline-start: 6px !important;
 }
 
-#userContext-label
-{
-	margin: 0 !important;
+#userContext-icons::before {
+    content: '' !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    background: var(--identity-tab-color) !important;
+    border-radius: 99px !important;
+    opacity: .1 !important;
 }
 
-#userContext-label + #userContext-indicator
-{
-	margin-inline-start: 6px !important;
+#cfr-label-container {
+    background: 0 !important;
 }
 
-#userContext-icons::before
-{
-	content: '' !important;
-	position: absolute !important;
-	left: 0 !important;
-	right: 0 !important;
-	top: 0 !important;
-	bottom: 0 !important;
-	background: var(--identity-tab-color) !important;
-	border-radius: 99px !important;
-	opacity: .1 !important;
+#cfr-label {
+    display: none !important;
 }
 
-#cfr-label-container
-{
-	background: 0 !important;
+#cfr-button {
+    fill: currentColor !important;
 }
 
-#cfr-label
-{
-	display: none !important;
-}
-
-#cfr-button
-{
-	fill: currentColor !important;
-}
-
-#urlbar[open] #urlbar-go-button,
-#searchbar[open] #search-go-button,
+#urlbar[open] #urlbar-go-button, #searchbar[open] #search-go-button,
 /* < 71 */
-#urlbar[open] .urlbar-go-button,
-#searchbar[open] .search-go-button
-{
-	height: 32px !important;
+
+#urlbar[open] .urlbar-go-button, #searchbar[open] .search-go-button {
+    height: 32px !important;
 }
 
-#urlbar-go-button,
-#search-go-button,
+#urlbar-go-button, #search-go-button,
 /* < 71 */
-.urlbar-go-button,
-.search-go-button
-{
-	list-style-image: url(go.svg) !important;
+
+.urlbar-go-button, .search-go-button {
+    list-style-image: url(go.svg) !important;
 }
 
-.search-go-container
-{
-	display: flex !important;
+.search-go-container {
+    display: flex !important;
 }
 
-#searchbar .textbox-input
-{
-	padding: 0 !important;
+#searchbar .textbox-input {
+    padding: 0 !important;
 }
 
 /* lock (secure) */
-#identity-box[pageproxystate="valid"].verifiedDomain #identity-icon,
-#identity-box[pageproxystate="valid"].mixedActiveBlocked #identity-icon
-{
-	list-style-image: var(--lock-icon) !important;
+
+#identity-box[pageproxystate="valid"].verifiedDomain #identity-icon, #identity-box[pageproxystate="valid"].mixedActiveBlocked #identity-icon {
+    list-style-image: var(--lock-icon) !important;
 }
 
 /* warning (dangerous) */
-#identity-box[pageproxystate="valid"].notSecure #identity-icon,
-#identity-box[pageproxystate="valid"].mixedActiveContent #identity-icon,
-#identity-box[pageproxystate="valid"].httpsOnlyErrorPage #identity-icon,
-#identity-box[pageproxystate="valid"].weakCipher #identity-icon,
-#identity-box[pageproxystate="valid"].mixedDisplayContent #identity-icon,
-#identity-box[pageproxystate="valid"].mixedDisplayContentLoadedActiveBlocked #identity-icon,
-#identity-box[pageproxystate="valid"].certUserOverridden #identity-icon,
-#identity-box[pageproxystate="valid"].certErrorPage #identity-icon
-{
+
+#identity-box[pageproxystate="valid"].notSecure #identity-icon, #identity-box[pageproxystate="valid"].mixedActiveContent #identity-icon, #identity-box[pageproxystate="valid"].httpsOnlyErrorPage #identity-icon, #identity-box[pageproxystate="valid"].weakCipher #identity-icon, #identity-box[pageproxystate="valid"].mixedDisplayContent #identity-icon, #identity-box[pageproxystate="valid"].mixedDisplayContentLoadedActiveBlocked #identity-icon, #identity-box[pageproxystate="valid"].certUserOverridden #identity-icon, #identity-box[pageproxystate="valid"].certErrorPage #identity-icon {
     list-style-image: var(--warning-icon) !important;
 }
 
-#urlbar-input,
-#searchbar-input,
-.searchbar-textbox /* < 71 */
-{
-	transform: translateY(var(--input-offset)) !important;
-	line-height: 1.8em !important;
+#urlbar-input, #searchbar-input, .searchbar-textbox
+/* < 71 */
+
+    {
+    transform: translateY(var(--input-offset)) !important;
+    line-height: 1.8em !important;
 }
 
 /* 1x */
-#urlbar
-{
-	--info-icon: url(info-1x.svg);
-	--lock-icon: url(connection-1x.svg);
-	--warning-icon: url(connection-warning-1x.svg);
+
+#urlbar {
+    --info-icon: url(info-1x.svg);
+    --lock-icon: url(connection-1x.svg);
+    --warning-icon: url(connection-warning-1x.svg);
 }
 
-#urlbar,
-#searchbar
-{
-	--input-offset: -1px;
+#urlbar, #searchbar {
+    --input-offset: -1px;
 }
 
 /* 2x */
-@media (min--moz-device-pixel-ratio: 2)
-{
-	#urlbar
-	{
-		--info-icon: url(info-2x.svg);
-		--lock-icon: url(connection-2x.svg);
-		--warning-icon: url(connection-warning-2x.svg);
-	}
-	
-	#urlbar,
-	#searchbar
-	{
-		--input-offset: -.5px;
-		
-	}
-	
-	#identity-icon-labels
-	{
-		padding-inline-end: .5px !important;
-	}
+
+@media (min--moz-device-pixel-ratio: 2) {
+    #urlbar {
+        --info-icon: url(info-2x.svg);
+        --lock-icon: url(connection-2x.svg);
+        --warning-icon: url(connection-warning-2x.svg);
+    }
+    #urlbar, #searchbar {
+        --input-offset: -.5px;
+    }
+    #identity-icon-labels {
+        padding-inline-end: .5px !important;
+    }
 }
