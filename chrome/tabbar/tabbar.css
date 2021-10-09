@@ -86,8 +86,8 @@
 #scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton),
 #scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton)
 {
-	margin-top: var(--tab-shadow-max-size) !important;
-	margin-bottom: var(--proton-tab-block-margin) !important;
+	margin-top: calc(var(--tab-shadow-max-size)) !important;
+	margin-bottom: 4px !important;
 }
 
 .tabbrowser-tab
