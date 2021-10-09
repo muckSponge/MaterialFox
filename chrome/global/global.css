@@ -6,7 +6,7 @@
 		{
 			@media (-moz-windows-default-theme)
 			{
-				:root[tabsintitlebar] .titlebar-button
+				:root[tabsintitlebar] #TabsToolbar .titlebar-button
 				{
 					transform: translateY(-8px) !important;
 				}
