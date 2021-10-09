@@ -570,6 +570,15 @@
 	width: auto !important;
 }
 
+.urlbar-page-action
+{
+	padding: 0 !important;
+	background: 0 !important;
+	border-radius: 0 !important;
+	height: 24px !important;
+	width: 32px !important;
+}
+
 .urlbar-page-action:-moz-any(
 	#reader-mode-button,
 	#pageActionButton,
