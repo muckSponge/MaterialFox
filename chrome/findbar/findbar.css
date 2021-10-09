@@ -1,14 +1,20 @@
+.findbar-container
+{
+	overflow: visible !important;
+}
+
 .findbar-textbox
 {
 	background-color: transparent !important;
-	background: var(--search-icon-url) !important;
 	background-repeat: no-repeat !important;
 	background-position: 5px center !important;
+	fill: currentColor !important;
 	fill-opacity: 1 !important;
 	border: 0 !important;
 	box-shadow: none !important;
 	margin-inline-start: 2px !important;
 	padding-inline-start: 28px !important;
+	outline: none !important;
 }
 
 hbox[anonid="findbar-textbox-wrapper"]

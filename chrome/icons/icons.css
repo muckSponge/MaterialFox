@@ -28,7 +28,8 @@
 	list-style-image: url(stop-1x.svg) !important;
 }
 
-.toolbarbutton-1#forward-button
+.toolbarbutton-1#forward-button .toolbarbutton-icon,
+#context-forward .menu-iconic-icon
 {
 	transform: scaleX(-1) !important;
 }
@@ -199,6 +200,11 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon
 #panelMenu_searchBookmarks
 {
 	list-style-image: url(search.svg) !important;
+}
+
+.findbar-textbox
+{
+	background-image: url(search.svg) !important;
 }
 
 #appMenu-cut-button
