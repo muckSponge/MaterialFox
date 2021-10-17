@@ -368,7 +368,8 @@
 
 #urlbar[pageproxystate=valid] #identity-box:-moz-any(.chromeUI, .extensionPage, .notSecureText)
 {
-	margin-inline-end: 8px !important;
+	padding-inline-end: 9px !important;
+	margin-inline-end: 9px !important;
 }
 
 
@@ -387,7 +388,7 @@
 {
 	margin: 0 !important;
 	padding-inline-start: 8px !important;
-	transform: translateY(-1px) !important;
+	transform: translateY(-2px) !important;
 	
 }
 
