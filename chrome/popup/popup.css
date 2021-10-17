@@ -14,8 +14,8 @@ menupopup > menu
 	appearance: none !important;
 }
 
-menuitem[disabled],
-menu[disabled]
+menuitem[disabled=true],
+menu[disabled=true]
 {
 	pointer-events: none !important;
 }
