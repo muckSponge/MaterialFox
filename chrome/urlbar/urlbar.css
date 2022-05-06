@@ -468,11 +468,19 @@
 	padding: 4px 8px !important;
 	margin: 0 !important;
 	border: 0 !important;
-	border-radius: 99px !important;
+/*	border-radius: 99px !important;*/
 	fill-opacity: 1 !important;
 	transition: background-color .2s var(--ease-basic) !important;
 	background: 0 !important;
 	background-color: transparent !important;
+}
+
+#identity-box {
+	border-radius: 99px 0 0 99px !important;
+}
+
+#star-button {
+	border-radius: 0 99px 99px 0 !important;
 }
 
 #tracking-protection-icon-container
