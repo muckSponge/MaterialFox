@@ -156,7 +156,7 @@
 	--toolbar-field-focus-background-color: hsl(0, 0%, 100%) !important;
 }
 
-:root:-moz-any(:-moz-lwtheme-brighttext, [privatebrowsingmode=temporary])
+:root:-moz-any([lwtheme-brighttext], [privatebrowsingmode=temporary])
 {
 	--toolbar-field-background-color: #202124 !important;
 	--toolbar-field-hover-background-color: #292a2d !important;
