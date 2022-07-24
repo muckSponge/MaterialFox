@@ -205,7 +205,7 @@
 {
 	/* -moz-accent-color won't work in a var... */
 	border: 2px solid -moz-accent-color !important;
-	padding: 0 !important;
+	padding: 0 auto !important;
 	margin: 0 !important;
 }
 
