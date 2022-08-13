@@ -7,3 +7,8 @@
 @import "popup/popup.css";
 @import "urlbar/urlbar.css";
 @import "findbar/findbar.css";
+
+/*move multi-account container color to the bottom of the tab*/
+.tab-context-line {
+  margin: var(--tab-min-height) var(--inline-tab-padding) 0 !important;
+}
