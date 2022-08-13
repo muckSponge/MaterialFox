@@ -329,4 +329,9 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon
 	{
 		list-style-image: url(library-2x.svg) !important;
 	}
+	
+	#personal-bookmarks .bookmark-item
+	{
+		list-style-image: url(bookmarkfolder.svg) !important; 
+	}
 }
