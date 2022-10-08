@@ -31,7 +31,7 @@
 .toolbarbutton-1#forward-button .toolbarbutton-icon,
 #context-forward .menu-iconic-icon
 {
-	transform: scaleX(-1) !important;
+	transform: translate(0px, -0.5px) scaleX(-1) !important;
 }
 
 #home-button
