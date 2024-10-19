@@ -126,7 +126,7 @@
 
 .tab-stack
 {
-	margin-top: 4px !important;
+	margin-top: -4px !important;
 	margin-bottom: -4px !important;
 }
 
@@ -489,7 +489,9 @@
 
 #tabbrowser-tabs #tabs-newtab-button
 {
-	margin-inline-start: 6px !important;
+	margin-inline-start: 4px !important;
+	margin-bottom: 4px !important;
+	margin-top: 4px !important;
 }
 
 #tabbrowser-tabs[overflow] .tabbrowser-arrowscrollbox
@@ -524,7 +526,7 @@
 	bottom: 0 !important;
 	left: 8px !important;
 	width: calc(100% - 16px) !important;
-	height: 2px !important;
+	height: 6px !important;
 	box-sizing: border-box !important;
 	border-radius: 99px 99px 0 0 !important;
 	transform: none !important;
@@ -541,7 +543,7 @@
 
 .tabbrowser-tab[usercontextid][selected] > .tab-stack::after
 {
-	bottom: calc(100% - 9px) !important;
+	bottom: calc(90% - 9px) !important;
 	left: calc(100% - 9px) !important;
 	width: 6px !important;
 	height: 6px !important;
